@@ -1,0 +1,33 @@
+# latex files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.synctex(busy)
+*.lof
+*.lot
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.pytxcode
+*.glstex
+*.cb
+*.cb2
+*.d
+*.nav
+*.snm
+
+# output files
+*.pdf
+!img/*.pdf
+img/*.puml.pdf
+
