@@ -1,0 +1,63 @@
+\documentclass{projdoc}
+\input{meta.tex}
+
+\title{Example Document}
+
+\begin{document}
+
+% generate table of contents, list of figures and list of tables
+\tablestables
+
+\bigskip
+Look how nice and consistent these tables and lists look compared to the default in
+MS Word!
+
+% flush page
+\newpage
+
+\section{Introduction}
+
+This is an example document that is meant to demonstrate various \LaTeX{} features,
+as well as some macros specific to \hbox{projdoc.cls}.
+% LaTeX has automatic line breaking. \hbox is used here to ensure projdoc.cls is
+% never broken across lines.
+
+\section{Sectioning}
+\subsection{Subsections}
+\subsubsection{Subsubsections}
+\paragraph{Paragraphs (level 4)}
+
+These don't show up in the table of contents by default
+
+\section{Figures and tables}
+
+\Cref{fig:example-a} definitely shows something.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{example-image-a}
+	\label{fig:example-a}
+	\caption{This is the figure title}
+\end{figure}
+
+\begin{table}
+	\centering
+	% i know, table code sucks
+	\begin{tabular}{ll@{\qquad}r}
+		\toprule
+		$a$ & $b$ & $x$\\
+		\midrule
+		0 & 0 & 0\\
+		0 & 1 & 1\\
+		1 & 0 & 1\\
+		1 & 1 & 0\\
+		\bottomrule
+	\end{tabular}
+	% booktabs tables look very nice, but it seems the author hates vertical rules with
+	% a burning passion. please avoid using vertical rules for consistency.
+	\label{tab:gate-xor}
+	\caption{XOR-gate truth table}
+\end{table}
+
+\end{document}
+
