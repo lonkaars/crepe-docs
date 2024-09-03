@@ -1,0 +1,10 @@
+# <who>: <when> <how long> <what>
+loek: 2024-09-02 1h4m repository scaffolding
+loek: 2024-09-03 25m repository scaffolding
+loek: 2024-09-03 1h30 repository scaffolding
+
+# something like this? i'll make a lil' awk script or smth to convert this to a
+# nice table or overview in LaTeX later when i feel like it
+
+# vim:ft=cfg
+
