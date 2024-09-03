@@ -36,7 +36,8 @@
 % font style
 \setmainfont{TeX Gyre Schola}
 \setmathfont{TeX Gyre Schola Math}
-\setmonofont[Scale=0.85]{JetBrainsMono Nerd Font}
+\setsansfont{Inter}
+\setmonofont[Scale=0.85]{JetBrains Mono}
 
 % fix fonts w/ siunitx
 \sisetup{detect-all = true}

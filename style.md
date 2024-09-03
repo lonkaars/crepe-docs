@@ -1,3 +1,26 @@
+# Fonts
+
+The documents use the following fonts. All of these are free and open source,
+and are likely available from your system's package manager if you are using
+Linux.
+
+If the documents fail to compile after installing these fonts, please check if
+you are using a LaTeX compiler with support for the `fontspec` package (i.e.
+`xelatex` or `lualatex`). The included `latexmkrc` file \*should\* cover LaTeX
+workshop and VimTeX.
+
+|Family|Usage|Typeface|
+|-|-|-|
+|serif|Body text (default)|[TeX Gyre Schola][texgyreschola]|
+|math|Math|[TeX Gyre Schola Math][texgyreschola-math]|
+|sans-serif|Figures|[Inter][inter]|
+|monospace|URLs, code listings|[JetBrains Mono][jetbrains-mono]|
+
+[inter]: https://rsms.me/inter
+[texgyreschola]: https://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/index_html
+[texgyreschola-math]: https://www.gust.org.pl/projects/e-foundry/tg-math/download/index_html#Schola_Math
+[jetbrains-mono]: https://www.jetbrains.com/lp/mono
+
 # Spelling
 
 All documentation is written in U.S. English
