@@ -3,6 +3,7 @@ loek: 2024-09-02 1h4m repository scaffolding
 loek: 2024-09-03 25m repository scaffolding
 loek: 2024-09-03 1h30m repository scaffolding / engine repository, unit testing
 loek: 2024-09-04 1h30m repository scaffolding / latex example code
+loek: 2024-09-04 50m poc / dynamic library linking test example
 
 # vim:ft=cfg
 
