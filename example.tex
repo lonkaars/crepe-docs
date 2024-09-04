@@ -93,20 +93,20 @@ is neatly handled by cleveref:
 
 \subsection{Fonts}
 
-The \code{\emph} command can be used to \emph{emphasize} (i.e.~italicize) text.
+The \codeinline{\emph} command can be used to \emph{emphasize} (i.e.~italicize) text.
 % Note the ~ (non-breaking space) after "i.e.". LaTeX inserts some extra negative
 % space after a full stop, but since the full stop is used to denote an abbreviation
 % we need to tell LaTeX to insert a regular space. This can also be achieved by using
 % "\ ", though this allows LaTeX to break a line after the "i.e." which looks ugly in
 % my opinion.
 
-The \code{\code} command can be used to insert inline code.
+The \codeinline{\codeinline} command can be used to insert inline code.
 
-The \code{codeblock} environment can be used to insert a code block:
+The \codeinline{blockcode} environment can be used to insert a code block:
 
-\begin{codeblock}
+\begin{blockcode}
 This is all included verbatim: \verb|asdf| \ $%!(*@#&)$
-\end{codeblock}
+\end{blockcode}
 
 \subsection{Lists}
 
@@ -138,7 +138,7 @@ Numbered list:
 
 \subsection{Citations}
 
-Citations are inserted using the \code{\autocite} command \autocite{rfc:3339}.
+Citations are inserted using the \codeinline{\autocite} command \autocite{rfc:3339}.
 
 \end{document}
 

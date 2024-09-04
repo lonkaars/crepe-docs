@@ -223,7 +223,7 @@
 }
 
 % code
-\DeclareUrlCommand\code{%
+\DeclareUrlCommand\codeinline{%
 	\urlstyle{tt}%
 	\def\codebreak{\discretionary{\hbox{~\textbackslash{}}}{\hbox{~~}}{}}%
 	\def\UrlSpecials{%
@@ -241,7 +241,7 @@
 	\def\UrlLeft{\hbox{\,}}%
 	\def\UrlRight{\hbox{\,}}%
 }
-\DefineVerbatimEnvironment{codeblock}{Verbatim}{
+\DefineVerbatimEnvironment{blockcode}{Verbatim}{
   tabsize=2,
   obeytabs,
 }

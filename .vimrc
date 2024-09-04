@@ -1,12 +1,12 @@
-" fix vimtex highlighting for \code{}
-syntax match texCmdVerb "\\code\>\*\?" nextgroup=texVerbZoneInline
+" fix vimtex highlighting for custom verbatim commands
+syntax match texCmdVerb "\\codeinline\>\*\?" nextgroup=texVerbZoneInline
 call vimtex#syntax#core#new_arg('texVerbZoneInline', {
 			\ 'contains': '',
 			\ 'matcher': 'start="{" end="}"'
 			\})
-" and \begin{codeblock} ... \end{codeblock}
+" and \begin{blockcode} ... \end{blockcode}
 call vimtex#syntax#core#new_env({
-			\ 'name': 'codeblock',
+			\ 'name': 'blockcode',
 			\ 'region': 'texVerbZone',
 			\})
 
