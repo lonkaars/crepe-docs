@@ -205,6 +205,9 @@
 
 % store figure/table count in macros
 \makeatletter
+\def\figurecount{0}%
+\def\tablecount{0}%
+\def\pagecount{0}%
 \AtEndDocument{
 	\immediate\write\@mainaux{\string\global\string\def\string\figurecount{\the\value{figure}}}
 	\immediate\write\@mainaux{\string\global\string\def\string\tablecount{\the\value{table}}}
