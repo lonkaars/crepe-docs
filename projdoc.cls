@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{school-assignment}[2024-01-20 class school-assignment]
+\ProvidesClass{projdoc}[2024-09-03 class projdoc]
 
 % based on article
 \LoadClass{article}
