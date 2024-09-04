@@ -1,4 +1,6 @@
 \documentclass{projdoc}
+% if the document compiles too slow (likely due to many/large images), try compiling
+% with the [draft] option. this replaces all images with placeholders.
 \input{meta.tex}
 
 \title{Example Document}
@@ -31,13 +33,30 @@ These don't show up in the table of contents by default
 
 \section{Figures and tables}
 
-\Cref{fig:example-a} definitely shows something.
+\Cref{fig:example-a} definitely shows something. Referencing multiple things at once
+is neatly handled by cleveref:
+\cref{fig:example-a,fig:example-b,fig:example-c,tab:gate-xor}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=8cm]{example-image-a}
-	\label{fig:example-a}
 	\caption{This is the figure title}
+	\label{fig:example-a} % label must be placed AFTER caption
+\end{figure}
+
+\begin{figure}
+	\begin{subfigure}{0.45\textwidth}%
+		\fitimg{\includegraphics{example-image-b}}
+		\caption{Example image B}
+		\label{fig:example-b}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}{0.45\textwidth}%
+		\fitimg{\includegraphics{example-image-c}}
+		\caption{Example image C}
+		\label{fig:example-c}
+	\end{subfigure}%
+	\caption{Subfigures}
 \end{figure}
 
 \begin{table}
@@ -55,9 +74,71 @@ These don't show up in the table of contents by default
 	\end{tabular}
 	% booktabs tables look very nice, but it seems the author hates vertical rules with
 	% a burning passion. please avoid using vertical rules for consistency.
-	\label{tab:gate-xor}
 	\caption{XOR-gate truth table}
+	\label{tab:gate-xor}
 \end{table}
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{lXr}
+		\toprule
+		left & & right\\
+		\midrule
+		This table & fills all available & horizontal space\\
+		\bottomrule
+	\end{tabularx}
+	\caption{Really wide table}
+\end{table}
+
+\section{Other markup}
+
+\subsection{Fonts}
+
+The \code{\emph} command can be used to \emph{emphasize} (i.e.~italicize) text.
+% Note the ~ (non-breaking space) after "i.e.". LaTeX inserts some extra negative
+% space after a full stop, but since the full stop is used to denote an abbreviation
+% we need to tell LaTeX to insert a regular space. This can also be achieved by using
+% "\ ", though this allows LaTeX to break a line after the "i.e." which looks ugly in
+% my opinion.
+
+The \code{\code} command can be used to insert inline code.
+
+The \code{codeblock} environment can be used to insert a code block:
+
+\begin{codeblock}
+This is all included verbatim: \verb|asdf| \ $%!(*@#&)$
+\end{codeblock}
+
+\subsection{Lists}
+
+Unordered (bullet) list:
+
+\begin{itemize}
+	\item Foo
+	\item Bar
+	\item Baz
+\end{itemize}
+
+Numbered list:
+
+\begin{enumerate}
+	\item Foo
+	\item Bar
+	\item Baz
+	\item \begin{enumerate}
+		\item These
+		\item Can
+		\item Be
+		\item Nested
+		\item And
+		\item \label{item:enum-nest-ref} Referenced
+	\end{enumerate}
+\end{enumerate}
+
+(See \cref{item:enum-nest-ref})
+
+\subsection{Citations}
+
+Citations are inserted using the \code{\autocite} command \autocite{rfc:3339}.
 
 \end{document}
 
