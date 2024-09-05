@@ -12,3 +12,5 @@ LATEXMKFLAGS += -interaction=nonstopmode
 %.tex: %.txt
 	./time2tex.py $< > $@
 
+timerep.pdf: time.tex
+
