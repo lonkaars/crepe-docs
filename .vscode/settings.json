@@ -13,5 +13,32 @@
 			"name": "latexmk",
 			"tools": [ "latexmk" ]
 		}
-	]
+	],
+	"files.exclude": {
+		"*.aux": true,
+		"*.bbl": true,
+		"*.bcf": true,
+		"*.blg": true,
+		"*.fdb_latexmk": true,
+		"*.fls": true,
+		"*.out": true,
+		"*.run.xml": true,
+		"*.synctex.gz": true,
+		"*.toc": true,
+		"*.synctex(busy)": true,
+		"*.lof": true,
+		"*.lot": true,
+		"*.glo": true,
+		"*.gls": true,
+		"*.glg": true,
+		"*.ist": true,
+		"*.acn": true,
+		"*.pytxcode": true,
+		"*.glstex": true,
+		"*.cb": true,
+		"*.cb2": true,
+		"*.d": true,
+		"*.nav": true,
+		"*.snm": true
+	}
 }

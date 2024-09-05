@@ -9,3 +9,6 @@ LATEXMKFLAGS += -interaction=nonstopmode
 	plantuml -tpdf $<
 	mv $*.pdf $@
 
+%.tex: %.txt
+	./time2tex.py $< > $@
+

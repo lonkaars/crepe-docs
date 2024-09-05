@@ -15,6 +15,22 @@ other document.
 - Images should be placed in the img/ folder
 - Labels and bibliography keys should only consist of characters from the
   following set: `[a-z0-9:-]` (lower-case, numbers, colon, dash).
+- Quotes are opened with the tilde (<code>`</code>)
+
+# Banned practices
+
+- **Using `\newpage`**
+
+  Widows and orphans are handled by LaTeX. If you want to prevent a page break
+  from occurring between two paragraphs, use the `\noparbreak` command at the
+  end of the first paragraph. For larger chunks, the `\needspace{<length>}`
+  command should be used instead.
+- **Using `\href`**
+
+  Add the source in sources.bib and cite this source instead.
+- **Using `\textbf` or `\textit` to emphasize**
+
+  Use `\emph`, single quotes or an em dash (`---`) instead.
 
 # References
 
