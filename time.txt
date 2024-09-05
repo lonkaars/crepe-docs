@@ -8,5 +8,10 @@ loek: 2024-09-04 45m repository scaffolding / visual studio code latex configura
 loek: 2024-09-04 20m repository scaffolding / visual studio code cmake configuration
 loek: 2024-09-05 15m repository scaffolding / additional latex contributing guidelines
 
+max: 2024-09-04 1h30m installing and configuring latex
+max: 2024-09-04 2h reading project info
+max: 2024-09-05 20m discussing GitHub with Jaro
+max: 2024-09-05 1h30m first group meeting
+
 # vim:ft=cfg
 
