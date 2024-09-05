@@ -259,3 +259,8 @@
 	\fitimg{\includegraphics[scale=0.6]{#1}}%
 }
 
+% prevent page break between two paragraphs
+\makeatletter
+\newcommand\noparbreak{\par\nobreak\@afterheading}
+\makeatother
+

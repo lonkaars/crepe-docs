@@ -6,6 +6,7 @@ loek: 2024-09-04 1h30m repository scaffolding / latex example code
 loek: 2024-09-04 50m poc / dynamic library linking test example
 loek: 2024-09-04 45m repository scaffolding / visual studio code latex configuration
 loek: 2024-09-04 20m repository scaffolding / visual studio code cmake configuration
+loek: 2024-09-05 15m repository scaffolding / additional latex contributing guidelines
 
 # vim:ft=cfg
 
