@@ -23,5 +23,11 @@ wouter: 2024-09-05 1h30m first group meeting
 wouter: 2024-09-05 20m setting up research document
 wouter: 2024-09-05 1h researching game enigne
 
+niels: 2024-09-03 1h reading project info
+niels: 2024-09-04 30m validation app ideas
+niels: 2024-09-04 2h setting up vimtex on neovim
+niels: 2024-09-04 1h researching different code styles and c++ guidelines
+niels: 2024-09-05 1h30m first group meeting
+niels: 2024-09-06 2h added c++ guidelines in the contributing.md
 
 # vim:ft=cfg
