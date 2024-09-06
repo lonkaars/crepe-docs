@@ -16,4 +16,12 @@ max: 2024-09-04 2h reading project info
 max: 2024-09-05 20m discussing GitHub with Jaro
 max: 2024-09-05 1h30m first group meeting
 
+wouter: 2024-09-03 1h reading project info
+wouter: 2024-09-04 1h setting up working environment
+wouter: 2024-09-04 1h30m researching 3rd party tools
+wouter: 2024-09-05 1h30m first group meeting
+wouter: 2024-09-05 20m setting up research document
+wouter: 2024-09-05 1h researching game enigne
+
+
 # vim:ft=cfg
