@@ -33,6 +33,7 @@ niels: 2024-09-06 2h added c++ guidelines in the contributing.md
 jaro: 2024-09-02 1h project kickoff
 jaro: 2024-09-02 45m project meeting
 jaro: 2024-09-02 1h45m scrumboard(miro), installing dependencies
+jaro: 2024-09-03 1h project lesson
 jaro: 2024-09-04 4h15m latex environment, code environment and project plan
 jaro: 2024-09-05 2h preparing meeting, project plan, discussing github with max
 jaro: 2024-09-05 1h30m project meeting
