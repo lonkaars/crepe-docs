@@ -1,12 +1,15 @@
 # <who>: <when> <how long> <what>
 loek: 2024-09-02 1h4m repository scaffolding
 loek: 2024-09-03 25m repository scaffolding
-loek: 2024-09-03 1h30m repository scaffolding / engine repository, unit testing
-loek: 2024-09-04 1h30m repository scaffolding / latex example code
-loek: 2024-09-04 50m poc / dynamic library linking test example
-loek: 2024-09-04 45m repository scaffolding / visual studio code latex configuration
-loek: 2024-09-04 20m repository scaffolding / visual studio code cmake configuration
-loek: 2024-09-05 15m repository scaffolding / additional latex contributing guidelines
+loek: 2024-09-03 1h30m repository scaffolding :: engine repository, unit testing
+loek: 2024-09-04 1h30m repository scaffolding :: latex example code
+loek: 2024-09-04 50m poc :: dynamic library linking test example
+loek: 2024-09-04 45m repository scaffolding :: visual studio code latex configuration
+loek: 2024-09-04 20m repository scaffolding :: visual studio code cmake configuration
+loek: 2024-09-05 15m repository scaffolding :: additional latex contributing guidelines
+loek: 2024-09-05 1h40m project meeting
+loek: 2024-09-05 1h24m time report script
+loek: 2024-09-06 55m time report script
 
 max: 2024-09-02 1h30m project kickoff
 max: 2024-09-03 1h30m project lesson
@@ -15,5 +18,18 @@ max: 2024-09-04 2h reading project info
 max: 2024-09-05 20m discussing GitHub with Jaro
 max: 2024-09-05 1h30m first group meeting
 
-# vim:ft=cfg
+wouter: 2024-09-03 1h reading project info
+wouter: 2024-09-04 1h setting up working environment
+wouter: 2024-09-04 1h30m researching 3rd party tools
+wouter: 2024-09-05 1h30m first group meeting
+wouter: 2024-09-05 20m setting up research document
+wouter: 2024-09-05 1h researching game enigne
 
+niels: 2024-09-03 1h reading project info
+niels: 2024-09-04 30m validation app ideas
+niels: 2024-09-04 2h setting up vimtex on neovim
+niels: 2024-09-04 1h researching different code styles and c++ guidelines
+niels: 2024-09-05 1h30m first group meeting
+niels: 2024-09-06 2h added c++ guidelines in the contributing.md
+
+# vim:ft=cfg

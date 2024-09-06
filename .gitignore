@@ -25,9 +25,12 @@
 *.d
 *.nav
 *.snm
+*-SAVE-ERROR
 
 # output files
 *.pdf
 !img/*.pdf
 img/*.puml.pdf
 
+# generated files
+time.tex
