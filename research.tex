@@ -8,16 +8,74 @@
 \section{Introduction}
 \section{Game engine}
     \subsection{Introduction}
-    To build a game engine it must first be known how it works. 
-    Which functionalities it must have and how these functionalities work together.
-    this section describes the general functioning of a game engine and the different parts required.
+    To build a game engine, it must first be understood how it operates. 
+    The functionalities it requires and how these functionalities work together must be determined.
+    In this section, the general functioning of a game engine and the different parts required are described.
     \subsection{Findings}
+    A game engine is not the game itself but a platform with which games are built. It should provide the functionalities with which the game is constructed.
+    The purpose of a game engine is not to create data out of nothing. Instead, data is read, and the correlating features and effects are generated.
+    However, the engine is also used to create these files, referred to as "assets." The game engine must be able to accept a certain format of these assets—whether levels, sprites, or textures—and convert them into usable data.
+    \subsubsection{Layers}
+    A game engine is composed of multiple layers, each with its own functions. These layers are divided into the following categories:
+    \begin{itemize}
+        \item Resource manager: Responsible for what happens when the engine is launched, including loading data formats.
+        \item Application: Manages the run loop, time, code execution, and events (e.g., input events).
+        \item Window/HID (Human Interface Devices): Handles input and events.
+        \item Renderer: Responsible for drawing the necessary objects on the screen, usually once per frame.
+        \item Debugging support: Provides testing for the engine, such as logging or performance profiling.
+        \item Scripting layer: Runs scripts, such as Lua or Python.
+        \item Memory systems: Handles and monitors memory usage.
+        \item Entity-Component System (ECS): Provides a modular way to create game objects, add physics, and define how the engine interacts with objects.
+        \item Physics: Adds specific physics to objects.
+        \item Audio: Processes audio.
+        \item AI: Provides artificial inteligent behavior.
+    \end{itemize}
+    
+    \subsubsection{ECS}
+        A game engine must have the ability to keep track and update several game objects. To do this most game engines employ an ECS model which uses modulair components to give entities properties and features.
+        The need for an entity component system arises because multiple game objects are required to create a scene in a game. These game objects exist within the scene and perform actions, such as a UI display for a score.
+        This game object does not need to be rendered; it could be a script running in the background.
+        It could also be a player sprite that is controlled.
+        These entities need to be aware of other entities, for example, during collisions.
+        For this to function, a scene is required to host all game objects.
+        Within this scene, the game objects must be stored efficiently, and entities must be provided with the required behavior, such as audio, position, or physics.
+        To create diverse entities with specific functions:
+        A scene can contain many different kinds of entities, each with different properties and functions.
+        But no matter how different each entity is, it remains an entity.
+        To assign properties and functions to entities, components are used.
+        Entt is an example of an ECS.
     \subsection{Conclusion}
 
 \section{3rd party tools}
-\subsection{Introduction}
-\subsection{Findings}
-\subsection{Conclusion}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Gameloop/resource manager}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Rendering}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Event manager}
+    \subsection{Introduction}
+    The event manager is responsible for handling input. The system is notified when an input or event occurs.
+    The layers can subscribe to these events and respond to them. A method for querying the state of an input or event, such as the mouse position, should also be provided by the engine.
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Memory/debugging}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Physics/scripting}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Conclusion}
+\section{Gameobjects/components}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
 \section{Conclusion}
 \end{document}
-
