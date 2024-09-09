@@ -45,10 +45,59 @@
         To assign properties and functions to entities, components are used.
         Entt is an example of an ECS.
     \subsection{Conclusion}
+    \section{3rd Party Tools} 
+    \subsection{Introduction} 
+    Developing a game engine from scratch requires a significant amount of time, as many different features are necessary. 
+    Fortunately, some of these features have already been developed and can be reused in the form of frameworks and 3rd party tools/libraries. The decision to use 3rd party libraries, and the selection of which ones to use, directly influences the development process of the game engine. In this section, several 3rd party frameworks and tools available for use are described.
 
-\section{3rd party tools}
-    \subsection{Introduction}
-    \subsection{Findings}
+    \subsection{Findings} 
+    \subsubsection{Media Frameworks} 
+    A game engine must have the ability to handle user input, render graphics, and process audio. Several large frameworks are available that provide these features and are already widely used by other game engines. 
+    The two most popular and best-supported options are SDL2 and SFML.
+    
+    \emph{SDL2}
+    
+    According to its official website, SDL2 (Simple DirectMedia Layer) "is a cross-platform development library designed to provide low-level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games, including Valve's award-winning catalog and many Humble Bundle games." 
+    SDL2 is written in the C programming language, and therefore, structs and functions are used instead of objects and methods.
+    
+    The advantages of SDL2 are: 
+    \begin{itemize} 
+        \item Controller support is provided. 
+        \item 2D and 3D rendering are supported. 
+        \item Broad multiplatform support is offered, including older consoles such as the Wii. 
+        \item Low-level control is available. 
+        \item A large community ensures wide usage. 
+        \item Extended libraries can be used to add functionalities, such as SDL\_Mixer for sound. 
+    \end{itemize}
+    
+    The disadvantages of SDL2 are: 
+    \begin{itemize} 
+        \item A limited built-in 2D renderer is provided. 
+        \item Extended libraries require setup. 
+    \end{itemize}
+    
+    \emph{SFML}
+    
+    SFML (Simple and Fast Multimedia Library) is a simple framework consisting of five modules: audio, graphics, network, system, and window. This framework, written in C++, was designed to simplify game development.
+    
+    The advantages of SFML are: 
+    \begin{itemize} 
+        \item Object-oriented design is provided since it is written in C++. 
+        \item A built-in 2D renderer is available for ease of use. 
+        \item A built-in audio system is included. 
+        \item Cross-platform support is available for Linux, Windows, and macOS. 
+        \item Networking capabilities are provided for multiplayer or networked applications. 
+    \end{itemize}
+    
+    The disadvantages of SFML are: 
+    \begin{itemize} 
+        \item The 2D rendering engine may experience performance issues in large-scale games. 
+        \item The community is smaller compared to SDL2. 
+        \item No native 3D support is provided. 
+        \item Not all image formats are supported. 
+    \end{itemize}
+    \subsubsection{Audio}
+    for audio some options could be: FMOD, Wwise, or iirKlang
     \subsection{Conclusion}
 \section{Gameloop/resource manager}
     \subsection{Introduction}
@@ -60,8 +109,6 @@
     \subsection{Conclusion}
 \section{Event manager}
     \subsection{Introduction}
-    The event manager is responsible for handling input. The system is notified when an input or event occurs.
-    The layers can subscribe to these events and respond to them. A method for querying the state of an input or event, such as the mouse position, should also be provided by the engine.
     \subsection{Findings}
     \subsection{Conclusion}
 \section{Memory/debugging}
