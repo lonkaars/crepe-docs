@@ -15,7 +15,8 @@ other document.
 - Images should be placed in the img/ folder
 - Labels and bibliography keys should only consist of characters from the
   following set: `[a-z0-9:-]` (lower-case, numbers, colon, dash).
-- Quotes are opened with the tilde (<code>`</code>)
+- Quotes are opened with a backtick (<code>&#96</code>)
+- Only environments indent the LaTeX source code
 
 # Banned practices
 
