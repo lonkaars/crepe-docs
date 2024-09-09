@@ -1,0 +1,128 @@
+\documentclass{projdoc}
+\input{meta.tex}
+
+\title{Research document}
+
+\begin{document}
+\tablestables
+\section{Introduction}
+\section{Game engine}
+    \subsection{Introduction}
+    To build a game engine, it must first be understood how it operates. 
+    The functionalities it requires and how these functionalities work together must be determined.
+    In this section, the general functioning of a game engine and the different parts required are described.
+    \subsection{Findings}
+    A game engine is not the game itself but a platform with which games are built. It should provide the functionalities with which the game is constructed.
+    The purpose of a game engine is not to create data out of nothing. Instead, data is read, and the correlating features and effects are generated.
+    However, the engine is also used to create these files, referred to as "assets." The game engine must be able to accept a certain format of these assets—whether levels, sprites, or textures—and convert them into usable data.
+    \subsubsection{Layers}
+    A game engine is composed of multiple layers, each with its own functions. These layers are divided into the following categories:
+    \begin{itemize}
+        \item Resource manager: Responsible for what happens when the engine is launched, including loading data formats.
+        \item Application: Manages the run loop, time, code execution, and events (e.g., input events).
+        \item Window/HID (Human Interface Devices): Handles input and events.
+        \item Renderer: Responsible for drawing the necessary objects on the screen, usually once per frame.
+        \item Debugging support: Provides testing for the engine, such as logging or performance profiling.
+        \item Scripting layer: Runs scripts, such as Lua or Python.
+        \item Memory systems: Handles and monitors memory usage.
+        \item Entity-Component System (ECS): Provides a modular way to create game objects, add physics, and define how the engine interacts with objects.
+        \item Physics: Adds specific physics to objects.
+        \item Audio: Processes audio.
+        \item AI: Provides artificial inteligent behavior.
+    \end{itemize}
+    
+    \subsubsection{ECS}
+        A game engine must have the ability to keep track and update several game objects. To do this most game engines employ an ECS model which uses modulair components to give entities properties and features.
+        The need for an entity component system arises because multiple game objects are required to create a scene in a game. These game objects exist within the scene and perform actions, such as a UI display for a score.
+        This game object does not need to be rendered; it could be a script running in the background.
+        It could also be a player sprite that is controlled.
+        These entities need to be aware of other entities, for example, during collisions.
+        For this to function, a scene is required to host all game objects.
+        Within this scene, the game objects must be stored efficiently, and entities must be provided with the required behavior, such as audio, position, or physics.
+        To create diverse entities with specific functions:
+        A scene can contain many different kinds of entities, each with different properties and functions.
+        But no matter how different each entity is, it remains an entity.
+        To assign properties and functions to entities, components are used.
+        Entt is an example of an ECS.
+    \subsection{Conclusion}
+    \section{3rd Party Tools} 
+    \subsection{Introduction} 
+    Developing a game engine from scratch requires a significant amount of time, as many different features are necessary. 
+    Fortunately, some of these features have already been developed and can be reused in the form of frameworks and 3rd party tools/libraries. The decision to use 3rd party libraries, and the selection of which ones to use, directly influences the development process of the game engine. In this section, several 3rd party frameworks and tools available for use are described.
+
+    \subsection{Findings} 
+    \subsubsection{Media Frameworks} 
+    A game engine must have the ability to handle user input, render graphics, and process audio. Several large frameworks are available that provide these features and are already widely used by other game engines. 
+    The two most popular and best-supported options are SDL2 and SFML.
+    
+    \emph{SDL2}
+    
+    According to its official website, SDL2 (Simple DirectMedia Layer) "is a cross-platform development library designed to provide low-level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games, including Valve's award-winning catalog and many Humble Bundle games." 
+    SDL2 is written in the C programming language, and therefore, structs and functions are used instead of objects and methods.
+    
+    The advantages of SDL2 are: 
+    \begin{itemize} 
+        \item Controller support is provided. 
+        \item 2D and 3D rendering are supported. 
+        \item Broad multiplatform support is offered, including older consoles such as the Wii. 
+        \item Low-level control is available. 
+        \item A large community ensures wide usage. 
+        \item Extended libraries can be used to add functionalities, such as SDL\_Mixer for sound. 
+    \end{itemize}
+    
+    The disadvantages of SDL2 are: 
+    \begin{itemize} 
+        \item A limited built-in 2D renderer is provided. 
+        \item Extended libraries require setup. 
+    \end{itemize}
+    
+    \emph{SFML}
+    
+    SFML (Simple and Fast Multimedia Library) is a simple framework consisting of five modules: audio, graphics, network, system, and window. This framework, written in C++, was designed to simplify game development.
+    
+    The advantages of SFML are: 
+    \begin{itemize} 
+        \item Object-oriented design is provided since it is written in C++. 
+        \item A built-in 2D renderer is available for ease of use. 
+        \item A built-in audio system is included. 
+        \item Cross-platform support is available for Linux, Windows, and macOS. 
+        \item Networking capabilities are provided for multiplayer or networked applications. 
+    \end{itemize}
+    
+    The disadvantages of SFML are: 
+    \begin{itemize} 
+        \item The 2D rendering engine may experience performance issues in large-scale games. 
+        \item The community is smaller compared to SDL2. 
+        \item No native 3D support is provided. 
+        \item Not all image formats are supported. 
+    \end{itemize}
+    \subsubsection{Audio}
+    for audio some options could be: FMOD, Wwise, or iirKlang
+    \subsection{Conclusion}
+\section{Gameloop/resource manager}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Rendering}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Event manager}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Memory/debugging}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Physics/scripting}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Conclusion}
+\section{Gameobjects/components}
+    \subsection{Introduction}
+    \subsection{Findings}
+    \subsection{Conclusion}
+\section{Conclusion}
+\end{document}
