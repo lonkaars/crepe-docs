@@ -19,6 +19,7 @@ max: 2024-09-04 2h reading project info
 max: 2024-09-05 20m discussing GitHub with Jaro
 max: 2024-09-05 1h30m first group meeting
 max: 2024-09-06 45m writing email and fixing clang-format/-tidy
+max: 2024-09-09 3h10m investigating Unity (in relation to the class diagram)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
