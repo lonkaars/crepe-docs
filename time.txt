@@ -11,6 +11,7 @@ loek: 2024-09-05 15m repository scaffolding :: additional latex contributing gui
 loek: 2024-09-05 1h40m project meeting
 loek: 2024-09-05 1h24m time report script
 loek: 2024-09-06 55m time report script
+loek: 2024-09-09 30m feedback :: niels code style guide
 
 max: 2024-09-02 1h project meeting :: project kickoff
 max: 2024-09-02 45m project meeting
