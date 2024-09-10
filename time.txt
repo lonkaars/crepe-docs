@@ -14,6 +14,9 @@ loek: 2024-09-06 55m time report script
 loek: 2024-09-09 30m feedback :: niels code style guide
 loek: 2024-09-09 45m review :: wouter research PR#5
 loek: 2024-09-09 25m documentation style guide
+loek: 2024-09-10 1h55m project meeting
+loek: 2024-09-10 25m briefing :: watch bob videos
+loek: 2024-09-10 5m docs :: update readme
 
 max: 2024-09-02 1h project meeting :: project kickoff
 max: 2024-09-02 45m project meeting
