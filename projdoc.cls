@@ -57,6 +57,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{subcaption}
 \RequirePackage{multicol}
+\RequirePackage{comparison} % ./comparison.sty
 
 % font style
 \setmainfont{TeX Gyre Schola}

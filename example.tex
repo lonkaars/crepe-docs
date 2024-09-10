@@ -108,7 +108,7 @@ The \codeinline{blockcode} environment can be used to insert a code block:
 This is all included verbatim: \verb|asdf| \ $%!(*@#&)$
 \end{blockcode}
 
-\subsection{Lists}
+\subsection{Information dumps}
 
 Unordered (bullet) list:
 
@@ -136,9 +136,34 @@ Numbered list:
 
 (See \cref{item:enum-nest-ref})
 
+Description:
+
+\begin{description}
+	\item[Item one] description of item one
+	\item[Item two] description of item two
+	\item[Item three] ...
+\end{description}
+
+\subsection{Comparisons}
+
+\begin{comparison}
+	\pro{Good thing}
+	\con{Bad thing}
+	\pro{Good thing 2}
+	\con{Bad thing 2}
+\end{comparison}
+
 \subsection{Citations}
 
 Citations are inserted using the \codeinline{\autocite} command \autocite{rfc:3339}.
+The bibliography is automatically printed after \codeinline{\end{document}}.
+
+\subsection{Glossary}
+
+Glossary entries can be inserted using the \codeinline{\gls} commands. Example:
+``\Gls{sdl2} handles \glspl{hid} as well!''. In following occurrences of acronyms,
+only their short form is printed: `\gls{sdl2}' and `\gls{hid}'. All of these link to
+the glossary that is automatically printed after \codeinline{\end{document}}.
 
 \end{document}
 
