@@ -38,6 +38,10 @@ jaro: 2024-09-04 4h15m latex environment, code environment and project plan
 jaro: 2024-09-05 2h preparing meeting, project plan, discussing github with max
 jaro: 2024-09-05 1h30m project meeting
 jaro: 2024-09-05 1h documentatie review and improving environment
-
+jaro: 2024-09-06 30m weekly update
+jaro: 2024-09-09 1h project plan
+jaro: 2024-09-10 1h preparing meeting and project plan
+jaro: 2024-09-10 1h30m project meeting
+jaro: 2024-09-10 1h project disussing research
 
 # vim:ft=cfg
