@@ -17,6 +17,7 @@ loek: 2024-09-09 25m documentation style guide
 loek: 2024-09-10 1h55m project meeting
 loek: 2024-09-10 25m briefing :: watch bob videos
 loek: 2024-09-10 5m docs :: update readme
+loek: 2024-09-10 12m docs :: add comparison package and more example latex code
 
 max: 2024-09-02 1h project meeting :: project kickoff
 max: 2024-09-02 45m project meeting
