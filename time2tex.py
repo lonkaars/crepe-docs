@@ -87,7 +87,7 @@ def fmt_weekly_overview(times):
   # begin table
   out += r"\begin{table}\centering"
   out += f"\\begin{{tabular}}{{l{'r@{~}l' * len(members)}@{{\\qquad}}r}}\\toprule"
-  out += r"\textbf{Week\#}"
+  out += r"\textbf{\#}"
   for member in members:
     out += f"&\\textbf{{{member}}}&"
   out += r"&\textbf{Subtotal}\\\midrule{}"
