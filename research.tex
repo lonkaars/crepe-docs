@@ -152,11 +152,52 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Conclusion}
 
-\section{Gameloop/resource manager}
+\section{resource manager}
 
 \subsection{Introduction}
 
 \subsection{Findings}
+
+\subsection{unity formats}
+Unity has many different asset file types that can be imported to use for a game \href{https://docs.unity3d.com/Manual/BuiltInImporters.html}{unity imports}. The most important formats are the audio, text and sprite formats.
+
+\paragraph{Audio}
+
+Unity uses a *Audio Source* component that holds the reference of the audio format which are all these different types.
+\begin{itemize}
+	\item ogg.
+	\item aif.
+	\item aiff.
+	\item flac.
+	\item wav.
+	\item mp3.
+	\item mod.
+	\item it.
+	\item s3m.
+	\item xm.
+\end{itemize}
+
+Where then the *Audio clip* contains all the audio data used by the *Audio Source* components. Inside the audio clip are options about each specified audio file to change specific settings from the origanl file. for example load type, compression format, quality, sample rate and more \href{https://docs.unity.cn/2018.4/Documentation/Manual/class-AudioClip.html}{audio clip}
+
+\paragraph{Sprite formats}
+Unity supports many different image formats:
+\begin{itemize}
+	\item jpg.
+	\item jpeg.
+	\item tif/tiff.
+	\item tga.
+	\item gif.
+	\item png.
+	\item psd.
+	\item bmp.
+	\item iff.
+	\item pict.
+	\item pic.
+	\item pct.
+	\item exr.
+	\item hdr.
+\end{itemize}
+
 
 \subsection{Conclusion}
 
