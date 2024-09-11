@@ -12,14 +12,19 @@ loek: 2024-09-05 1h40m project meeting
 loek: 2024-09-05 1h24m time report script
 loek: 2024-09-06 55m time report script
 
-max: 2024-09-02 1h project meeting :: project kickoff
-max: 2024-09-02 45m project meeting
+max: 2024-09-02 1h project kickoff
+max: 2024-09-02 45m first project meeting
+max: 2024-09-03 1h30m first project lesson
 max: 2024-09-04 1h30m installing and configuring latex
 max: 2024-09-04 2h reading project info
 max: 2024-09-05 20m discussing GitHub with Jaro
-max: 2024-09-05 1h30m first group meeting
+max: 2024-09-05 1h30m second project meeting
 max: 2024-09-06 45m writing email and fixing clang-format/-tidy
 max: 2024-09-09 3h10m investigating Unity (in relation to the class diagram)
+max: 2024-09-10 1h30m third project meeting
+max: 2024-09-10 20m discussing about class diagram
+max: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
+max: 2024-09-11 1h50m first review of Jaro's Plan document
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
