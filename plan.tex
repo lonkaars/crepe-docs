@@ -1,79 +1,94 @@
 \documentclass{projdoc}
 \input{meta.tex}
 
+% @Jaro: Zie hieronder
+% Version 0.0 seems not right
+% I'm also missing a 'version table'
+% Shall we use this version system?:
+% Version numbers after the comma indicate an interim version and version numbers before the comma indicate versions ready for publication
+
 \title{Project Plan}
+\version{0.1}
 
 \begin{document}
 
 \tablestables
 \newpage
 
+
+\section {Background}
+This project is part of the fourth-year minor `Systems Programming in C++'. The minor consists of several courses troughout 20 weeks, which create the basis for this project. The project is focussed on building a game engine using the programming language C++. This document describes our plan of attack for the project.
+
 \section{Problem Definition}
-The assignment is part of a fourth-year minor. The assignments will be discussed with the project supervisor on specifics for this project. This will give the team the ability to direct the project.
+% The assignments will be discussed with the project supervisor on specifics for this project. This will give the team the ability to direct the project.
+% @Jaro: Ik snap niet wat je met deze zinnen wil zeggen. Het lijkt een soort van background information, maar toch niet helemaal ofzo. Hoe dan ook heb ik het er nu even uit gehaald en een nieuw kopje background toegevoegd.
 
 \subsection{Problem Analysis}
-CodedFun Games is a small, single-person game company looking to scale up. The owner, who is also a game programmer, graphical artist, and the client, has received government funding, which he wants to invest in a custom-built game engine. The owner has no interest in developing or maintaining a game engine himself, so he has hired a part-time engine programmer. This programmer does not have time to create an entire engine but is willing to maintain or expand an existing engine one day per week.
+CodedFun Games is a small, single-person game company looking to scale up. The owner, who is also a game programmer, and graphical artist, has received government funding, which he wants to invest in a custom-built game engine. The owner has no interest in developing or maintaining a game engine himself, so he has hired a part-time engine programmer. This programmer does not have time to create an entire engine but is willing to maintain or expand an existing engine one day per week.
 
-The client seeks a custom game engine that is easy to maintain, extend, and user-friendly. Additionally, the engine should be well-documented, which is considered an essential aspect of being user-friendly.
+The client seeks a custom game engine that is easy to maintain, easy to extend, and user-friendly. Additionally, the engine should be well-documented, which is considered an essential aspect of being user-friendly.
 
 So far, the client has made all his games in Unity and is very fond of the structure. Therefore, he wants the new engine to adhere to a similar structure. A simple requirements document is defined to specify how strictly this structure should be followed.
 
-Finally, because the client does not want to dive deeply into the engine himself, he wants a secondary application (preferably a game) that can be used to test the engine's features. This is referred to as the `Validation App.'
+Finally, because the client does not want to dive deeply into the engine himself, he wants a secondary application (preferably a game) that can be used to test the engine's features. This is referred to as the `validation application.'
 
 \subsection{Goal}
-The goal is to develop a custom game engine that meets the client's requirements for maintainability, extensibility, user-friendliness, and adherence to a Unity-like structure. In addition, a validation application should be created to test the engine's features.
+The goal is to develop a custom game engine that meets the client's requirements for maintainability, extensibility, user-friendliness, and adherence to a Unity-like structure. In addition, a validation application should be created to show and test the engine's features.
 
 \subsection{Result}
 The expected result is a well-documented, custom game engine that follows a structure similar to Unity. Additionally, a validation application should be provided to test and showcase the engine's capabilities.
 
 
-
 \section{Planning}
-% todo add table of deliverables 
-week 4: sprint oplevering, project plan
-week 7: sprint oplevering
-week 10: sprint oplevering, POC and design
-week 17: eind oplevering
-
+The customer specified multiple deliverables troughout the 20 weeks of this project. Despite the fact that 20 weeks have been reserved for this project, the intention is that the game will be delivered in week 17. Any delay/resit will take place between weeks 17 and 20. A rough planning can be found in \cref{tab:planning}.
+\begin{table}
+	\begin{tabularx}{\linewidth}{lXr}
+		\toprule
+		Week & Deliverable & \\
+		\midrule
+		4 & Project Plan & \\
+		7 & Requirements document & \\
+		10 & POCs and Design document & \\
+		17 & Game engine, Validation application, Research document, and Qualification document & \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Planning}
+	\label{tab:planning}
+\end{table}
 
 
 \section{Risks}
 \subsection{Techincal Risks}
-Multiplatform: The team works in linux and windows which poses a risk for the development if there is a platform dependencies.
+Multiplatform: The team works in both linux and windows, which poses a risk for the development if there is a platform dependency.
 Integration: Users can make a wrong integration causing for delay or risk of losing code.
 
-%  todo add technical risks
 \subsection{Project Management Risks}
 Scope Expansion: There is a risk of creating a scope that is bigger than the requirements.
 Lack of Team Collaboration: Insufficient collaboration among team members 
 may hinder progress.
+
 \subsection{Measures}
-Scope Expansion: By writing detailed requirements and having weekly team meeting to check if the progress is within the scope should be sufficient to decrease the risk.
-Lack of Team Collaboration: Weekly team meetings will result is collaboration among team members and discussing what each other tasks is will decease this risk.
-Multiplatform: The team can switch any time to a single platform so this risk is metigated. 
-Integration: By follwing standard and having an integrator which checks every pull request this risk is minimilised.
+Multiplatform: The team can switch any time to a single platform, so this risk is metigated. 
+Integration: By following standards and having an integrator, which checks every pull request, this risk is minimilised.
+Scope Expansion: By writing detailed requirements and having weekly team meetings, to check if the progress is within the scope, should be sufficient to decrease the risk.
+Lack of Team Collaboration: Weekly team meetings will result in collaboration among team members and discussing what each other tasks is, will decease this risk.
+
 
 % Documentation Standard is described here
 \section{Documentation}
-
-This section describes the required documentation for the project, including the
- types of documents to be created and the standards they must adhere to.
+This section describes the required documentation for the project, including the types of documents to be created and the standards they must adhere to.
 
 \subsection{Documents}
-
-This project consists of five main documents:\noparbreak
-
+This project consists of seven main documents:\noparbreak
 \begin{description}
-	\item[Project Plan] Contains all elements related to the organization of the
-	 project, including timelines, milestones, roles, responsibilities.
-	\item[Requirements] Details the requirements and 
-	user stories, including both functional and non-functional requirements. 
+	\item[Project Plan] Contains all elements related to the organization of the project, including timelines, milestones, roles, and responsibilities.
+	\item[Requirements] Details the requirements and user stories, including both functional and non-functional requirements.
 	\item[Research] Consists of all research related to this project.
 	\item[Design] Describes the design choices, including architecture,
-	 user interface, and system components.
+	user interface, and system components.
 	\item[Qualification] Includes test cases, test plans, and quality 
 	measures to ensure the project meets its requirements and standards.
-	\item[Working hours] A tabel which includes all working hours of each team member.
+	\item[Working hours] A table which includes all working hours of each team member.
 	\item[API Reference] Details the available endpoints, request and response formats, authentication methods, error codes, and examples for interacting with the project's API.
 \end{description}
 
@@ -84,9 +99,7 @@ The documentation standard can be found in the contributing.md \autocite{crepe:d
 \section{Work Agreements}
 Work agreements are the expectations and commitments made by the team members. 
 This section includes details on roles and responsibilities, documentation of 
-work hours, protocols for handling absences or delays, guidelines for addressing
- inconsistent participation, and procedures for weekly updates and meetings. All
-  team members reviewed and agreed to these terms.
+work hours, protocols for handling absences or delays, guidelines for addressing inconsistent participation, and procedures for weekly updates and meetings. All team members reviewed and agreed to these terms.
 
 \subsection{Project Roles}
 \begin{itemize}
@@ -97,10 +110,8 @@ work hours, protocols for handling absences or delays, guidelines for addressing
 	\item \textbf{Niels Stunnebrink}: Project Member
 \end{itemize}
 
-
 \subsection{Work Hours}
-Each project member will keep track of their own working hours and 
-add them to the `file'.
+Each project member will keep track of their own working hours and add them to the `file'.
 
 \subsection{Absence Or Delay}
 If a project member is going to be absent or delayed, they are required to 
@@ -109,35 +120,28 @@ should be informed of the absence as well.
 
 \subsection{Inconsistent participation}
 Inconsistent participation will be addressed in a structured manner:
-
 \begin{description}
-	\item[Initial Discussion] The team leader will first discuss the 
+	\item[Initial Discussion]: The team leader will first discuss the 
 	issue of inconsistent participation with the individual team member.
 	\item [Team Discussion]: If no improvement is observed, the issue 
 	will be brought up with the entire team to seek a collective solution.
-	\item [Project Supervisor Involvement]: Should the problem persist 
-	despite these efforts, it will be escalated to the project supervisor for 
-	further action.
+	\item [Project Supervisor Involvement]: Should the problem persist, despite these efforts, it will be escalated to the project supervisor (Bob van der Putten) for further action.
 \end{description}
 
 Valid reasons for absence or inconsistency will be considered, and no 
 repercussions will be necessary in such cases. However, if the inconsistency is 
-due to other factors, potential repercussions may include additional assignments
- or actions as determined by the project supervisor.
- 
+due to other factors, potential repercussions may include additional assignments or actions as determined by the project supervisor.
+
 A team member is considered to have inconsistent participation if their hours 
 are significantly behind the team’s average or if tasks are not completed 
 without valid reasons. It is essential that any concerns regarding a team 
-member's performance be resolved through unanimous agreement within the team.
-
+member's performance, should be resolved through unanimous agreement within the team.
 
 \subsection{Weekly Update}
 Each team member is required to send their technical weekly update to Jaro 
-Rutjes before 12:00 on Friday. Personal updates may also be included and will be
- confidential between the team member, the Team Leader, and/or the teacher, if 
- requested.
+Rutjes before 12:00 on Friday. Personal updates may also be included and will be confidential between the team member, the Team Leader, and/or the teacher, if requested.
 
-Jaro Rutjes will compile and send a team update to the project supervisor,Bob 
+Jaro Rutjes will compile and send a team update to the project supervisor, Bob 
 van der Putten, also by Friday. This update will include technical information 
 on what has been accomplished, plans for upcoming work, and an overview of the 
 team's overall progress.
@@ -152,15 +156,12 @@ sent via Outlook. Additional meetings may be scheduled if necessary to address
 issues or project needs.
 
 
-
 % Information about how and when Scrum will be used in this project (using Miro).
 \section{Scrum (Miro)}
-
-The team will start using scrum after the initial fase of structering the project is over. This fase is over when proof of concepts are being made.
+The team will start using scrum after the initial phase, of structering the project, is finished. This phase is over when proof of concepts are being made.
 
 \subsection{Scrum Board}
 The Scrum board \autocite{miro:scrum-board} will consist of the following tabs:
-
 \begin{description}
 	\item[Backlog]: This tab contains a list of all tasks and user stories that are planned for future sprints.
 	\item[Next Sprint]: This tab includes tasks and user stories that have been selected for the upcoming sprint.
@@ -181,20 +182,18 @@ To manage tasks effectively:
 
 \noindent
 Each task or user story will be assigned user points, which indicate the relative size or complexity of the task compared to these examples.
-TODO: add examples
+% TODO: add examples
 
 \subsection{Burn Down Chart}
 The Burn Down Chart will be generated using Excel from the Scrum board data every week.
-Each user story or tasks marked as done will burn the chart downwards.
-This Burn down chart is shared in the weekly updates with the team and the project supervisor.
+Each user story or task marked as done, will burn the chart downwards.
+This Burn Down Chart is shared in the weekly updates with the team and the project supervisor.
 
 
 % Information regarding the git workflow of this project. Diagram explaining the workflow
 \section{Git Workflow}
-
 GitHub is used for version management of both code and documentation, each in its own respective repository.
-This keep the documentation and code seperate, resulting in ordened and manageable repositories. 
-
+This keeps the documentation and code seperate, resulting in ordened and manageable repositories.
 \begin{itemize}
 	\item Code Repository: crepe \autocite{crepe:code-repo}
 	\item Documentation Repository: crepe-docs \autocite{crepe:docs-repo}
@@ -204,8 +203,7 @@ This keep the documentation and code seperate, resulting in ordened and manageab
 % TODO: add here details from contributing.md?
 \subsection{Git Merge To Master}
 % TODO: add here diagram on what actions are taken before merge.
-\subsection{Code standard}
+\subsection{Code Standard}
 The code standard can be found in the contributing.md \autocite{crepe:code-standard}.
 
 \end{document}
-
