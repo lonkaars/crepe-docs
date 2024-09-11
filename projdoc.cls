@@ -14,6 +14,18 @@
 \PassOptionsToPackage{nosort}{cleveref}
 \PassOptionsToPackage{nameinlink}{cleveref}
 \PassOptionsToPackage{obeyspaces}{url}
+\PassOptionsToPackage{toc=false}{glossaries}
+\PassOptionsToPackage{record}{glossaries-extra}
+\PassOptionsToPackage{
+	backend=biber,
+	bibencoding=utf8,
+	style=iso-numeric,
+	% Technically, Avans University of Applied Sciences requires that we always use APA
+	% style references, but this often results in ugly citations when working with
+	% technical or online resources. At the end of the day, the bibliography is there
+	% to prove we didn't plagiarize or make shit up, so ISO 690 is *probably* fine.
+	autocite=plain,
+}{biblatex}
 
 % frequently used packages
 \RequirePackage{geometry}
@@ -38,9 +50,14 @@
 \RequirePackage{cleveref}
 \RequirePackage{adjustbox}
 \RequirePackage{xparse}
+\RequirePackage{biblatex}
+\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra}
 \RequirePackage{ifdraft}
 \RequirePackage{enumitem}
 \RequirePackage{subcaption}
+\RequirePackage{multicol}
+\RequirePackage{comparison} % ./comparison.sty
 
 % font style
 \setmainfont{TeX Gyre Schola}
@@ -171,17 +188,13 @@
 \makeatother
 
 % bibliography
-\usepackage[
-	backend=biber,
-	bibencoding=utf8,
-	style=iso-numeric,
-	% Technically, Avans University of Applied Sciences requires that we always use APA
-	% style references, but this often results in ugly citations when working with
-	% technical or online resources. At the end of the day, the bibliography is there
-	% to prove we didn't plagiarize or make shit up, so ISO 690 is *probably* fine.
-	autocite=plain,
-]{biblatex}
 \addbibresource{sources.bib}
+
+% glossary
+\GlsXtrLoadResources[
+	src={./glossary.bib},
+	selection={recorded and deps and see},
+]
 
 % default document header/trailer
 \makeatletter
@@ -196,8 +209,16 @@
 \newbool{projdoc@cited}
 \apptocmd{\abx@aux@cite}{\global\booltrue{projdoc@cited}}{}{}
 \def\projdoc@trailer{
-	% end with bibliography (if citations used)
+	% bibliography (if citations used)
 	\ifbool{projdoc@cited}{\printbibliography}{}%
+	% glossary
+	\ifcsundef{printunsrtglossary}{}{%
+		\section*{Glossary}%
+		\begin{multicols}{2}%
+			\renewcommand{\glossarysection}[2][]{}%
+			\printunsrtglossary%
+		\end{multicols}%
+	}%
 }
 \AtBeginDocument{\projdoc@header}
 \AtEndDocument{\projdoc@trailer}

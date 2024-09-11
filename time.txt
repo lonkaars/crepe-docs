@@ -11,6 +11,14 @@ loek: 2024-09-05 15m repository scaffolding :: additional latex contributing gui
 loek: 2024-09-05 1h40m project meeting
 loek: 2024-09-05 1h24m time report script
 loek: 2024-09-06 55m time report script
+loek: 2024-09-09 30m feedback :: niels code style guide
+loek: 2024-09-09 45m review :: wouter research PR#5
+loek: 2024-09-09 25m documentation style guide
+loek: 2024-09-10 1h55m project meeting
+loek: 2024-09-10 25m briefing :: watch bob videos
+loek: 2024-09-10 5m docs :: update readme
+loek: 2024-09-10 12m docs :: add comparison package and more example latex code
+loek: 2024-09-10 30m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -47,9 +55,15 @@ niels: 2024-09-06 2h added c++ guidelines in the contributing.md
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
 jaro: 2024-09-02 1h45m scrumboard(miro), installing dependencies
+jaro: 2024-09-03 1h project lesson
 jaro: 2024-09-04 4h15m latex environment, code environment and project plan
 jaro: 2024-09-05 2h preparing meeting, project plan, discussing github with max
 jaro: 2024-09-05 1h30m project meeting
 jaro: 2024-09-05 1h documentatie review and improving environment
+jaro: 2024-09-06 30m weekly update
+jaro: 2024-09-09 1h project plan
+jaro: 2024-09-10 1h preparing meeting and project plan
+jaro: 2024-09-10 1h30m project meeting
+jaro: 2024-09-10 1h project disussing research
 
 # vim:ft=cfg
