@@ -25,6 +25,7 @@
 *.d
 *.nav
 *.snm
+*-SAVE-ERROR
 
 # output files
 *.pdf
