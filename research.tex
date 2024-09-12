@@ -163,7 +163,7 @@ Unity has many different asset file types that can be imported to use for a game
 
 \paragraph{Audio}
 
-Unity uses a *Audio Source* component that holds the reference of the audio format which are all these different types.
+The unity engine supports a lot of different audio formats:
 \begin{itemize}
 	\item ogg.
 	\item aif.
@@ -177,9 +177,8 @@ Unity uses a *Audio Source* component that holds the reference of the audio form
 	\item xm.
 \end{itemize}
 
-Where then the *Audio clip* contains all the audio data used by the *Audio Source* components. Inside the audio clip are options about each specified audio file to change specific settings from the origanl file. for example load type, compression format, quality, sample rate and more \href{https://docs.unity.cn/2018.4/Documentation/Manual/class-AudioClip.html}{audio clip}
-
 \paragraph{Sprite formats}
+
 Unity supports many different image formats:
 \begin{itemize}
 	\item jpg.
@@ -197,6 +196,31 @@ Unity supports many different image formats:
 	\item exr.
 	\item hdr.
 \end{itemize}
+
+\paragraph{scripts}
+The different text scripts unity supports:
+ \begin{itemize}
+	 \item txt
+	 \item html 
+	 \item htm 
+	 \item xml
+	 \item json
+	 \item csv
+	 \item yaml
+	 \item bytes
+	 \item fnt 
+	 \item manifest
+	 \item md 
+	 \item js
+	 \item boo
+	 \item rsp
+ \end{itemize}
+
+\subsection{Audio Format} The choice of audio format for the Crepe game engine depends on several factors, including sound quality, memory usage, and licensing. According to various sources \href{https://dev.to/tenry/comparison-of-audio-formats-for-games-jak}{comparison audio formats}, \href{https://www.universityofgames.net/articles/audio-file-formats-used-in-game-development/}{Audio files in games} , the most commonly used audio formats in game development are WAV, MP3, and Ogg.
+
+\paragraph{Licensing} Historically, MP3 had patents on the audio format, but these restrictions have expired. Ogg and FLAC, both developed by Xiph.Org, are open-source formats. Additionally, the WAV format, though widely used, does not require a specific license for distribution.
+
+\paragraph{Conclusion} For the Crepe game engine, Ogg and FLAC are the preferred audio formats due to their open-source licenses and high compatibility. FLAC is ideal for high-quality audio with minimal compression, while Ogg is better suited for lower-quality audio that requires reduced memory usage. Both formats come from the same non-profit organization, Xiph.Org, ensuring that they align with open-source values and licensing flexibility.
 
 
 \subsection{Conclusion}
