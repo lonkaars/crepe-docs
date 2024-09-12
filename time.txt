@@ -19,6 +19,7 @@ loek: 2024-09-10 25m briefing :: watch bob videos
 loek: 2024-09-10 5m docs :: update readme
 loek: 2024-09-10 12m docs :: add comparison package and more example latex code
 loek: 2024-09-10 30m project meeting
+loek: 2024-09-12 15m integration :: PR merge
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
