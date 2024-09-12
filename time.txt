@@ -33,6 +33,7 @@ max: 2024-09-10 1h30m third project meeting
 max: 2024-09-10 20m discussing about class diagram
 max: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
 max: 2024-09-11 1h50m first review of Jaro's Plan document
+max: 2024-09-12 1h trying to fix LaTeX and VS code settings
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
