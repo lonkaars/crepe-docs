@@ -1,3 +1,9 @@
+This document contains requirements for all project documentation. Specific
+LaTeX commands and LaTeX source style requirements are detailed in
+[contributing.md](./contributing.md), and [example.tex](./example.tex) contains
+a number of frequently used snippets that may be used as a cheat-sheet style
+reference.
+
 # Fonts
 
 The documents use the following fonts. All of these are free and open source,
@@ -23,7 +29,9 @@ workshop and VimTeX.
 
 # Spelling
 
-All documentation is written in U.S. English
+- All documentation is written in U.S. English
+- Section headers are in sentence case (i.e. only the first word and proper
+  nouns are capitalized)
 
 # Grammar
 
@@ -50,4 +58,19 @@ converted to PDF (e.g. using `svg2pdf` on linux).
 
 Raster images should only be used when the source is already in a raster format
 (e.g. for photos) or when otherwise impractical.
+
+# References
+
+- When a library or piece of software is introduced in a document, reference
+  the project homepage using the bibliography.
+- Direct quotations or paraphased text must be cited.
+- Acronyms, abbreviations and jargon reference the glossary.
+- All figures and tables must be referenced in the body text. Don't write
+  paragraphs that 'lead up' to figures, as this forces LaTeX to not break the
+  page between the paragraph and figure.
+
+# Document structure
+
+- Use `\section`, `\subsection`, `\subsubsection` and `\paragraph` to insert
+  headings.
 
