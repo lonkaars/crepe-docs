@@ -33,6 +33,8 @@ wouter: 2024-09-04 1h30m researching 3rd party tools
 wouter: 2024-09-05 1h30m first group meeting
 wouter: 2024-09-05 20m setting up research document
 wouter: 2024-09-05 1h researching game enigne
+wouter: 2024-09-06 3h researching game enigne
+wouter: 2024-09-09 2h researching SDL and SFML2
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
