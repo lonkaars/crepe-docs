@@ -1,7 +1,4 @@
 {
-	"editor.wordWrap": "wordWrapColumn",
-	"editor.wrappingIndent": "same",
-	"editor.wordWrapColumn": 85,
 	"files.trimTrailingWhitespace": true,
 	"latex-workshop.latex.recipe.default": "latexmk",
 	"latex-workshop.latex.tools": [

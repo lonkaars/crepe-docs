@@ -1,0 +1,80 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{comparison}[2024-01-19 package comparison]
+
+\RequirePackage{booktabs}
+\RequirePackage{etoolbox}
+\RequirePackage{tabularx}
+\RequirePackage{environ}
+\RequirePackage{enumitem}
+
+% comparison environment, usage:
+%
+% \begin{comparison}
+% 	\pro{reason why thing is good}
+% 	\pro{...}
+% 	\con{reason why thing is bad}
+% 	\con{...}
+% \end{comparison}
+%
+% output:
+%
+% Pros (2)                      Cons (2)
+% ----------------------------------------------------------
+%  - reason why thing is good    - reason why thing is bad
+%  - ...                         - ...
+%
+
+\newcounter{pro-count}
+\newcounter{pro-index}
+\newcounter{con-count}
+\newcounter{con-index}
+\newcounter{cmp-count}
+\newcounter{cmp-index}
+\NewEnviron{comparison}{%
+	\par%
+	\setcounter{pro-count}{0}%
+	\newcommand{\pro}[1]{%
+		\stepcounter{pro-count}%
+		\csdef{pro-\the\value{pro-count}}{##1}%
+	}%
+	\setcounter{con-count}{0}%
+	\newcommand{\con}[1]{%
+		\stepcounter{con-count}%
+		\csdef{con-\the\value{con-count}}{##1}%
+	}%
+	\BODY%
+	\def\spacing{3mm}%
+	\newcommand{\halfbox}[1]{%
+		\begin{minipage}[t]{\dimexpr(\linewidth - \spacing) / 2\relax}%
+			##1%
+		\end{minipage}%
+	}%
+	\begin{minipage}{\linewidth}%
+		\halfbox{\strut\centering\textsc{Benefits}~(\the\value{pro-count})\strut}%
+		\hfill%
+		\halfbox{\strut\centering\textsc{Drawbacks}~(\the\value{con-count})\strut}%
+		\par%
+		\vspace*{\dimexpr-\parskip-0.5\baselineskip\relax}%
+		\noindent\rule{\linewidth}{0.66pt}\par%
+		\vspace*{\dimexpr-\parskip\relax}%
+		\halfbox{%
+			\begin{itemize}[leftmargin=5mm]%
+				\setcounter{pro-index}{0}%
+				\whileboolexpr{test{\ifnumcomp{\value{pro-index}}{<}{\value{pro-count}}}}{%
+					\stepcounter{pro-index}%
+					\item \csuse{pro-\the\value{pro-index}}%
+				}%
+			\end{itemize}%
+		}\hfill\halfbox{%
+			\begin{itemize}[leftmargin=5mm]%
+				\setcounter{con-index}{0}%
+				\whileboolexpr{test{\ifnumcomp{\value{con-index}}{<}{\value{con-count}}}}{%
+					\stepcounter{con-index}%
+					\item \csuse{con-\the\value{con-index}}%
+				}%
+			\end{itemize}%
+		}%
+	\end{minipage}%
+	\par%
+}
+
