@@ -188,6 +188,103 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Introduction}
 
+Physics Core Concepts
+
+rigid body
+A chunk of matter that is so strong that the distance between any two bits of matter on the chunk is constant.
+
+shape
+A shape binds collision geometry to a body and adds material properties such as density, friction, and restitution.
+
+constraint
+A constraint is a physical connection that removes degrees of freedom from bodies. A 2D body has 3 degrees of freedom (two translation coordinates and one rotation coordinate). If I take a body and pin it to the wall (like a pendulum) I have constrained the body to the wall. At this point the body can only rotate about the pin, so the constraint has removed 2 degrees of freedom.
+
+contact constraint
+A special constraint designed to prevent penetration of rigid bodies and to simulate friction and restitution. You do not create contact constraints; they are created automatically by Box2D.
+
+joint constraint
+This is a constraint used to hold two or more bodies together. Box2D supports several joint types: revolute, prismatic, distance, and more. Joints may have limits, motors, and/or springs.
+
+joint limit
+A joint limit restricts the range of motion of a joint. For example, the human elbow only allows a certain range of angles.
+
+joint motor
+A joint motor drives the motion of the connected bodies according to the joint's degrees of freedom. For example, you can use a motor to drive the rotation of an elbow. Motors have a target speed and a maximum force or torque. The simulation will apply the force or torque required to achieve the desired speed.
+
+joint spring
+A joint spring has a stiffness and damping. In Box2D spring stiffness is expressed in terms or Hertz or cycles per second. This lets you configure how quickly a spring reacts regardless of the body masses. Joint springs also have a damping ratio to let you specify how quickly the spring will come to rest.
+
+world
+A physics world is a collection of bodies, shapes, joints, and contacts that interact together. Box2D supports the creation of multiple worlds which are completely independent.
+
+solver
+The physics world has a solver that is used to advance time and to resolve contact and joint constraints. The Box2D solver is a high performance sequential solver that operates in order N time, where N is the number of constraints.
+
+continuous collision
+The solver advances bodies in time using discrete time steps. Without intervention this can lead to tunneling.
+
+Box2D contains specialized algorithms to deal with tunneling. First, the collision algorithms can interpolate the motion of two bodies to find the first time of impact (TOI). Second, speculative collision is used to create contact constraints between bodies before they touch.
+
+events
+World simulation leads to the creation of events that are available at the end of the time step:
+
+body movement events
+contact begin and end events
+contact hit events
+These events allow your application to react to changes in the simulation.
+
+
+
+Box2D
+
+Description: One of the most popular and widely used open-source 2D physics engines, Box2D is known for its simplicity, robustness, and efficiency. It powers many games across different platforms.
+
+Key Features:
+Collision detection and response.
+Rigid body dynamics, including joints, springs, and constraints.
+Support for convex polygons and circles.
+Highly customizable, allowing fine control over physics simulation parameters.
+
+Use Cases: Suitable for platformers, puzzles, and any game requiring realistic 2D physics.
+
+License: MIT License.
+https://box2d.org/
+
+
+2. LiquidFun
+Description: A fork of Box2D, LiquidFun adds particle-based fluid simulation to Box2D's rigid body dynamics. It's ideal for games that require both solid and fluid dynamics.
+Key Features:
+All features of Box2D.
+Particle system for simulating fluids, soft bodies, and other deformable materials.
+High performance with SIMD optimization.
+Use Cases: Games requiring fluid simulations, like water physics or granular materials.
+License: Apache License 2.0.
+3. Chipmunk2D
+Description: A lightweight and fast 2D physics engine that emphasizes ease of use and flexibility. Chipmunk2D is designed to be simple enough to understand and integrate but powerful enough for complex simulations.
+Key Features:
+Collision detection, including circle, segment, and polygon shapes.
+Supports constraints, motors, and damped springs.
+Built-in support for sleeping objects to optimize performance.
+Written in C, but it has bindings for C++.
+Use Cases: Ideal for developers who need a simple yet performant physics engine.
+License: MIT License.
+4. Nape
+Description: A 2D physics engine that is optimized for use with the Haxe programming language but has a C++ backend. It focuses on ease of use, with a clean API and features tailored for 2D games.
+Key Features:
+Provides both rigid body and soft body physics.
+Broad-phase and narrow-phase collision detection.
+Constraints, forces, and motor simulations.
+Integrates well with cross-platform tools that generate C++ code, like Haxe.
+Use Cases: Suitable for developers using Haxe or projects that require an easy-to-use API.
+License: MIT License.
+
+liquidfun (fork of box2d)
+https://google.github.io/liquidfun/
+
+Chipmunk2D
+https://chipmunk-physics.net/
+
+
 \subsection{Findings}
 
 \subsection{Conclusion}
