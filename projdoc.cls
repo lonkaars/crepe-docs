@@ -206,19 +206,23 @@
 	\thispagestyle{empty}
 	\end{titlepage}
 }
-\newbool{projdoc@cited}
-\apptocmd{\abx@aux@cite}{\global\booltrue{projdoc@cited}}{}{}
+\newbool{projdoc@used@cite}
+\newbool{projdoc@used@gls}
+\apptocmd{\abx@aux@cite}{\global\booltrue{projdoc@used@cite}}{}{}
+\apptocmd{\glsxtr@record}{\global\booltrue{projdoc@used@gls}}{}{}
 \def\projdoc@trailer{
 	% bibliography (if citations used)
-	\ifbool{projdoc@cited}{\printbibliography}{}%
+	\ifbool{projdoc@used@cite}{%
+		\printbibliography%
+	}{}%
 	% glossary
-	\ifcsundef{printunsrtglossary}{}{%
+	\ifbool{projdoc@used@cite}{%
 		\section*{Glossary}%
 		\begin{multicols}{2}%
 			\renewcommand{\glossarysection}[2][]{}%
 			\printunsrtglossary%
 		\end{multicols}%
-	}%
+	}{}%
 }
 \AtBeginDocument{\projdoc@header}
 \AtEndDocument{\projdoc@trailer}
