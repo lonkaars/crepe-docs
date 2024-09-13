@@ -1,4 +1,5 @@
 all: plan.pdf
+all: research.pdf
 
 LATEXMKFLAGS += -cd
 LATEXMKFLAGS += -interaction=nonstopmode

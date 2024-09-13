@@ -176,13 +176,70 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Conclusion}
 
-\section{Profiling/debugging}
+% TODO: this entire section
+\section{Profiling and debugging}
+
+% Which profiling and debugging features are wanted?
+% How to provide those profiling and debugging features?
+% Can most of the profiling/debugging be handled by external tools?
+
+% Ideas:
+% - flame graph
+% - watchtable (combine w/ fps/speed control overlay?)
+% - debug printing utility functions
 
 \subsection{Introduction}
 
 \subsection{Findings}
 
+\subsubsection{Callgrind}
+
+\begin{comparison}
+	\pro{Source code does not need to be modified for profiling}
+	\con{Execution speed is severely impacted}
+\end{comparison}
+
 \subsection{Conclusion}
+
+% TODO: this entire section
+\section{Audio}
+
+% should audio research be scoped down to SDL2 (if that's what we're going with) or
+% standalone libraries only (for modularity?).
+
+The game engine is required to have an audio system with support for playing multiple
+audio streams (i.e.~tracks or samples) simultaniously. Since writing a custom live
+audio mixing engine is outside the scope of this project, this section compares
+various standalone audio engines that could be used in the engine.
+
+% TODO: requirements first!
+
+% REQ ~ is cross-platform
+% REQ ~ supports multiple audio formats (TODO: which)
+% REQ ~ supports simultanious playback / mixing
+% REQ ~ has an open-source license
+\begin{table}
+	\centering
+	\begin{tabular}{llc}
+		\toprule
+		\textbf{Library} & \textbf{License} & \textbf{API}\\
+		\midrule
+		miniaudio & MIT-0 & C\\
+		YSE & EPL & C++\\
+		SoLoud & Zlip/LibPng & C++\\
+		\bottomrule
+	\end{tabular}
+	\caption{Audio engine library comparison}
+	\label{tab:audio-engines}
+\end{table}
+% TODO: ref https://miniaud.io/
+% TODO: ref https://www.attr-x.net/yse/
+
+Not considered further:
+\begin{description}
+	\item[FMOD] is proprietary
+	\item[PortAudio] requires manual mixing
+\end{description}
 
 \section{Physics}
 
@@ -199,6 +256,7 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 \subsection{Findings}
 
 \subsection{Conclusion}
+
 \section{Audio}
 
 \subsection{Introduction}
@@ -258,7 +316,5 @@ can not have more than one parent.
 % TODO: cite https://docs.unity3d.com/Manual/class-Transform.html
 
 \subsection{Conclusion}
-
-\section{Conclusion}
 
 \end{document}
