@@ -119,6 +119,16 @@
 	itemsep=\dimexpr\style@itemsep-\style@parsep\relax,
 	parsep=\style@parsep,
 }
+\def\projdoc@setdescriptionstyle{%
+	\renewcommand\makelabel[1]{%
+		{\bfseries ##1}:%
+	}%
+}
+\setdescription{
+	before={\projdoc@setdescriptionstyle},
+	leftmargin=3em,
+	labelindent=3ex,
+}
 \makeatother
 
 % create a label using \customlabel[<creftype>]{<refname>}{<reftext>} that displays
@@ -213,10 +223,16 @@
 \def\projdoc@trailer{
 	% bibliography (if citations used)
 	\ifbool{projdoc@used@cite}{%
+		\hfuzz=50pt% reduce overfull hbox warnings for bibliography (mostly URLs)
 		\printbibliography%
 	}{}%
 	% glossary
-	\ifbool{projdoc@used@cite}{%
+	\ifbool{projdoc@used@gls}{%
+		\setdescription{
+			before={\projdoc@setdescriptionstyle},
+			leftmargin=2ex,
+			labelindent=0pt,
+		}%
 		\section*{Glossary}%
 		\begin{multicols}{2}%
 			\renewcommand{\glossarysection}[2][]{}%
