@@ -25,6 +25,7 @@ loek: 2024-09-12 30m research :: audio
 loek: 2024-09-13 1h10m project meeting
 loek: 2024-09-13 45m integration :: PR merge
 loek: 2024-09-14 45m refactoring :: clean up LaTeX build system
+loek: 2024-09-14 1h10m docs :: requirements
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
