@@ -7,20 +7,16 @@ Please see [style.md](./style.md) for writing style and
 
 ## Compilation
 
-- A `latexmkrc` file is provided for copmilation with `latexmk`. The documents
-  should also compile under [Visual Studio Code][vscode] using the [LaTeX
-  Workshop extension][latexworkshop], as well as [VimTeX][vimtex].
-- A [makefile](./makefile) is used to compile other files (e.g. plantuml
-  diagrams, [time report](#time-report))
-- These documents use fonts loaded using `fontspec`, please see
-  [style.md](./style.md) for download links.
+Requirements:
 
-## Time report
+- A LaTeX distribution that includes the XeLaTeX compiler
+- PlantUML
+- Python 3 (timerep only)
+- Fonts (see see [style.md](./style.md) for download links)
 
-The time report document includes generated LaTeX code which can be compiled
-from [time.txt](./time.txt) using [time2tex.py](./time2tex.py). The
-[makefile](./makefile) includes a rule that does this, so `make timerep.pdf`
-should be used to compile this document specifically.
+A `latexmkrc` file is provided for copmilation with `latexmk`. The documents
+should also compile under [Visual Studio Code][vscode] using the [LaTeX
+Workshop extension][latexworkshop], as well as [VimTeX][vimtex].
 
 ## Requirements
 
