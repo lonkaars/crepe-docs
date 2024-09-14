@@ -1,49 +1,32 @@
-$pdflatex = "xelatex %O %S";
+# https://nl.mirrors.cicku.me/ctan/support/latexmk/latexmk.pdf
+
+$pdflatex = "xelatex --interaction=nonstopmode %O %S";
 $pdf_mode = 1;
 $dvi_mode = 0;
 $postscript_mode = 0;
-
-# https://tex.stackexchange.com/questions/400325/latexmkrc-for-bib2gls
-add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
-add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
-add_cus_dep('aux', 'glstex', 0, 'run_bib2gls');
-
-sub run_makeglossaries {
-  if ( $silent ) {
-    system "makeglossaries -q '$_[0]'";
-  } else {
-    system "makeglossaries '$_[0]'";
-  };
-}
-
-sub run_bib2gls {
-  if ( $silent ) {
-    my $ret = system "bib2gls --silent --group '$_[0]'";
-  } else {
-    my $ret = system "bib2gls --group '$_[0]'";
-  };
-  my ($base, $path) = fileparse( $_[0] );
-  if ($path && -e "$base.glstex") {
-    rename "$base.glstex", "$path$base.glstex";
-  }
-  # Analyze log file.
-  local *LOG;
-  $LOG = "$_[0].glg";
-  if (!$ret && -e $LOG) {
-    open LOG, "<$LOG";
-    while (<LOG>) {
-      if (/^Reading (.*\.bib)\s$/) {
-        rdb_ensure_file( $rule, $1 );
-      }
-    }
-    close LOG;
-  }
-  return $ret;
-}
+$clean_ext .= ' %R.ist %R.xdy bbl run.xml';
+@default_files = (
+	'example',
+	'plan',
+	'research',
+	'timerep',
+);
 
 push @file_not_found, '^Package .* No file `([^\\\']*)\\\'';
 push @generated_exts, 'glo', 'gls', 'glg';
-push @generated_exts, 'acn', 'acr', 'alg';
-$clean_ext .= ' %R.ist %R.xdy';
-$clean_ext .= ' bbl run.xml';
+
+add_cus_dep('aux', 'glstex', 0, 'bib2gls');
+sub bib2gls {
+	return system "bib2gls '$_[0]'";
+}
+
+add_cus_dep('puml', 'eps', 0, 'plantuml');
+sub plantuml {
+  return system "plantuml -teps '$_[0].puml'";
+}
+
+add_cus_dep('txt', 'tex', 0, 'time2tex');
+sub time2tex {
+	return system "./time2tex.py '$_[0].txt' > '$_[0].tex'";
+}
 

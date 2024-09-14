@@ -35,7 +35,7 @@ These don't show up in the table of contents by default
 
 \Cref{fig:example-a} definitely shows something. Referencing multiple things at once
 is neatly handled by cleveref:
-\cref{fig:example-a,fig:example-b,fig:example-c,tab:gate-xor}.
+\cref{fig:example-a,fig:example-b,fig:example-puml,tab:gate-xor}.
 
 \begin{figure}
 	\centering
@@ -46,15 +46,17 @@ is neatly handled by cleveref:
 
 \begin{figure}
 	\begin{subfigure}{0.45\textwidth}%
+		\centering
 		\fitimg{\includegraphics{example-image-b}}
 		\caption{Example image B}
 		\label{fig:example-b}
 	\end{subfigure}%
 	\hfill
 	\begin{subfigure}{0.45\textwidth}%
-		\fitimg{\includegraphics{example-image-c}}
-		\caption{Example image C}
-		\label{fig:example-c}
+		\centering
+		\includepumldiag{img/example.puml}
+		\caption{Example PlantUML diagram}
+		\label{fig:example-puml}
 	\end{subfigure}%
 	\caption{Subfigures}
 \end{figure}

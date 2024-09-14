@@ -58,6 +58,7 @@
 \RequirePackage{subcaption}
 \RequirePackage{multicol}
 \RequirePackage{comparison} % ./comparison.sty
+\RequirePackage{xstring}
 
 % font style
 \setmainfont{TeX Gyre Schola}
@@ -297,7 +298,8 @@
 
 % adjust scale for puml diagrams
 \newcommand{\includepumldiag}[1]{%
-	\fitimg{\includegraphics[scale=0.6]{#1}}%
+	\StrSubstitute{#1}{.puml}{.eps}[\filename]%
+	\fitimg{\includegraphics[scale=0.6]{\filename}}%
 }
 
 % prevent page break between two paragraphs
