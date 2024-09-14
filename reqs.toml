@@ -1,0 +1,31 @@
+[audio.async-api]
+type = 'system'
+priority = 'must'
+description = '''
+The public audio \gls{api} supports starting audio samples asynchronously
+(i.e.~fire and forget).
+'''
+
+[audio.handle]
+type = 'system'
+priority = 'must'
+description = '''
+The public audio \gls{api} allows the game programmer to control (i.e.~play,
+pause and stop) audio samples after they are created/initialized.
+'''
+
+[audio.stream-mix]
+type = 'system'
+priority = 'must'
+description = '''
+The audio system supports playing multiple audio streams simultaniously.
+'''
+
+[aux.license]
+type = 'system'
+priority = 'must'
+description = '''
+External libraries must have a license that is MIT-compatible, or one that
+allows linking against MIT code.
+'''
+

@@ -24,12 +24,12 @@ def fmt_percentage(fac):
 def fmt_member_overview(times):
   # calculations
   out = ""
-  members = {}
+  tracked = {}
   total_time = 0
   for time in times:
-    if not time["name"] in members:
-      members[time["name"]] = 0
-    members[time["name"]] += time["duration"]
+    if not time["name"] in tracked:
+      tracked[time["name"]] = 0
+    tracked[time["name"]] += time["duration"]
     total_time += time["duration"]
 
   # begin table
@@ -38,8 +38,9 @@ def fmt_member_overview(times):
   out += r"\textbf{Member} & \textbf{Tracked} &\\\midrule{}"
 
   # member overview
-  for name, tracked in members.items():
-    out += f"{name} & {fmt_duration(tracked)} & {fmt_percentage(tracked / total_time)}\\\\"
+  members = sorted(list(set(time["name"] for time in times)))
+  for name in members:
+    out += f"{name} & {fmt_duration(tracked[name])} & {fmt_percentage(tracked[name] / total_time)}\\\\"
   out += r"\midrule{}"
 
   # sum
@@ -58,7 +59,7 @@ def fmt_weekly_overview(times):
   weeks = []
   member_totals = {}
   total_time = sum(time["duration"] for time in times)
-  members = list(set(time["name"] for time in times))
+  members = sorted(list(set(time["name"] for time in times)))
   time_start = min(time["date"] for time in times)
   time_end = max(time["date"] for time in times)
   week_start = time_start - timedelta(days=time_start.weekday()) # round down to nearest monday
@@ -86,6 +87,7 @@ def fmt_weekly_overview(times):
 
   # begin table
   out += r"\begin{table}\centering"
+  out += r"\fitimg{"
   out += f"\\begin{{tabular}}{{l{'r@{~}l' * len(members)}@{{\\qquad}}r}}\\toprule"
   out += r"\textbf{\#}"
   for member in members:
@@ -105,6 +107,7 @@ def fmt_weekly_overview(times):
 
   # end table
   out += r"\bottomrule\end{tabular}"
+  out += r"}" # \fitimg
   out += r"\caption{Tracked time per week}\label{tab:time-weekly}"
   out += r"\end{table}"
 
@@ -170,17 +173,15 @@ def parse(content):
   return out
 
 def fmt(times):
-  # TODO: Task overview
-  print(f"""
+  return f"""
 \\section{{Overviews}}\n
 \\subsection{{Members}}\n
 {fmt_member_overview(times)}
 \\subsection{{Weekly}}\n
 {fmt_weekly_overview(times)}
-""")
+"""
 
-def main():
-  input_file = sys.argv[1]
+def main(input_file):
   content = ""
   with open(input_file, "r") as file:
     content = file.read()
@@ -189,12 +190,15 @@ def main():
   except Exception as e:
     print(f"{input_file}: {e}")
     exit(1)
+  output = fmt(parsed)
 
-  fmt(parsed)
+  output_file = input_file.removesuffix(".txt") + ".tex"
+  with open(output_file, "w+") as file:
+    file.write(output)
 
 if __name__ == "__main__":
   if len(sys.argv) != 2:
-    print("usage: time2tex <input>")
+    print("usage: time2tex.py time.txt")
     exit(1)
-  main()
+  main(sys.argv[1])
 
