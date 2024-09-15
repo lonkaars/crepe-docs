@@ -26,11 +26,12 @@ sub plantuml {
 
 add_cus_dep('txt', 'tex', 0, 'time2tex');
 sub time2tex {
-	return system "python3 time2tex.py '$_[0].txt'";
+	return system "python3 scripts/time2tex.py '$_[0].txt'";
 }
 
 add_cus_dep('toml', 'tex', 0, 'reqs2tex');
+add_cus_dep('toml', 'aux', 0, 'reqs2tex');
 sub reqs2tex {
-	return system "python3 reqs2tex.py '$_[0].toml'";
+	return system "python3 scripts/reqs2tex.py '$_[0].toml'";
 }
 

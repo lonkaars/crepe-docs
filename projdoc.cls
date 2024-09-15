@@ -307,3 +307,11 @@
 \newcommand\noparbreak{\par\nobreak\@afterheading}
 \makeatother
 
+% cleveref extra types
+\crefname{paragraph}{paragraph}{paragraphs}
+\Crefname{paragraph}{Paragraph}{Paragraphs}
+\crefname{requirement}{requirement}{requirements}
+\Crefname{requirement}{Requirement}{Requirements}
+\crefname{test}{test}{tests}
+\Crefname{test}{Test}{Tests}
+

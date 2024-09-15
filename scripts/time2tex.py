@@ -1,5 +1,5 @@
 #!/bin/python3
-import sys
+import sys, tex
 from datetime import datetime, timedelta
 
 def fmt_duration(sec):
@@ -19,11 +19,14 @@ def fmt_duration(sec):
   return "\\,".join(out)
 
 def fmt_percentage(fac):
-  return f"{{\\footnotesize\\itshape({round(fac * 100)}\\%)}}"
+  return tex.sgroup(
+    tex.cmd('footnotesize') +\
+    tex.cmd('itshape') +\
+    tex.esc(f"({round(fac * 100)}%)")
+  )
 
 def fmt_member_overview(times):
   # calculations
-  out = ""
   tracked = {}
   total_time = 0
   for time in times:
@@ -32,24 +35,29 @@ def fmt_member_overview(times):
     tracked[time["name"]] += time["duration"]
     total_time += time["duration"]
 
-  # begin table
-  out += r"\begin{table}\centering"
-  out += r"\begin{tabular}{lr@{~}l}\toprule"
-  out += r"\textbf{Member} & \textbf{Tracked} &\\\midrule{}"
+  out = ""
+
+  # header
+  out += tex.cmd('toprule')
+  out += tex.tabrule(tex.cmd('textbf', 'Member'), tex.cmd('textbf', 'Tracked'), '')
+  out += tex.cmd('midrule')
 
   # member overview
   members = sorted(list(set(time["name"] for time in times)))
   for name in members:
-    out += f"{name} & {fmt_duration(tracked[name])} & {fmt_percentage(tracked[name] / total_time)}\\\\"
-  out += r"\midrule{}"
+    out += tex.tabrule(name, fmt_duration(tracked[name]), fmt_percentage(tracked[name] / total_time))
+  out += tex.cmd('midrule')
 
   # sum
-  out += f"&{fmt_duration(total_time)}&\\\\"
+  out += tex.tabrule('', fmt_duration(total_time), '')
+  out += tex.cmd('bottomrule')
 
-  # end table
-  out += r"\bottomrule\end{tabular}"
-  out += r"\caption{Tracked time per group member}\label{tab:time-member}"
-  out += r"\end{table}"
+  out = tex.env('tabular', 'lr@{~}l', out)
+  out = tex.cmd('centering') +\
+        out +\
+        tex.cmd('caption', 'Tracked time per group member') +\
+        tex.cmd('label', 'tab:time-member')
+  out = tex.env('table', out)
 
   return out
 
@@ -85,6 +93,7 @@ def fmt_weekly_overview(times):
   for member in members:
     member_totals[member] = sum(time["duration"] for time in times if time["name"] == member)
 
+  # TODO: refactor
   # begin table
   out += r"\begin{table}\centering"
   out += r"\fitimg{"
@@ -173,13 +182,13 @@ def parse(content):
   return out
 
 def fmt(times):
-  return f"""
-\\section{{Overviews}}\n
-\\subsection{{Members}}\n
-{fmt_member_overview(times)}
-\\subsection{{Weekly}}\n
-{fmt_weekly_overview(times)}
-"""
+  return "\n\n".join([
+    tex.cmd('section', 'Overviews'),
+    tex.cmd('subsection', 'Members'),
+    fmt_member_overview(times),
+    tex.cmd('subsection', 'Weekly'),
+    fmt_weekly_overview(times),
+  ])
 
 def main(input_file):
   content = ""
