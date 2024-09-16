@@ -43,6 +43,9 @@ max: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
 max: 2024-09-11 1h50m first review of Jaro's Plan document
 max: 2024-09-12 1h trying to fix LaTeX and VS code settings
 max: 2024-09-12 1h worked on gameObject research
+max: 2024-09-13 1h30m fourth project meeting
+max: 2024-09-16 1h researching self-made ECS possibilities
+max: 2024-09-16 1h30m researching ECS libraries
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
