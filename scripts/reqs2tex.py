@@ -69,18 +69,15 @@ def convert(data):
   return reqs
 
 def req2aux(req):
-  # TODO: this is a dead-end solution, newlabel only works for in-document anchors, not external links
+  ref = tex.label2ref(req['label'])
   out = [
-    tex.scmd('newlabel', f"req:{req['label']}:id", tex.group(req['id'], req['id'], '', './requirements.pdf', '')),
-    tex.scmd('newlabel', f"req:{req['label']}:id@cref", tex.group(f"[requirement][][]{req['id']}", '')),
+    tex.cmd('newlabel', f"{ref}", tex.group(req['id'], req['id'], 'ggg', 'hhh', 'iii')),
+    tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{req['id']}", '[ccc][ddd][eee]fff')),
   ]
-  return "\n".join([tex.auxout(line) for line in out])
+  return "\n".join(out)
 
 def fmt_aux(data):
-  out = ""
-  out += tex.cmd('makeatletter')
-  out += "\n".join([req2aux(req) for req in data])
-  out += tex.cmd('makeatother')
+  out = "\n".join([req2aux(req) for req in data])
   return out
 
 def fmt_tex(data):

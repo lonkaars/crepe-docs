@@ -40,6 +40,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
 \RequirePackage{needspace}
+\RequirePackage{xr-hyper}
 \RequirePackage{hyperref}
 \RequirePackage{microtype}
 \RequirePackage{xcolor}
