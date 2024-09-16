@@ -9,7 +9,7 @@ def flatten(data):
     items = flatten(value)
     for item in items:
       if 'label' in item:
-        item['label'] = f"{key}:{item['label']}"
+        item['label'] = f"{key}.{item['label']}"
       else:
         item['label'] = f"{key}"
     out += items
@@ -24,16 +24,44 @@ def make_id(item):
     counter = id_counter,
   )
 
+def sanitize(item, ids):
+  def die(msg):
+    print(f"[{item['label']}]: {msg}")
+    exit(1)
+
+  # ensure properties
+  item['description'] = item.get('description')
+  item['done'] = item.get('done')
+  item['priority'] = item.get('priority')
+  item['type'] = item.get('type')
+
+  # type checks
+  if item['type'] not in ['system', 'user']:
+    die(f"unknown or missing requirement type {repr(item['type'])}")
+  if item['priority'] not in ['must', 'should', 'could', 'will not']:
+    die(f"unknown or missing requirement priority {repr(item['type'])}")
+
+  # logic checks
+  if item['type'] != 'user' and item['done'] is not None:
+    die("has definition of done but is not a user requirement")
+
+  # conversions
+  if isinstance(item['done'], list):
+    # safety check
+    if not set(item['done']).issubset(ids):
+      die("definition of done includes unknown requirement(s)")
+    item['done'] = tex.cmd('Cref', tex.label2ref(*item['done']))
+
 def convert(data):
   reqs = flatten(data)
-  for index, item in enumerate(reqs):
+  index = 0
+  for item in reqs:
     item['id'] = tex.esc(make_id(item))
-    item['index'] = index
-    item['description'] = item.get('description', '???')
-    item['done'] = item.get('done', None)
-    item['priority'] = item.get('priority', 'must')
-    item['type'] = item.get('type', 'system')
     item['deleted'] = item.get('deleted', False)
+    if item['deleted']: continue
+    item['index'] = index
+    index += 1
+    sanitize(item, [req['label'] for req in reqs])
 
   # skip deleted requirements (but process for make_id)
   reqs = [item for item in reqs if item['deleted'] == False]
