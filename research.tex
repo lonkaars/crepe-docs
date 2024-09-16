@@ -66,9 +66,29 @@ must be stored efficiently, and entities must be provided with the required beha
 such as audio, position, or physics. To create diverse entities with specific
 functions: A scene can contain many different kinds of entities, each with different
 properties and functions. But no matter how different each entity is, it remains an
-entity. To assign properties and functions to entities, components are used. Entt is
-an example of an \gls{ecs}.
+entity. To assign properties and functions to entities, components are used.
 % TODO: ref?entt
+
+There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
+popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is based
+on the amount of stars on GitHub.
+\begin{table}
+	\begin{tabularx}{\linewidth}{lXr}
+		\toprule
+		\textbf{Name} & \textbf{Short Description} & \textbf{GitHub Stars} \\
+		\midrule
+		EnTT & Fast and reliable entity-component system & 10k \\
+		Flecs & A Multithreaded Entity Component System written for C89 and C99 & 6.3k \\
+		EntityX & Fast, type-safe C++ entity component system & 2.2k \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Popular \gls{ecs} libraries}
+	\label{tab:popularECSLibraries}
+\end{table}
+https://github.com/abeimler/ecs_benchmark
+
+It is, of course, not necessary to use a library to implement an \gls{ecs} architecture.
+However, it seems very hard to achieve the same performance as a library. https://github.com/SanderMertens/ecs-faq?tab=readme-ov-file#should-i-write-my-own-ecs
 
 \subsection{Conclusion}
 
