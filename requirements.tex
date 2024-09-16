@@ -1,10 +1,20 @@
 \documentclass{projdoc}
 \input{meta.tex}
-\input{reqs.tex}
+
+\makeatletter
+\projdoc@description@leftmargin=2ex
+\projdoc@description@labelindent=0pt
+\projdoc@setdescriptionstyle
+\makeatother
 
 \title{Requirements}
 
 \begin{document}
+
+\section{Requirements}
+\begin{multicols}{2}
+\input{reqs.tex}
+\end{multicols}
 
 \end{document}
 

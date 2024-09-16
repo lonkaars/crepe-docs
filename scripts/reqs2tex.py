@@ -68,22 +68,28 @@ def convert(data):
 
   return reqs
 
-def req2aux(req):
-  ref = tex.label2ref(req['label'])
-  out = [
-    tex.cmd('newlabel', f"{ref}", tex.group(req['id'], req['id'], 'ggg', 'hhh', 'iii')),
-    tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{req['id']}", '[ccc][ddd][eee]fff')),
-  ]
+def fmt_aux(data):
+  out = []
+  for req in data:
+    ref = tex.label2ref(req['label'])
+    out += [
+      tex.cmd('newlabel', f"{ref}", tex.group(req['id'], req['id'], 'ggg', 'hhh', 'iii')),
+      tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{req['id']}", '[ccc][ddd][eee]fff')),
+    ]
   return "\n".join(out)
 
-def fmt_aux(data):
-  out = "\n".join([req2aux(req) for req in data])
-  return out
-
 def fmt_tex(data):
-  return "\n".join([
-    tex.cmd('relax')
-  ])
+  out = []
+  for req in data:
+    out.append(
+      tex.cmd('subsection', req['id']) + "\n\n" +\
+      tex.env('description',
+        tex.cmd('item', ['Priority']) + req['priority'].title() +\
+        tex.cmd('item', ['Requirement']) + req['description'] +\
+        (tex.cmd('item', ['Definition of done']) + req['done'] if req['type'] == 'user' else "")
+      )
+    )
+  return "\n\n".join(out)
 
 def main(input_file):
   data = {}

@@ -1,7 +1,13 @@
 # utility function for converting latex code
 
 def group(*args):
-  return "".join("{" + arg + "}" for arg in args)
+  out = ""
+  for arg in args:
+    if isinstance(arg, list):
+      out += "[" + arg[0] + "]"
+    if isinstance(arg, str):
+      out += "{" + arg + "}"
+  return out
 
 def string(content):
   return r"\string" + content
