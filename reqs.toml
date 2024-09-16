@@ -29,3 +29,157 @@ External libraries must have a license that is MIT-compatible, or one that
 allows linking against MIT code.
 '''
 
+[level]
+type = 'user'
+priority = 'must'
+description = '''
+The game engine should support multiple levels or regions.
+'''
+done = '\Cref{reg:level:multiple,reg:level:transitions}'
+
+[level.transitions]
+type = 'system'
+priority = 'must'
+description = '''
+The engine should facilitate easy switching between levels or regions to enable seamless transitions when a level is completed or to allow easy resetting of a level (loading screens are permitted).
+'''
+done = '\Cref{reg:level:multiple}'
+
+[level.multiple]
+type = 'system'
+priority = 'must'
+description = '''
+The game engine should support multiple levels or regions.
+'''
+done = '\Cref{reg:level:one}'
+
+[level.one]
+type = 'system'
+priority = 'must'
+description = '''
+The game engine should support one level.
+'''
+
+
+[scenes]
+type = 'user'
+priority = 'must'
+description = '''
+The game engine should support scenes to improve memory management and focus on specific.
+'''
+done = '\Cref{reg:scenes:menu,reg:scenes:gameplay}'
+
+[scenes.menu]
+type = 'system'
+priority = 'must'
+description = '''
+The game engine should support a menu scene.
+'''
+
+[scenes.gameplay]
+type = 'system'
+priority = 'must'
+description = '''
+The game engine should support a gameplay scene.
+'''
+
+[game.speed]
+type = 'user'
+priority = 'must'
+description = '''
+The engine should support adjustable gameplay speed (e.g., pg up for faster, pg dn for slower, home to reset) to allow control over speed during testing, including slow-motion and skipping through less interesting sections.
+'''
+done = '\Cref{reg:input:keyboard}'
+
+[input]
+type = 'user'
+priority = 'must'
+description = '''
+The engine must support input from both mouse and keyboard to receive notifications when input events occur.
+'''
+done = '\Cref{reg:input:mouse,reg:input:keyboard}'
+
+[input.mouse]
+type = 'system'
+priority = 'must'
+description = '''
+The engine must support event inputs from mouse.
+'''
+
+[input.user]
+type = 'system'
+priority = 'must'
+description = '''
+The engine must support event inputs from keyboard.
+'''
+
+
+
+[animation.spritesheet]
+type = 'system'
+priority = 'must'
+description = '''
+The engine should support animating game objects easily through code using spritesheets, allowing for complex animations and support for multiple animations per character.
+'''
+done = '\Cref{reg:character:gameobject}'
+
+[animation.calculated]
+type = 'system'
+priority = 'must'
+description = '''
+The engine should support animating game objects through code by scaling, rotating, and translating via calculations, eliminating the need for a spritesheet for simpler animations.
+'''
+done = '\Cref{reg:character:gameobject}'
+
+[character.gameobject]
+type = 'system'
+priority = 'must'
+description = '''
+The engine should allow easy creation of characters or other game objects through code to populate the game world with objects that may or may not be controllable, animatable,
+or affected by physics.
+'''
+
+
+
+
+
+[HUD]
+type = 'user'
+priority = 'must'
+description = '''
+The engine should support adding a Heads Up Display (HUD) or GUI with data (such as health, time, etc.) to the screen, ensuring that the HUD item aligns once and is rendered always on top and follows the camera
+in a 2D fashion.
+'''
+[HUD.fps]
+type = 'user'
+priority = 'must'
+description = '''
+The game engine should display the FPS count in the upper right corner when a specific key (chosen by the team) is pressed to toggle the FPS display on and off.
+'''
+
+
+[save]
+type = 'user'
+priority = 'must'
+description = '''
+The engine should allow easy saving and loading of data from code, enabling the game to save progress, levels, statistics, unlocks, achievements, etc.
+'''
+
+
+[AI]
+type = 'system'
+priority = 'must'
+description = '''
+The engine should provide basic AI support, such as pathfinding between two points, to allow NPC game objects to navigate rooms with obstacles and follow other objects (e.g., player).
+'''
+
+[physics]
+type = 'system'
+priority = 'must'
+description = '''
+The engine should include basic physics support, such as collision detection and handling, to prevent characters from passing through walls and to allow simple objects (e.g., a bouncing ball) to behave physically.
+'''
+
+
+
+
