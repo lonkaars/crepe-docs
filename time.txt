@@ -54,6 +54,11 @@ wouter: 2024-09-05 20m setting up research document
 wouter: 2024-09-05 1h researching game enigne
 wouter: 2024-09-06 3h researching game enigne
 wouter: 2024-09-09 2h researching SDL and SFML2
+wouter: 2024-09-10 1h30m third project meeting
+wouter: 2024-09-10 45m project videos
+wouter: 2024-09-10 40m second project lesson
+wouter: 2024-09-12 2h researching gameloops
+wouter: 2024-09-14 3h working on game loop poc
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
