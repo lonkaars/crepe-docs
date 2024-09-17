@@ -25,18 +25,19 @@ class REQ_PRIORITY(StrEnum):
   COULD = 'could'
   WONT = 'will not'
 
-# this doesn't work right
 def flatten(data):
   out = []
-  # this key is a requirement
-  if KEY.DESCRIPTION in data:
-    out.append(data)
-  # check for children
   for key, value in data.items():
+    # this item is a requirement
+    if key == KEY.DESCRIPTION:
+      out.append(data)
+
     # skip over reserved keys
     if key in KEY: continue
 
+    # recursively flatten other requirements
     items = flatten(value)
+    # and prefix them with the current key
     for item in items:
       if KEY.LABEL in item:
         item[KEY.LABEL] = f"{key}.{item[KEY.LABEL]}"
