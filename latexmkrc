@@ -1,5 +1,7 @@
 # https://nl.mirrors.cicku.me/ctan/support/latexmk/latexmk.pdf
 
+use File::Spec::Functions;
+
 $pdflatex = "xelatex --interaction=nonstopmode %O %S";
 $pdf_mode = 1;
 $dvi_mode = 0;
@@ -26,12 +28,16 @@ sub plantuml {
 
 add_cus_dep('txt', 'tex', 0, 'time2tex');
 sub time2tex {
-	return system "python3 scripts/time2tex.py '$_[0].txt'";
+	my $script = catfile("scripts", "time2tex.py");
+	return system "python3 $script '$_[0].txt'";
 }
 
 add_cus_dep('toml', 'tex', 0, 'reqs2tex');
 add_cus_dep('toml', 'aux', 0, 'reqs2tex');
 sub reqs2tex {
-	return system "python3 scripts/reqs2tex.py '$_[0].toml'";
+	my $script = catfile("scripts", "reqs2tex.py");
+	return system "python3 $script '$_[0].toml'";
 }
+
+# vim:ft=perl
 
