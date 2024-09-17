@@ -41,10 +41,6 @@ def sanitize(item, ids):
   if item['priority'] not in ['must', 'should', 'could', 'will not']:
     die(f"unknown or missing requirement priority {repr(item['type'])}")
 
-  # logic checks
-  if item['type'] != 'user' and item['done'] is not None:
-    die("has definition of done but is not a user requirement")
-
   # conversions
   if isinstance(item['done'], list):
     # safety check
@@ -86,7 +82,7 @@ def fmt_tex(data):
       tex.env('description',
         tex.cmd('item', ['Priority']) + req['priority'].title() +\
         tex.cmd('item', ['Requirement']) + req['description'] +\
-        (tex.cmd('item', ['Definition of done']) + req['done'] if req['type'] == 'user' else "")
+        (tex.cmd('item', ['Definition of done']) + req['done'] if req['done'] is not None else "")
       )
     )
   return "\n\n".join(out)
