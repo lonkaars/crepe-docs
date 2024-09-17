@@ -9,6 +9,9 @@ def group(*args):
       out += "{" + arg + "}"
   return out
 
+def join(*things):
+  return "".join(things)
+
 def string(content):
   return r"\string" + content
 
@@ -18,11 +21,14 @@ def cmd(*args):
   if len(args) == 0: args = [""]
   return f"\\{name}" + group(*args)
 
+def pedef(*args):
+  return r"\protected@edef" + cmd(*args)
+
 def csdef(*args):
   return r"\def" + cmd(*args)
 
-def auxout(content):
-  return r"\write\@auxout" + group(content)
+def auxout(*content):
+  return r"\write\@auxout" + group(join(*content))
 
 def scmd(*args):
   return string(cmd(*args))
@@ -46,4 +52,11 @@ def esc(plain):
 
 def tabrule(*cells):
   return "&".join(cells) + "\\\\"
+
+def withatletter(*content):
+  return join(
+    cmd('makeatletter'),
+    *content,
+    cmd('makeatother'),
+  )
 

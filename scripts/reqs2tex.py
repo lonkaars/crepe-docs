@@ -107,19 +107,25 @@ def fmt_aux(data):
   return "\n".join(out)
 
 def fmt_tex(data):
-  out = []
+  out = ""
   for item in data:
-    out.append(
-      tex.cmd('subsection', item[KEY.ID]) +\
-      tex.cmd('label', label2ref(item[KEY.LABEL])) +\
-      tex.cmd('par') +\
-      tex.env('description',
-        tex.cmd('item', ['Priority']) + item[KEY.PRIORITY].title() +\
-        tex.cmd('item', ['Requirement']) + item[KEY.DESCRIPTION] +\
-        (tex.cmd('item', ['Definition of done']) + item[KEY.DONE] if item[KEY.DONE] is not None else "")
-      )
+    out += tex.join(
+      tex.cmd('subsection', item[KEY.ID]),
+      tex.withatletter(
+        tex.cmd('cref@constructprefix', 'requirement', r'\cref@result'),
+        tex.pedef('@currentlabel', item[KEY.ID]),
+        tex.pedef('@currentlabelname', item[KEY.ID]),
+        tex.pedef('cref@currentlabel', tex.group(['requirement'], [''], [r'\cref@result']) + item[KEY.ID]),
+      ),
+      tex.cmd('label', ['requirement'], label2ref(item[KEY.LABEL])),
+      tex.cmd('par'),
+      tex.env('description', tex.join(
+        tex.cmd('item', ['Priority']) + item[KEY.PRIORITY].title(),
+        tex.cmd('item', ['Requirement']) + item[KEY.DESCRIPTION],
+        (tex.cmd('item', ['Definition of done']) + item[KEY.DONE] if item[KEY.DONE] is not None else ""),
+      ))
     )
-  return "".join(out)
+  return out
 
 def main(input_file):
   data = {}
