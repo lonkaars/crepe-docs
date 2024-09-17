@@ -49,6 +49,7 @@ max: 2024-09-12 1h worked on gameObject research
 max: 2024-09-13 1h30m fourth project meeting
 max: 2024-09-16 1h researching self-made ECS possibilities
 max: 2024-09-16 1h30m researching ECS libraries
+max: 2024-09-17 1h30m fifth project meeting
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
