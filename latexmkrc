@@ -18,25 +18,23 @@ push @file_not_found, '^Package .* No file `([^\\\']*)\\\'';
 push @generated_exts, 'glo', 'gls', 'glg';
 add_cus_dep('aux', 'glstex', 0, 'bib2gls');
 sub bib2gls {
-	return system "bib2gls '$_[0]'";
+	return Run_msg("bib2gls $_[0]");
 }
 
 add_cus_dep('puml', 'eps', 0, 'plantuml');
 sub plantuml {
-  return system "plantuml -teps '$_[0].puml'";
+  return Run_msg("plantuml -teps $_[0].puml");
 }
 
 add_cus_dep('txt', 'tex', 0, 'time2tex');
 sub time2tex {
-	my $script = catfile("scripts", "time2tex.py");
-	return system "python3 $script '$_[0].txt'";
+	return Run_msg("python3 @{[catfile('scripts', 'time2tex.py')]} $_[0].txt");
 }
 
 add_cus_dep('toml', 'tex', 0, 'reqs2tex');
 add_cus_dep('toml', 'aux', 0, 'reqs2tex');
 sub reqs2tex {
-	my $script = catfile("scripts", "reqs2tex.py");
-	return system "python3 $script '$_[0].toml'";
+	return Run_msg("python3 @{[catfile('scripts', 'reqs2tex.py')]} $_[0].toml");
 }
 
 # vim:ft=perl
