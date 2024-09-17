@@ -1,7 +1,13 @@
 # utility function for converting latex code
 
 def group(*args):
-  return "".join("{" + arg + "}" for arg in args)
+  out = ""
+  for arg in args:
+    if isinstance(arg, list):
+      out += "[" + arg[0] + "]"
+    if isinstance(arg, str):
+      out += "{" + arg + "}"
+  return out
 
 def string(content):
   return r"\string" + content
@@ -40,4 +46,7 @@ def esc(plain):
 
 def tabrule(*cells):
   return "&".join(cells) + "\\\\"
+
+def label2ref(*labels):
+  return ",".join(["req:" + label.replace('.', ':') for label in labels])
 

@@ -3,7 +3,7 @@
 % with the [draft] option. this replaces all images with placeholders.
 \input{meta.tex}
 
-\input{reqs.aux}
+\externaldocument{reqs}[./requirements.pdf]
 
 \title{Example Document}
 
@@ -174,7 +174,7 @@ the glossary that is automatically printed after \codeinline{\end{document}}.
 \subsubsection{Requirements}
 
 Requirements are referenced like \codeinline{\label}s:
-e.g.~\cref{req:audio:handle:id,req:audio:async-api:id}.
+e.g.~\cref{req:audio:handle,req:audio:async-api}.
 
 \end{document}
 

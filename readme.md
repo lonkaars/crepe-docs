@@ -18,6 +18,12 @@ A `latexmkrc` file is provided for copmilation with latexmk. The documents
 should also compile under [Visual Studio Code][vscode] using the [LaTeX
 Workshop extension][latexworkshop], as well as [VimTeX][vimtex].
 
+## TODO
+
+- Requirement cross-references are broken (they print both the label and the
+  path to the other document, should be label only). Interesting:
+  `\creflabelformat` and `\@templabel` (inside #2 of `\creflabelformat`).
+
 [vscode]: https://code.visualstudio.com
 [latexworkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
 [vimtex]: https://github.com/lervag/vimtex

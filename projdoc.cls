@@ -40,6 +40,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
 \RequirePackage{needspace}
+\RequirePackage{xr-hyper}
 \RequirePackage{hyperref}
 \RequirePackage{microtype}
 \RequirePackage{xcolor}
@@ -120,16 +121,23 @@
 	itemsep=\dimexpr\style@itemsep-\style@parsep\relax,
 	parsep=\style@parsep,
 }
-\def\projdoc@setdescriptionstyle{%
+\def\projdoc@description@before{%
 	\renewcommand\makelabel[1]{%
 		{\bfseries ##1}:%
 	}%
 }
-\setdescription{
-	before={\projdoc@setdescriptionstyle},
-	leftmargin=3em,
-	labelindent=3ex,
+\newlength\projdoc@description@leftmargin%
+\projdoc@description@leftmargin=3em%
+\newlength\projdoc@description@labelindent%
+\projdoc@description@labelindent=3ex%
+\def\projdoc@setdescriptionstyle{%
+	\setdescription{
+		before={\projdoc@description@before},
+		leftmargin=\projdoc@description@leftmargin,
+		labelindent=\projdoc@description@labelindent,
+	}%
 }
+\projdoc@setdescriptionstyle%
 \makeatother
 
 % create a label using \customlabel[<creftype>]{<refname>}{<reftext>} that displays
@@ -229,11 +237,9 @@
 	}{}%
 	% glossary
 	\ifbool{projdoc@used@gls}{%
-		\setdescription{
-			before={\projdoc@setdescriptionstyle},
-			leftmargin=2ex,
-			labelindent=0pt,
-		}%
+		\projdoc@description@leftmargin=2ex%
+		\projdoc@description@labelindent=0pt%
+		\projdoc@setdescriptionstyle%
 		\section*{Glossary}%
 		\begin{multicols}{2}%
 			\renewcommand{\glossarysection}[2][]{}%

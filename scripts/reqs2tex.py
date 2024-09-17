@@ -9,7 +9,7 @@ def flatten(data):
     items = flatten(value)
     for item in items:
       if 'label' in item:
-        item['label'] = f"{key}:{item['label']}"
+        item['label'] = f"{key}.{item['label']}"
       else:
         item['label'] = f"{key}"
     out += items
@@ -24,41 +24,72 @@ def make_id(item):
     counter = id_counter,
   )
 
+def sanitize(item, ids):
+  def die(msg):
+    print(f"[{item['label']}]: {msg}")
+    exit(1)
+
+  # ensure properties
+  item['description'] = item.get('description')
+  item['done'] = item.get('done')
+  item['priority'] = item.get('priority')
+  item['type'] = item.get('type')
+
+  # type checks
+  if item['type'] not in ['system', 'user']:
+    die(f"unknown or missing requirement type {repr(item['type'])}")
+  if item['priority'] not in ['must', 'should', 'could', 'will not']:
+    die(f"unknown or missing requirement priority {repr(item['type'])}")
+
+  # logic checks
+  if item['type'] != 'user' and item['done'] is not None:
+    die("has definition of done but is not a user requirement")
+
+  # conversions
+  if isinstance(item['done'], list):
+    # safety check
+    if not set(item['done']).issubset(ids):
+      die("definition of done includes unknown requirement(s)")
+    item['done'] = tex.cmd('Cref', tex.label2ref(*item['done']))
+
 def convert(data):
   reqs = flatten(data)
-  for index, item in enumerate(reqs):
+  index = 0
+  for item in reqs:
     item['id'] = tex.esc(make_id(item))
-    item['index'] = index
-    item['description'] = item.get('description', '???')
-    item['done'] = item.get('done', None)
-    item['priority'] = item.get('priority', 'must')
-    item['type'] = item.get('type', 'system')
     item['deleted'] = item.get('deleted', False)
+    if item['deleted']: continue
+    item['index'] = index
+    index += 1
+    sanitize(item, [req['label'] for req in reqs])
 
   # skip deleted requirements (but process for make_id)
   reqs = [item for item in reqs if item['deleted'] == False]
 
   return reqs
 
-def req2aux(req):
-  # TODO: this is a dead-end solution, newlabel only works for in-document anchors, not external links
-  out = [
-    tex.scmd('newlabel', f"req:{req['label']}:id", tex.group(req['id'], req['id'], '', './requirements.pdf', '')),
-    tex.scmd('newlabel', f"req:{req['label']}:id@cref", tex.group(f"[requirement][][]{req['id']}", '')),
-  ]
-  return "\n".join([tex.auxout(line) for line in out])
-
 def fmt_aux(data):
-  out = ""
-  out += tex.cmd('makeatletter')
-  out += "\n".join([req2aux(req) for req in data])
-  out += tex.cmd('makeatother')
-  return out
+  out = []
+  for req in data:
+    ref = tex.label2ref(req['label'])
+    out += [
+      tex.cmd('newlabel', f"{ref}", tex.group(req['id'], req['id'], 'ggg', 'hhh', 'iii')),
+      tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{req['id']}", '[ccc][ddd][eee]fff')),
+    ]
+  return "\n".join(out)
 
 def fmt_tex(data):
-  return "\n".join([
-    tex.cmd('relax')
-  ])
+  out = []
+  for req in data:
+    out.append(
+      tex.cmd('subsection', req['id']) + "\n\n" +\
+      tex.env('description',
+        tex.cmd('item', ['Priority']) + req['priority'].title() +\
+        tex.cmd('item', ['Requirement']) + req['description'] +\
+        (tex.cmd('item', ['Definition of done']) + req['done'] if req['type'] == 'user' else "")
+      )
+    )
+  return "\n\n".join(out)
 
 def main(input_file):
   data = {}

@@ -1,10 +1,35 @@
+# This is a TOML file containing all project requirements. The reqs2tex script
+# can be used to generate the files necessary to compile requirements.tex and
+# cross-reference the requirements from other documents.
+#
+# Note that TOML has a hash table structure, so keys used for defining
+# requirement properties cannot be used for requirement IDs. The properties are:
+# label, type, id, index, deleted, done, description, priority
+
+# This is the requirement cross-reference ID. Requirements can be
+# (cross-)referenced from LaTeX by prefixing this ID with `req:` and
+# substituting dots for colons (i.e. this requirement is referenced as
+# \cref{req:audio:async-api}).
 [audio.async-api]
+# Requirement type ('system' | 'user')
 type = 'system'
+# MoSCoW priority ('must' | 'should' | 'could' | 'will not')
 priority = 'must'
+# Requirement body. Supports LaTeX formatting. (tip: use single quotes so
+# backslash doesn't act as an escape character)
 description = '''
 The public audio \gls{api} supports starting audio samples asynchronously
 (i.e.~fire and forget).
 '''
+# Definition of done (user requirements only). If 'done' is a string, it is
+# treated as LaTeX code (like description), if it is a list of strings, each
+# item is treated as the ID of another requirement.
+#done = 'When I feel like it'
+#done = [ 'audio.handle', 'audio.stream-mix' ]
+# Requirements that are no longer applicable should set `deleted` to `true`.
+# This will make sure the requirements are numbered consistently across
+# different document revisions.
+#deleted = true
 
 [audio.handle]
 type = 'system'
