@@ -28,6 +28,7 @@ loek: 2024-09-14 45m refactoring :: clean up LaTeX build system
 loek: 2024-09-14 1h10m docs :: requirements
 loek: 2024-09-15 2h55m docs :: requirements
 loek: 2024-09-16 2h30m docs :: requirements
+loek: 2024-09-17 1h20m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
