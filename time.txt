@@ -25,6 +25,11 @@ loek: 2024-09-12 30m research :: audio
 loek: 2024-09-13 1h10m project meeting
 loek: 2024-09-13 45m integration :: PR merge
 loek: 2024-09-14 45m refactoring :: clean up LaTeX build system
+loek: 2024-09-14 1h10m docs :: requirements
+loek: 2024-09-15 2h55m docs :: requirements
+loek: 2024-09-16 2h30m docs :: requirements
+loek: 2024-09-17 1h20m project meeting
+loek: 2024-09-17 15m bugs :: cross-platform latexmk filespec
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -52,6 +57,11 @@ wouter: 2024-09-05 20m setting up research document
 wouter: 2024-09-05 1h researching game enigne
 wouter: 2024-09-06 3h researching game enigne
 wouter: 2024-09-09 2h researching SDL and SFML2
+wouter: 2024-09-10 1h30m third project meeting
+wouter: 2024-09-10 45m project videos
+wouter: 2024-09-10 40m second project lesson
+wouter: 2024-09-12 2h researching gameloops
+wouter: 2024-09-14 3h working on game loop poc
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -61,6 +71,14 @@ niels: 2024-09-04 2h setting up vimtex on neovim
 niels: 2024-09-04 1h researching different code styles and c++ guidelines
 niels: 2024-09-05 1h30m first group meeting
 niels: 2024-09-06 2h added c++ guidelines in the contributing.md
+niels: 2024-09-09 1h adjusted code of conduct based on feedback
+niels: 2024-09-10 1h30m project meeting
+niels: 2024-09-10 45m project videos
+niels: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
+niels: 2024-09-11 3h researching the different resourches from unity
+niels: 2024-09-12 3h researching the best option for audio/sprites format and comparing it to sdl2 and sfml.
+niels: 2024-09-13 1h30m project meeting
+niels: 2024-09-13 10m weekly update
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
