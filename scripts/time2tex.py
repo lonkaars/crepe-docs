@@ -19,7 +19,7 @@ def fmt_duration(sec):
   return "\\,".join(out)
 
 def fmt_percentage(fac):
-  return tex.sgroup(
+  return tex.group(
     tex.cmd('footnotesize') +\
     tex.cmd('itshape') +\
     tex.esc(f"({round(fac * 100)}%)")
