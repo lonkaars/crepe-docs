@@ -1,17 +1,47 @@
 #!/bin/python3
 import sys, tomllib, tex
+from enum import StrEnum
 
+def label2ref(*labels):
+  return ",".join(["req:" + label.replace('.', ':') for label in labels])
+
+class KEY(StrEnum):
+  LABEL = 'label'
+  TYPE = 'type'
+  ID = 'id'
+  INDEX = 'index'
+  DELETED = 'deleted'
+  DONE = 'done'
+  DESCRIPTION = 'description'
+  PRIORITY = 'priority'
+
+class REQ_TYPE(StrEnum):
+  SYSTEM = 'system'
+  USER = 'user'
+
+class REQ_PRIORITY(StrEnum):
+  MUST = 'must'
+  SHOULD = 'should'
+  COULD = 'could'
+  WONT = 'will not'
+
+# this doesn't work right
 def flatten(data):
-  if 'description' in data:
-    return [ data ]
   out = []
+  # this key is a requirement
+  if KEY.DESCRIPTION in data:
+    out.append(data)
+  # check for children
   for key, value in data.items():
+    # skip over reserved keys
+    if key in KEY: continue
+
     items = flatten(value)
     for item in items:
-      if 'label' in item:
-        item['label'] = f"{key}.{item['label']}"
+      if KEY.LABEL in item:
+        item[KEY.LABEL] = f"{key}.{item[KEY.LABEL]}"
       else:
-        item['label'] = f"{key}"
+        item[KEY.LABEL] = f"{key}"
     out += items
   return out
 
@@ -20,72 +50,75 @@ def make_id(item):
   global id_counter
   id_counter += 1
   return "{type_short}#{counter:03d}".format(
-    type_short = item['type'][0].upper(),
+    type_short = item[KEY.TYPE][0].upper(),
     counter = id_counter,
   )
 
 def sanitize(item, ids):
   def die(msg):
-    print(f"[{item['label']}]: {msg}")
+    print(f"[{item[KEY.LABEL]}]: {msg}")
     exit(1)
 
   # ensure properties
-  item['description'] = item.get('description')
-  item['done'] = item.get('done')
-  item['priority'] = item.get('priority')
-  item['type'] = item.get('type')
+  item[KEY.DESCRIPTION] = item.get(KEY.DESCRIPTION)
+  item[KEY.DONE] = item.get(KEY.DONE)
+  item[KEY.PRIORITY] = item.get(KEY.PRIORITY)
+  item[KEY.TYPE] = item.get(KEY.TYPE)
 
   # type checks
-  if item['type'] not in ['system', 'user']:
-    die(f"unknown or missing requirement type {repr(item['type'])}")
-  if item['priority'] not in ['must', 'should', 'could', 'will not']:
-    die(f"unknown or missing requirement priority {repr(item['type'])}")
+  if item[KEY.TYPE] not in REQ_TYPE:
+    die(f"unknown or missing requirement type: {repr(item[KEY.TYPE])}")
+  if item[KEY.PRIORITY] not in REQ_PRIORITY:
+    die(f"unknown or missing requirement priority: {repr(item[KEY.PRIORITY])}")
 
   # conversions
-  if isinstance(item['done'], list):
+  if isinstance(item[KEY.DONE], list):
     # safety check
-    if not set(item['done']).issubset(ids):
+    if not set(item[KEY.DONE]).issubset(ids):
       die("definition of done includes unknown requirement(s)")
-    item['done'] = tex.cmd('Cref', tex.label2ref(*item['done']))
+    item[KEY.DONE] = tex.cmd('Cref', label2ref(*item[KEY.DONE]))
 
 def convert(data):
   reqs = flatten(data)
+  all_ids = [item[KEY.LABEL] for item in reqs]
   index = 0
   for item in reqs:
-    item['id'] = tex.esc(make_id(item))
-    item['deleted'] = item.get('deleted', False)
-    if item['deleted']: continue
-    item['index'] = index
+    item[KEY.ID] = tex.esc(make_id(item))
+    item[KEY.DELETED] = item.get(KEY.DELETED, False)
+    if item[KEY.DELETED]: continue
+    item[KEY.INDEX] = index
     index += 1
-    sanitize(item, [req['label'] for req in reqs])
+    sanitize(item, all_ids)
 
   # skip deleted requirements (but process for make_id)
-  reqs = [item for item in reqs if item['deleted'] == False]
+  reqs = [item for item in reqs if item[KEY.DELETED] == False]
 
   return reqs
 
 def fmt_aux(data):
   out = []
-  for req in data:
-    ref = tex.label2ref(req['label'])
+  for item in data:
+    ref = label2ref(item[KEY.LABEL])
     out += [
-      tex.cmd('newlabel', f"{ref}", tex.group(req['id'], req['id'], 'ggg', 'hhh', 'iii')),
-      tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{req['id']}", '[ccc][ddd][eee]fff')),
+      tex.cmd('newlabel', f"{ref}", tex.group(item[KEY.ID], item[KEY.ID], 'ggg', 'hhh', 'iii')),
+      tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{item[KEY.ID]}", '[ccc][ddd][eee]fff')),
     ]
   return "\n".join(out)
 
 def fmt_tex(data):
   out = []
-  for req in data:
+  for item in data:
     out.append(
-      tex.cmd('subsection', req['id']) + "\n\n" +\
+      tex.cmd('subsection', item[KEY.ID]) +\
+      tex.cmd('label', label2ref(item[KEY.LABEL])) +\
+      tex.cmd('par') +\
       tex.env('description',
-        tex.cmd('item', ['Priority']) + req['priority'].title() +\
-        tex.cmd('item', ['Requirement']) + req['description'] +\
-        (tex.cmd('item', ['Definition of done']) + req['done'] if req['done'] is not None else "")
+        tex.cmd('item', ['Priority']) + item[KEY.PRIORITY].title() +\
+        tex.cmd('item', ['Requirement']) + item[KEY.DESCRIPTION] +\
+        (tex.cmd('item', ['Definition of done']) + item[KEY.DONE] if item[KEY.DONE] is not None else "")
       )
     )
-  return "\n\n".join(out)
+  return "".join(out)
 
 def main(input_file):
   data = {}

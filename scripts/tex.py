@@ -47,6 +47,3 @@ def esc(plain):
 def tabrule(*cells):
   return "&".join(cells) + "\\\\"
 
-def label2ref(*labels):
-  return ",".join(["req:" + label.replace('.', ':') for label in labels])
-
