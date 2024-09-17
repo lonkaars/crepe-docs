@@ -60,3 +60,12 @@ def withatletter(*content):
     cmd('makeatother'),
   )
 
+def explist(*items):
+  out = []
+  for item in items:
+    if isinstance(item, str) or not hasattr(item, '__iter__'):
+      out.append(item)
+    else:
+      out += explist(*item)
+  return out
+
