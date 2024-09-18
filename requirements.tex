@@ -8,7 +8,6 @@
 \makeatother
 \setcounter{secnumdepth}{1}
 
-\usepackage{bophook}
 \makeatletter
 \def\reqlabel#1{\csuse{reqlabel@#1}}
 \def\reqlabelreset{%
@@ -26,7 +25,7 @@
 	}%
 }
 % Abbreviate requirement field labels after first occurrence on every page
-\AtBeginPage{\reqlabelreset}
+\AtBeginShipout{\reqlabelreset}
 \makeatother
 
 \title{Requirements}
