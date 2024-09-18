@@ -52,8 +52,9 @@ layers are divided into the following categories:\noparbreak
 \subsubsection{Structures}
 
 The above mentioned layers should be structured, somehow. One of the requirements is
-that the game engine's API uses a so-called gameObject (with one or more component(s)).
-The gameObject is described in more detail at \cref{sec:Gameobjects/components}.
+that the game engine's API uses a so-called gameObject (with one or more
+component(s)). The gameObject is described in more detail at
+\cref{sec:Gameobjects/components}.
 
 There are multiple structures that could be used to structure a game engine. It's of
 course possible to use inheritance. A major disadvantages of inheritance is that it's
@@ -61,54 +62,62 @@ not flexible. However, the provided class diagram of the game engine's API alrea
 specifies that composition should be used (in stead of inheritance). So, let's take a
 look at structures that use composition.
 
-The Decorator design pattern (as shown in \cref{fig:decorator}) could be used to structure
-the game engine. A gameObject's propperties/behavior is determined by one (or more)
-components. The Decorator design pattern allows to modify an object's propperties/behavior
-by adding one (or more) Decorators. The object that is modified, could be the gameObject and
-the components could be the Decorators. This is not exactly the same as the required API,
-but it's very close. A major disadvantage of such Decorator design pattern, is that the
-interface of all components should be the same (they should share the same methods), because
-the client (which is the scene in our case) can only call/reach the components through the
-interface. This would require very general methods (at the interface), which might make the
-programming harder. \autocite{man:DecoratorDesignPattern} \autocite{man:Decorator}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{img/DecoratorDesignPattern.png}
-    \caption{Decorator design pattern \autocite{img:Decorator}}
-    \label{fig:decorator}
+The Decorator design pattern (as shown in \cref{fig:decorator}) could be used to
+structure the game engine. A gameObject's propperties/behavior is determined by one
+(or more) components. The Decorator design pattern allows to modify an object's
+propperties/behavior by adding one (or more) Decorators. The object that is modified,
+could be the gameObject and the components could be the Decorators. This is not
+exactly the same as the required API, but it's very close. A major disadvantage of
+such Decorator design pattern, is that the interface of all components should be the
+same (they should share the same methods), because the client (which is the scene in
+our case) can only call/reach the components through the interface. This would
+require very general methods (at the interface), which might make the programming
+harder \autocite{man:DecoratorDesignPattern,man:Decorator}.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/decorator-design-pattern.puml}
+	\caption{Decorator design pattern}
+	Source: \autocite{img:Decorator}
+	\label{fig:decorator}
 \end{figure}
 
 TODO: Add Extension Objects design pattern (if this is applicable)!
 
-Another (very popular) design pattern to structure the game engine, is the Entity Component
-System (\gls{ecs}). The \gls{ecs} is made out of three main subsystems, namely entities,
-components and systems. Entities are just IDs. An entity is made out of a gameObject and one
-(or more) components. Components are the classes that hold the data. The components determine
-what kind of entity it is (e.g. a sprite, audio, and so on). Systems take care of the behavior
-of the entities. Systems mainly read and write the enity's components data. The \gls{ecs}
-clearly distinguishes the data (components) from the functionality (systems).
-TODO: Continue this explanation (also add some diagrams to make the ECS more clear)!
+Another (very popular) design pattern to structure the game engine, is the Entity
+Component System (\gls{ecs}). The \gls{ecs} is made out of three main subsystems,
+namely entities, components and systems. Entities are just IDs. An entity is made out
+of a gameObject and one (or more) components. Components are the classes that hold
+the data. The components determine what kind of entity it is (e.g. a sprite, audio,
+and so on). Systems take care of the behavior of the entities. Systems mainly read
+and write the enity's components data. The \gls{ecs} clearly distinguishes the data
+(components) from the functionality (systems).
+
+% TODO: Continue this explanation (also add some diagrams to make the ECS more clear)!
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
-popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is based
-on the amount of stars on GitHub.
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{ll@{\qquad}lr}
-        \toprule
-        \textbf{Name} & \textbf{Short Description} & \textbf{Stars} & \textbf{License} \\
-        \midrule
-        EnTT & Fast and reliable entity-component system & 10k & MIT \\
-        Flecs & A Multithreaded Entity Component System & 6.3k & MIT \\
-        EntityX & Fast, type-safe C++ entity component system & 2.2k & MIT \\
-        \bottomrule
-    \end{tabular}
-    \caption{Popular \gls{ecs} libraries \autocite{github:001}}
-    \label{tab:popularECSLibraries}
+popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is
+based on the amount of stars on GitHub.
+
+\begin{table}
+	\centering
+	\begin{tabular}{ll@{\qquad}lr}
+		\toprule
+		\textbf{Name} & \textbf{Short Description} & \textbf{Stars} & \textbf{License}\\
+		\midrule
+		EnTT & Fast and reliable entity-component system & 10k & MIT\\
+		Flecs & A Multithreaded Entity Component System & 6.3k & MIT\\
+		EntityX & Fast, type-safe C++ entity component system & 2.2k & MIT\\
+		\bottomrule
+	\end{tabular}
+	\caption{Popular \gls{ecs} libraries}
+	Source: \autocite{github:awesome-ecs}
+	\label{tab:popularECSLibraries}
 \end{table}
 
-It is, of course, not necessary to use a library to implement an \gls{ecs} architecture.
-However, it seems very hard to achieve the same performance as a library. \autocite{github:002}
+It is, of course, not necessary to use a library to implement an \gls{ecs}
+architecture. However, it seems very hard to achieve the same performance as a
+library \autocite{github:ecsfaq}.
 
 \subsection{Conclusion}
 
