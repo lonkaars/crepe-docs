@@ -152,23 +152,18 @@ software, emulators, and popular games, including Valve's award-winning catalog 
 many Humble Bundle games.''} \gls{sdl2} is written in the C programming language, and
 therefore, structs and functions are used instead of objects and methods.
 
-The advantages of \gls{sdl2} are:\noparbreak
-\begin{itemize}
-	\item Controller support is provided.
-	\item 2D and 3D rendering are supported.
-	\item Broad multiplatform support is offered, including older consoles such as the
-		Wii.
-	\item Low-level control is available.
-	\item A large community ensures wide usage.
-	\item Extended libraries can be used to add functionalities, such as SDL\_Mixer for
-		sound.
-\end{itemize}
-
-The disadvantages of \gls{sdl2} are:\noparbreak
-\begin{itemize}
-	\item A limited built-in 2D renderer is provided.
-	\item Extended libraries require setup.
-\end{itemize}
+\begin{comparison}
+	\pro{Controller support is provided.}
+	\pro{2D and 3D rendering are supported.}
+	\pro{Broad multiplatform support is offered, including older consoles such as the
+	Wii.}
+	\pro{Low-level control is available.}
+	\pro{A large community ensures wide usage.}
+	\pro{Extended libraries can be used to add functionalities, such as SDL\_Mixer for
+	sound.}
+	\con{A limited built-in 2D renderer is provided.}
+	\con{Extended libraries require setup.}
+\end{comparison}
 
 \paragraph{SFML}
 
@@ -176,24 +171,19 @@ The disadvantages of \gls{sdl2} are:\noparbreak
 network, system, and window. This framework, written in C++, was designed to simplify
 game development.
 
-The advantages of \gls{sfml} are:
-\begin{itemize}
-	\item Object-oriented design is provided since it is written in C++.
-	\item A built-in 2D renderer is available for ease of use.
-	\item A built-in audio system is included.
-	\item Cross-platform support is available for Linux, Windows, and macOS.
-	\item Networking capabilities are provided for multiplayer or networked
-		applications.
-\end{itemize}
-
-The disadvantages of \gls{sfml} are:
-\begin{itemize}
-	\item The 2D rendering engine may experience performance issues in large-scale
-		games.
-	\item The community is smaller compared to \gls{sdl2}.
-	\item No native 3D support is provided.
-	\item Not all image formats are supported.
-\end{itemize}
+\begin{comparison}
+	\pro{Object-oriented design is provided since it is written in C++.}
+	\pro{A built-in 2D renderer is available for ease of use.}
+	\pro{A built-in audio system is included.}
+	\pro{Cross-platform support is available for Linux, Windows, and macOS.}
+	\pro{Networking capabilities are provided for multiplayer or networked
+	applications.}
+	\con{The 2D rendering engine may experience performance issues in large-scale
+	games.}
+	\con{The community is smaller compared to \gls{sdl2}.}
+	\con{No native 3D support is provided.}
+	\con{Not all image formats are supported.}
+\end{comparison}
 
 \subsubsection{Audio}
 
