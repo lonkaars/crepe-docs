@@ -113,7 +113,7 @@ def fmt_aux(data):
         '[][][]',
         '',
         '',
-        './requirements.pdf',
+        '',
       )),
     ]
   return "\n".join(out)

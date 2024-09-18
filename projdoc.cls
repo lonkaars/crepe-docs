@@ -216,7 +216,7 @@
 ]
 
 % requirements
-\externaldocument{reqs}[./requirements.pdf]
+\externaldocument{reqs}[requirements.pdf]
 
 % default document header/trailer
 \makeatletter
