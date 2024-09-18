@@ -101,8 +101,20 @@ def fmt_aux(data):
   for item in data:
     ref = label2ref(item[KEY.LABEL])
     out += [
-      tex.cmd('newlabel', f"{ref}", tex.group(item[KEY.ID], item[KEY.ID], 'ggg', 'hhh', 'iii')),
-      tex.cmd('newlabel', f"{ref}@cref", tex.group(f"[requirement][aaa][bbb]{item[KEY.ID]}", '[ccc][ddd][eee]fff')),
+      tex.cmd('newlabel', f"{ref}", tex.group(
+        item[KEY.ID],
+        '',
+        '',
+        ref,
+        '',
+      )),
+      tex.cmd('newlabel', f"{ref}@cref", tex.group(
+        f"[requirement][][]{item[KEY.ID]}",
+        '[][][]',
+        '',
+        '',
+        './requirements.pdf',
+      )),
     ]
   return "\n".join(out)
 
