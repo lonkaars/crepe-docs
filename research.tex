@@ -44,12 +44,16 @@ layers are divided into the following categories:\noparbreak
 		performance profiling.
 	\item[Scripting layer] Runs scripts, such as Lua or Python.
 	\item[Memory systems] Handles and monitors memory usage.
-	\item[\gls{ecs}] Provides a modular way to create game objects, add physics, and
-		define how the engine interacts with objects.
 	\item[Physics] Adds specific physics to objects.
 	\item[Audio] Processes audio.
 	\item[AI] Provides artificial inteligent behavior.
 \end{description}
+
+\subsubsection{Structure}
+
+The above mentioned layers should be structured, somehow. One of the requirements is
+that the game engine's API uses a so-called gameObject (with one or more component(s)).
+The gameObject is described in more detail at \cref{sec:Gameobjects/components}. ...
 
 \subsubsection{ECS}
 
@@ -286,6 +290,7 @@ Not considered further:
 \subsection{Conclusion}
 
 \section{Gameobjects/components}
+\label{sec:Gameobjects/components}
 
 \subsection{Introduction}
 
@@ -302,16 +307,7 @@ A gameObject is the most important concept in Unity. Every object in a game is a
 GameObject, from characters and collectible items to the lights, cameras and special
 effects. However, a gameObject itself can't do anything on its own. A gameObject
 needs to be given properties before it can become a character, an envirnment, or a
-special effect.
-% TODO: cite https://docs.unity3d.com/Manual/GameObjects.html
-
-\subsection{Conclusion}
-
-\section{AI}
-
-\subsection{Introduction}
-
-\subsection{Findings}
+special effect. \autocite{man:unityGameobjects}
 
 A gameObject can be seen as a container for components. Components are the properties
 of the gameObject. A few examples of components are sprites, animators, audioSources,
@@ -326,14 +322,20 @@ gameObject.
 Each gameObject always has one transform class. The transform class describes the
 position, rotation, and scale within the scene. Some component use this information
 to e.g. scale a sprite. Other components eddit this information to e.g.~model
-gravity.
-% TODO: cite https://docs.unity3d.com/Manual/class-Transform.html
+gravity. \autocite{man:unityTransformClass}
 
 A gameObject can have one (or multiple) children gameObject(s). All children
 gameObjects, of course, also have one transform class. However, the position,
 rotation, and scale of this class, is always the same as the child's parent. A child
-can not have more than one parent.
-% TODO: cite https://docs.unity3d.com/Manual/class-Transform.html
+can not have more than one parent. \autocite{man:unityTransformClass}
+
+\subsection{Conclusion}
+
+\section{AI}
+
+\subsection{Introduction}
+
+\subsection{Findings}
 
 \subsection{Conclusion}
 
