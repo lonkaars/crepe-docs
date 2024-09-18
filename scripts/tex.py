@@ -9,6 +9,9 @@ def group(*args):
       out += "{" + arg + "}"
   return out
 
+def join(*things):
+  return "".join(things)
+
 def string(content):
   return r"\string" + content
 
@@ -18,11 +21,14 @@ def cmd(*args):
   if len(args) == 0: args = [""]
   return f"\\{name}" + group(*args)
 
+def pedef(*args):
+  return r"\protected@edef" + cmd(*args)
+
 def csdef(*args):
   return r"\def" + cmd(*args)
 
-def auxout(content):
-  return r"\write\@auxout" + group(content)
+def auxout(*content):
+  return r"\write\@auxout" + group(join(*content))
 
 def scmd(*args):
   return string(cmd(*args))
@@ -47,6 +53,29 @@ def esc(plain):
 def tabrule(*cells):
   return "&".join(cells) + "\\\\"
 
-def label2ref(*labels):
-  return ",".join(["req:" + label.replace('.', ':') for label in labels])
+def withatletter(*content):
+  return join(
+    cmd('makeatletter'),
+    *content,
+    cmd('makeatother'),
+  )
+
+def explist(*items):
+  out = []
+  for item in items:
+    if isinstance(item, str) or not hasattr(item, '__iter__'):
+      out.append(item)
+    else:
+      out += explist(*item)
+  return out
+
+def sec(level, heading):
+  level = max(min(3, level), 0)
+  section = [
+    'section',
+    'subsection',
+    'subsubsection',
+    'paragraph',
+  ][level]
+  return cmd(section, heading)
 
