@@ -75,6 +75,9 @@
 \bigskipamount=7mm
 \medskipamount=4mm
 
+% number paragraphs by default
+\setcounter{secnumdepth}{4}
+
 % section placement / appearance
 \newlength{\sectionpenalty}
 \newlength{\subsectionpenalty}
