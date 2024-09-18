@@ -206,11 +206,17 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 The game engine is required to have an audio system
 \autocite[\ref{req:audio}]{crepe:requirements}. Since writing a custom real-time
 audio mixing engine is outside the scope of this project\mref, this section compares
-various standalone audio engines that could be used in the engine.
+various standalone audio libraries for suitability in the engine.
+
+\Cref{sec:audio:libs} details which libraries were considered,
+\cref{sec:audio:benchmark} compares their performance, and
+\cref{sec:audio:conclusion} concludes with a recommendation for most performant audio
+library.
 
 \subsection{Libraries}
+\label{sec:audio:libs}
 
-\Cref{tab:audio-engines} compares several standalone audio engine libraries that fit
+\Cref{tab:audio:libs} lists the standalone audio engine libraries that fit
 \cref{req:audio,req:lib:license}.
 
 \begin{table}
@@ -225,7 +231,7 @@ various standalone audio engines that could be used in the engine.
 		\bottomrule
 	\end{tabular}
 	\caption{Audio engine library comparison}
-	\label{tab:audio-engines}
+	\label{tab:audio:libs}
 \end{table}
 
 Other popular libraries that were researched but are unsuitable for this project
@@ -234,6 +240,43 @@ include:\noparbreak
 	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license})
 	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing
 \end{description}
+
+\subsection{Benchmarks}
+\label{sec:audio:benchmark}
+
+The same benchmark application was written for each of the libraries listed in
+\cref{tab:audio:libs}. The application does the following:\noparbreak
+\begin{enumerate}
+	\item Load a background track (Ogg Vorbis)
+	\item Load three short samples (WAV)
+	\item Start the background track
+	\item Play each sample sequentially while pausing and resuming the background track
+	\item Play all samples simultaniously
+	\item Stop all audio and exit
+\end{enumerate}
+
+Each benchmark was profiled using \emph{perf} \autocite{tool:perf} and compared based
+on total CPU and memory utilization. The results of these benchmarks are listed in
+\cref{tab:audio:benchmark}.
+
+\begin{table}
+	\centering
+	\begin{tabular}{lr}
+		\toprule
+		\textbf{Library} & \textbf{???}\\
+		\midrule
+		miniaudio &\\
+		YSE &\\
+		SoLoud &\\
+		\bottomrule
+	\end{tabular}
+	\caption{Audio engine library benchmark results}
+	\label{tab:audio:benchmark}
+\end{table}
+
+\subsection{Conclusion}
+\label{sec:audio:conclusion}
+
 
 \section{Physics}
 
