@@ -49,7 +49,7 @@ layers are divided into the following categories:\noparbreak
 	\item[AI] Provides artificial inteligent behavior.
 \end{description}
 
-\subsubsection{Structure}
+\subsubsection{Structures}
 
 The above mentioned layers should be structured, somehow. One of the requirements is
 that the game engine's API uses a so-called gameObject (with one or more component(s)).
@@ -78,24 +78,16 @@ programming harder. \autocite{man:DecoratorDesignPattern} \autocite{man:Decorato
     \label{fig:decorator}
 \end{figure}
 
-Another very popular design pattern, is the Entity Component System (\gls{ecs}). ...
+TODO: Add Extension Objects design pattern (if this is applicable)!
 
-\paragraph{ECS}
-
-A game engine must have the ability to keep track and update several game objects. To
-do this most game engines employ an \gls{ecs} model which uses modulair components to
-give entities properties and features. The need for an entity component system arises
-because multiple game objects are required to create a scene in a game. These game
-objects exist within the scene and perform actions, such as a UI display for a score.
-This game object does not need to be rendered; it could be a script running in the
-background. It could also be a player sprite that is controlled. These entities need
-to be aware of other entities, for example, during collisions. For this to function,
-a scene is required to host all game objects. Within this scene, the game objects
-must be stored efficiently, and entities must be provided with the required behavior,
-such as audio, position, or physics. To create diverse entities with specific
-functions: A scene can contain many different kinds of entities, each with different
-properties and functions. But no matter how different each entity is, it remains an
-entity. To assign properties and functions to entities, components are used.
+Another (very popular) design pattern to structure the game engine, is the Entity Component
+System (\gls{ecs}). The \gls{ecs} is made out of three main subsystems, namely entities,
+components and systems. Entities are just IDs. An entity is made out of a gameObject and one
+(or more) components. Components are the classes that hold the data. The components determine
+what kind of entity it is (e.g. a sprite, audio, and so on). Systems take care of the behavior
+of the entities. Systems mainly read and write the enity's components data. The \gls{ecs}
+clearly distinguishes the data (components) from the functionality (systems).
+TODO: Continue this explanation (also add some diagrams to make the ECS more clear)!
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
 popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is based
