@@ -67,11 +67,25 @@ The public audio \gls{api} allows the game programmer to control the volume of
 audio samples.
 '''
 
-[aux.license]
+# TODO: audio encoding support?
+
+[lib.license]
 type = 'system'
 priority = 'must'
 description = '''
 External libraries must have a license that is MIT-compatible, or one that
 allows linking against MIT code.
 '''
+
+[lib.platform]
+type = 'system'
+priority = 'must'
+description = '''
+External libraries must have cross-platform support for at least Linux and
+Windows.
+'''
+
+# TODO: library popularity as quality factor?
+# TODO: library documentation as quality factor?
+# TODO: modularity over less libraries? (i.e. why don't we just SDL2 everything?)
 

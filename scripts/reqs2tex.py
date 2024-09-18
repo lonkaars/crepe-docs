@@ -94,6 +94,9 @@ def convert(data):
   # skip deleted requirements (but process for make_id)
   reqs = [item for item in reqs if item[KEY.DELETED] == False]
 
+  # sort by label
+  reqs = sorted(reqs, key=lambda item: item[KEY.LABEL])
+
   return reqs
 
 def fmt_aux(data):
