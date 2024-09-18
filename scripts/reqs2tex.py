@@ -132,9 +132,14 @@ def fmt_tex(data):
       tex.cmd('label', ['requirement'], label2ref(item[KEY.LABEL])),
       tex.cmd('parbox', tex.cmd('linewidth'),
         tex.env('description', tex.join(
-          tex.cmd('item', ['Priority']) + item[KEY.PRIORITY].title(),
-          tex.cmd('item', ['Requirement']) + item[KEY.DESCRIPTION],
-          (tex.cmd('item', ['Definition of done']) + item[KEY.DONE] if item[KEY.DONE] is not None else ""),
+          tex.cmd('item', [tex.cmd('reqlabel', 'priority')]),
+          item[KEY.PRIORITY].title(),
+          tex.cmd('item', [tex.cmd('reqlabel', 'description')]),
+          item[KEY.DESCRIPTION],
+          *([
+            tex.cmd('item', [tex.cmd('reqlabel', 'done')]),
+            item[KEY.DONE]
+          ] if item[KEY.DONE] is not None else []),
         )),
       )
     )
