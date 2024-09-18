@@ -53,9 +53,34 @@ layers are divided into the following categories:\noparbreak
 
 The above mentioned layers should be structured, somehow. One of the requirements is
 that the game engine's API uses a so-called gameObject (with one or more component(s)).
-The gameObject is described in more detail at \cref{sec:Gameobjects/components}. ...
+The gameObject is described in more detail at \cref{sec:Gameobjects/components}.
 
-\subsubsection{ECS}
+There are multiple structures that could be used to structure a game engine. It's of
+course possible to use inheritance. A major disadvantages of inheritance is that it's
+not flexible. However, the provided class diagram of the game engine's API already
+specifies that composition should be used (in stead of inheritance). So, let's take a
+look at structures that use composition.
+
+The Decorator design pattern (as shown in \cref{fig:decorator}) could be used to structure
+the game engine. A gameObject's propperties/behavior is determined by one (or more)
+components. The Decorator design pattern allows to modify an object's propperties/behavior
+by adding one (or more) Decorators. The object that is modified, could be the gameObject and
+the components could be the Decorators. This is not exactly the same as the required API,
+but it's very close. A major disadvantage of such Decorator design pattern, is that the
+interface of all components should be the same (they should share the same methods), because
+the client (which is the scene in our case) can only call/reach the components through the
+interface. This would require very general methods (at the interface), which might make the
+programming harder. \autocite{man:DecoratorDesignPattern} \autocite{man:Decorator}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/DecoratorDesignPattern.png}
+    \caption{Decorator design pattern \autocite{img:Decorator}}
+    \label{fig:decorator}
+\end{figure}
+
+Another very popular design pattern, is the Entity Component System (\gls{ecs}). ...
+
+\paragraph{ECS}
 
 A game engine must have the ability to keep track and update several game objects. To
 do this most game engines employ an \gls{ecs} model which uses modulair components to
@@ -71,7 +96,6 @@ such as audio, position, or physics. To create diverse entities with specific
 functions: A scene can contain many different kinds of entities, each with different
 properties and functions. But no matter how different each entity is, it remains an
 entity. To assign properties and functions to entities, components are used.
-% TODO: ref?entt
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
 popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is based
