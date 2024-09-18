@@ -122,7 +122,7 @@ def fmt_tex(data):
   out = ""
   for item in data:
     out += tex.join(
-      tex.cmd('subsection', item[KEY.ID]),
+      tex.cmd('subsection', f"{item[KEY.ID]}: {item[KEY.LABEL]}".upper()),
       tex.withatletter(
         tex.cmd('cref@constructprefix', 'requirement', r'\cref@result'),
         tex.pedef('@currentlabel', item[KEY.ID]),
@@ -130,12 +130,13 @@ def fmt_tex(data):
         tex.pedef('cref@currentlabel', tex.group(['requirement'], [''], [r'\cref@result']) + item[KEY.ID]),
       ),
       tex.cmd('label', ['requirement'], label2ref(item[KEY.LABEL])),
-      tex.cmd('par'),
-      tex.env('description', tex.join(
-        tex.cmd('item', ['Priority']) + item[KEY.PRIORITY].title(),
-        tex.cmd('item', ['Requirement']) + item[KEY.DESCRIPTION],
-        (tex.cmd('item', ['Definition of done']) + item[KEY.DONE] if item[KEY.DONE] is not None else ""),
-      ))
+      tex.cmd('parbox', tex.cmd('linewidth'),
+        tex.env('description', tex.join(
+          tex.cmd('item', ['Priority']) + item[KEY.PRIORITY].title(),
+          tex.cmd('item', ['Requirement']) + item[KEY.DESCRIPTION],
+          (tex.cmd('item', ['Definition of done']) + item[KEY.DONE] if item[KEY.DONE] is not None else ""),
+        )),
+      )
     )
   return out
 

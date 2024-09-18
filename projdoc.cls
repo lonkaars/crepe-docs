@@ -215,8 +215,11 @@
 	selection={recorded and deps and see},
 ]
 
-% requirements
-\externaldocument{reqs}[requirements.pdf]
+% allow cross-references to requirements.pdf from all documents except
+% requirements.pdf itself
+\IfEq*{\jobname}{requirements}{}{
+	\externaldocument{reqs}[requirements.pdf]
+}
 
 % default document header/trailer
 \makeatletter

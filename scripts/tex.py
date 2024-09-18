@@ -69,3 +69,13 @@ def explist(*items):
       out += explist(*item)
   return out
 
+def sec(level, heading):
+  level = max(min(3, level), 0)
+  section = [
+    'section',
+    'subsection',
+    'subsubsection',
+    'paragraph',
+  ][level]
+  return cmd(section, heading)
+
