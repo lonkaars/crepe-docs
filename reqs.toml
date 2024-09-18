@@ -226,6 +226,19 @@ description = '''
 The engine should include basic physics support, such as collision detection and handling, to prevent characters from passing through walls and to allow simple objects (e.g., a bouncing ball) to behave physically.
 '''
 
+[particles]
+type = 'system'
+priority = 'must'
+description = '''
+The particle engine should support adding simple visual effects such as smoke, fire, explosions, and rain. It should allow developers to easily attach these effects to game objects from code.
+'''
+
+[replay]
+type = 'system'
+priority = 'must'
+description = '''
+The replay system should allow developers to record and replay game actions. This includes the ability to review cool moments or an entire gameplay session without saving the replay as a video file.
+'''
 
 
 
