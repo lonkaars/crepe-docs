@@ -75,6 +75,9 @@
 \bigskipamount=7mm
 \medskipamount=4mm
 
+% number paragraphs by default
+\setcounter{secnumdepth}{4}
+
 % section placement / appearance
 \newlength{\sectionpenalty}
 \newlength{\subsectionpenalty}
@@ -145,13 +148,13 @@
 % \cref{<refname>} is used
 \makeatletter
 \NewDocumentCommand{\customlabel}{omm}{%
-  \begingroup
-  \cref@constructprefix{#1}{\cref@result}%
-  \protected@edef\@currentlabel{#3}%
-  \protected@edef\@currentlabelname{#3}%
-  \protected@edef\cref@currentlabel{[#1][][\cref@result]#3}
-  \label[#1]{#2}%
-  \endgroup
+	\begingroup
+	\cref@constructprefix{#1}{\cref@result}%
+	\protected@edef\@currentlabel{#3}%
+	\protected@edef\@currentlabelname{#3}%
+	\protected@edef\cref@currentlabel{[#1][][\cref@result]#3}
+	\label[#1]{#2}%
+	\endgroup
 }
 \makeatother
 
@@ -214,6 +217,12 @@
 	src={./glossary.bib},
 	selection={recorded and deps and see},
 ]
+
+% allow cross-references to requirements.pdf from all documents except
+% requirements.pdf itself
+\IfEq*{\jobname}{requirements}{}{
+	\externaldocument{reqs}[requirements.pdf]
+}
 
 % default document header/trailer
 \makeatletter
@@ -293,8 +302,8 @@
 	\def\UrlRight{\hbox{\,}}%
 }
 \DefineVerbatimEnvironment{blockcode}{Verbatim}{
-  tabsize=2,
-  obeytabs,
+	tabsize=2,
+	obeytabs,
 }
 
 % scale down image if it exceeds page margins
@@ -320,4 +329,66 @@
 \Crefname{requirement}{Requirement}{Requirements}
 \crefname{test}{test}{tests}
 \Crefname{test}{Test}{Tests}
+
+% fix cleveref showing filename to external cross-reference
+% see <https://tex.stackexchange.com/a/708445/211562>
+% edited from cleveref source
+\makeatletter
+\def\cref@getref#1#2{%
+	\expandafter\let\expandafter#2\csname r@#1@cref\endcsname%
+	\expandafter\expandafter\expandafter\def%
+		\expandafter\expandafter\expandafter#2%
+		\expandafter\expandafter\expandafter{%
+			\expandafter\@firstoffive#2}}%
+\def\cpageref@getref#1#2{%
+	\expandafter\let\expandafter#2\csname r@#1@cref\endcsname%
+	\expandafter\expandafter\expandafter\def%
+		\expandafter\expandafter\expandafter#2%
+		\expandafter\expandafter\expandafter{%
+			\expandafter\@secondoffive#2}}%
+\AtBeginDocument{%
+	\def\label@noarg#1{%
+		\cref@old@label{#1}%
+		\@bsphack%
+		\edef\@tempa{{page}{\the\c@page}}%
+		\setcounter{page}{1}%
+		\edef\@tempb{\thepage}%
+		\expandafter\setcounter\@tempa%
+		\cref@constructprefix{page}{\cref@result}%
+		\protected@write\@auxout{}{%
+			\string\newlabel{#1@cref}{%
+				{\cref@currentlabel}%
+				{[\@tempb][\arabic{page}][\cref@result]\thepage}%
+				{}%
+				{}%
+				{}%
+			}%
+		}%
+		\@esphack%
+	}%
+	\def\label@optarg[#1]#2{%
+		\cref@old@label{#2}%
+		\@bsphack%
+		\edef\@tempa{{page}{\the\c@page}}%
+		\setcounter{page}{1}%
+		\edef\@tempb{\thepage}%
+		\expandafter\setcounter\@tempa%
+		\cref@constructprefix{page}{\cref@result}%
+		\protected@edef\cref@currentlabel{%
+			\expandafter\cref@override@label@type%
+			\cref@currentlabel\@nil{#1}%
+		}%
+		\protected@write\@auxout{}{%
+			\string\newlabel{#2@cref}{%
+				{\cref@currentlabel}%
+				{[\@tempb][\arabic{page}][\cref@result]\thepage}%
+				{}%
+				{}%
+				{}%
+			}%
+		}%
+		\@esphack%
+	}%
+}
+\makeatother
 

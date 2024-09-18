@@ -6,6 +6,27 @@
 \projdoc@description@labelindent=0pt
 \projdoc@setdescriptionstyle
 \makeatother
+\setcounter{secnumdepth}{1}
+
+\makeatletter
+\def\reqlabel#1{\csuse{reqlabel@#1}}
+\def\reqlabelreset{%
+	\global\def\reqlabel@priority{%
+		\Glsdesc{reqlabel-priority}%
+		\global\def\reqlabel@priority{\Glstext{reqlabel-priority}}%
+	}%
+	\global\def\reqlabel@description{%
+		\Glsdesc{reqlabel-description}%
+		\global\def\reqlabel@description{\Glstext{reqlabel-description}}%
+	}%
+	\global\def\reqlabel@done{%
+		\Glsdesc{reqlabel-done}%
+		\global\def\reqlabel@done{\Glstext{reqlabel-done}}%
+	}%
+}
+% Abbreviate requirement field labels after first occurrence on every page
+\AtBeginShipout{\reqlabelreset}
+\makeatother
 
 \title{Requirements}
 
