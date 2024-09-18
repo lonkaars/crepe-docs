@@ -32,6 +32,7 @@ loek: 2024-09-17 1h20m project meeting
 loek: 2024-09-17 55m bugs :: cross-platform latexmk filespec
 loek: 2024-09-17 2h25m docs :: requirements
 loek: 2024-09-18 2h20m docs :: requirements
+loek: 2024-09-18 1h50m research :: audio
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
