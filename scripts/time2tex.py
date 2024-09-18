@@ -35,35 +35,30 @@ def fmt_member_overview(times):
     tracked[time["name"]] += time["duration"]
     total_time += time["duration"]
 
-  out = ""
-
-  # header
-  out += tex.cmd('toprule')
-  out += tex.tabrule(tex.cmd('textbf', 'Member'), tex.cmd('textbf', 'Tracked'), '')
-  out += tex.cmd('midrule')
-
-  # member overview
   members = sorted(list(set(time["name"] for time in times)))
-  for name in members:
-    out += tex.tabrule(name, fmt_duration(tracked[name]), fmt_percentage(tracked[name] / total_time))
-  out += tex.cmd('midrule')
-
-  # sum
-  out += tex.tabrule('', fmt_duration(total_time), '')
-  out += tex.cmd('bottomrule')
-
-  out = tex.env('tabular', 'lr@{~}l', out)
-  out = tex.cmd('centering') +\
-        out +\
-        tex.cmd('caption', 'Tracked time per group member') +\
-        tex.cmd('label', 'tab:time-member')
-  out = tex.env('table', out)
-
-  return out
+  return tex.env('table', tex.join(
+    tex.cmd('centering'),
+    tex.env('tabular', 'lr@{~}l', tex.join(
+      tex.cmd('toprule'),
+      tex.tabrule(tex.cmd('textbf', 'Member'), tex.cmd('textbf', 'Tracked')),
+      tex.cmd('midrule'),
+      *[
+        tex.tabrule(
+          name,
+          fmt_duration(tracked[name]),
+          fmt_percentage(tracked[name] / total_time))
+        for name in members
+      ],
+      tex.cmd('midrule'),
+      tex.tabrule('', fmt_duration(total_time), ''),
+      tex.cmd('bottomrule'),
+    )),
+    tex.cmd('caption', 'Tracked time per group member'),
+    tex.cmd('label', 'tab:time-member'),
+  ))
 
 def fmt_weekly_overview(times):
   # calculations
-  out = ""
   weeks = []
   member_totals = {}
   total_time = sum(time["duration"] for time in times)
@@ -93,34 +88,40 @@ def fmt_weekly_overview(times):
   for member in members:
     member_totals[member] = sum(time["duration"] for time in times if time["name"] == member)
 
-  # TODO: refactor
-  # begin table
-  out += r"\begin{table}\centering"
-  out += r"\fitimg{"
-  out += f"\\begin{{tabular}}{{l{'r@{~}l' * len(members)}@{{\\qquad}}r}}\\toprule"
-  out += r"\textbf{\#}"
-  for member in members:
-    out += f"&\\textbf{{{member}}}&"
-  out += r"&\textbf{Subtotal}\\\midrule{}"
-
-  for entry in weeks:
-    out += f"{entry['num']}"
-    for member in members:
-      out += f"&{fmt_duration(entry['members'][member])}&{fmt_percentage(entry['members'][member] / entry['total'])}"
-    out += f"&{fmt_duration(entry['total'])}\\\\"
-
-  out += r"\midrule{}"
-  for member in members:
-    out += f"&{fmt_duration(member_totals[member])}&{fmt_percentage(member_totals[member] / total_time)}"
-  out += f"&{fmt_duration(total_time)}\\\\"
-
-  # end table
-  out += r"\bottomrule\end{tabular}"
-  out += r"}" # \fitimg
-  out += r"\caption{Tracked time per week}\label{tab:time-weekly}"
-  out += r"\end{table}"
-
-  return out
+  return tex.env('table', tex.join(
+    tex.cmd('centering'),
+    tex.cmd('fitimg',
+      tex.env('tabular', r'l' + r'r@{~}l' * len(members) + r'@{\qquad}r', tex.join(
+        tex.cmd('toprule'),
+        tex.tabrule(*[
+          tex.cmd('textbf', cell)
+          for cell in [
+            tex.esc("#"),
+            *tex.explist([ member, "" ] for member in members),
+            "Subtotal",
+          ]
+        ]),
+        tex.cmd('midrule'),
+        *[
+          tex.tabrule(*[
+            str(entry['num']),
+            *tex.explist(
+              [
+                fmt_duration(entry['members'][member]),
+                fmt_percentage(entry['members'][member] / entry['total']),
+              ]
+              for member in members
+            ),
+            fmt_duration(entry['total']),
+          ])
+          for entry in weeks
+        ],
+        tex.cmd('bottomrule'),
+      )),
+    ),
+    tex.cmd('caption', 'Tracked time per week'),
+    tex.cmd('label', 'tab:time-weekly'),
+  ))
 
 def duration2secs(duration):
   out = 0 # output (seconds)
@@ -182,13 +183,13 @@ def parse(content):
   return out
 
 def fmt(times):
-  return "\n\n".join([
+  return tex.join(
     tex.cmd('section', 'Overviews'),
     tex.cmd('subsection', 'Members'),
     fmt_member_overview(times),
     tex.cmd('subsection', 'Weekly'),
     fmt_weekly_overview(times),
-  ])
+  )
 
 def main(input_file):
   content = ""
