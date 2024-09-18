@@ -44,31 +44,80 @@ layers are divided into the following categories:\noparbreak
 		performance profiling.
 	\item[Scripting layer] Runs scripts, such as Lua or Python.
 	\item[Memory systems] Handles and monitors memory usage.
-	\item[\gls{ecs}] Provides a modular way to create game objects, add physics, and
-		define how the engine interacts with objects.
 	\item[Physics] Adds specific physics to objects.
 	\item[Audio] Processes audio.
 	\item[AI] Provides artificial inteligent behavior.
 \end{description}
 
-\subsubsection{ECS}
+\subsubsection{Structures}
 
-A game engine must have the ability to keep track and update several game objects. To
-do this most game engines employ an \gls{ecs} model which uses modulair components to
-give entities properties and features. The need for an entity component system arises
-because multiple game objects are required to create a scene in a game. These game
-objects exist within the scene and perform actions, such as a UI display for a score.
-This game object does not need to be rendered; it could be a script running in the
-background. It could also be a player sprite that is controlled. These entities need
-to be aware of other entities, for example, during collisions. For this to function,
-a scene is required to host all game objects. Within this scene, the game objects
-must be stored efficiently, and entities must be provided with the required behavior,
-such as audio, position, or physics. To create diverse entities with specific
-functions: A scene can contain many different kinds of entities, each with different
-properties and functions. But no matter how different each entity is, it remains an
-entity. To assign properties and functions to entities, components are used. Entt is
-an example of an \gls{ecs}.
-% TODO: ref?entt
+The above mentioned layers should be structured, somehow. One of the requirements is
+that the game engine's API uses a so-called gameObject (with one or more
+component(s)). The gameObject is described in more detail at
+\cref{sec:Gameobjects/components}.
+
+There are multiple structures that could be used to structure a game engine. It's of
+course possible to use inheritance. A major disadvantages of inheritance is that it's
+not flexible. However, the provided class diagram of the game engine's API already
+specifies that composition should be used (in stead of inheritance). So, let's take a
+look at structures that use composition.
+
+The Decorator design pattern (as shown in \cref{fig:decorator}) could be used to
+structure the game engine. A gameObject's propperties/behavior is determined by one
+(or more) components. The Decorator design pattern allows to modify an object's
+propperties/behavior by adding one (or more) Decorators. The object that is modified,
+could be the gameObject and the components could be the Decorators. This is not
+exactly the same as the required API, but it's very close. A major disadvantage of
+such Decorator design pattern, is that the interface of all components should be the
+same (they should share the same methods), because the client (which is the scene in
+our case) can only call/reach the components through the interface. This would
+require very general methods (at the interface), which might make the programming
+harder \autocite{man:DecoratorDesignPattern,man:Decorator}.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/decorator-design-pattern.puml}
+	\caption{Decorator design pattern}
+	Source: \autocite{img:Decorator}
+	\label{fig:decorator}
+\end{figure}
+
+TODO: Add Extension Objects design pattern (if this is applicable)!
+
+Another (very popular) design pattern to structure the game engine, is the Entity
+Component System (\gls{ecs}). The \gls{ecs} is made out of three main subsystems,
+namely entities, components and systems. Entities are just IDs. An entity is made out
+of a gameObject and one (or more) components. Components are the classes that hold
+the data. The components determine what kind of entity it is (e.g. a sprite, audio,
+and so on). Systems take care of the behavior of the entities. Systems mainly read
+and write the enity's components data. The \gls{ecs} clearly distinguishes the data
+(components) from the functionality (systems).
+
+% TODO: Continue this explanation (also add some diagrams to make the ECS more clear)!
+
+There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
+popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is
+based on the amount of stars on GitHub.
+
+\begin{table}
+	\centering
+	\begin{tabular}{ll@{\qquad}lr}
+		\toprule
+		\textbf{Name} & \textbf{Short Description} & \textbf{Stars} & \textbf{License}\\
+		\midrule
+		EnTT & Fast and reliable entity-component system & 10k & MIT\\
+		Flecs & A Multithreaded Entity Component System & 6.3k & MIT\\
+		EntityX & Fast, type-safe C++ entity component system & 2.2k & MIT\\
+		\bottomrule
+	\end{tabular}
+	\caption{Popular \gls{ecs} libraries}
+	Source: \autocite{github:awesome-ecs}
+	\label{tab:popularECSLibraries}
+\end{table}
+
+It is, of course, not necessary to use a library to implement an \gls{ecs}
+architecture. However, it seems very hard to achieve the same performance as a
+library \autocite{github:ecsfaq}.
 
 \subsection{Conclusion}
 
@@ -103,23 +152,18 @@ software, emulators, and popular games, including Valve's award-winning catalog 
 many Humble Bundle games.''} \gls{sdl2} is written in the C programming language, and
 therefore, structs and functions are used instead of objects and methods.
 
-The advantages of \gls{sdl2} are:\noparbreak
-\begin{itemize}
-	\item Controller support is provided.
-	\item 2D and 3D rendering are supported.
-	\item Broad multiplatform support is offered, including older consoles such as the
-		Wii.
-	\item Low-level control is available.
-	\item A large community ensures wide usage.
-	\item Extended libraries can be used to add functionalities, such as SDL\_Mixer for
-		sound.
-\end{itemize}
-
-The disadvantages of \gls{sdl2} are:\noparbreak
-\begin{itemize}
-	\item A limited built-in 2D renderer is provided.
-	\item Extended libraries require setup.
-\end{itemize}
+\begin{comparison}
+	\pro{Controller support is provided.}
+	\pro{2D and 3D rendering are supported.}
+	\pro{Broad multiplatform support is offered, including older consoles such as the
+	Wii.}
+	\pro{Low-level control is available.}
+	\pro{A large community ensures wide usage.}
+	\pro{Extended libraries can be used to add functionalities, such as SDL\_Mixer for
+	sound.}
+	\con{A limited built-in 2D renderer is provided.}
+	\con{Extended libraries require setup.}
+\end{comparison}
 
 \paragraph{SFML}
 
@@ -127,24 +171,19 @@ The disadvantages of \gls{sdl2} are:\noparbreak
 network, system, and window. This framework, written in C++, was designed to simplify
 game development.
 
-The advantages of \gls{sfml} are:
-\begin{itemize}
-	\item Object-oriented design is provided since it is written in C++.
-	\item A built-in 2D renderer is available for ease of use.
-	\item A built-in audio system is included.
-	\item Cross-platform support is available for Linux, Windows, and macOS.
-	\item Networking capabilities are provided for multiplayer or networked
-		applications.
-\end{itemize}
-
-The disadvantages of \gls{sfml} are:
-\begin{itemize}
-	\item The 2D rendering engine may experience performance issues in large-scale
-		games.
-	\item The community is smaller compared to \gls{sdl2}.
-	\item No native 3D support is provided.
-	\item Not all image formats are supported.
-\end{itemize}
+\begin{comparison}
+	\pro{Object-oriented design is provided since it is written in C++.}
+	\pro{A built-in 2D renderer is available for ease of use.}
+	\pro{A built-in audio system is included.}
+	\pro{Cross-platform support is available for Linux, Windows, and macOS.}
+	\pro{Networking capabilities are provided for multiplayer or networked
+	applications.}
+	\con{The 2D rendering engine may experience performance issues in large-scale
+	games.}
+	\con{The community is smaller compared to \gls{sdl2}.}
+	\con{No native 3D support is provided.}
+	\con{Not all image formats are supported.}
+\end{comparison}
 
 \subsubsection{Audio}
 
@@ -303,6 +342,7 @@ on total CPU and memory utilization. The results of these benchmarks are listed 
 \subsection{Conclusion}
 
 \section{Gameobjects/components}
+\label{sec:Gameobjects/components}
 
 \subsection{Introduction}
 
@@ -319,16 +359,7 @@ A gameObject is the most important concept in Unity. Every object in a game is a
 GameObject, from characters and collectible items to the lights, cameras and special
 effects. However, a gameObject itself can't do anything on its own. A gameObject
 needs to be given properties before it can become a character, an envirnment, or a
-special effect.
-% TODO: cite https://docs.unity3d.com/Manual/GameObjects.html
-
-\subsection{Conclusion}
-
-\section{AI}
-
-\subsection{Introduction}
-
-\subsection{Findings}
+special effect. \autocite{man:unityGameobjects}
 
 A gameObject can be seen as a container for components. Components are the properties
 of the gameObject. A few examples of components are sprites, animators, audioSources,
@@ -343,14 +374,20 @@ gameObject.
 Each gameObject always has one transform class. The transform class describes the
 position, rotation, and scale within the scene. Some component use this information
 to e.g. scale a sprite. Other components eddit this information to e.g.~model
-gravity.
-% TODO: cite https://docs.unity3d.com/Manual/class-Transform.html
+gravity. \autocite{man:unityTransformClass}
 
 A gameObject can have one (or multiple) children gameObject(s). All children
 gameObjects, of course, also have one transform class. However, the position,
 rotation, and scale of this class, is always the same as the child's parent. A child
-can not have more than one parent.
-% TODO: cite https://docs.unity3d.com/Manual/class-Transform.html
+can not have more than one parent. \autocite{man:unityTransformClass}
+
+\subsection{Conclusion}
+
+\section{AI}
+
+\subsection{Introduction}
+
+\subsection{Findings}
 
 \subsection{Conclusion}
 
