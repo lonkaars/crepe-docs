@@ -3,6 +3,8 @@
 % with the [draft] option. this replaces all images with placeholders.
 \input{meta.tex}
 
+\externaldocument{reqs}[./requirements.pdf]
+
 \title{Example Document}
 
 \begin{document}
@@ -155,17 +157,24 @@ Description:
 	\con{Bad thing 2}
 \end{comparison}
 
-\subsection{Citations}
+\subsection{References}
+
+\subsubsection{Citations}
 
 Citations are inserted using the \codeinline{\autocite} command \autocite{rfc:3339}.
 The bibliography is automatically printed after \codeinline{\end{document}}.
 
-\subsection{Glossary}
+\subsubsection{Glossary}
 
 Glossary entries can be inserted using the \codeinline{\gls} commands. Example:
 ``\Gls{sdl2} handles \glspl{hid} as well!''. In following occurrences of acronyms,
 only their short form is printed: `\gls{sdl2}' and `\gls{hid}'. All of these link to
 the glossary that is automatically printed after \codeinline{\end{document}}.
+
+\subsubsection{Requirements}
+
+Requirements are referenced like \codeinline{\label}s:
+e.g.~\cref{req:audio:handle,req:audio:async-api}.
 
 \end{document}
 
