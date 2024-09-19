@@ -2,10 +2,6 @@ This document is an extension of the [crêpe engine contribution
 guidelines][crepe-engine-contrib]. Rules in this document override those in the
 other document.
 
-# Versioning
-
-- TODO: discuss w/ group
-
 # Code style
 
 - Indent using tabs
