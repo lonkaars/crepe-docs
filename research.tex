@@ -186,113 +186,125 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \section{Physics/scripting}
 
-\subsection{Introduction}
-This part of the research explains the use of physics in a game engine. Furthermore, it examines the ease of using a physics engine compared to implementing physics from scratch. Ultimately, a recommendation will be provided on whether using a physics engine is more feasible than a custom implementation.
+%links
+%ragdoll info: https://learn.unity.com/tutorial/creating-ragdolls-2019#649c42abedbc2a04c2145ce7
+%softbody info: https://www.greenfoot.org/scenarios/29502
+.
+%2d box concepts: https://box2d.org/
+%liquidfun (fork of box2d): https://google.github.io/liquidfun/
+%Chipmunk2D: https://chipmunk-physics.net/
+% particel systemhttps://learn.unity.com/tutorial/introduction-to-particle-systems#
+%rigid body:https://docs.unity3d.com/ScriptReference/Rigidbody.html
 
-\subsection{Physics Core Concepts}
+\subsection{Introduction}
+This part of the research explains physcis concepts and the use of physics in a game engine. Furthermore, it examines the ease of using a physics engine compared to implementing physics from scratch. Ultimately, a recommendation will be provided on whether using a physics engine is more feasible than a custom implementation.
+
+
+\subsection{Physics concepts}
+
+
+%Physics core concepts: https://bluebirdinternational.com/game-physics/#:~:text=Game%20physics%20is%20implemented%20using,solid%20and%20deformable%20objects%2C%20respectively
+
+%ragdoll https://bluebirdinternational.com/ragdoll-physics/
 
 \subsubsection{Kinematics}
+Kinematics in game physics involves calculating the position, velocity, and acceleration of objects to simulate realistic motion. It affects everything from character movement to projectiles and vehicles. Collision detection is key, as it determines when objects collide and how they respond, including any damage or effects. Kinematics also helps create lifelike animations, like jumping or running, enhancing the game's realism and immersion.
+\begin{itemize}
+	\item mass
+	\item speed
+	\item direction
+	\item collision detection
+\end{itemize}
+
 
 \subsubsection{Dynamics}
+Dynamics simulate object interactions and forces, such as gravity and friction, to enhance realism. It includes rigid body, soft body, and fluid dynamics. For example, it affects car movements in racing games and projectiles in shooters. Balancing dynamics is crucial to maintain performance. Ragdoll physics, a related concept, models a character’s body as interconnected rigid bodies for realistic movement.
+\begin{itemize}
+	\item rigid body dynamics
+	\item soft body dynamics
+	\item fluid dynamics
+	\item ragdoll physics
+\end{itemize}
 
 
-Physics Core Concepts
+\subsubsection{Collision}
+Collision detection is the process of determining when two or more objects in the game world come into contact with each other. There are several techniques used for collision detection.
+\begin{itemize}
+	\item bounding boxes
+	\item bounding spheres
+	\item mesh-based collision
+\end{itemize}
+These techniques involve creating simple shapes around the objects and checking if they intersect with each other.
 
-https://bluebirdinternational.com/game-physics/#:~:text=Game%20physics%20is%20implemented%20using,solid%20and%20deformable%20objects%2C%20respectively.
+\subsubsection{Rigidbody}
+Rigidbodys deels with the behavior of of non deformable solid objects. it has some physical properties.
+\begin{itemize}
+	\item mass
+	\item velocity
+	\item angular velocity
+	\item orientation
+\end{itemize}
+To calculate all forces applied to the rigid body the most used algoritm is Newton-Euler equations. The alogritm is about mass an conservation of energy.
 
-rigid body
-A chunk of matter that is so strong that the distance between any two bits of matter on the chunk is constant.
+\subsubsection{Softbody}
+Soft body dynamics simulates deformable objects like cloth, fluids, and flesh, adding complexity beyond rigid body dynamics. Key techniques include:
+\begin{itemize}
+	\item Finite Element Method: Divides the object into small elements that interact based on physical laws.
+	\item Mass-Spring Systems: Uses masses and springs to model deformation and stretching.
+\end{itemize}
+These methods enhance game realism by creating lifelike clothing, natural water effects, and realistic collision deformations. However, they are resource intensive an require precise calculations to avoid unrealistic results.
 
-shape
-A shape binds collision geometry to a body and adds material properties such as density, friction, and restitution.
+\subsubsection{Particle Systems}
+Particle systems simulate numerous small objects to create larger effects like dust, smoke, fire, or explosions. These effects can add an extra layer of realism to a game.
 
-constraint
-A constraint is a physical connection that removes degrees of freedom from bodies. A 2D body has 3 degrees of freedom (two translation coordinates and one rotation coordinate). If I take a body and pin it to the wall (like a pendulum) I have constrained the body to the wall. At this point the body can only rotate about the pin, so the constraint has removed 2 degrees of freedom.
+\subsubsection{Fluid Dynamics}
+Fluid dynamics shows how fluids move and behave. In game physics, it simulates liquids like water or lava, adding complexity and realism to games with fluid interactions.
 
-contact constraint
-A special constraint designed to prevent penetration of rigid bodies and to simulate friction and restitution. You do not create contact constraints; they are created automatically by Box2D.
+\subsubsection{Aerodynamics}
+Aerodynamics shows the movement of air and its interaction with solid objects. In video games, it simulates how objects like airplanes or birds move through the air, adding a realistic touch to games involving flight or gliding.
 
-joint constraint
-This is a constraint used to hold two or more bodies together. Box2D supports several joint types: revolute, prismatic, distance, and more. Joints may have limits, motors, and/or springs.
+\subsection{Implementation of Physics}
 
-joint limit
-A joint limit restricts the range of motion of a joint. For example, the human elbow only allows a certain range of angles.
+To know what the best Physics solution is for a project a list has been created with physics concepts.This list shows how much effort it is to implement a feature and if an engine has the feature available. For this list three physics engines have been found that can provide 2d physics.
 
-joint motor
-A joint motor drives the motion of the connected bodies according to the joint's degrees of freedom. For example, you can use a motor to drive the rotation of an elbow. Motors have a target speed and a maximum force or torque. The simulation will apply the force or torque required to achieve the desired speed.
+\subsubsection{Physics comparison}
 
-joint spring
-A joint spring has a stiffness and damping. In Box2D spring stiffness is expressed in terms or Hertz or cycles per second. This lets you configure how quickly a spring reacts regardless of the body masses. Joint springs also have a damping ratio to let you specify how quickly the spring will come to rest.
+\begin{itemize}
+    \item Rigid Body Dynamics
+    \item Soft Body Dynamics
+    \item Particle Systems
+    \item Fluid Dynamics
+    \item Collision Detection
+    \item Aerodynamics
+    \item Ragdoll Physics
+    \item Constraints %box2d
+    \item Joint Limits %box2d
+    \item Joint Motors %box2d
+    \item Joint Springs %box2d
+    \item World Simulation %box2d
+    \item Solver %box2d
+\end{itemize}
 
-world
-A physics world is a collection of bodies, shapes, joints, and contacts that interact together. Box2D supports the creation of multiple worlds which are completely independent.
+\subsubsection{Physics Engines}
 
-solver
-The physics world has a solver that is used to advance time and to resolve contact and joint constraints. The Box2D solver is a high performance sequential solver that operates in order N time, where N is the number of constraints.
+\paragraph{Box2D}
+\begin{description}
+	\item[Description:] One of the most popular and widely used open-source 2D physics engines, Box2D is known for its simplicity, robustness, and efficiency.
+	\item[License:] MIT License
+\end{description}
 
-continuous collision
-The solver advances bodies in time using discrete time steps. Without intervention this can lead to tunneling.
+\paragraph{LiquidFun}
+\begin{description}
+	\item[Description:] A fork of Box2D, LiquidFun adds particle-based fluid simulation to Box2D's rigid body dynamics. It’s ideal for games that require both solid and fluid dynamics.
+	\item[License:] Apache License 2.0
+\end{description}
 
-Box2D contains specialized algorithms to deal with tunneling. First, the collision algorithms can interpolate the motion of two bodies to find the first time of impact (TOI). Second, speculative collision is used to create contact constraints between bodies before they touch.
+\paragraph{Chipmunk2D}
+\begin{description}
+	\item[Description:] A lightweight and fast 2D physics engine that emphasizes ease of use and flexibility. Chipmunk2D is designed to be simple enough to understand and integrate but powerful enough for complex simulations.
+	\item[License:] MIT License
+\end{description}
 
-events
-World simulation leads to the creation of events that are available at the end of the time step:
-
-body movement events
-contact begin and end events
-contact hit events
-These events allow your application to react to changes in the simulation.
-
-
-
-Box2D
-
-Description: One of the most popular and widely used open-source 2D physics engines, Box2D is known for its simplicity, robustness, and efficiency. It powers many games across different platforms.
-
-Key Features:
-Collision detection and response.
-Rigid body dynamics, including joints, springs, and constraints.
-Support for convex polygons and circles.
-Highly customizable, allowing fine control over physics simulation parameters.
-
-Use Cases: Suitable for platformers, puzzles, and any game requiring realistic 2D physics.
-
-License: MIT License.
-https://box2d.org/
-
-
-2. LiquidFun
-Description: A fork of Box2D, LiquidFun adds particle-based fluid simulation to Box2D's rigid body dynamics. It's ideal for games that require both solid and fluid dynamics.
-Key Features:
-All features of Box2D.
-Particle system for simulating fluids, soft bodies, and other deformable materials.
-High performance with SIMD optimization.
-Use Cases: Games requiring fluid simulations, like water physics or granular materials.
-License: Apache License 2.0.
-3. Chipmunk2D
-Description: A lightweight and fast 2D physics engine that emphasizes ease of use and flexibility. Chipmunk2D is designed to be simple enough to understand and integrate but powerful enough for complex simulations.
-Key Features:
-Collision detection, including circle, segment, and polygon shapes.
-Supports constraints, motors, and damped springs.
-Built-in support for sleeping objects to optimize performance.
-Written in C, but it has bindings for C++.
-Use Cases: Ideal for developers who need a simple yet performant physics engine.
-License: MIT License.
-4. Nape
-Description: A 2D physics engine that is optimized for use with the Haxe programming language but has a C++ backend. It focuses on ease of use, with a clean API and features tailored for 2D games.
-Key Features:
-Provides both rigid body and soft body physics.
-Broad-phase and narrow-phase collision detection.
-Constraints, forces, and motor simulations.
-Integrates well with cross-platform tools that generate C++ code, like Haxe.
-Use Cases: Suitable for developers using Haxe or projects that require an easy-to-use API.
-License: MIT License.
-
-liquidfun (fork of box2d)
-https://google.github.io/liquidfun/
-
-Chipmunk2D
-https://chipmunk-physics.net/
 
 
 \subsection{Findings}
