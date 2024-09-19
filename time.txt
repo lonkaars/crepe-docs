@@ -54,6 +54,9 @@ max: 2024-09-16 1h researching self-made ECS possibilities
 max: 2024-09-16 1h30m researching ECS libraries
 max: 2024-09-17 1h30m fifth project meeting
 max: 2024-09-18 4h researching engine structure
+max: 2024-09-19 20m sixt project meeting (part one)
+max: 2024-09-19 1h30m third project lesson
+max: 2024-09-19 45m sixt project meeting (part two)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
