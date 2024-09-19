@@ -1,13 +1,6 @@
 \documentclass{projdoc}
 \input{meta.tex}
 
-% @Jaro: Zie hieronder
-% Version 0.0 seems not right
-% I'm also missing a 'version table'
-% Shall we use this version system?:
-% Version numbers after the comma indicate an interim version and version numbers
-% before the comma indicate versions ready for publication
-
 \title{Project Plan}
 \version{0.1}
 
@@ -18,18 +11,11 @@
 \section{Background}
 
 This project is part of the fourth-year minor `Systems Programming in C++'. The minor
-consists of several courses troughout 20 weeks, which create the basis for this
-project. The project is focussed on building a game engine using the programming
+consists of several courses throughout 20 weeks, which create the basis for this
+project. The project focus is on building a game engine using the programming
 language C++. This document describes the plan of attack for the project.
 
 \section{Problem Definition}
-
-% The assignments will be discussed with the project supervisor on specifics for this
-% project. This will give the team the ability to direct the project.
-
-% @Jaro: Ik snap niet wat je met deze zinnen wil zeggen. Het lijkt een soort van
-% background information, maar toch niet helemaal ofzo. Hoe dan ook heb ik het er nu
-% even uit gehaald en een nieuw kopje background toegevoegd.
 
 \subsection{Problem Analysis}
 
@@ -45,7 +31,7 @@ user-friendly. Additionally, the engine should be well-documented, which is
 considered an essential aspect of being user-friendly.
 
 So far, the client has made all his games in Unity and is very fond of the structure.
-Therefore, he wants the new engine to adhere to a similar structure. A simple
+Therefore, the client wants the new engine to adhere to a similar structure. A simple
 requirements document is defined to specify how strictly this structure should be
 followed.
 
@@ -62,6 +48,10 @@ The requirements document \autocite{crepe:requirements} has several requirements
 
 The expected result is a well-documented, custom game engine that follows a structure similar to Unity. Additionally, a validation application should be provided to test and showcase the engine's capabilities.
 
+\subsection{validation application}
+
+The validation application \autocite{crepe:validation-application} is explained in a document where the features of the validation application are linked to the user stories.
+
 \section{Planning}
 
 The customer specified multiple deliverables throughout the 20 weeks of this project. Despite the fact that 20 weeks have been reserved for this project, the game will be delivered in week 17. Any delay/resit will take place between weeks 17 and 20. A rough planning can be found in \cref{tab:planning}.
@@ -72,10 +62,9 @@ The customer specified multiple deliverables throughout the 20 weeks of this pro
 		\textbf{Week\#} & \textbf{Deliverable}\\
 		\midrule
 		4 & Project Plan\\
-		7 & Requirements document\\
+		7 & POCs\\
 		10 & POCs and Design document\\
-		17 & Game engine, Validation application, Research document, and Qualification
-		document\\
+		17 & Game engine, Validation application\\
 		\bottomrule
 	\end{tabularx}
 	\caption{Planning}
@@ -100,6 +89,7 @@ The customer specified multiple deliverables throughout the 20 weeks of this pro
 		requirements. Lack of Team Collaboration: Insufficient collaboration among team
 		members may hinder progress.
 	\item[Lack of Team Collaboration] Within the team a lack of collaboration can result in miscommunication or delay in work.
+	\item[Falling out of specific team member] Within the team the scrum master and integrator have additional roles. If one or both members can not continue it can hinder progress of the project.
 \end{description}
 
 \subsection{Measures}
@@ -113,6 +103,7 @@ The customer specified multiple deliverables throughout the 20 weeks of this pro
 		meetings, to check if the progress is within the scope, should be sufficient to
 		decrease the risk.
 	\item[Lack of Team Collaboration] Weekly team meetings will result in collaboration among team members and discussing what each other tasks is, will decease this risk.
+	\item[Falling out of specific team member] The scrum master can be taken over by any other team member. All tools (e.g. scrum board) are open to all members. The tasks of the integrator can be taken over by the team. Within GitHub the team as a whole has the same rights as the integrator.
 \end{description}
 
 \section{Documentation}
@@ -128,7 +119,6 @@ This project consists of seven main documents:\noparbreak
 		project, including timelines, milestones, roles, and responsibilities.
 	\item[Requirements] Details the requirements and user stories, including both
 		functional and non-functional requirements.
-	\item[Research] Consists of all research related to this project.
 	\item[Design] Describes the design choices, including architecture, user interface,
 		and system components.
 	\item[Qualification] Includes test cases, test plans, and quality measures to
