@@ -1,9 +1,9 @@
 #!/bin/python3
-import sys, tomllib, tex
+import sys, tomllib, tex, re
 from enum import StrEnum
 
 def label2ref(*labels):
-  return ",".join(["req:" + label.replace('.', ':') for label in labels])
+  return ",".join(["req:" + label for label in labels])
 
 class KEY(StrEnum):
   LABEL = 'label'
@@ -24,27 +24,6 @@ class REQ_PRIORITY(StrEnum):
   SHOULD = 'should'
   COULD = 'could'
   WONT = 'will not'
-
-def flatten(data):
-  out = []
-  for key, value in data.items():
-    # this item is a requirement
-    if key == KEY.DESCRIPTION:
-      out.append(data)
-
-    # skip over reserved keys
-    if key in KEY: continue
-
-    # recursively flatten other requirements
-    items = flatten(value)
-    # and prefix them with the current key
-    for item in items:
-      if KEY.LABEL in item:
-        item[KEY.LABEL] = f"{key}.{item[KEY.LABEL]}"
-      else:
-        item[KEY.LABEL] = f"{key}"
-    out += items
-  return out
 
 id_counter = 0
 def make_id(item):
@@ -79,8 +58,7 @@ def sanitize(item, ids):
       die("definition of done includes unknown requirement(s)")
     item[KEY.DONE] = tex.cmd('Cref', label2ref(*item[KEY.DONE]))
 
-def convert(data):
-  reqs = flatten(data)
+def convert(reqs):
   all_ids = [item[KEY.LABEL] for item in reqs]
   index = 0
   for item in reqs:
@@ -93,6 +71,9 @@ def convert(data):
 
   # skip deleted requirements (but process for make_id)
   reqs = [item for item in reqs if item[KEY.DELETED] == False]
+
+  # sort by label
+  reqs = sorted(reqs, key=lambda req: req[KEY.LABEL])
 
   return reqs
 
@@ -145,20 +126,42 @@ def fmt_tex(data):
     )
   return out
 
-def main(input_file):
-  data = {}
-  with open(input_file, "rb") as file:
-    data = tomllib.load(file)
+def tomlload(content):
+  # replace requirement labels with temp value
+  label_map = dict()
+  label_idx = 0
+  lines = content.split("\n")
+  for index, line in enumerate(lines):
+    match = re.search(r"^\s*\[(.+)\]", line)
+    if match is None: continue
+    lines[index] = f"[{label_idx}]"
+    label_map[str(label_idx)] = match.group(1)
+    label_idx += 1
+  content = "\n".join(lines)
 
-  requirements = convert(data)
+  # load TOML and replace temporary labels with real labels
+  data_dict = tomllib.loads(content)
+  data_list = []
+  for key, value in data_dict.items():
+    value[KEY.LABEL] = label_map[key]
+    data_list.append(value)
+
+  return data_list
+
+def main(input_file):
+  data = []
+  with open(input_file, "r") as file:
+    data = tomlload(file.read())
+
+  items = convert(data)
 
   output_aux = input_file.removesuffix(".toml") + ".aux"
   with open(output_aux, "w+") as file:
-    file.write(fmt_aux(requirements))
+    file.write(fmt_aux(items))
 
   output_tex = input_file.removesuffix(".toml") + ".tex"
   with open(output_tex, "w+") as file:
-    file.write(fmt_tex(requirements))
+    file.write(fmt_tex(items))
 
 if __name__ == "__main__":
   if len(sys.argv) != 2:

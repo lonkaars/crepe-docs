@@ -164,8 +164,6 @@
 \def\project#1{\def\@project{#1}}
 \let\@organization\relax
 \def\organization#1{\def\@organization{#1}}
-\let\@version\relax
-\def\version#1{\def\@version{#1}}
 \def\@maketitle{%
 	\centering%
 	\parskip=0pt%
@@ -195,8 +193,15 @@
 	}%
 	\vfill\flushright%
 	\par{%
-		\par{\strut{}Version \@version\strut}%
 		\par{\strut\@date\strut}%
+		\begingroup%
+		\endlinechar=\m@ne\everyeof{\noexpand}%
+		\edef\x{%
+			\endgroup%
+			\def\noexpand\commit{\@@input|"git rev-parse --short HEAD" }%
+		}%
+		\x%
+		\par{\strut\footnotesize({\ttfamily\commit})\strut}%
 	}%
 	\par\vspace*{2in}%
 }

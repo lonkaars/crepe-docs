@@ -1,15 +1,10 @@
 # This is a TOML file containing all project requirements. The reqs2tex script
 # can be used to generate the files necessary to compile requirements.tex and
 # cross-reference the requirements from other documents.
-#
-# Note that TOML has a hash table structure, so keys used for defining
-# requirement properties cannot be used for requirement IDs. The properties are:
-# label, type, id, index, deleted, done, description, priority
 
 # This is the requirement cross-reference ID. Requirements can be
-# (cross-)referenced from LaTeX by prefixing this ID with `req:` and
-# substituting dots for colons (i.e. this requirement is referenced as
-# \cref{req:audio:async-api}).
+# (cross-)referenced from LaTeX by prefixing this ID with `req:` (i.e. this
+# requirement is referenced as \cref{req:audio}).
 [audio]
 # Requirement type ('system' | 'user')
 type = 'user'
@@ -25,10 +20,10 @@ background music, while simultaniously playing sound effects.
 # is a list of strings, each item is treated as the ID of another requirement,
 # and the references are checked before LaTeX runs.
 done = [
-	'audio.async-api',
-	'audio.handle',
-	'audio.stream-mix',
-	'audio.volume',
+	'audio:async-api',
+	'audio:handle',
+	'audio:stream-mix',
+	'audio:volume',
 ]
 #done = 'When I feel like it'
 # Requirements that are no longer applicable should set `deleted` to `true`.
@@ -36,7 +31,7 @@ done = [
 # different document revisions.
 #deleted = true
 
-[audio.async-api]
+[audio:async-api]
 type = 'system'
 priority = 'must'
 description = '''
@@ -44,7 +39,7 @@ The public audio \gls{api} supports starting audio samples asynchronously
 (i.e.~fire and forget).
 '''
 
-[audio.handle]
+[audio:handle]
 type = 'system'
 priority = 'must'
 description = '''
@@ -52,14 +47,14 @@ The public audio \gls{api} allows the game programmer to control (i.e.~play,
 pause, resume and stop) audio samples after they are created/initialized.
 '''
 
-[audio.stream-mix]
+[audio:stream-mix]
 type = 'system'
 priority = 'must'
 description = '''
 The audio system supports playing multiple audio streams simultaniously.
 '''
 
-[audio.volume]
+[audio:volume]
 type = 'system'
 priority = 'must'
 description = '''
@@ -67,7 +62,7 @@ The public audio \gls{api} allows the game programmer to control the volume of
 audio samples.
 '''
 
-[aux.license]
+[aux:license]
 type = 'system'
 priority = 'must'
 description = '''

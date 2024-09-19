@@ -33,6 +33,12 @@ loek: 2024-09-17 55m bugs :: cross-platform latexmk filespec
 loek: 2024-09-17 2h25m docs :: requirements
 loek: 2024-09-18 2h20m docs :: requirements
 loek: 2024-09-18 1h50m research :: audio
+loek: 2024-09-18 1h05m integration :: PR merge
+loek: 2024-09-19 30m docs :: requirements
+loek: 2024-09-19 15m project meeting
+loek: 2024-09-19 1h30m project meeting
+loek: 2024-09-19 45m project meeting
+loek: 2024-09-19 15m docs :: remove versioning
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -49,6 +55,11 @@ max: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
 max: 2024-09-11 1h50m first review of Jaro's Plan document
 max: 2024-09-12 1h trying to fix LaTeX and VS code settings
 max: 2024-09-12 1h worked on gameObject research
+max: 2024-09-13 1h30m fourth project meeting
+max: 2024-09-16 1h researching self-made ECS possibilities
+max: 2024-09-16 1h30m researching ECS libraries
+max: 2024-09-17 1h30m fifth project meeting
+max: 2024-09-18 4h researching engine structure
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
