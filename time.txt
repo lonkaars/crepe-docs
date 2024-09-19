@@ -36,6 +36,8 @@ loek: 2024-09-18 1h50m research :: audio
 loek: 2024-09-18 1h05m integration :: PR merge
 loek: 2024-09-19 30m docs :: requirements
 loek: 2024-09-19 15m project meeting
+loek: 2024-09-19 1h30m project meeting
+loek: 2024-09-19 45m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
