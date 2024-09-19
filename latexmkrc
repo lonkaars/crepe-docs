@@ -2,7 +2,7 @@
 
 use File::Spec::Functions;
 
-$pdflatex = "xelatex --interaction=nonstopmode %O %S";
+$pdflatex = "xelatex --interaction=nonstopmode --shell-escape %O %S";
 $pdf_mode = 1;
 $dvi_mode = 0;
 $postscript_mode = 0;
