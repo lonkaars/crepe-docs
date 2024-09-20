@@ -127,6 +127,18 @@ jaro: 2024-09-10 1h project plan research physics
 jaro: 2024-09-13 1h project preparing meeting and reading review project plan
 jaro: 2024-09-13 1h30m project meeting
 jaro: 2024-09-13 30m weekly update
-
+jaro: 2024-09-16 1h30m Meeting Niels resource manager
+jaro: 2024-09-16 2h requirements and sdl2 example
+jaro: 2024-09-16 30m requirements
+jaro: 2024-09-17 30m preparing meeting
+jaro: 2024-09-17 1h30m meeting
+jaro: 2024-09-17 30m requirements
+jaro: 2024-09-17 2h30m class diagram
+jaro: 2024-09-18 45m project plan (feedback)
+jaro: 2024-09-19 1h30m research physics
+jaro: 2024-09-19 30m project meeting
+jaro: 2024-09-19 1h30m project lesson
+jaro: 2024-09-19 1h project meeting
+jaro: 2024-09-19 30m project plan and class diagram
 
 # vim:ft=cfg
