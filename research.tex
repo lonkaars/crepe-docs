@@ -131,7 +131,8 @@ The component manager stores two lists (key value pairs). The key of the first l
 is the ID of an entity, and the value of this list are the connected components. The key
 of the second list is the component, and the value of this list are the entities that
 have this component. These two lists make it possible to very quickly gather components
-or entities. This makes the \gls{ecs} very fast, which is of course an advantage.
+or entities. This makes the \gls{ecs} very fast, which is of course an advantage
+\autocite{man:ECSComponentManager}.
 
 \begin{figure}
 	\centering
@@ -153,13 +154,13 @@ Systems should be aware of Collision Components and Rigidbody Components, as bot
 probably contain necessary information regarding physics simulation. It's best to see
 systems as “closed environments”. That is, they do not take ownership of entities nor
 components. They do access them through independent manager objects, which in turn will
-take care of the entities and components life-cycle.
+take care of the entities and components life-cycle \autocite{man:ECSExplanation}.
 
 Sometimes systems, entities and even components need to cummincate with each other. This
 might be very hard because systems, entities and components are more or less independent.
 One option is to use an event systems. A system, entity and component can raise an event
 and other systems, entities and components can react to that event. This is what makes the
-\gls{ecs} a complicated system (disadvantage).
+\gls{ecs} a complicated system (disadvantage) \autocite{man:ECSExplanation}.
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
 popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is
