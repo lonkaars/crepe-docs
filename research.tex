@@ -141,7 +141,25 @@ or entities. This makes the \gls{ecs} very fast, which is of course an advantage
 	\label{fig:ECS Component manager}
 \end{figure}
 
-Disadvantage: systems have to cummincate with each other...
+Another aspect that makes the \gls{ecs} very fast, is that a system can handle all
+components (of the same type) together at once. This is possible because all entities
+are independent of each other.
+
+There are many ways of implementing the systems. Some say that each component type has
+their own system. This interpretation of the systems does not take the interplay of
+different component types, into account. A less restrictive approach is to let different
+systems deal with all components they should be concerned with. For instance a Physics
+Systems should be aware of Collision Components and Rigidbody Components, as both
+probably contain necessary information regarding physics simulation. It's best to see
+systems as “closed environments”. That is, they do not take ownership of entities nor
+components. They do access them through independent manager objects, which in turn will
+take care of the entities and components life-cycle.
+
+Sometimes systems, entities and even components need to cummincate with each other. This
+might be very hard because systems, entities and components are more or less independent.
+One option is to use an event systems. A system, entity and component can raise an event
+and other systems, entities and components can react to that event. This is what makes the
+\gls{ecs} a complicated system (disadvantage).
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
 popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is
