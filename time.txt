@@ -76,6 +76,13 @@ wouter: 2024-09-10 45m project videos
 wouter: 2024-09-10 40m second project lesson
 wouter: 2024-09-12 2h researching gameloops
 wouter: 2024-09-14 3h working on game loop poc
+wouter: 2024-09-16 4h working on gameloop poc
+wouter: 2024-09-17 1h30m fifth project meeting
+wouter: 2024-09-18 3h finishing gameloop poc and starting event manager
+wouter: 2024-09-19 15m project meeting
+wouter: 2024-09-19 1h30m project meeting
+wouter: 2024-09-19 45m project meeting
+wouter: 2024-09-19 15m docs :: remove versioning
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
