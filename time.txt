@@ -65,6 +65,7 @@ max: 2024-09-19 1h30m third project lesson
 max: 2024-09-19 45m sixt project meeting (part two)
 max: 2024-09-19 20m researching facade design pattern
 max: 2024-09-20 1h30m checking PvA (and fixing LaTeX)
+max: 2024-09-20 3h researching engine structure
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
