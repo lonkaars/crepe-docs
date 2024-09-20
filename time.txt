@@ -80,6 +80,13 @@ wouter: 2024-09-10 45m project videos
 wouter: 2024-09-10 40m second project lesson
 wouter: 2024-09-12 2h researching gameloops
 wouter: 2024-09-14 3h working on game loop poc
+wouter: 2024-09-16 4h working on gameloop poc
+wouter: 2024-09-17 1h30m fifth project meeting
+wouter: 2024-09-18 3h finishing gameloop poc and starting event manager
+wouter: 2024-09-19 15m project meeting
+wouter: 2024-09-19 1h30m project meeting
+wouter: 2024-09-19 45m project meeting
+wouter: 2024-09-19 15m docs :: remove versioning
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -97,6 +104,14 @@ niels: 2024-09-11 3h researching the different resourches from unity
 niels: 2024-09-12 3h researching the best option for audio/sprites format and comparing it to sdl2 and sfml.
 niels: 2024-09-13 1h30m project meeting
 niels: 2024-09-13 10m weekly update
+niels: 2024-09-16 1h30m Discussing with jaro about resource manager
+niels: 2024-09-16 4h programming resource manager POC
+niels: 2024-09-17 1h30m project meeting
+niels: 2024-09-18 2h Continued with programming resource manager
+niels: 2024-09-19 15m project meeting
+niels: 2024-09-19 1h30m project meeting
+niels: 2024-09-19 45m project meeting
+niels: 2024-09-19 15m PvA reviewing
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -116,6 +131,18 @@ jaro: 2024-09-10 1h project plan research physics
 jaro: 2024-09-13 1h project preparing meeting and reading review project plan
 jaro: 2024-09-13 1h30m project meeting
 jaro: 2024-09-13 30m weekly update
-
+jaro: 2024-09-16 1h30m Meeting Niels resource manager
+jaro: 2024-09-16 2h requirements and sdl2 example
+jaro: 2024-09-16 30m requirements
+jaro: 2024-09-17 30m preparing meeting
+jaro: 2024-09-17 1h30m meeting
+jaro: 2024-09-17 30m requirements
+jaro: 2024-09-17 2h30m class diagram
+jaro: 2024-09-18 45m project plan (feedback)
+jaro: 2024-09-19 1h30m research physics
+jaro: 2024-09-19 30m project meeting
+jaro: 2024-09-19 1h30m project lesson
+jaro: 2024-09-19 1h project meeting
+jaro: 2024-09-19 30m project plan and class diagram
 
 # vim:ft=cfg
