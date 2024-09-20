@@ -15,15 +15,17 @@ class KEY(StrEnum):
   DESCRIPTION = 'description'
   PRIORITY = 'priority'
 
-class REQ_TYPE(StrEnum):
-  SYSTEM = 'system'
-  USER = 'user'
+REQ_TYPE = [
+  'system',
+  'user',
+]
 
-class REQ_PRIORITY(StrEnum):
-  MUST = 'must'
-  SHOULD = 'should'
-  COULD = 'could'
-  WONT = 'will not'
+REQ_PRIORITY = [
+  'must',
+  'should',
+  'could',
+  'will not',
+]
 
 id_counter = 0
 def make_id(item):
