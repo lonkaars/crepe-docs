@@ -83,18 +83,19 @@ harder \autocite{man:DecoratorDesignPattern}.
 \end{figure}
 
 The Extension Objects design pattern (as shown in \cref{fig:extension objects}) could
-also be used to structure the game engine. The Extension Objects design pattern allows
-to modify an object's propperties/behavior by adding one (or more) Extensions. The
-object that is modified, could be the gameObject and the components could be the
-Extensions. This is quite the same as the required API. An advantage is, that the client
-(which is the scene in our case) can call all kind of different Extension's methods
-(depending on the kind of Externsion, e.g. the method render() for the sprite Extension
-and the method update() for the script Extension). In other words, the interfaces of the
-different Extensions should not be the same. This is way more flexible than the Decorator
-design pattern. A disadvantage is that the data and functionality are in the same class
-(namely inside the Extion's methods), so it's not sepperated. Another disadvantage is
-that the Extension Objects design pattern can be quite slow, because objects are scattered
-in memory (and it is very hard to quickly get their memory address)
+also be used to structure the game engine. The Extension Objects design pattern
+allows to modify an object's propperties/behavior by adding one (or more) Extensions.
+The object that is modified, could be the gameObject and the components could be the
+Extensions. This is quite the same as the required API. An advantage is, that the
+client (which is the scene in our case) can call all kind of different Extension's
+methods (depending on the kind of Externsion, e.g.~the method \codeinline{render()}
+for the sprite Extension and the method \codeinline{update()} for the script
+Extension). In other words, the interfaces of the different Extensions should not be
+the same. This is way more flexible than the Decorator design pattern. A disadvantage
+is that the data and functionality are in the same class (namely inside the Extion's
+methods), so it's not sepperated. Another disadvantage is that the Extension Objects
+design pattern can be quite slow, because objects are scattered in memory (and it is
+very hard to quickly get their memory address)
 \autocite{man:ExtensionObjectDesignPattern, man:extionsionObjectsStackOverflow}.
 
 \begin{figure}
@@ -110,10 +111,10 @@ Component System (\gls{ecs}) (as shown in \cref{fig:ECS Block Diagram}). The
 \gls{ecs} is made out of three main subsystems, namely entities, components and
 systems. Entities are just IDs. An entity is made out of a gameObject and one (or
 more) components. Components are the classes that hold the data. The components
-determine what kind of entity it is (e.g. a sprite, audio, and so on). Systems
-take care of the behavior of the entities. Systems mainly read and write the enity's
-components data. The \gls{ecs} clearly distinguishes the data (components) from
-the functionality (systems), which is an advantage.
+determine what kind of entity it is (e.g.~a sprite, audio, and so on). Systems take
+care of the behavior of the entities. Systems mainly read and write the enity's
+components data. The \gls{ecs} clearly distinguishes the data (components) from the
+functionality (systems), which is an advantage.
 
 \begin{figure}
 	\centering
@@ -126,13 +127,13 @@ the functionality (systems), which is an advantage.
 The \gls{ecs} is normally equipped with a component manager (as shown in
 \cref{fig:ECS Component manager}). The component manager keeps track of the entities
 (Alien, Player, Target, etc in \cref{fig:ECS Component manager}) and the connected
-components (Position, Movement, Render, etc in \cref{fig:ECS Component manager}).
-The component manager stores two lists (key value pairs). The key of the first list
-is the ID of an entity, and the value of this list are the connected components. The key
+components (Position, Movement, Render, etc in \cref{fig:ECS Component manager}). The
+component manager stores two lists (key value pairs). The key of the first list is
+the ID of an entity, and the value of this list are the connected components. The key
 of the second list is the component, and the value of this list are the entities that
-have this component. These two lists make it possible to very quickly gather components
-or entities. This makes the \gls{ecs} very fast, which is of course an advantage
-\autocite{man:ECSComponentManager}.
+have this component. These two lists make it possible to very quickly gather
+components or entities. This makes the \gls{ecs} very fast, which is of course an
+advantage \autocite{man:ECSComponentManager}.
 
 \begin{figure}
 	\centering
@@ -146,21 +147,23 @@ Another aspect that makes the \gls{ecs} very fast, is that a system can handle a
 components (of the same type) together at once. This is possible because all entities
 are independent of each other.
 
-There are many ways of implementing the systems. Some say that each component type has
-their own system. This interpretation of the systems does not take the interplay of
-different component types, into account. A less restrictive approach is to let different
-systems deal with all components they should be concerned with. For instance a Physics
-Systems should be aware of Collision Components and Rigidbody Components, as both
-probably contain necessary information regarding physics simulation. It's best to see
-systems as “closed environments”. That is, they do not take ownership of entities nor
-components. They do access them through independent manager objects, which in turn will
-take care of the entities and components life-cycle \autocite{man:ECSExplanation}.
+There are many ways of implementing the systems. Some say that each component type
+has their own system. This interpretation of the systems does not take the interplay
+of different component types, into account. A less restrictive approach is to let
+different systems deal with all components they should be concerned with. For
+instance a Physics Systems should be aware of Collision Components and Rigidbody
+Components, as both probably contain necessary information regarding physics
+simulation. It's best to see systems as ``closed environments''. That is, they do not
+take ownership of entities nor components. They do access them through independent
+manager objects, which in turn will take care of the entities and components
+life-cycle \autocite{man:ECSExplanation}.
 
-Sometimes systems, entities and even components need to cummincate with each other. This
-might be very hard because systems, entities and components are more or less independent.
-One option is to use an event systems. A system, entity and component can raise an event
-and other systems, entities and components can react to that event. This is what makes the
-\gls{ecs} a complicated system (disadvantage) \autocite{man:ECSExplanation}.
+Sometimes systems, entities and even components need to cummincate with each other.
+This might be very hard because systems, entities and components are more or less
+independent. One option is to use an event systems. A system, entity and component
+can raise an event and other systems, entities and components can react to that
+event. This is what makes the \gls{ecs} a complicated system (disadvantage)
+\autocite{man:ECSExplanation}.
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
 popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is
@@ -222,7 +225,7 @@ gameObject.
 
 Each gameObject always has one transform class. The transform class describes the
 position, rotation, and scale within the scene. Some component use this information
-to e.g. scale a sprite. Other components eddit this information to e.g.~model
+to e.g.~scale a sprite. Other components eddit this information to e.g.~model
 gravity. \autocite{man:unityTransformClass}
 
 A gameObject can have one (or multiple) children gameObject(s). All children
