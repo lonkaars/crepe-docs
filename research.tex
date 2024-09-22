@@ -247,44 +247,14 @@ The game engine is required to have an audio system
 audio mixing engine is outside the scope of this project\mref, this section compares
 various standalone audio libraries for suitability in the engine.
 
-\Cref{sec:audio:libs} details which libraries were considered,
-\cref{sec:audio:benchmark} compares their performance, and
-\cref{sec:audio:conclusion} concludes with a recommendation for most performant audio
-library.
-
 \subsection{Libraries}
 \label{sec:audio:libs}
 
-\Cref{tab:audio:libs} lists the standalone audio engine libraries that fit
-\cref{req:audio,req:lib:license}.
-
-\begin{table}
-	\centering
-	\begin{tabular}{llc}
-		\toprule
-		\textbf{Library} & \textbf{License} & \textbf{API}\\
-		\midrule
-		miniaudio \autocite{lib:miniaudio} & MIT-0 & C\\
-		YSE \autocite{lib:yse} & EPL & C++\\
-		SoLoud \autocite{lib:soloud} & Zlip/LibPng & C++\\
-		\bottomrule
-	\end{tabular}
-	\caption{Audio engine library comparison}
-	\label{tab:audio:libs}
-\end{table}
-
-Other popular libraries that were researched but are unsuitable for this project
-include:\noparbreak
-\begin{description}
-	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license})
-	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing
-\end{description}
-
-\subsection{Benchmarks}
-\label{sec:audio:benchmark}
-
-The same benchmark application was written for each of the libraries listed in
-\cref{tab:audio:libs}. The application does the following:\noparbreak
+After searching for libraries (search terms: `dynamic/adaptive audio', `real-time
+audio', `audio library', `game audio engine'), several libraries were found. These
+libraries were checked against the audio engine requirements
+\autocite{crepe:requirements} and then tested by writing the same benchmark-style
+\gls{poc} using the remaining qualifying libraries:\noparbreak
 \begin{enumerate}
 	\item Load a background track (Ogg Vorbis)
 	\item Load three short samples (WAV)
@@ -294,28 +264,26 @@ The same benchmark application was written for each of the libraries listed in
 	\item Stop all audio and exit
 \end{enumerate}
 
-Each benchmark was profiled using \emph{perf} \autocite{tool:perf} and compared based
-on total CPU and memory utilization. The results of these benchmarks are listed in
-\cref{tab:audio:benchmark}.
+Of these libraries the following were determined to be unsuitable for use in this
+project due to various reasons:\noparbreak
+\begin{description}
+	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license})
+	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing
+	\item[miniaudio \autocite{lib:miniaudio}] With finished \gls{poc}, but dropped due
+		to very limited codec support (WAV, MP3 and FLAC only); Also does not have an
+		\gls{api} reference (only programming manual)
+	\item[YSE \autocite{lib:yse}] Attempted to write \gls{poc}, but CMake configuration
+		in repository is broken; This project seems to have been abandoned
+\end{description}
 
-\begin{table}
-	\centering
-	\begin{tabular}{lr}
-		\toprule
-		\textbf{Library} & \textbf{???}\\
-		\midrule
-		miniaudio &\\
-		YSE &\\
-		SoLoud &\\
-		\bottomrule
-	\end{tabular}
-	\caption{Audio engine library benchmark results}
-	\label{tab:audio:benchmark}
-\end{table}
+The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
+is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
 
 \subsection{Conclusion}
 \label{sec:audio:conclusion}
 
+Due to a severe shortage of libraries that fit our requirements, SoLoud appears to be
+the most suitable (and only) audio library for use in this project.
 
 \section{Physics}
 
