@@ -116,6 +116,7 @@ niels: 2024-09-19 15m project meeting
 niels: 2024-09-19 1h30m project meeting
 niels: 2024-09-19 45m project meeting
 niels: 2024-09-19 15m PvA reviewing
+niels: 2024-09-22 2h30m Adding spritesheet functionalities
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
