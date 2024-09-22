@@ -397,3 +397,6 @@
 }
 \makeatother
 
+% missing reference marker
+\def\mref{\textsuperscript{\textit{\,ref?}}}
+

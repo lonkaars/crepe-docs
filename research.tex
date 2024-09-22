@@ -354,45 +354,50 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Conclusion}
 
-% TODO: this entire section
 \section{Audio}
 
-% should audio research be scoped down to SDL2 (if that's what we're going with) or
-% standalone libraries only (for modularity?).
+The game engine is required to have an audio system
+\autocite[\ref{req:audio}]{crepe:requirements}. Since writing a custom real-time
+audio mixing engine is outside the scope of this project\mref, this section compares
+various standalone audio libraries for suitability in the engine.
 
-The game engine is required to have an audio system with support for playing multiple
-audio streams (i.e.~tracks or samples) simultaniously. Since writing a custom live
-audio mixing engine is outside the scope of this project, this section compares
-various standalone audio engines that could be used in the engine.
+\subsection{Libraries}
+\label{sec:audio:libs}
 
-% TODO: requirements first!
+After searching for libraries (search terms: `dynamic/adaptive audio', `real-time
+audio', `audio library', `game audio engine'), several libraries were found. These
+libraries were checked against the audio engine requirements
+\autocite{crepe:requirements} and then tested by writing the same benchmark-style
+\gls{poc} using the remaining qualifying libraries:\noparbreak
+\begin{enumerate}
+	\item Load a background track (Ogg Vorbis)
+	\item Load three short samples (WAV)
+	\item Start the background track
+	\item Play each sample sequentially while pausing and resuming the background track
+	\item Play all samples simultaniously
+	\item Stop all audio and exit
+\end{enumerate}
 
-% REQ ~ is cross-platform
-% REQ ~ supports multiple audio formats (TODO: which)
-% REQ ~ supports simultanious playback / mixing
-% REQ ~ has an open-source license
-\begin{table}
-	\centering
-	\begin{tabular}{llc}
-		\toprule
-		\textbf{Library} & \textbf{License} & \textbf{API}\\
-		\midrule
-		miniaudio & MIT-0 & C\\
-		YSE & EPL & C++\\
-		SoLoud & Zlip/LibPng & C++\\
-		\bottomrule
-	\end{tabular}
-	\caption{Audio engine library comparison}
-	\label{tab:audio-engines}
-\end{table}
-% TODO: ref https://miniaud.io/
-% TODO: ref https://www.attr-x.net/yse/
-
-Not considered further:
+Of these libraries the following were determined to be unsuitable for use in this
+project due to various reasons:\noparbreak
 \begin{description}
-	\item[FMOD] is proprietary
-	\item[PortAudio] requires manual mixing
+	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license})
+	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing
+	\item[miniaudio \autocite{lib:miniaudio}] With finished \gls{poc}, but dropped due
+		to very limited codec support (WAV, MP3 and FLAC only); Also does not have an
+		\gls{api} reference (only programming manual)
+	\item[YSE \autocite{lib:yse}] Attempted to write \gls{poc}, but CMake configuration
+		in repository is broken; This project seems to have been abandoned
 \end{description}
+
+The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
+is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
+
+\subsection{Conclusion}
+\label{sec:audio:conclusion}
+
+Due to a severe shortage of libraries that fit our requirements, SoLoud appears to be
+the most suitable (and only) audio library for use in this project.
 
 \section{Physics}
 
