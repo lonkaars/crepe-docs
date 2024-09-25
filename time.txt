@@ -66,6 +66,9 @@ max: 2024-09-19 45m sixt project meeting (part two)
 max: 2024-09-19 20m researching facade design pattern
 max: 2024-09-20 1h30m checking PvA (and fixing LaTeX)
 max: 2024-09-20 3h researching engine structure
+max: 2024-09-24 2h seventh project meeting
+max: 2024-09-24 45m PvA review with Bob
+max: 2024-09-25 7h30m Creating EnTT POC and considering other ECS
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
