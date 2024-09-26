@@ -43,6 +43,7 @@ loek: 2024-09-19 30m PR merge and style guide update
 loek: 2024-09-22 2h15m docs :: research
 loek: 2024-09-24 1h45m project meeting
 loek: 2024-09-25 3h implementation :: audio facade and API
+loek: 2024-09-26 2h project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
