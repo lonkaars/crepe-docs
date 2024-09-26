@@ -76,6 +76,8 @@ max: 2024-09-24 45m PvA review with Bob
 max: 2024-09-25 7h30m Creating EnTT POC and considering other ECS
 max: 2024-09-25 1h wrote email to Bob
 max: 2024-09-25 2h40m make my own ECS (homemade ECS)
+max: 2024-09-26 2h eight project meeting
+max: 2024-09-26 1h wrote email to Bob (after project meeting)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
