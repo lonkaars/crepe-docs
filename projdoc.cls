@@ -1,6 +1,19 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{projdoc}[2024-09-03 class projdoc]
 
+% project defaults
+\makeatletter
+\def\@project{Project cr\^epe}
+\def\@organization{Avans University of Applied Sciences}
+\def\@author{%
+	Loek Le Blansch\and%
+	Wouter Boerenkamps\and%
+	Jaro Rutjes\and%
+	Max Smits\and%
+	Niels Stunnebrink%
+}
+\makeatother
+
 % based on article
 \LoadClass{article}
 
@@ -160,9 +173,7 @@
 
 % \maketitle format
 \makeatletter
-\let\@project\relax
 \def\project#1{\def\@project{#1}}
-\let\@organization\relax
 \def\organization#1{\def\@organization{#1}}
 \def\@maketitle{%
 	\centering%
