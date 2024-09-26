@@ -17,6 +17,8 @@ other document.
 - Only environments indent the LaTeX source code
 - Insert a non-breaking space (`~`) after (Latin) abbreviations such as "i.e."
   or "e.g.". Never place a comma after either of these.
+- Multiple references (both `\cref` and `\autocite`) should be done in a single
+  command (i.e. `\cref{fig:a,fig:b}` and `\autocite{source1,source2}`)
 
 # Banned practices
 

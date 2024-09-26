@@ -1,5 +1,4 @@
 \documentclass{projdoc}
-\input{meta.tex}
 
 \title{Research document}
 
@@ -24,7 +23,7 @@ A game engine is not the game itself but a platform with which games are built. 
 should provide the functionalities with which the game is constructed. The purpose of
 a game engine is not to create data out of nothing. Instead, data is read, and the
 correlating features and effects are generated. However, the engine is also used to
-create these files, referred to as ``assets.'' The game engine must be able to accept
+create these files, referred to as ``assets''. The game engine must be able to accept
 a certain format of these assets---whether levels, sprites, or textures---and convert
 them into usable data.
 
@@ -72,28 +71,98 @@ such Decorator design pattern, is that the interface of all components should be
 same (they should share the same methods), because the client (which is the scene in
 our case) can only call/reach the components through the interface. This would
 require very general methods (at the interface), which might make the programming
-harder \autocite{man:DecoratorDesignPattern,man:Decorator}.
+harder \autocite{man:DecoratorDesignPattern}.
 
 \begin{figure}
 	\centering
-	\includepumldiag{img/decorator-design-pattern.puml}
+	\includegraphics[width=0.5\textwidth]{img/DecoratorDesignPattern.png}
 	\caption{Decorator design pattern}
 	Source: \autocite{img:Decorator}
 	\label{fig:decorator}
 \end{figure}
 
-TODO: Add Extension Objects design pattern (if this is applicable)!
+The Extension Objects design pattern (as shown in \cref{fig:extension objects}) could
+also be used to structure the game engine. The Extension Objects design pattern
+allows to modify an object's propperties/behavior by adding one (or more) Extensions.
+The object that is modified, could be the gameObject and the components could be the
+Extensions. This is quite the same as the required API. An advantage is, that the
+client (which is the scene in our case) can call all kind of different Extension's
+methods (depending on the kind of Externsion, e.g.~the method \codeinline{render()}
+for the sprite Extension and the method \codeinline{update()} for the script
+Extension). In other words, the interfaces of the different Extensions should not be
+the same. This is way more flexible than the Decorator design pattern. A disadvantage
+is that the data and functionality are in the same class (namely inside the Extion's
+methods), so it's not sepperated. Another disadvantage is that the Extension Objects
+design pattern can be quite slow, because objects are scattered in memory (and it is
+very hard to quickly get their memory address)
+\autocite{man:ExtensionObjectDesignPattern, man:extionsionObjectsStackOverflow}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/ExtensionObjects.jpg}
+	\caption{Extension Objects design pattern}
+	Source: \autocite{img:extionsionObjects}
+	\label{fig:extension objects}
+\end{figure}
 
 Another (very popular) design pattern to structure the game engine, is the Entity
-Component System (\gls{ecs}). The \gls{ecs} is made out of three main subsystems,
-namely entities, components and systems. Entities are just IDs. An entity is made out
-of a gameObject and one (or more) components. Components are the classes that hold
-the data. The components determine what kind of entity it is (e.g. a sprite, audio,
-and so on). Systems take care of the behavior of the entities. Systems mainly read
-and write the enity's components data. The \gls{ecs} clearly distinguishes the data
-(components) from the functionality (systems).
+Component System (\gls{ecs}) (as shown in \cref{fig:ECS Block Diagram}). The
+\gls{ecs} is made out of three main subsystems, namely entities, components and
+systems. Entities are just IDs. An entity is made out of a gameObject and one (or
+more) components. Components are the classes that hold the data. The components
+determine what kind of entity it is (e.g.~a sprite, audio, and so on). Systems take
+care of the behavior of the entities. Systems mainly read and write the enity's
+components data. The \gls{ecs} clearly distinguishes the data (components) from the
+functionality (systems), which is an advantage.
 
-% TODO: Continue this explanation (also add some diagrams to make the ECS more clear)!
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/ECSBlockDiagram.png}
+	\caption{ECS design pattern}
+	Source: \autocite{img:ECSBlockDiagram}
+	\label{fig:ECS Block Diagram}
+\end{figure}
+
+The \gls{ecs} is normally equipped with a component manager (as shown in
+\cref{fig:ECS Component manager}). The component manager keeps track of the entities
+(Alien, Player, Target, etc in \cref{fig:ECS Component manager}) and the connected
+components (Position, Movement, Render, etc in \cref{fig:ECS Component manager}). The
+component manager stores two lists (key value pairs). The key of the first list is
+the ID of an entity, and the value of this list are the connected components. The key
+of the second list is the component, and the value of this list are the entities that
+have this component. These two lists make it possible to very quickly gather
+components or entities. This makes the \gls{ecs} very fast, which is of course an
+advantage \autocite{man:ECSComponentManager}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/ECSComponentManager.png}
+	\caption{ECS Component manager}
+	Source: \autocite{img:ECSComponentSystem}
+	\label{fig:ECS Component manager}
+\end{figure}
+
+Another aspect that makes the \gls{ecs} very fast, is that a system can handle all
+components (of the same type) together at once. This is possible because all entities
+are independent of each other.
+
+There are many ways of implementing the systems. Some say that each component type
+has their own system. This interpretation of the systems does not take the interplay
+of different component types, into account. A less restrictive approach is to let
+different systems deal with all components they should be concerned with. For
+instance a Physics Systems should be aware of Collision Components and Rigidbody
+Components, as both probably contain necessary information regarding physics
+simulation. It's best to see systems as ``closed environments''. That is, they do not
+take ownership of entities nor components. They do access them through independent
+manager objects, which in turn will take care of the entities and components
+life-cycle \autocite{man:ECSExplanation}.
+
+Sometimes systems, entities and even components need to cummincate with each other.
+This might be very hard because systems, entities and components are more or less
+independent. One option is to use an event systems. A system, entity and component
+can raise an event and other systems, entities and components can react to that
+event. This is what makes the \gls{ecs} a complicated system (disadvantage)
+\autocite{man:ECSExplanation}.
 
 There are many C/C++ libraries available, completely dedicated to \gls{ecs}. The most
 popular libraries are shown in \cref{tab:popularECSLibraries}. The popularity is
@@ -115,9 +184,53 @@ based on the amount of stars on GitHub.
 	\label{tab:popularECSLibraries}
 \end{table}
 
+TODO: Add library benchmark to find the best library.
+
 It is, of course, not necessary to use a library to implement an \gls{ecs}
 architecture. However, it seems very hard to achieve the same performance as a
 library \autocite{github:ecsfaq}.
+
+\subsection{Conclusion}
+
+\section{Gameobjects/components}
+\label{sec:Gameobjects/components}
+
+\subsection{Introduction}
+
+One of the requirements of our customer, is that the game engine's structure is
+similar to Unity. The customer has created a class diagram of the game engine's API,
+which is (of course) very similar to Unity. One of the most important parts of the
+class diagram is a so-called gameObject (with several components). It's needed to
+understand the exact meaning/function of these gameObjects, that's why this research
+question arose.
+
+\subsection{Findings}
+
+A gameObject is the most important concept in Unity. Every object in a game is a
+GameObject, from characters and collectible items to the lights, cameras and special
+effects. However, a gameObject itself can't do anything on its own. A gameObject
+needs to be given properties before it can become a character, an envirnment, or a
+special effect. \autocite{man:unityGameobjects}
+
+A gameObject can be seen as a container for components. Components are the properties
+of the gameObject. A few examples of components are sprites, animators, audioSources,
+and so on. Multiple (different) components can be assigned to a single gameObject
+(e.g.~a sprite and an audioSource).
+
+Since we now know that a gameObject needs components to do something, it's obvious
+that there should be a way to add components to a gameObject. Some components
+(e.g.~the behaviorScript component) should also be able to reference to its
+gameObject.
+
+Each gameObject always has one transform class. The transform class describes the
+position, rotation, and scale within the scene. Some component use this information
+to e.g.~scale a sprite. Other components eddit this information to e.g.~model
+gravity. \autocite{man:unityTransformClass}
+
+A gameObject can have one (or multiple) children gameObject(s). All children
+gameObjects, of course, also have one transform class. However, the position,
+rotation, and scale of this class, is always the same as the child's parent. A child
+can not have more than one parent. \autocite{man:unityTransformClass}
 
 \subsection{Conclusion}
 
@@ -240,45 +353,50 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Conclusion}
 
-% TODO: this entire section
 \section{Audio}
 
-% should audio research be scoped down to SDL2 (if that's what we're going with) or
-% standalone libraries only (for modularity?).
+The game engine is required to have an audio system
+\autocite[\ref{req:audio}]{crepe:requirements}. Since writing a custom real-time
+audio mixing engine is outside the scope of this project\mref, this section compares
+various standalone audio libraries for suitability in the engine.
 
-The game engine is required to have an audio system with support for playing multiple
-audio streams (i.e.~tracks or samples) simultaniously. Since writing a custom live
-audio mixing engine is outside the scope of this project, this section compares
-various standalone audio engines that could be used in the engine.
+\subsection{Libraries}
+\label{sec:audio:libs}
 
-% TODO: requirements first!
+After searching for libraries (search terms: `dynamic/adaptive audio', `real-time
+audio', `audio library', `game audio engine'), several libraries were found. These
+libraries were checked against the audio engine requirements
+\autocite{crepe:requirements} and then tested by writing the same benchmark-style
+\gls{poc} using the remaining qualifying libraries:\noparbreak
+\begin{enumerate}
+	\item Load a background track (Ogg Vorbis)
+	\item Load three short samples (WAV)
+	\item Start the background track
+	\item Play each sample sequentially while pausing and resuming the background track
+	\item Play all samples simultaniously
+	\item Stop all audio and exit
+\end{enumerate}
 
-% REQ ~ is cross-platform
-% REQ ~ supports multiple audio formats (TODO: which)
-% REQ ~ supports simultanious playback / mixing
-% REQ ~ has an open-source license
-\begin{table}
-	\centering
-	\begin{tabular}{llc}
-		\toprule
-		\textbf{Library} & \textbf{License} & \textbf{API}\\
-		\midrule
-		miniaudio & MIT-0 & C\\
-		YSE & EPL & C++\\
-		SoLoud & Zlip/LibPng & C++\\
-		\bottomrule
-	\end{tabular}
-	\caption{Audio engine library comparison}
-	\label{tab:audio-engines}
-\end{table}
-% TODO: ref https://miniaud.io/
-% TODO: ref https://www.attr-x.net/yse/
-
-Not considered further:
+Of these libraries the following were determined to be unsuitable for use in this
+project due to various reasons:\noparbreak
 \begin{description}
-	\item[FMOD] is proprietary
-	\item[PortAudio] requires manual mixing
+	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license})
+	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing
+	\item[miniaudio \autocite{lib:miniaudio}] With finished \gls{poc}, but dropped due
+		to very limited codec support (WAV, MP3 and FLAC only); Also does not have an
+		\gls{api} reference (only programming manual)
+	\item[YSE \autocite{lib:yse}] Attempted to write \gls{poc}, but CMake configuration
+		in repository is broken; This project seems to have been abandoned
 \end{description}
+
+The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
+is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
+
+\subsection{Conclusion}
+\label{sec:audio:conclusion}
+
+Due to a severe shortage of libraries that fit our requirements, SoLoud appears to be
+the most suitable (and only) audio library for use in this project.
 
 \section{Physics}
 
@@ -301,48 +419,6 @@ Not considered further:
 \subsection{Introduction}
 
 \subsection{Findings}
-
-\subsection{Conclusion}
-
-\section{Gameobjects/components}
-\label{sec:Gameobjects/components}
-
-\subsection{Introduction}
-
-One of the requirements of our customer, is that the game engine's structure is
-similar to Unity. The customer has created a class diagram of the game engine's API,
-which is (of course) very similar to Unity. One of the most important parts of the
-class diagram is a so-called gameObject (with several components). It's needed to
-understand the exact meaning/function of these gameObjects, that's why this research
-question arose.
-
-\subsection{Findings}
-
-A gameObject is the most important concept in Unity. Every object in a game is a
-GameObject, from characters and collectible items to the lights, cameras and special
-effects. However, a gameObject itself can't do anything on its own. A gameObject
-needs to be given properties before it can become a character, an envirnment, or a
-special effect. \autocite{man:unityGameobjects}
-
-A gameObject can be seen as a container for components. Components are the properties
-of the gameObject. A few examples of components are sprites, animators, audioSources,
-and so on. Multiple (different) components can be assigned to a single gameObject
-(e.g.~a sprite and an audioSource).
-
-Since we now know that a gameObject needs components to do something, it's obvious
-that there should be a way to add components to a gameObject. Some components
-(e.g.~the behaviorScript component) should also be able to reference to its
-gameObject.
-
-Each gameObject always has one transform class. The transform class describes the
-position, rotation, and scale within the scene. Some component use this information
-to e.g. scale a sprite. Other components eddit this information to e.g.~model
-gravity. \autocite{man:unityTransformClass}
-
-A gameObject can have one (or multiple) children gameObject(s). All children
-gameObjects, of course, also have one transform class. However, the position,
-rotation, and scale of this class, is always the same as the child's parent. A child
-can not have more than one parent. \autocite{man:unityTransformClass}
 
 \subsection{Conclusion}
 

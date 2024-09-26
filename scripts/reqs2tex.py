@@ -75,7 +75,7 @@ def convert(reqs):
   reqs = [item for item in reqs if item[KEY.DELETED] == False]
 
   # sort by label
-  reqs = sorted(reqs, key=lambda req: req[KEY.LABEL])
+  reqs = sorted(reqs, key=lambda item: item[KEY.LABEL])
 
   return reqs
 
