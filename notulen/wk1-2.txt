@@ -1,0 +1,32 @@
+	Documents
+		Research Document
+			Setup research document
+		Project plan
+			[closed]Setup project plan
+				[closed] 2 meetings 30 minutes standup + 1 hour discussion
+			Continue adding information to project plan
+		document standard
+			Add updates when needed
+			[closed] Ask if APA is a requirement. (not needed)
+	Git
+		[closed] Setup document repo
+		[closed] Setup code repo
+		[closed] Setup code standard
+		Code standard
+			Add updates when needed
+			add doxygen code comments
+	Environments
+		[closed]Setup environment code
+
+		Setup environment document
+			issues with windows and linux compatibility latex
+	Research
+		3rd party tools
+			SDL2
+			SFML
+		[closed] Watch video project introduction unity
+		research unity game engine
+
+
+
+

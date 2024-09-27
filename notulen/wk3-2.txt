@@ -1,0 +1,43 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			Final Review document
+		document standard
+			Add updates when needed
+		requirement
+			-
+		design document
+			-
+		[closed] no version control
+		[closed] Converting meeting nodes
+	Git
+		Code standard
+			Add updates when needed
+			add doxygen code comments
+	Environments
+		-
+	Research
+		start research gameloop + eventmanager Starting POC adding to documentation
+		start research resource manager POC add to documentation
+		start research renderer
+		start research scripting
+		start research debugging/profiling
+		start research gameobject
+		start research physics Starting POC
+		start research audio finishing POC
+		start research ecs
+		start research particels
+		start research loading level and sprite (visuals)
+	Design
+		discussed class diagram
+		Making first version of class diagram
+		[closed] Change string from audio and sprint to a instance of an object (resource)
+		[closed] Discussing validation application
+	Product
+		Creating 3rd party tool facade audio
+
+
+
+
+

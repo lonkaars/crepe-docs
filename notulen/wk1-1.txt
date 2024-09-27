@@ -1,0 +1,22 @@
+	Documents
+		Project plan
+			Setup project plan
+				2 meetings 30 minutes standup + 1 hour discussion
+		document standard
+			Ask if APA is a requirement.
+	Git
+		Setup document repo
+		Setup code repo
+		Setup code standard
+	Environments
+		Setup environment code
+		Setup environment document
+	Research
+		3rd party tools
+			SDL2
+			SFML
+		Watch video project introduction unity
+
+
+
+

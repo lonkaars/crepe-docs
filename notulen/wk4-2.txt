@@ -1,0 +1,47 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			-
+		document standard
+			Add updates when needed
+		requirement
+			-
+		design document
+			-
+	Git
+		Code standard
+			Add updates when needed
+			add doxygen code comments
+	Environments
+		-
+	Research
+		[closed] start research gameloop + eventmanager
+		start research resource manager POC move some functionality
+		start research renderer
+		start research scripting
+		start research debugging/profiling
+		start research gameobject
+		start research physics Starting POC
+			Discussed functional phiscics requirements
+		start research ecs (showed poc design must change asked customer if design can change)
+		start research particels
+	Design
+		discussed class diagram
+			one instance of rigidbody and collider
+			Gameobject is not the owner of the component but the manager is
+			and one component type per gameobject.
+			Functions within a model can they change?
+		Adding design audio
+		Adding design resource manager
+		Adding design gameloop + eventmanager
+	Product
+		Creating 3rd party tool facade audio
+		class diagram to c++ will wait until some design changes
+	Test
+		Add unit test for audio
+
+
+
+
+
