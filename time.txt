@@ -163,5 +163,10 @@ jaro: 2024-09-19 30m project meeting
 jaro: 2024-09-19 1h30m project lesson
 jaro: 2024-09-19 1h project meeting
 jaro: 2024-09-19 30m project plan and class diagram
-
+jaro: 2024-09-24 3h45m physics research and poc
+jaro: 2024-09-24 3h30m project: meeting + delivery project plan
+jaro: 2024-09-26 2h30m physics research and poc
+jaro: 2024-09-26 30m preparing meeting
+jaro: 2024-09-26 2h team meeting
+jaro: 2024-09-27 45m converting notes
 # vim:ft=cfg
