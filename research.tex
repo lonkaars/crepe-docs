@@ -310,6 +310,52 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Findings}
 
+\subsection{unity formats}
+Unity has many different asset file types that can be imported to use for a game \href{https://docs.unity3d.com/Manual/BuiltInImporters.html}{unity imports}. The most important formats are the audio, text and sprite formats.
+
+\paragraph{Audio}
+
+The unity engine supports a lot of different audio formats:
+\begin{itemize}
+	\item ogg.
+	\item aif.
+	\item aiff.
+	\item flac.
+	\item wav.
+	\item mp3.
+	\item mod.
+	\item it.
+	\item s3m.
+	\item xm.
+\end{itemize}
+
+\paragraph{Sprite formats}
+
+Unity supports many different image formats:
+\begin{itemize}
+	\item jpg.
+	\item jpeg.
+	\item tif/tiff.
+	\item tga.
+	\item gif.
+	\item png.
+	\item psd.
+	\item bmp.
+	\item iff.
+	\item pict.
+	\item pic.
+	\item pct.
+	\item exr.
+	\item hdr.
+\end{itemize}
+
+\subsection{Audio Format} The choice of audio format for the Crepe game engine depends on several factors, including sound quality, memory usage, and licensing. According to various sources \href{https://dev.to/tenry/comparison-of-audio-formats-for-games-jak}{comparison audio formats}, \href{https://www.universityofgames.net/articles/audio-file-formats-used-in-game-development/}{Audio files in games} , the most commonly used audio formats in game development are WAV, MP3, and Ogg.
+
+\paragraph{Licensing} Historically, MP3 had patents on the audio format, but these restrictions have expired. Ogg and FLAC, both developed by Xiph.Org, are open-source formats. Additionally, the WAV format, though widely used, does not require a specific license for distribution.
+
+\paragraph{Conclusion} For the Crepe game engine, Ogg and FLAC are the preferred audio formats due to their open-source licenses and high compatibility. FLAC is ideal for high-quality audio with minimal compression, while Ogg is better suited for lower-quality audio that requires reduced memory usage. Both formats come from the same non-profit organization, Xiph.Org, ensuring that they align with open-source values and licensing flexibility.
+
+
 \subsection{Conclusion}
 
 \section{Rendering}
