@@ -102,6 +102,9 @@ wouter: 2024-09-19 15m project meeting
 wouter: 2024-09-19 1h30m project meeting
 wouter: 2024-09-19 45m project meeting
 wouter: 2024-09-19 15m docs :: remove versioning
+wouter: 2024-09-26 2h eight project meeting
+wouter: 2024-09-26 3h researching event manager
+
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
