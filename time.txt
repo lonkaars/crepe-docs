@@ -131,6 +131,11 @@ niels: 2024-09-19 1h30m project meeting
 niels: 2024-09-19 45m project meeting
 niels: 2024-09-19 15m PvA reviewing
 niels: 2024-09-22 2h30m Adding spritesheet functionalities
+niels: 2024-09-23 2h researching and POC tiled library tmxlite
+niels: 2024-09-24 2h project Meeting
+niels: 2024-09-24 45m meeting with Bob
+niels: 2024-09-25 6h integrate the resource manager spritesheet, tmxlite, texture.
+niels: 2024-09-26 2h project meeting 
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
