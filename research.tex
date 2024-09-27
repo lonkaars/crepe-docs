@@ -1,6 +1,6 @@
 \documentclass{projdoc}
 
-\title{Research document}
+\title{Research Document}
 
 \begin{document}
 \tablestables
@@ -310,12 +310,18 @@ for audio some options could be: FMOD, Wwise, or iirKlang
 
 \subsection{Findings}
 
-\subsection{unity formats}
-Unity has many different asset file types that can be imported to use for a game \href{https://docs.unity3d.com/Manual/BuiltInImporters.html}{unity imports}. The most important formats are the audio, text and sprite formats.
+\subsection{Unity formats}
 
-\paragraph{Audio}
+% TODO: +ref (urldate 2024-09-11)
+Unity has many different asset file types that can be imported to use for a game
+\href{https://docs.unity3d.com/Manual/BuiltInImporters.html}{unity imports}. The most
+important formats are the audio, text and sprite formats.
 
-The unity engine supports a lot of different audio formats:
+\subsubsection{Audio}
+
+% NOTE: multicols to save space (is this list necessary?)
+The unity engine supports a lot of different audio formats:\noparbreak
+\begin{multicols}{5}
 \begin{itemize}
 	\item ogg.
 	\item aif.
@@ -328,10 +334,13 @@ The unity engine supports a lot of different audio formats:
 	\item s3m.
 	\item xm.
 \end{itemize}
+\end{multicols}
 
-\paragraph{Sprite formats}
+\subsubsection{Sprite formats}
 
-Unity supports many different image formats:
+% NOTE: multicols to save space (is this list necessary?)
+Unity supports many different image formats:\noparbreak
+\begin{multicols}{5}
 \begin{itemize}
 	\item jpg.
 	\item jpeg.
@@ -348,13 +357,32 @@ Unity supports many different image formats:
 	\item exr.
 	\item hdr.
 \end{itemize}
+\end{multicols}
 
-\subsection{Audio Format} The choice of audio format for the Crepe game engine depends on several factors, including sound quality, memory usage, and licensing. According to various sources \href{https://dev.to/tenry/comparison-of-audio-formats-for-games-jak}{comparison audio formats}, \href{https://www.universityofgames.net/articles/audio-file-formats-used-in-game-development/}{Audio files in games} , the most commonly used audio formats in game development are WAV, MP3, and Ogg.
+\subsection{Audio Format}
 
-\paragraph{Licensing} Historically, MP3 had patents on the audio format, but these restrictions have expired. Ogg and FLAC, both developed by Xiph.Org, are open-source formats. Additionally, the WAV format, though widely used, does not require a specific license for distribution.
+% TODO: +ref (both urldate 2024-09-12)
+The choice of audio format for the cr\^epe game engine depends on several factors,
+including sound quality, memory usage, and licensing. According to various sources
+\href{https://dev.to/tenry/comparison-of-audio-formats-for-games-jak}{comparison audio formats},
+\href{https://www.universityofgames.net/articles/audio-file-formats-used-in-game-development/}{Audio files in games},
+the most commonly used audio formats in game development are WAV, MP3, and Ogg.
 
-\paragraph{Conclusion} For the Crepe game engine, Ogg and FLAC are the preferred audio formats due to their open-source licenses and high compatibility. FLAC is ideal for high-quality audio with minimal compression, while Ogg is better suited for lower-quality audio that requires reduced memory usage. Both formats come from the same non-profit organization, Xiph.Org, ensuring that they align with open-source values and licensing flexibility.
+\subsubsection{Licensing}
 
+Historically, MP3 had patents on the audio format, but these restrictions have
+expired. Ogg and FLAC, both developed by Xiph.Org, are open-source formats.
+Additionally, the WAV format, though widely used, does not require a specific license
+for distribution.
+
+\subsubsection{Conclusion}
+
+For the cr\^epe game engine, Ogg and FLAC are the preferred audio formats due to
+their open-source licenses and high compatibility. FLAC is ideal for high-quality
+audio with minimal compression, while Ogg is better suited for lower-quality audio
+that requires reduced memory usage. Both formats come from the same non-profit
+organization, Xiph.Org, ensuring that they align with open-source values and
+licensing flexibility.
 
 \subsection{Conclusion}
 
@@ -477,3 +505,4 @@ the most suitable (and only) audio library for use in this project.
 \subsection{Conclusion}
 
 \end{document}
+

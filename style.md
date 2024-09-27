@@ -13,6 +13,9 @@ reference.
   instead of a slash, etc.)
 - Quotes are closed before punctuation marks.
 - Do not use contractions, modal adverbs or rhetorical questions.
+- The engine is stylized in lowercase, and is just called 'crêpe'. Additional
+  words describing what crêpe is (i.e. '(game) engine') should not be
+  capitalized, as crêpe is not written like a porper noun.
 
 # References
 

@@ -7,7 +7,7 @@ other document.
 - Indent using tabs
 - Wrap long lines at column 80
 - ASCII only (LaTeX syntax should be used instead of UTF-8, i.e. `fa\c{c}ade`
-  instead of `façade`, `---` instead of `—`)
+  instead of `façade`, `---` instead of `—`, `cr\^epe` instead of `crêpe`)
 - Images should be placed in the img/ folder
 - Labels and bibliography keys should only consist of characters from the
   following set: `[a-z0-9:-]` (lower-case, numbers, colon, dash).
