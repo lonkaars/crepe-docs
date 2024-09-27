@@ -19,13 +19,66 @@ loek: 2024-09-10 25m briefing :: watch bob videos
 loek: 2024-09-10 5m docs :: update readme
 loek: 2024-09-10 12m docs :: add comparison package and more example latex code
 loek: 2024-09-10 30m project meeting
+loek: 2024-09-11 1h40m research :: profiling and debugging
+loek: 2024-09-12 15m integration :: PR merge
+loek: 2024-09-12 30m research :: audio
+loek: 2024-09-13 1h10m project meeting
+loek: 2024-09-13 45m integration :: PR merge
+loek: 2024-09-14 45m refactoring :: clean up LaTeX build system
+loek: 2024-09-14 1h10m docs :: requirements
+loek: 2024-09-15 2h55m docs :: requirements
+loek: 2024-09-16 2h30m docs :: requirements
+loek: 2024-09-17 1h20m project meeting
+loek: 2024-09-17 55m bugs :: cross-platform latexmk filespec
+loek: 2024-09-17 2h25m docs :: requirements
+loek: 2024-09-18 2h20m docs :: requirements
+loek: 2024-09-18 1h50m research :: audio
+loek: 2024-09-18 1h05m integration :: PR merge
+loek: 2024-09-19 30m docs :: requirements
+loek: 2024-09-19 15m project meeting
+loek: 2024-09-19 1h30m project meeting
+loek: 2024-09-19 45m project meeting
+loek: 2024-09-19 15m docs :: remove versioning
+loek: 2024-09-19 30m PR merge and style guide update
+loek: 2024-09-22 2h15m docs :: research
+loek: 2024-09-24 1h45m project meeting
+loek: 2024-09-25 3h implementation :: audio facade and API
+loek: 2024-09-26 2h project meeting
+loek: 2024-09-25 1h20m implementation :: audio facade and API
 
-max: 2024-09-02 1h project meeting :: project kickoff
-max: 2024-09-02 45m project meeting
+max: 2024-09-02 1h project kickoff
+max: 2024-09-02 45m first project meeting
+max: 2024-09-03 1h30m first project lesson
 max: 2024-09-04 1h30m installing and configuring latex
 max: 2024-09-04 2h reading project info
 max: 2024-09-05 20m discussing GitHub with Jaro
-max: 2024-09-05 1h30m first group meeting
+max: 2024-09-05 1h30m second project meeting
+max: 2024-09-06 45m writing email and fixing clang-format/-tidy
+max: 2024-09-09 3h10m investigating Unity (in relation to the class diagram)
+max: 2024-09-10 1h30m third project meeting
+max: 2024-09-10 20m discussing about class diagram
+max: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
+max: 2024-09-11 1h50m first review of Jaro's Plan document
+max: 2024-09-12 1h trying to fix LaTeX and VS code settings
+max: 2024-09-12 1h worked on gameObject research
+max: 2024-09-13 1h30m fourth project meeting
+max: 2024-09-16 1h researching self-made ECS possibilities
+max: 2024-09-16 1h30m researching ECS libraries
+max: 2024-09-17 1h30m fifth project meeting
+max: 2024-09-18 4h researching engine structure
+max: 2024-09-19 20m sixt project meeting (part one)
+max: 2024-09-19 1h30m third project lesson
+max: 2024-09-19 45m sixt project meeting (part two)
+max: 2024-09-19 20m researching facade design pattern
+max: 2024-09-20 1h30m checking PvA (and fixing LaTeX)
+max: 2024-09-20 3h researching engine structure
+max: 2024-09-24 2h seventh project meeting
+max: 2024-09-24 45m PvA review with Bob
+max: 2024-09-25 7h30m Creating EnTT POC and considering other ECS
+max: 2024-09-25 1h wrote email to Bob
+max: 2024-09-25 2h40m make my own ECS (homemade ECS)
+max: 2024-09-26 2h eight project meeting
+max: 2024-09-26 1h wrote email to Bob (after project meeting)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -35,6 +88,20 @@ wouter: 2024-09-04 1h30m researching 3rd party tools
 wouter: 2024-09-05 1h30m first group meeting
 wouter: 2024-09-05 20m setting up research document
 wouter: 2024-09-05 1h researching game enigne
+wouter: 2024-09-06 3h researching game enigne
+wouter: 2024-09-09 2h researching SDL and SFML2
+wouter: 2024-09-10 1h30m third project meeting
+wouter: 2024-09-10 45m project videos
+wouter: 2024-09-10 40m second project lesson
+wouter: 2024-09-12 2h researching gameloops
+wouter: 2024-09-14 3h working on game loop poc
+wouter: 2024-09-16 4h working on gameloop poc
+wouter: 2024-09-17 1h30m fifth project meeting
+wouter: 2024-09-18 3h finishing gameloop poc and starting event manager
+wouter: 2024-09-19 15m project meeting
+wouter: 2024-09-19 1h30m project meeting
+wouter: 2024-09-19 45m project meeting
+wouter: 2024-09-19 15m docs :: remove versioning
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -44,6 +111,23 @@ niels: 2024-09-04 2h setting up vimtex on neovim
 niels: 2024-09-04 1h researching different code styles and c++ guidelines
 niels: 2024-09-05 1h30m first group meeting
 niels: 2024-09-06 2h added c++ guidelines in the contributing.md
+niels: 2024-09-09 1h adjusted code of conduct based on feedback
+niels: 2024-09-10 1h30m project meeting
+niels: 2024-09-10 45m project videos
+niels: 2024-09-10 40m second project lesson (one-to-one meeting with Bob)
+niels: 2024-09-11 3h researching the different resourches from unity
+niels: 2024-09-12 3h researching the best option for audio/sprites format and comparing it to sdl2 and sfml.
+niels: 2024-09-13 1h30m project meeting
+niels: 2024-09-13 10m weekly update
+niels: 2024-09-16 1h30m Discussing with jaro about resource manager
+niels: 2024-09-16 4h programming resource manager POC
+niels: 2024-09-17 1h30m project meeting
+niels: 2024-09-18 2h Continued with programming resource manager
+niels: 2024-09-19 15m project meeting
+niels: 2024-09-19 1h30m project meeting
+niels: 2024-09-19 45m project meeting
+niels: 2024-09-19 15m PvA reviewing
+niels: 2024-09-22 2h30m Adding spritesheet functionalities
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -58,5 +142,23 @@ jaro: 2024-09-09 1h project plan
 jaro: 2024-09-10 1h preparing meeting and project plan
 jaro: 2024-09-10 1h30m project meeting
 jaro: 2024-09-10 1h project disussing research
+jaro: 2024-09-10 45m project videos
+jaro: 2024-09-10 1h project plan research physics
+jaro: 2024-09-13 1h project preparing meeting and reading review project plan
+jaro: 2024-09-13 1h30m project meeting
+jaro: 2024-09-13 30m weekly update
+jaro: 2024-09-16 1h30m Meeting Niels resource manager
+jaro: 2024-09-16 2h requirements and sdl2 example
+jaro: 2024-09-16 30m requirements
+jaro: 2024-09-17 30m preparing meeting
+jaro: 2024-09-17 1h30m meeting
+jaro: 2024-09-17 30m requirements
+jaro: 2024-09-17 2h30m class diagram
+jaro: 2024-09-18 45m project plan (feedback)
+jaro: 2024-09-19 1h30m research physics
+jaro: 2024-09-19 30m project meeting
+jaro: 2024-09-19 1h30m project lesson
+jaro: 2024-09-19 1h project meeting
+jaro: 2024-09-19 30m project plan and class diagram
 
 # vim:ft=cfg

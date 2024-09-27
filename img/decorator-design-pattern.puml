@@ -1,0 +1,62 @@
+@startuml
+!include theme.ipuml
+skinparam style strictuml
+skinparam Linetype ortho
+
+class Client
+class Component <<interface>> {
+	+ execute()
+	--
+}
+class ConcComponent as "Concrete\nComponent" {
+	...
+	--
+	+ execute()
+}
+class BaseDecorator as "Base Decorator" {
+	- wrappee: Component
+	+ BaseDecorator(c: Component)
+	+ execute()
+}
+class ConcDecorator as "Concrete\nDecorators" {
+	...
+	--
+	+ execute()
+	+ extra()
+}
+
+hide Client members
+hide circle
+
+Client --> Component
+Component <|.. ConcComponent
+Component <|.. BaseDecorator
+Component <--o BaseDecorator
+BaseDecorator <|-- ConcDecorator
+
+ConcComponent -right[hidden] BaseDecorator
+
+note right of Client
+	a = <b>new</b> ConcComponent()
+	b = <b>new</b> ConcDecorator1(a)
+	c = <b>new</b> ConcDecorator1(b)
+	c.execute()
+	// Decorator -> Decorator -> Component
+end note
+
+note right of BaseDecorator::BaseDecorator
+	wrappee = c
+end note
+
+note right of BaseDecorator::execute
+	wrappee.execute()
+end note
+
+note right of ConcDecorator::execute
+	super::execute()
+	extra()
+end note
+
+@enduml
+
+" referenced from <https://github.com/algamza/algamza.github.io>

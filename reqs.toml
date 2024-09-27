@@ -1,0 +1,86 @@
+# This is a TOML file containing all project requirements. The reqs2tex script
+# can be used to generate the files necessary to compile requirements.tex and
+# cross-reference the requirements from other documents.
+
+# This is the requirement cross-reference ID. Requirements can be
+# (cross-)referenced from LaTeX by prefixing this ID with `req:` (i.e. this
+# requirement is referenced as \cref{req:audio}).
+[audio]
+# Requirement type ('system' | 'user')
+type = 'user'
+# MoSCoW priority ('must' | 'should' | 'could' | 'will not')
+priority = 'must'
+# Requirement body. Supports LaTeX formatting. (tip: use single quotes so
+# backslash doesn't act as an escape character)
+description = '''
+The engine allows the game programmer to easily start, pause and stop
+background music, while simultaniously playing sound effects.
+'''
+# Definition of done. If 'done' is a string, it is treated as LaTeX code, if it
+# is a list of strings, each item is treated as the ID of another requirement,
+# and the references are checked before LaTeX runs.
+done = [
+	'audio:async-api',
+	'audio:handle',
+	'audio:stream-mix',
+	'audio:volume',
+]
+#done = 'When I feel like it'
+# Requirements that are no longer applicable should set `deleted` to `true`.
+# This will make sure the requirements are numbered consistently across
+# different document revisions.
+#deleted = true
+
+[audio:async-api]
+type = 'system'
+priority = 'must'
+description = '''
+The public audio \gls{api} supports starting audio samples asynchronously
+(i.e.~fire and forget).
+'''
+
+[audio:handle]
+type = 'system'
+priority = 'must'
+description = '''
+The public audio \gls{api} allows the game programmer to control (i.e.~play,
+pause, resume and stop) audio samples after they are created/initialized.
+'''
+
+[audio:stream-mix]
+type = 'system'
+priority = 'must'
+description = '''
+The audio system supports playing multiple audio streams simultaniously.
+'''
+
+[audio:volume]
+type = 'system'
+priority = 'must'
+description = '''
+The public audio \gls{api} allows the game programmer to control the volume of
+audio samples.
+'''
+
+# TODO: audio encoding support?
+
+[lib:license]
+type = 'system'
+priority = 'must'
+description = '''
+External libraries must have a license that is MIT-compatible, or one that
+allows linking against MIT code.
+'''
+
+[lib:platform]
+type = 'system'
+priority = 'must'
+description = '''
+External libraries must have cross-platform support for at least Linux and
+Windows.
+'''
+
+# TODO: library popularity as quality factor?
+# TODO: library documentation as quality factor?
+# TODO: modularity over less libraries? (i.e. why don't we just SDL2 everything?)
+

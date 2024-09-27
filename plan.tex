@@ -1,9 +1,264 @@
 \documentclass{projdoc}
-\input{meta.tex}
 
 \title{Project Plan}
 
 \begin{document}
-hoi
-\end{document}
+\tablestables
+\newpage
 
+\section{Background}
+
+This project is part of the fourth-year minor `Systems Programming in C++'. The minor
+consists of several courses throughout 20 weeks, which create the basis for this
+project. The project focus is on building a game engine using the programming
+language C++. This document describes the plan of attack for the project.
+
+\section{Problem Definition}
+
+\subsection{Problem Analysis}
+
+CodedFun Games is a small, single-person game company looking to scale up. The owner,
+who is a game programmer, and graphical artist, has received government funding,
+which he wants to invest in a custom-built game engine. The owner has no interest in
+developing or maintaining a game engine himself, so he has hired a part-time engine
+programmer. This programmer does not have time to create an entire engine but is
+willing to maintain or expand an existing engine one day per week.
+
+The client seeks a custom game engine that is easy to maintain, easy to extend, and
+user-friendly. Additionally, the engine should be well-documented, which is
+considered an essential aspect of being user-friendly.
+
+So far, the client has made all his games in Unity and is very fond of the structure.
+Therefore, the client wants the new engine to adhere to a similar structure. A simple
+requirements document is defined to specify how strictly this structure should be
+followed.
+
+Finally, because the client does not want to dive deeply into the engine himself, he wants a secondary application (preferably a game) that can be used to test the engine's features. This is referred to as the \emph{validation application}.
+
+\subsection{Goal}
+
+The goal is to develop a custom game engine that meets the client's requirements for maintainability, extensibility, user-friendliness, and adherence to a Unity-like structure. The engine may integrate third-party software (as agreed with the client) to support specific features, such as audio, physics, and rendering. In addition, a \emph{validation application} is created to show and test the engine's features.
+
+\subsection{Scope}
+The requirements document \autocite{crepe:requirements} has several requirements with a MoSCoW `must', `should', `could' or `won't' priority to indicate the project's scope.
+
+\subsection{Result}
+
+The expected result is a well-documented, custom game engine that follows a structure similar to Unity. Additionally, a \emph{validation application} should be provided to test and showcase the engine's capabilities.
+
+\subsection{Validation Application}
+
+The \emph{validation application} \autocite{crepe:validation-application} is explained in a document where the features of the \emph{validation application} are linked to the user stories.
+
+\section{Planning}
+
+The customer specified multiple deliverables throughout the 20 weeks of this project. Despite the fact that 20 weeks have been reserved for this project, the game will be delivered in week 17. Any delay/resit will take place between weeks 17 and 20. A rough planning can be found in \cref{tab:planning}.
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{lX}
+		\toprule
+		\textbf{Week\#} & \textbf{Deliverable}\\
+		\midrule
+		4 & Project Plan\\
+		7 & Some POCs\\
+		10 & POCs and Design document\\
+		17 & Game engine, \emph{validation application}\\
+		\bottomrule
+	\end{tabularx}
+	\caption{Planning}
+	\label{tab:planning}
+\end{table}
+
+\section{Risks}
+
+\subsection{Technical Risks}
+
+\begin{description}
+	\item[Multiplatform] The team works in both Linux and windows, which poses a risk
+		for the development if there is a platform dependency.
+	\item[Integration] Users can make a wrong integration causing for delay or risk of
+		losing code.
+\end{description}
+
+\subsection{Project Management Risks}
+
+\begin{description}
+	\item[Scope Expansion] There is a risk of creating a scope that is bigger than the
+		requirements. Lack of Team Collaboration: Insufficient collaboration among team
+		members may hinder progress.
+	\item[Lack of Team Collaboration] Within the team a lack of collaboration can result in miscommunication or delay in work.
+	\item[Falling out of specific team member] Within the team the scrum master and integrator have additional roles. If one or both members can not continue it can hinder progress of the project.
+\end{description}
+
+\subsection{Measures}
+
+\begin{description}
+	\item[Multiplatform] The team can switch any time to a single platform, so this
+		risk is mitigated.
+	\item[Integration] By following standards and having an integrator, which checks
+		every pull request, this risk is minimized.
+	\item[Scope Expansion] By writing detailed requirements and having weekly team
+		meetings, to check if the progress is within the scope, should be sufficient to
+		decrease the risk.
+	\item[Lack of Team Collaboration] Weekly team meetings will result in collaboration among team members and discussing what each other tasks is, will decease this risk.
+	\item[Falling out of specific team member] The scrum master can be taken over by any other team member. All tools (e.g. scrum board) are open to all members. The tasks of the integrator can be taken over by the team. Within GitHub the team as a whole has the same rights as the integrator.
+\end{description}
+
+\section{Documentation}
+
+This section describes the required documentation for the project, including the
+types of documents to be created and the standards they must adhere to.
+
+\subsection{Documents}
+
+This project consists of seven main documents:\noparbreak
+\begin{description}
+	\item[Project Plan] Contains all elements related to the organization of the
+		project, including timelines, milestones, roles, and responsibilities.
+	\item[Requirements] Details the requirements and user stories, including both
+		functional and non-functional requirements.
+	\item[Design] Describes the design choices, including architecture, user interface,
+		and system components.
+	\item[Working hours] A table which includes all working hours of each team member.
+	\item[API Reference] Details the available endpoints, request and response formats,
+		authentication methods, error codes, and examples for interacting with the
+		project's API.
+\end{description}
+
+\subsection{Documentation Standard}
+
+The documentation standard can be found in the contributing.md
+\autocite{crepe:docs-standard}.
+
+\section{Work Agreements}
+
+Work agreements are the expectations and commitments made by the team members. This
+section includes details on roles and responsibilities, documentation of work hours,
+protocols for handling absences or delays, guidelines for addressing inconsistent
+participation, and procedures for weekly updates and meetings. All team members
+reviewed and agreed to these terms.
+
+\subsection{Project Roles}
+
+\begin{description}
+	\item[Loek Le Blansch] Integrator
+	\item[Wouter Boerenkamps] Project Member
+	\item[Jaro Rutjes] Team Leader / Scrum Master
+	\item[Max Smits] Project Member / Product Owner
+	\item[Niels Stunnebrink] Project Member
+\end{description}
+
+\subsection{Work Hours}
+
+Each project member will keep track of their own working hours and add them to the
+`file'.
+
+\subsection{Absence or Delay}
+
+If a project member is going to be absent or delayed, they are required to
+notify the team through either WhatsApp or Outlook. Additionally, the teacher
+should be informed of the absence as well.
+
+\subsection{Inconsistent Participation}
+
+Inconsistent participation will be addressed in a structured manner:
+
+\begin{description}
+	\item[Initial Discussion] The team leader will first discuss the issue of
+		inconsistent participation with the individual team member.
+	\item [Team Discussion] If no improvement is observed, the issue will be brought up
+		with the entire team to seek a collective solution.
+	\item [Project Supervisor Involvement] Should the problem persist, despite these
+		efforts, it will be escalated to the project supervisor (Bob van der Putten) for
+		further action.
+\end{description}
+
+Valid reasons for absence or inconsistency will be considered, and no repercussions
+will be necessary in such cases. However, if the inconsistency is due to other
+factors, potential repercussions may include additional assignments or actions as
+determined by the project supervisor.
+
+A team member is considered to have inconsistent participation if their hours
+are significantly behind the team’s average or if tasks are not completed
+without valid reasons. It is essential that any concerns regarding a team
+member's performance, should be resolved through unanimous agreement within the team.
+
+\subsection{Weekly Update}
+
+Each team member is required to send their technical weekly update to Jaro Rutjes
+before 12:00 on Friday. Personal updates may also be included and will be
+confidential between the team member, the Team Leader, and/or the teacher, if
+requested.
+
+Jaro Rutjes will compile and send a team update to the project supervisor, Bob
+van der Putten, also by Friday. This update will include technical information
+on what has been accomplished, plans for upcoming work, and an overview of the
+team's overall progress.
+
+\subsection{Weekly Meetings}
+
+The project team will hold at least two meetings each week, with each meeting lasting
+a maximum of 30 minutes. Following these meetings, an additional one hour will be
+scheduled for discussions on the topics covered.
+
+Meetings will be planned and discussed one week in advance, with invitations sent via
+Outlook. Additional meetings may be scheduled if necessary to address issues or
+project needs.
+
+% Information about how and when Scrum will be used in this project (using Miro).
+\section{Scrum (Miro)}
+
+The team starts using scrum after the initial phase, of structuring the project, is finished. This phase is finished after a initial design of the product is made.
+
+\subsection{Scrum Board}
+
+The Scrum board \autocite{miro:scrum-board} will consist of the following tabs:
+
+\begin{description}
+	\item[Backlog] This tab contains a list of all tasks and user stories that are
+		planned for future sprints.
+	\item[Next Sprint] This tab includes tasks and user stories that have been selected
+		for the upcoming sprint.
+	\item[Current Sprint] This tab displays the tasks and user stories that are
+		actively being worked on in the current sprint.
+	\item[In Progress] Tasks that are actively being worked on are moved to this tab.
+	\item[Review] Completed tasks that are awaiting review or testing will be placed in
+		this tab.
+	\item[Done] Once tasks have been reviewed and are considered complete, they are
+		moved to the Done tab.
+	\item [Blocked] This tab is used for tasks that cannot proceed due to obstacles or
+		dependencies.
+\end{description}
+
+To manage tasks effectively:
+
+\begin{itemize}
+	\item A task from the \emph{Current Sprint} tab should be selected and moved to the
+		\emph{In Progress} tab when work begins.
+	\item The status of the task should be updated to \emph{In Progress} as soon as
+		work starts.
+	\item Once the task is completed and reviewed, it should be moved to the
+		\emph{Done} tab, and its status should be updated to \emph{Done}.
+\end{itemize}
+
+Each task or user story will be assigned user points, which indicate the relative size or complexity of the task. Examples of certain tasks will be available in the scrumboard.
+
+\subsection{Burn Down Chart}
+
+The Burn Down Chart will be generated using Excel from the Scrum board data every
+week. Each user story or task marked as done, will burn the chart downwards. This
+Burn Down Chart is shared in the weekly updates with the team.
+
+% Information regarding the git workflow of this project.
+\section{Git Workflow}
+
+GitHub is used for version management of both code \autocite{crepe:code-repo} and
+documentation \autocite{crepe:docs-repo}, each in its own respective repository. This
+keeps the documentation and code separate, resulting in ordered and manageable
+repositories.
+
+\subsection{Code Standard and Git Workflow}
+
+The code standard and the git workflow can be found in the contributing.md \autocite{crepe:code-standard}.
+
+\end{document}

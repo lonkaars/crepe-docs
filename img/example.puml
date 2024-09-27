@@ -1,0 +1,6 @@
+@startuml
+!include theme.ipuml
+
+Bob -> Alice : hello
+
+@enduml
