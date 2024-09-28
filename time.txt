@@ -47,6 +47,7 @@ loek: 2024-09-26 2h project meeting
 loek: 2024-09-25 1h20m implementation :: audio facade and API
 loek: 2024-09-27 20m PR merge and style guide update
 loek: 2024-09-27 55m implementation :: fix library import structure
+loek: 2024-09-28 2h20m implementation :: audio facade and API
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
