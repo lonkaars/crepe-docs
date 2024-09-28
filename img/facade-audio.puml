@@ -24,16 +24,13 @@ package crepe {
 
 package SoLoud {
 	class Soloud
-	class WavStream
 	class Wav
 }
 
 ' layout
 crepe -[hidden]down- SoLoud
-SoLoud.Wav -[hidden]right- SoLoud.WavStream
-SoLoud.WavStream -[hidden]right- SoLoud.Soloud
 
-crepe.Sound ..> (SoLoud.WavStream, SoLoud.Wav) : either
+crepe.Sound ..> SoLoud.Wav
 crepe.SoundSystem ..> SoLoud.Soloud
 
 @enduml
