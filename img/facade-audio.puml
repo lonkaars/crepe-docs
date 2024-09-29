@@ -4,33 +4,49 @@ skinparam Linetype ortho
 
 
 package crepe {
-	class Sound {
-		+Sound(crepe::api::Resource)
+	package api {
+		class Resource <<irrelevant>>
+	}
 
+	class Sound {
+		+Sound(resource)
+		--
 		+pause()
 		+play()
 		+rewind()
 		+set_volume(float)
 		+set_looping(bool)
-
-		-_handle : SoLoud::handle
-		-_paused : bool
+		--
+		-sample : SoLoud::Wav
+		-handle : SoLoud::handle
+		--
+		-load(resource)
 	}
 
-	class SoundSystem {
-
+	class SoundSystem <<Singleton>> {
+		-instance() : SoundSystem& <<static>>
+		--
+		-SoundSystem()
+		-~SoundSystem()
+		--
+		-engine : SoLoud::Soloud
 	}
 }
 
 package SoLoud {
-	class Soloud
-	class Wav
+	class Soloud <<irrelevant>>
+	class Wav <<irrelevant>>
 }
 
 ' layout
 crepe -[hidden]down- SoLoud
 
-crepe.Sound ..> SoLoud.Wav
-crepe.SoundSystem ..> SoLoud.Soloud
+crepe.Sound --> SoLoud.Wav
+crepe.SoundSystem --> SoLoud.Soloud
+
+crepe.Sound .> crepe.SoundSystem
+crepe.SoundSystem .> crepe.Sound
+
+crepe.Sound .> crepe.api.Resource
 
 @enduml

@@ -8,3 +8,6 @@ skinparam Nodesep 25
 skinparam Padding 2
 skinparam Ranksep 50
 skinparam RoundCorner 0
+
+hide <<irrelevant>> stereotype
+hide <<irrelevant>> members
