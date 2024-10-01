@@ -4,6 +4,31 @@ LaTeX commands and LaTeX source style requirements are detailed in
 a number of frequently used snippets that may be used as a cheat-sheet style
 reference.
 
+# General rules
+
+- All documentation is written in U.S. English
+- Section headers are in sentence case (i.e. only the first word and proper
+  nouns are capitalized)
+- Section headers should not contain punctuation (e.g. no question marks, "or"
+  instead of a slash, etc.)
+- Quotes are closed before punctuation marks.
+- Do not use contractions, modal adverbs or rhetorical questions.
+- The engine is stylized in lowercase, and is just called 'crêpe'. Additional
+  words describing what crêpe is (i.e. '(game) engine') should not be
+  capitalized, as crêpe is not written like a porper noun.
+
+# References
+
+- Citations are inserted before the full stop at the end of a sentence.
+- When a library or piece of software is introduced in a document, reference
+  the project homepage using the bibliography.
+- Direct quotations or paraphased text must be cited.
+- Acronyms, abbreviations and jargon reference the glossary.
+- All figures and tables must be referenced in the body text. Don't write
+  paragraphs that 'lead up' to figures, as this forces LaTeX to not break the
+  page between the paragraph and figure.
+- Figures from third-party sources must be cited.
+
 # Fonts
 
 The documents use the following fonts. All of these are free and open source,
@@ -27,15 +52,18 @@ workshop and VimTeX.
 [texgyreschola-math]: https://www.gust.org.pl/projects/e-foundry/tg-math/download/index_html#Schola_Math
 [jetbrains-mono]: https://www.jetbrains.com/lp/mono
 
-# Spelling
+# Figures
 
-- All documentation is written in U.S. English
-- Section headers are in sentence case (i.e. only the first word and proper
-  nouns are capitalized)
+Non-raster figures are preferred over rasterized figures (where applicable).
+Please note that LaTeX does not support SVG images, and these need to be
+converted to PDF (e.g. using `svg2pdf` on linux).
 
-# Grammar
+Raster images should only be used when the source is already in a raster format
+(e.g. for photos) or when otherwise impractical.
 
-## Comma And
+# Specific rules
+
+## Comma and
 
 **In lists**, the last element is mentioned using the word 'and', *without* a
 comma.
@@ -49,28 +77,4 @@ consistency.
 > The first, second and last items.
 >
 > Action X was performed, and this had Y impact.
-
-# Figures
-
-Non-raster figures are preferred over rasterized figures (where applicable).
-Please note that LaTeX does not support SVG images, and these need to be
-converted to PDF (e.g. using `svg2pdf` on linux).
-
-Raster images should only be used when the source is already in a raster format
-(e.g. for photos) or when otherwise impractical.
-
-# References
-
-- When a library or piece of software is introduced in a document, reference
-  the project homepage using the bibliography.
-- Direct quotations or paraphased text must be cited.
-- Acronyms, abbreviations and jargon reference the glossary.
-- All figures and tables must be referenced in the body text. Don't write
-  paragraphs that 'lead up' to figures, as this forces LaTeX to not break the
-  page between the paragraph and figure.
-
-# Document structure
-
-- Use `\section`, `\subsection`, `\subsubsection` and `\paragraph` to insert
-  headings.
 

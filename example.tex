@@ -1,7 +1,6 @@
 \documentclass{projdoc}
 % if the document compiles too slow (likely due to many/large images), try compiling
 % with the [draft] option. this replaces all images with placeholders.
-\input{meta.tex}
 
 \title{Example Document}
 
@@ -35,7 +34,7 @@ These don't show up in the table of contents by default
 
 \Cref{fig:example-a} definitely shows something. Referencing multiple things at once
 is neatly handled by cleveref:
-\cref{fig:example-a,fig:example-b,fig:example-c,tab:gate-xor}.
+\cref{fig:example-a,fig:example-b,fig:example-puml,tab:gate-xor}.
 
 \begin{figure}
 	\centering
@@ -46,15 +45,17 @@ is neatly handled by cleveref:
 
 \begin{figure}
 	\begin{subfigure}{0.45\textwidth}%
+		\centering
 		\fitimg{\includegraphics{example-image-b}}
 		\caption{Example image B}
 		\label{fig:example-b}
 	\end{subfigure}%
 	\hfill
 	\begin{subfigure}{0.45\textwidth}%
-		\fitimg{\includegraphics{example-image-c}}
-		\caption{Example image C}
-		\label{fig:example-c}
+		\centering
+		\includepumldiag{img/example.puml}
+		\caption{Example PlantUML diagram}
+		\label{fig:example-puml}
 	\end{subfigure}%
 	\caption{Subfigures}
 \end{figure}
@@ -153,17 +154,24 @@ Description:
 	\con{Bad thing 2}
 \end{comparison}
 
-\subsection{Citations}
+\subsection{References}
+
+\subsubsection{Citations}
 
 Citations are inserted using the \codeinline{\autocite} command \autocite{rfc:3339}.
 The bibliography is automatically printed after \codeinline{\end{document}}.
 
-\subsection{Glossary}
+\subsubsection{Glossary}
 
 Glossary entries can be inserted using the \codeinline{\gls} commands. Example:
 ``\Gls{sdl2} handles \glspl{hid} as well!''. In following occurrences of acronyms,
 only their short form is printed: `\gls{sdl2}' and `\gls{hid}'. All of these link to
 the glossary that is automatically printed after \codeinline{\end{document}}.
+
+\subsubsection{Requirements}
+
+Requirements are referenced like \codeinline{\label}s:
+e.g.~\cref{req:audio:handle,req:audio:async-api}.
 
 \end{document}
 

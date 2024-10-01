@@ -1,0 +1,40 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			[closed] Continue adding information to project plan
+			Review document
+		document standard
+			Add updates when needed
+			[closed] use autocite for sources
+		requirement
+			[closed] setup requirement document
+			[closed] add userstories to requirement
+		design document
+			[closed] setup design document
+	Git
+		Code standard
+			Add updates when needed
+			add doxygen code comments
+	Environments
+		Setup environment document
+			[closed] issues with windows and linux compatibility latex.
+	Research
+		[closed] research unity game engine (reviewing added information)
+		start research gameloop + eventmanager
+		start research resource manager
+		start research renderer
+		start research scripting
+		start research debugging/profiling
+		start research gameobject
+		start research physics
+		start research audio
+		start research ecs
+	Design
+		discussed class diagram
+		Discussing validation application
+		[closed] Discussion SDL2 and SFML
+
+
+
+

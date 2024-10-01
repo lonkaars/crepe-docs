@@ -2,16 +2,12 @@ This document is an extension of the [crêpe engine contribution
 guidelines][crepe-engine-contrib]. Rules in this document override those in the
 other document.
 
-# Versioning
-
-- TODO: discuss w/ group
-
 # Code style
 
 - Indent using tabs
 - Wrap long lines at column 80
 - ASCII only (LaTeX syntax should be used instead of UTF-8, i.e. `fa\c{c}ade`
-  instead of `façade`, `---` instead of `—`)
+  instead of `façade`, `---` instead of `—`, `cr\^epe` instead of `crêpe`)
 - Images should be placed in the img/ folder
 - Labels and bibliography keys should only consist of characters from the
   following set: `[a-z0-9:-]` (lower-case, numbers, colon, dash).
@@ -21,6 +17,8 @@ other document.
 - Only environments indent the LaTeX source code
 - Insert a non-breaking space (`~`) after (Latin) abbreviations such as "i.e."
   or "e.g.". Never place a comma after either of these.
+- Multiple references (both `\cref` and `\autocite`) should be done in a single
+  command (i.e. `\cref{fig:a,fig:b}` and `\autocite{source1,source2}`)
 
 # Banned practices
 
