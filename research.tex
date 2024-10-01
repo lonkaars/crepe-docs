@@ -503,7 +503,7 @@ Some information about certain Physics topics. second partdescibes what physics 
 
 %ragdoll https://bluebirdinternational.com/ragdoll-physics/
 
-\subsubsection{Kinematics}
+Kinematics:
 Kinematics in game physics involves calculating the position, velocity, and acceleration of objects to simulate realistic motion. It affects everything from character movement to projectiles and vehicles. Collision detection is key, as it determines when objects collide and how they respond, including any damage or effects. Kinematics also helps create lifelike animations, like jumping or running, enhancing the game's realism and immersion.
 \begin{itemize}
 	\item mass
@@ -513,7 +513,7 @@ Kinematics in game physics involves calculating the position, velocity, and acce
 \end{itemize}
 
 
-\subsubsection{Dynamics}
+Dynamics:
 Dynamics simulate object interactions and forces, such as gravity and friction, to enhance realism. It includes rigid body, soft body, and fluid dynamics. For example, it affects car movements in racing games and projectiles in shooters. Balancing dynamics is crucial to maintain performance. Ragdoll physics, a related concept, models a character’s body as interconnected rigid bodies for realistic movement.
 \begin{itemize}
 	\item rigid body dynamics
@@ -523,7 +523,7 @@ Dynamics simulate object interactions and forces, such as gravity and friction, 
 \end{itemize}
 
 
-\subsubsection{Collision}
+Collision:
 Collision detection is the process of determining when two or more objects in the game world come into contact with each other. There are several techniques used for collision detection.
 \begin{itemize}
 	\item bounding boxes
@@ -532,7 +532,7 @@ Collision detection is the process of determining when two or more objects in th
 \end{itemize}
 These techniques involve creating simple shapes around the objects and checking if they intersect with each other.
 
-\subsubsection{Rigidbody}
+Rigidbody:
 Rigidbodys deels with the behavior of of non deformable solid objects. it has some physical properties.
 \begin{itemize}
 	\item mass
@@ -542,7 +542,7 @@ Rigidbodys deels with the behavior of of non deformable solid objects. it has so
 \end{itemize}
 To calculate all forces applied to the rigid body the most used algoritm is Newton-Euler equations. The alogritm is about mass an conservation of energy.
 
-\subsubsection{Softbody}
+Softbody:
 Soft body dynamics simulates deformable objects like cloth, fluids, and flesh, adding complexity beyond rigid body dynamics. Key techniques include:
 \begin{itemize}
 	\item Finite Element Method: Divides the object into small elements that interact based on physical laws.
@@ -550,41 +550,42 @@ Soft body dynamics simulates deformable objects like cloth, fluids, and flesh, a
 \end{itemize}
 These methods enhance game realism by creating lifelike clothing, natural water effects, and realistic collision deformations. However, they are resource intensive an require precise calculations to avoid unrealistic results.
 
-\subsubsection{Particle Systems}
+Particle Systems:
 Particle systems simulate numerous small objects to create larger effects like dust, smoke, fire, or explosions. These effects can add an extra layer of realism to a game.
 
-\subsubsection{Fluid Dynamics}
+Fluid Dynamics:
 Fluid dynamics shows how fluids move and behave. In game physics, it simulates liquids like water or lava, adding complexity and realism to games with fluid interactions.
 
-\subsubsection{Aerodynamics}
+Aerodynamics:
 Aerodynamics shows the movement of air and its interaction with solid objects. In video games, it simulates how objects like airplanes or birds move through the air, adding a realistic touch to games involving flight or gliding.
 
-\subsection{Implementation of Physics}
+
+\subsection{Findings}
 
 This part shows some phiscics engines an certain physics features that could be needed within the project.
 
 
-\subsubsection{Physics Engines}
+\subsubsection{available Physics Engines}
 available physics engines for complex Physics
-\paragraph{Box2D}
+Box2D:
 \begin{description}
 	\item[Description:] One of the most popular and widely used open-source 2D physics engines, Box2D is known for its simplicity, robustness, and efficiency.
 	\item[License:] MIT License
 \end{description}
 
-\paragraph{LiquidFun}
+LiquidFun:
 \begin{description}
 	\item[Description:] A fork of Box2D, LiquidFun adds particle-based fluid simulation to Box2D's rigid body dynamics. It’s ideal for games that require both solid and fluid dynamics.
 	\item[License:] Apache License 2.0
 \end{description}
 
-\paragraph{Chipmunk2D}
+Chipmunk2D:
 \begin{description}
 	\item[Description:] A lightweight and fast 2D physics engine that emphasizes ease of use and flexibility. Chipmunk2D is designed to be simple enough to understand and integrate but powerful enough for complex simulations.
 	\item[License:] MIT License
 \end{description}
 
-\subsubsection{Simple Physics features}
+Simple Physics features:
 
 There are some features that could be beneficial for this project.a list has been created to show these features. More complex features will be worked out furter.
 
@@ -615,14 +616,14 @@ There are some features that could be beneficial for this project.a list has bee
 	\item particels
 \end{itemize}
 
-\subsubsection{Physics system (engine specific physics engine)}
+Physics system (engine specific physics engine):
 A physics engine that is independent can be used across multiple game engines or applications. But when the physics engine is built directly into the game engine and can not be reused independently, it is often considered a physics system or physics module within that specific engine. It is optimized and designed to work within the constraints and features of that particular engine.
 
 For simple features as listed above (besides collision and particels) a Physics system is sufficient to provide these features to the game engine.
 
 These features can be implented using EC and ECS. Both have each own benefits and downsites.
 
-\subsubsection(Physics with EC)
+\subsubsection{Physics with EC}
 with EC the component (e.g. Rigidbody) would have some functionality to change its own physics. Besides storing data it would hold function as well for applying gravity, forces, or handle other physics-related logic.
 
 Preview of Rigidbody
@@ -643,7 +644,7 @@ step 4: check for collsion handeling (would be the collsion component)
 
 because it is not known with EC if the list contains all object with a rigidbody some overhead is created if the entity does not have a component of the type rigidbody.
 
-\subsubsection(Physics with ECS)
+\subsubsection{Physics with ECS}
 With ECS the component (e.g. Rigidbody) would only be used to store data. all functionality would be moved to the Physics system
 
 Preview of Rigidbody
@@ -669,12 +670,11 @@ The benefit of ECS is that all physics and collsions are handled by one system. 
 
 What EC can not provide compared to ECS is a physics world. A physics world would be the physics that apply to all dynamic physics components. If you want to create gravity you can add the force to the world. The physics system would read all the Physics forces in the world and apply them to all dynamic entities. This would create an easier to use interface for the user and improve the efficiency of the physics because the total forces can be calcualted ones and then applied to all dynamic entities.
 
-
-
-
-\subsection{Findings}
+\subsubsection{Collsions}
 
 \subsection{Conclusion}
+More components need te be created for both EC and ECS with the diagram provided by the customer. With ECS having the benefit of creating a world where all dynamic object can have a force they interact with. A physics system has the benefit that all physics functionalities are located within one system instead in each component. The flow of Physics updates can be change within the physics system instead of in the gameloop itself.
+
 
 \section{Audio}
 
