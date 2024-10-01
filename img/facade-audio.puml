@@ -14,8 +14,8 @@ package crepe {
 		+pause()
 		+play()
 		+rewind()
-		+set_volume(float)
-		+set_looping(bool)
+		-volume : float <<+set>> <<+get>>
+		-looping : bool <<+set>> <<+get>>
 		--
 		-sample : SoLoud::Wav
 		-handle : SoLoud::handle
@@ -23,11 +23,11 @@ package crepe {
 		-load(resource)
 	}
 
-	class SoundSystem <<Singleton>> {
-		-instance() : SoundSystem& <<static>>
+	class SoundContext <<Singleton>> {
+		-instance() : SoundContext& <<static>>
 		--
-		-SoundSystem()
-		-~SoundSystem()
+		-SoundContext()
+		-~SoundContext()
 		--
 		-engine : SoLoud::Soloud
 	}
@@ -42,10 +42,10 @@ package SoLoud {
 crepe -[hidden]down- SoLoud
 
 crepe.Sound --> SoLoud.Wav
-crepe.SoundSystem --> SoLoud.Soloud
+crepe.SoundContext --> SoLoud.Soloud
 
-crepe.Sound .> crepe.SoundSystem
-crepe.SoundSystem .> crepe.Sound
+crepe.Sound .> crepe.SoundContext
+crepe.SoundContext .> crepe.Sound
 
 crepe.Sound .> crepe.api.Resource
 
