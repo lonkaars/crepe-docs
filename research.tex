@@ -585,9 +585,16 @@ Chipmunk2D:
 	\item[License:] MIT License
 \end{description}
 
-Simple Physics features:
 
-There are some features that could be beneficial for this project.a list has been created to show these features. More complex features will be worked out furter.
+\subsubsection{Physics system (engine specific physics engine)}
+A physics engine that is independent can be used across multiple game engines or applications. But when the physics engine is built directly into the game engine and can not be reused independently, it is often considered a physics system or physics module within that specific engine. It is optimized and designed to work within the constraints and features of that particular engine.
+
+features a physics engine should provide is determined by the requirements.
+Because the only requirement is that the user should easily add physics a list below is made for simple physics that can be implemented without the use of an 3rd party physics engine. Other features can be made by the user using scripts.
+
+For simple features as listed below (besides collision and particels) a Physics system is sufficient to provide these features to the game engine.
+
+Simple Physics features a physics engine could provide:
 
 \begin{itemize}
     \item Gravity
@@ -615,13 +622,6 @@ There are some features that could be beneficial for this project.a list has bee
 	\end{itemize}
 	\item particels
 \end{itemize}
-
-Physics system (engine specific physics engine):
-A physics engine that is independent can be used across multiple game engines or applications. But when the physics engine is built directly into the game engine and can not be reused independently, it is often considered a physics system or physics module within that specific engine. It is optimized and designed to work within the constraints and features of that particular engine.
-
-For simple features as listed above (besides collision and particels) a Physics system is sufficient to provide these features to the game engine.
-
-These features can be implented using EC and ECS. Both have each own benefits and downsites.
 
 \subsubsection{Physics with EC}
 with EC the component (e.g. Rigidbody) would have some functionality to change its own physics. Besides storing data it would hold function as well for applying gravity, forces, or handle other physics-related logic.
@@ -670,10 +670,80 @@ The benefit of ECS is that all physics and collsions are handled by one system. 
 
 What EC can not provide compared to ECS is a physics world. A physics world would be the physics that apply to all dynamic physics components. If you want to create gravity you can add the force to the world. The physics system would read all the Physics forces in the world and apply them to all dynamic entities. This would create an easier to use interface for the user and improve the efficiency of the physics because the total forces can be calcualted ones and then applied to all dynamic entities.
 
-\subsubsection{Collsions}
-
 \subsection{Conclusion}
 More components need te be created for both EC and ECS with the diagram provided by the customer. With ECS having the benefit of creating a world where all dynamic object can have a force they interact with. A physics system has the benefit that all physics functionalities are located within one system instead in each component. The flow of Physics updates can be change within the physics system instead of in the gameloop itself.
+
+\section{Collisions}
+
+\subsection{Introduction}
+
+Collision is mostly made part of an Physics engine, however it is something seperate but some collision handeling is done by the Physics engine that is the reason why they are most of the time one system.
+
+Collsions exists from two thing. Collsion detection and collsion handeling/ Some handeling is done by the physics engine and by user scripts and will not be explanined in this topic. Collsion detection is the scope of this research.
+There is a need of understanding what different type of collision objects are and what algoritm can be used to increase efficiency of the detection.
+
+\subsection{Findings}
+
+
+Collsion detection is made out of 2 fases.
+
+%https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+
+%https://medium.com/@bpmw/quadtrees-for-2d-games-with-moving-elements-63360b08329f
+
+%https://medium.com/my-games-company/optimizing-r-tree-inserts-in-unity-a-bomberman-like-example-81d2576efd75
+
+%https://matthias-research.github.io/pages/tenMinutePhysics/11-hashing.pdf
+
+The first fase want to make a list out of objects that could be colliding. Some algorithm can be used to make these list in an efficient way.
+Quad Trees, R-Trees or a Spatial Hashmap.
+
+\begin{description}
+	\item[Quadtrees] Quadtrees partition 2D space into quadrants (stored as nodes in a tree), dividing these quadrants into smaller quadrants when they contain more than a certain threshold of elements.
+	\item[R-Trees] These are data structures commonly used for spatial access. They are more suited for dynamic data and allow efficient querying of rectangles or bounding boxes, making them useful for collision detection.
+	\item[Spatial hashing] This technique divides space into uniform grids (similar to cells in a 2D array), and each object is assigned to one or more cells based on its position. Objects within the same or adjacent cells are checked for collisions, improving efficiency by limiting the number of checks to nearby objects.
+\end{description}
+
+R-Trees are easy to understand but how the R-tree is build (how objects are inserted) is complex. The benefits of this tree for this project are not needed because Quadtree would be sufficient for this purpose. reading the data would be as fast as the quadtree but implemeting the R-tree and knowing how to implement it takes to much time and is out of scope.
+
+
+\begin{table}
+    \begin{tabularx}{\linewidth}{lXl}
+        \toprule
+        Criteria & Quadtree & R-tree & Spatial Hashing \\
+        \midrule
+        Best for & Static objects, sparse data & Complex shapes, dynamic objects & Fast-moving objects, uniform data \\
+        \midrule
+        Handles moving objects & Poorly (requires restructuring) & Well (efficient updates) & Very well (simple re-hash) \\
+        \midrule
+        Memory usage & Moderate & Moderate to high & Can be high \\
+        \midrule
+        Complexity & Moderate & High & Low \\
+        \midrule
+        Spatial queries & Efficient & Very efficient & Less efficient \\
+        \midrule
+        Grid size sensitivity & Not applicable & Not applicable & High (tuning needed) \\
+        \midrule
+        Handling variable density & Good & Good & Poor \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Comparison of Quadtree, R-tree, and Spatial Hashing}
+\end{table}
+
+
+%https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+
+The second face checks the list from the first face if there are actually colliding. the narrow face detections are descripted in the list below.
+
+List of collision detection objects/algoritms (narrow)
+\begin{description}
+	\item[Axis-Aligned Bounding Box]One of the simpler forms of collision detection is between two rectangles that are axis aligned — meaning no rotation. The algorithm works by ensuring there is no gap between any of the 4 sides of the rectangles.
+	\item[Circle Collision] a simple shape for collision detection is between two circles. This algorithm works by taking the center points of the two circles and ensuring the distance between the center points are less than the two radii added together.
+	\item[Separating Axis Theorem] This is a collision algorithm that can detect a collision between any two convex polygons. It's more complicated to implement than other methods but is more powerful.
+\end{description}
+
+
+\subsection{Conclusion}
 
 
 \section{Audio}
