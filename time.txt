@@ -52,6 +52,7 @@ loek: 2024-09-29 1h55m implementation :: debug logging facilities
 loek: 2024-09-29 20m implementation :: audio facade
 loek: 2024-09-29 45m docs :: audio facade design
 loek: 2024-09-30 1h40m project meeting
+loek: 2024-10-01 2h20m review :: feedback & discussing software design
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
