@@ -1,0 +1,52 @@
+@startuml
+!include theme.ipuml
+skinparam Linetype ortho
+
+
+package crepe {
+	package api {
+		class Resource <<irrelevant>>
+	}
+
+	class Sound {
+		+Sound(resource)
+		--
+		+pause()
+		+play()
+		+rewind()
+		-volume : float <<+set>> <<+get>>
+		-looping : bool <<+set>> <<+get>>
+		--
+		-sample : SoLoud::Wav
+		-handle : SoLoud::handle
+		--
+		-load(resource)
+	}
+
+	class SoundContext <<Singleton>> {
+		-instance() : SoundContext& <<static>>
+		--
+		-SoundContext()
+		-~SoundContext()
+		--
+		-engine : SoLoud::Soloud
+	}
+}
+
+package SoLoud {
+	class Soloud <<irrelevant>>
+	class Wav <<irrelevant>>
+}
+
+' layout
+crepe -[hidden]down- SoLoud
+
+crepe.Sound --> SoLoud.Wav
+crepe.SoundContext --> SoLoud.Soloud
+
+crepe.Sound .> crepe.SoundContext
+crepe.SoundContext .> crepe.Sound
+
+crepe.Sound .> crepe.api.Resource
+
+@enduml
