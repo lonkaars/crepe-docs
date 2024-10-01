@@ -1,0 +1,63 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			-
+		Document standard
+			Add updates when needed
+		Requirement
+			physics sub-requirements -> Jaro write document
+			eventmanager sub-requirements -> Wouter write document
+			gameloop sub-requirements -> Wouter write document
+			ecs sub-requirements
+			particles sub-requirement
+			resourceManager sub-requirement -> Niels write document
+			rendering sub-requirement
+		design document
+			Discussing top-down
+		Game design
+			-
+	Git
+		Code standard -> LOEK update
+			Show updates
+			Getter and setter wil get: 'set' and 'get'
+			namespace/ using namespace
+
+ 	Environments
+		-
+	Research (POC)
+		research eventmanager -> Wouter POC
+		resource manager -> Niels POC check datatype for conversion
+		start research renderer
+		start research scripting
+		[closed] start research debugging
+		[closed] start research gameobject
+		start research physics Starting POC -> Jaro
+			[closed] Discussed functional physics requirements
+			More research about physics
+		research ecs -> Max POC(showed poc design must change asked customer if design can change)
+		start research particles Starting research -> Jaro (LOEK is sterk tegen particles in physics system omdat loek geen vloeistof wilt)
+	Design
+		discussed class diagram
+			one instance of rigidbody and collider
+			Gameobject is not the owner of the component but the manager is
+			and one component type per gameobject.
+			Functions within a model can they change?
+		[closed] Adding design audio
+		Adding design resource manager -> niels met LOEK overleggen
+		Adding design gameloop + eventmanager -> Wouter toevoegen
+	Product
+		Creating 3rd party tool facade audio -> LOEK verder werken
+		Api	class diagram to c++ will wait until some design changes
+	Test
+		Add unit test for audio (wait on api)
+		Discuss about what to test (wait on api)
+	Question Bob
+		Mail (waiting on mail for KD)
+		Tell where these documents are located -> jaro
+
+
+
+
+
+
