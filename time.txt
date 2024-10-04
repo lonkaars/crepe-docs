@@ -210,4 +210,12 @@ jaro: 2024-09-26 2h30m physics research and poc
 jaro: 2024-09-26 30m preparing meeting
 jaro: 2024-09-26 2h team meeting
 jaro: 2024-09-27 45m converting notes
+jaro: 2024-09-27 2h30m weeklyupdate + Physics
+jaro: 2024-09-30 1h30m project meeting
+jaro: 2024-10-01 3h research physics + collisions
+jaro: 2024-10-01 1h meeting facade
+jaro: 2024-10-01 3h15m research physics + collisions
+jaro: 2024-10-01 1h30m Particels poc
+jaro: 2024-10-03 2h project meeting + project lesson
+jaro: 2024-10-04 1h15m project meeting
 # vim:ft=cfg
