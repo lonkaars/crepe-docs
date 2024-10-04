@@ -90,6 +90,10 @@ max: 2024-09-25 1h wrote email to Bob
 max: 2024-09-25 2h40m make my own ECS (homemade ECS)
 max: 2024-09-26 2h eight project meeting
 max: 2024-09-26 1h wrote email to Bob (after project meeting)
+max: 2024-09-30 1h30m nineth project meeting
+max: 2024-10-02 6h15m improved own ECS (POC)
+max: 2024-10-03 30m tenth project meeting
+max: 2024-10-03 1h30m fifth project lesson
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
