@@ -158,6 +158,19 @@ niels: 2024-09-24 2h project Meeting
 niels: 2024-09-24 45m meeting with Bob
 niels: 2024-09-25 6h integrate the resource manager spritesheet, tmxlite, texture.
 niels: 2024-09-26 2h project meeting
+niels: 2024-09-30 1h40m project meeting
+niels: 2024-10-01 2h design resource manager and making resource manager singleton
+niels: 2024-10-01 1h meeting loek refactoring resource manager
+niels: 2024-10-01 1h20m meeting jaro & loek about questions regarding design and ownership pointers
+niels: 2024-10-01 45m starting refactoring code after feedback
+niels: 2024-10-01 1h30m try implementating library in git submodule. And refactoring code further
+niels: 2024-10-02 1h finishing adding git submodule and bugs related to compiling external library
+niels: 2024-10-02 4h refacting code further so that textures and spritesheet work and fixing bugs.
+niels: 2024-10-04 1h10m project meeting
+
+
+
+
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
