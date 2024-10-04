@@ -25,6 +25,17 @@ workflows.
 \section{Overview}
 
 \subsection{Core}
+\subsubsection{Game Loop}
+Problem Statement\
+
+In the context of game development, a robust game loop is essential for maintaining consistent gameplay and ensuring that game logic, physics, and rendering are executed in a synchronized manner. Without a well-defined game loop, issues such as inconsistent frame rates, unresponsive input handling, and unpredictable behavior can arise, leading to a poor user experience. Therefore, the implementation of a game loop within a game engine is crucial for providing a stable foundation upon which game developers can build their projects.
+Game Loop Design\
+
+The game loop is integrated directly into the engine to streamline development and minimize timing issues for game developers. Two separate update functions are employed. A fixed-time update is used with a consistent time delay per update call for game logic and physics, ensuring predictable behavior regardless of fluctuations in frame rates. By performing physics calculations at regular intervals, game logic and physics are decoupled from frame rate, ensuring consistent behavior across different hardware.
+
+Rendering and animations are handled separately on a per-frame basis.
+A delay and delta time calculation are applied to create consitent visual behavior, even when frame rates vary.
+This separation between game logic and rendering ensures that both simulation accuracy and visual fluidity are optimized.
 
 \subsection{Patterns}
 
