@@ -96,6 +96,7 @@ max: 2024-10-02 6h15m improved own ECS (POC)
 max: 2024-10-03 30m tenth project meeting
 max: 2024-10-03 1h30m fifth project lesson
 max: 2024-10-04 2h20m creating class diagram of ecs-homemade (and researching other possibilities for the ecs-homemade)
+max: 2024-10-05 2h made memory efficient ecs
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
