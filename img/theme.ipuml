@@ -1,13 +1,26 @@
+' vim:ft=plantuml
+
 !theme plain
 skinparam ClassAttributeIconSize 0
 skinparam ClassFontStyle bold
 skinparam DefaultFontName Inter
-skinparam DefaultFontSize 14
+skinparam DefaultFontSize 10
 skinparam MaxMessageSize 200
 skinparam Nodesep 25
-skinparam Padding 2
+' skinparam Padding 0
 skinparam Ranksep 50
 skinparam RoundCorner 0
+skinparam PackageStyle rectangle
+skinparam PackageFontStyle italic
 
+hide class circle
+
+' class <<irrelevant>> for third-party classes
 hide <<irrelevant>> stereotype
 hide <<irrelevant>> members
+
+' rectangle <<group>>
+hide <<group>> stereotype
+skinparam Rectangle<<group>>BorderStyle dashed
+skinparam Rectangle<<group>>BorderColor gray
+
