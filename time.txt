@@ -58,6 +58,7 @@ loek: 2024-10-03 1h30m project meeting
 loek: 2024-10-04 15m research :: read others' research
 loek: 2024-10-04 1h15m project meeting
 loek: 2024-10-05 1h10m refacting :: unify unit tests + update code style
+loek: 2024-10-06 3h40m implementation :: scripting interface
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
