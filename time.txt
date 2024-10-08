@@ -11,7 +11,7 @@ loek: 2024-09-05 15m repository scaffolding :: additional latex contributing gui
 loek: 2024-09-05 1h40m project meeting
 loek: 2024-09-05 1h24m time report script
 loek: 2024-09-06 55m time report script
-loek: 2024-09-09 30m feedback :: niels code style guide
+loek: 2024-09-09 30m review :: niels code style guide
 loek: 2024-09-09 45m review :: wouter research PR#5
 loek: 2024-09-09 25m documentation style guide
 loek: 2024-09-10 1h55m project meeting
@@ -60,6 +60,8 @@ loek: 2024-10-04 1h15m project meeting
 loek: 2024-10-05 1h10m refacting :: unify unit tests + update code style
 loek: 2024-10-06 3h40m implementation :: scripting interface
 loek: 2024-10-07 2h45m project meeting
+loek: 2024-10-08 40m review :: Max' ECS code
+loek: 2024-10-08 5m review :: incorporate feedback and merge PR
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
