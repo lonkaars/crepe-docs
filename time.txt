@@ -97,6 +97,10 @@ max: 2024-10-03 30m tenth project meeting
 max: 2024-10-03 1h30m fifth project lesson
 max: 2024-10-04 2h20m creating class diagram of ecs-homemade (and researching other possibilities for the ecs-homemade)
 max: 2024-10-05 2h made memory efficient ecs
+max: 2024-10-09 2h trying to get clang-format working (ending up upgrading Linux)
+max: 2024-10-09 30m reviewing feedback of ecs-homemade
+max: 2024-10-09 30m expanding class diagram
+max: 2024-10-09 2h50m investigating compiler error options for game programmer when adding too much or too little Components of a specific type
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
