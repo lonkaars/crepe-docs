@@ -97,6 +97,8 @@ max: 2024-10-03 30m tenth project meeting
 max: 2024-10-03 1h30m fifth project lesson
 max: 2024-10-04 2h20m creating class diagram of ecs-homemade (and researching other possibilities for the ecs-homemade)
 max: 2024-10-05 2h made memory efficient ecs
+max: 2024-10-07 30m sixth project lesson
+max: 2024-10-07 2h15m eleventh project meeting
 max: 2024-10-09 2h trying to get clang-format working (ending up upgrading Linux)
 max: 2024-10-09 30m reviewing feedback of ecs-homemade
 max: 2024-10-09 30m expanding class diagram
