@@ -20,42 +20,45 @@
 	Git
 		Code standard -> LOEK update
 			Show updates
-			[closed] namespace/ using namespace
+			Code standard with examples not in main?
+			POC can/should be made in Example.
+			Code that performs POC should be as the code standard so it can be easy to understand and copied if needed.
 
  	Environments
 		-
 	Research (POC)
-		research eventmanager -> Wouter POC (goede voortgang)
+		research eventmanager -> Wouter POC (goede voortgang) knoppen uitlezen
 		resource manager -> Niels POC check datatype for conversion (na meeting afgerond) alleen implementatie tiled
 		start research ui -> wouter
 		start research ai
 		start research savedata -> loek
-		start research renderer -> niels (kleine start)
+		start research renderer -> niels (sprite & color & transform) POC simple (SDL_GPU voor efficiency verbetering)
 		start research scripting -> loek
 		start research debugging (los staande profilers, toevoegen timers voor profilers?)
 		start research physics Starting POC -> Jaro
 			More research about physics
 			[closed] Question customer about physics requirements
 		start reasearch collsion detection -> Jaro
-		research ecs -> Max POC (change in design of ecs. moved components after each other in memory to increase efficiency.) loek/scripts branch voor ecs.
+		research ecs -> Max POC add detecting if a component exists.
 		start research particles Starting research -> Jaro (start lifetime. spawning area)
 	Design
 		Adding design asset class -> niels
 		Adding design resource holder -> niels
 		[closed] Adding design gameloop  -> Wouter toevoegen
-		Discuss facade design.
-		Who is owner of which facade instancies?
-		who is owner of what?
+		[closed] Discuss facade design.
+		[closed] Who is owner of which facade instancies?
+		[closed] who is owner of what?
 		How does a game designer make a scene?
 		[closed] resourceManager discuss design.
-		review design document (loeks features) -> Wouter
+		[closed] review design document (loeks features) -> Wouter
 	Product
-		[closed] Creating 3rd party tool facade audio -> LOEK verder werken
-		Api	class diagram to c++
+		[closed] Api	class diagram to c++
 	Test
-		[closed] Add unit test for audio (do we want unit tests)
-		Discuss about what to test (wait on api) testen uitgebreid als je wilt maar mag niet teveel tijd kosten en moet nuttig zijn.
-		[closed] Change location tests -> loek
-	Question Bob
 		-
+	Question Bob
+		animator heeft 1 sprite sheet (1 sprite) animator sprite relatie
+		sprite sheet staat altijd in leesvolgorde
+	Overig
+		Presentatie maken -> Jaro
+
 
