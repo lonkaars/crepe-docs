@@ -63,6 +63,7 @@ loek: 2024-10-07 2h45m project meeting
 loek: 2024-10-08 40m review :: Max' ECS code
 loek: 2024-10-08 5m review :: incorporate feedback and merge PR
 loek: 2024-10-09 25m review :: feedback discussion + code style update
+loek: 2024-10-10 1h05m refacting :: fix build system + update readmes
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
