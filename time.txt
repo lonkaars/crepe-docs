@@ -244,4 +244,13 @@ jaro: 2024-10-01 3h15m research physics + collisions
 jaro: 2024-10-01 1h30m Particels poc
 jaro: 2024-10-03 2h project meeting + project lesson
 jaro: 2024-10-04 1h15m project meeting
+jaro: 2024-10-07 2h particle system
+jaro: 2024-10-07 30m project lesson
+jaro: 2024-10-07 2hm project meeting
+jaro: 2024-10-07 4h30m particle system
+jaro: 2024-10-09 30m particle system with ECS
+jaro: 2024-10-10 3h30m particle system with ECS
+jaro: 2024-10-10 1h30m project meeting
+jaro: 2024-10-11 30m weekly update
+
 # vim:ft=cfg
