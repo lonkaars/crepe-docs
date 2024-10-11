@@ -176,6 +176,11 @@ niels: 2024-10-01 1h30m try implementating library in git submodule. And refacto
 niels: 2024-10-02 1h finishing adding git submodule and bugs related to compiling external library
 niels: 2024-10-02 4h refacting code further so that textures and spritesheet work and fixing bugs.
 niels: 2024-10-04 1h10m project meeting
+niels: 2024-10-07 2h45m project meeting
+niels: 2024-10-09 2h adding the rendering components to api, and making the rendering system
+niels: 2024-10-09 3h researching and programming,debugging the rendersystem
+niels: 2024-10-10 3h Test jaro/particels branch to improve sdl functionalities. additionally, researching the necessary components
+niels: 2024-10-11 1h30m project meeting
 
 
 
