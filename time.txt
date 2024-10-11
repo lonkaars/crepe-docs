@@ -133,8 +133,13 @@ wouter: 2024-09-30 1h40m project meeting
 wouter: 2024-10-03 1h30m discussing event with seger
 wouter: 2024-10-03 4h developing event poc
 wouter: 2024-10-03 1h30m creating gameloop design
-wouter: 2024-10-04 2h developing event poc
 wouter: 2024-10-03 1h30m project meeting
+wouter: 2024-10-04 2h developing event poc
+wouter: 2024-10-04 1h15m project meeting
+wouter: 2024-10-07 2h45m project meeting
+wouter: 2024-10-08 4h: finishing keyboard and mouse events
+wouter: 2024-10-09 3h: intergrating gameloop with events for testing
+wouter: 2024-10-10 1h30m project meeting
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
