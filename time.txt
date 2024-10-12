@@ -65,6 +65,7 @@ loek: 2024-10-08 5m review :: incorporate feedback and merge PR
 loek: 2024-10-09 25m review :: feedback discussion + code style update
 loek: 2024-10-10 1h05m tooling :: build system (fix libraries + update readmes)
 loek: 2024-10-10 1h30m project meeting
+loek: 2024-10-12 1h15m implementation :: scripting interface
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
