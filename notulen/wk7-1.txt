@@ -51,5 +51,6 @@
 		mag de API gewoon een interface worden voor wat onderliggend een ECS is.
 	Overig
 		Timers voor systems
+		8 uur per groepsgenoot deze week door drukte.
 
 
