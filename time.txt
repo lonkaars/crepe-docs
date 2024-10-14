@@ -67,6 +67,8 @@ loek: 2024-10-10 1h05m tooling :: build system (fix libraries + update readmes)
 loek: 2024-10-10 1h30m project meeting
 loek: 2024-10-12 1h15m implementation :: scripting interface
 loek: 2024-10-13 1h implementation :: scripting interface
+loek: 2024-10-14 2h project meeting (class)
+loek: 2024-10-14 1h30m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
