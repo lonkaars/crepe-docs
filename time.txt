@@ -72,6 +72,7 @@ loek: 2024-10-14 1h30m project meeting
 loek: 2024-10-16 1h40m implementation :: scripting interface
 loek: 2024-10-16 40m implementation :: scripting interface
 loek: 2024-10-16 20m implementation :: scripting interface
+loek: 2024-10-17 40m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
