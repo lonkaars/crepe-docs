@@ -84,3 +84,36 @@ Windows.
 # TODO: library documentation as quality factor?
 # TODO: modularity over less libraries? (i.e. why don't we just SDL2 everything?)
 
+[script:interface]
+type = 'system'
+priority = 'must'
+description = '''
+There is a base \codeinline{Script} class that has empty default
+implementations for functions that may be implemented by the game programmer.
+'''
+
+[script:user-class]
+type = 'system'
+priority = 'must'
+description = '''
+The game programmer implements scripts by creating classes derived from the
+\codeinline{Script} class.
+'''
+
+[script:direct-instance]
+type = 'system'
+priority = 'must'
+description = '''
+Unless explicitly changed by the game programmer, derived script classes cannot
+be instantiated directly, and must be instantiated by the component manager.
+'''
+
+[script:direct-run]
+type = 'system'
+priority = 'must'
+description = '''
+Unless explicitly changed by the game programmer, methods on instances of
+\codeinline{Script} (and derivative) classes cannot be called directly, and
+must be called by the script system.
+'''
+

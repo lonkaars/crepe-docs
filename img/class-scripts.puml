@@ -1,0 +1,48 @@
+@startuml
+!include theme.ipuml
+skinparam Linetype ortho
+skinparam Nodesep 75
+skinparam Ranksep 30
+
+class ComponentManager <<irrelevant>>
+
+package api {
+	class Component <<irrelevant>>
+
+	class Script {
+		# init() <<virtual>>
+		# update() <<virtual>>
+		--
+		- Script()
+	}
+
+	class BehaviorScript {
+		# BehaviorScript()
+		+ ~BehaviorScript()
+		--
+		+ set_script<T>() : this &
+		--
+		# script : Script *
+	}
+
+	BehaviorScript -u-|> Component
+	Script .u.> BehaviorScript
+}
+
+class System <<irrelevant>>
+class ScriptSystem <<Singleton>> {
+	+ get_instance() : ScriptSystem & <<static>>
+	+ update()
+	--
+	- ScriptSystem()
+	- ~ScriptSystem()
+}
+
+System <|-- ScriptSystem
+ScriptSystem .[norank]> ComponentManager
+
+ScriptSystem .[norank]> api.Script : < friend
+ScriptSystem .[norank]> api.BehaviorScript : < friend
+ComponentManager .[norank]> api.BehaviorScript : < friend
+
+@enduml
