@@ -120,6 +120,13 @@ max: 2024-10-09 2h trying to get clang-format working (ending up upgrading Linux
 max: 2024-10-09 30m reviewing feedback of ecs-homemade
 max: 2024-10-09 30m expanding class diagram
 max: 2024-10-09 2h50m investigating compiler error options for game programmer when adding too much or too little Components of a specific type
+max: 2024-10-13 30m preparing 'kennisdeling' and 'functioneringsgesprek'
+max: 2024-10-14 2h kennisdeling
+max: 2024-10-14 1h30m twelfth project meeting
+max: 2024-10-16 30m investigated whether or not EnTT can handle multiple inheritance
+max: 2024-10-16 3h rethinked scripting (to avoid mutliple inheritance)
+max: 2024-10-16 20m added new scripting idea to ecs-homemade
+max: 2024-10-17 1h thirteenth project meeting
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
