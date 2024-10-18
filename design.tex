@@ -36,6 +36,90 @@ workflows.
 
 \subsection{Scripting}
 
+The scripting interface was designed around a `target' \gls{api} (described by
+\cref{req:script:interface,req:script:user-class,req:script:direct-instance,req:script:direct-run}).
+An example of this \gls{api} is shown below:\noparbreak
+
+\begin{blockcode}
+class MyScript : public BehaviorScript {
+	void update() {
+		// update code here
+	}
+	// init() also exists, but is empty by default
+};
+
+{ // in scene initialization
+	GameObject & obj = ...;
+	obj.add_component<MyScript>();
+}
+\end{blockcode}
+
+The above call to \codeinline{GameObject::add_component} cannot work correctly
+without significantly increasing the complexity of the component manager, so the
+following restrictions were taken into account when creating the script system
+architecture:\noparbreak
+
+\begin{itemize}
+	\item The first template parameter passed to \codeinline{GameObject::add_component}
+		\emph{must} be a base `script \emph{component}' class, so each derived user
+		script class is instantiated in the same generic script list.
+	\item C++ does not allow passing types (i.e.~\codeinline{MyScript} in this case) as
+		function parameters, so a function call like
+		\codeinline{add_component<BehaviorScript>(MyScript)} cannot be realized.
+\end{itemize}
+
+\subsubsection{Architecture}
+
+The restrictions detailed at the start of this section are mitigated as
+follows:\noparbreak
+
+\begin{itemize}
+	\item User scripts are split into two classes---
+		\begin{enumerate}
+			\item a script \emph{interface} class (\codeinline{Script})
+			\item a script \emph{component} class (\codeinline{BehaviorScript})
+		\end{enumerate}
+	\item \codeinline{GameObject::add_component} receives the script \emph{component}
+		as template parameter
+	\item \codeinline{GameObject::add_component} now always returns a reference to the
+		component instance
+	\item The script component class has a setter function that takes a template
+		parameter for classes derived from the base script \emph{interface} class
+\end{itemize}
+
+\Cref{fig:class-scripts} shows the resulting structure as a class diagram. It
+contains the following classes:\noparbreak
+\begin{description}
+	\item[Script] This is the script \emph{interface}, and is used by the game
+		programmer to create derived script classes. All methods in this class are
+		declared virtual and have an empty implementation.
+
+		This class' methods are protected by default, and a friend relation to
+		\codeinline{ScriptSystem} is used to ensure only \codeinline{ScriptSystem} is
+		able to call these methods.
+
+		Only classes derived from \codeinline{Script} can be used with
+		\codeinline{BehaviorScript::set_script}'s template parameter \codeinline{T}. This
+		function returns a reference to the \codeinline{BehaviorScript} instance it was
+		called on so it can be chained after the call to
+		\codeinline{GameObject::add_component}.
+	\item[BehaviorScript]
+		This is the script \emph{component}, and is given as the template parameter to
+		\codeinline{GameObject::add_component}.
+
+		This class also uses a friend relation to \codeinline{ScriptSystem} to restrict
+		access to its private reference member \codeinline{script}.
+	\item[ScriptSystem] This is the system class that runs the methods implemented in
+		the derivative instances of \codeinline{Script}.
+\end{description}
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/class-scripts.puml}
+	\caption{User script class diagram}
+	\label{fig:class-scripts}
+\end{figure}
+
 \subsection{Audio}
 
 \subsubsection{Library}
