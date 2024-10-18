@@ -11,7 +11,7 @@ def fmt_duration(sec):
 
   hour = mins // 60
   if hour > 0:
-    out.append("%02dh" % (hour, ))
+    out.append("%dh" % (hour, ))
     mins = mins % 60
 
   out.append("%02dm" % (mins, ))
@@ -91,16 +91,13 @@ def fmt_weekly_overview(times):
   return tex.env('table', tex.join(
     tex.cmd('centering'),
     tex.cmd('fitimg',
-      tex.env('tabular', r'l' + r'r@{~}l' * len(members) + r'@{\qquad}r', tex.join(
+      tex.env('tabular', r'l' + r'r@{~}l' * len(members) + r'>{\quad}r', tex.join(
         tex.cmd('toprule'),
-        tex.tabrule(*[
-          tex.cmd('textbf', cell)
-          for cell in [
-            tex.esc("#"),
-            *tex.explist([ member, "" ] for member in members),
-            "Subtotal",
-          ]
-        ]),
+        tex.tabrule(
+          tex.cmd("textbf", tex.esc("#")),
+          *[tex.cmd("multicolumn", "2", "c", tex.cmd("textbf", member)) for member in members],
+          tex.cmd("textbf", "Subtotal"),
+        ),
         tex.cmd('midrule'),
         *[
           tex.tabrule(*[
