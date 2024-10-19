@@ -1,57 +1,80 @@
-loek: 2024-09-02 1h project meeting :: project kickoff
+loek: 2024-09-02 1h project meeting (project kickoff)
 loek: 2024-09-02 45m project meeting
-loek: 2024-09-02 1h4m repository scaffolding
-loek: 2024-09-03 25m repository scaffolding
-loek: 2024-09-03 1h30m repository scaffolding :: engine repository, unit testing
-loek: 2024-09-04 1h30m repository scaffolding :: latex example code
+loek: 2024-09-02 1h4m tooling :: repository (scaffolding)
+loek: 2024-09-03 25m tooling :: repository (scaffolding)
+loek: 2024-09-03 1h30m tooling :: unit testing
+loek: 2024-09-04 1h30m tooling :: documentation (add latex example code)
 loek: 2024-09-04 50m poc :: dynamic library linking test example
-loek: 2024-09-04 45m repository scaffolding :: visual studio code latex configuration
-loek: 2024-09-04 20m repository scaffolding :: visual studio code cmake configuration
-loek: 2024-09-05 15m repository scaffolding :: additional latex contributing guidelines
+loek: 2024-09-04 45m tooling :: repository (visual studio code latex configuration)
+loek: 2024-09-04 20m tooling :: repository (visual studio code cmake configuration)
+loek: 2024-09-05 15m tooling :: documentation (additional latex contributing guidelines)
 loek: 2024-09-05 1h40m project meeting
-loek: 2024-09-05 1h24m time report script
-loek: 2024-09-06 55m time report script
-loek: 2024-09-09 30m feedback :: niels code style guide
-loek: 2024-09-09 45m review :: wouter research PR#5
-loek: 2024-09-09 25m documentation style guide
+loek: 2024-09-05 1h24m tooling :: time report script
+loek: 2024-09-06 55m tooling :: time report script
+loek: 2024-09-09 30m review :: style (niels code style guide)
+loek: 2024-09-09 45m review :: PR review (#5 wouter research)
+loek: 2024-09-09 25m docs :: style guide
 loek: 2024-09-10 1h55m project meeting
-loek: 2024-09-10 25m briefing :: watch bob videos
-loek: 2024-09-10 5m docs :: update readme
-loek: 2024-09-10 12m docs :: add comparison package and more example latex code
+loek: 2024-09-10 25m research :: watch bob's videos
+loek: 2024-09-10 5m tooling :: repository (update readme)
+loek: 2024-09-10 12m tooling :: documentation (comparison package & more example latex code)
 loek: 2024-09-10 30m project meeting
 loek: 2024-09-11 1h40m research :: profiling and debugging
-loek: 2024-09-12 15m integration :: PR merge
+loek: 2024-09-12 15m review :: PR review
 loek: 2024-09-12 30m research :: audio
 loek: 2024-09-13 1h10m project meeting
-loek: 2024-09-13 45m integration :: PR merge
-loek: 2024-09-14 45m refactoring :: clean up LaTeX build system
-loek: 2024-09-14 1h10m docs :: requirements
-loek: 2024-09-15 2h55m docs :: requirements
-loek: 2024-09-16 2h30m docs :: requirements
+loek: 2024-09-13 45m review :: PR review
+loek: 2024-09-14 45m tooling :: documentation (clean up LaTeX build system)
+loek: 2024-09-14 1h10m tooling :: requirements
+loek: 2024-09-15 2h55m tooling :: requirements
+loek: 2024-09-16 2h30m tooling :: requirements
 loek: 2024-09-17 1h20m project meeting
-loek: 2024-09-17 55m bugs :: cross-platform latexmk filespec
-loek: 2024-09-17 2h25m docs :: requirements
+loek: 2024-09-17 55m tooling :: documentation (cross-platform latexmk filespec bug)
+loek: 2024-09-17 2h25m tooling :: requirements
 loek: 2024-09-18 2h20m docs :: requirements
 loek: 2024-09-18 1h50m research :: audio
-loek: 2024-09-18 1h05m integration :: PR merge
-loek: 2024-09-19 30m docs :: requirements
+loek: 2024-09-18 1h05m review :: PR review
+loek: 2024-09-19 30m tooling :: requirements
 loek: 2024-09-19 15m project meeting
 loek: 2024-09-19 1h30m project meeting
 loek: 2024-09-19 45m project meeting
-loek: 2024-09-19 15m docs :: remove versioning
-loek: 2024-09-19 30m PR merge and style guide update
+loek: 2024-09-19 15m tooling :: documentation (move to git commit versioning)
+loek: 2024-09-19 30m review :: PR review (+ style guide update)
 loek: 2024-09-22 2h15m docs :: research
 loek: 2024-09-24 1h45m project meeting
-loek: 2024-09-25 3h implementation :: audio facade and API
+loek: 2024-09-25 3h implementation :: audio API
 loek: 2024-09-26 2h project meeting
-loek: 2024-09-25 1h20m implementation :: audio facade and API
-loek: 2024-09-27 20m PR merge and style guide update
-loek: 2024-09-27 55m implementation :: fix library import structure
-loek: 2024-09-28 2h20m implementation :: audio facade and API
+loek: 2024-09-25 1h20m implementation :: audio API
+loek: 2024-09-27 20m review :: PR review (+ style guide update)
+loek: 2024-09-27 55m tooling :: build system (fix library import structure)
+loek: 2024-09-28 2h20m implementation :: audio API
 loek: 2024-09-29 1h55m implementation :: debug logging facilities
-loek: 2024-09-29 20m implementation :: audio facade
-loek: 2024-09-29 45m docs :: audio facade design
+loek: 2024-09-29 20m implementation :: audio API
+loek: 2024-09-29 45m docs :: design :: audio API
 loek: 2024-09-30 1h40m project meeting
+loek: 2024-10-01 2h20m review :: feedback & discussing software design
+loek: 2024-10-01 30m implementation :: audio API
+loek: 2024-10-03 1h30m project meeting
+loek: 2024-10-04 15m research :: read others' research
+loek: 2024-10-04 1h15m project meeting
+loek: 2024-10-05 1h10m tooling :: unit testing (unify unit tests + update code style)
+loek: 2024-10-06 3h40m implementation :: scripting interface
+loek: 2024-10-07 2h45m project meeting
+loek: 2024-10-08 40m review :: Max' ECS code
+loek: 2024-10-08 5m review :: incorporate feedback and merge PR
+loek: 2024-10-09 25m review :: feedback discussion + code style update
+loek: 2024-10-10 1h05m tooling :: build system (fix libraries + update readmes)
+loek: 2024-10-10 1h30m project meeting
+loek: 2024-10-12 1h15m implementation :: scripting interface
+loek: 2024-10-13 1h implementation :: scripting interface
+loek: 2024-10-14 2h project meeting (class)
+loek: 2024-10-14 1h30m project meeting
+loek: 2024-10-16 1h40m implementation :: scripting interface
+loek: 2024-10-16 40m implementation :: scripting interface
+loek: 2024-10-16 20m implementation :: scripting interface
+loek: 2024-10-17 40m project meeting
+loek: 2024-10-17 10m review :: PR review (#5 and #6)
+loek: 2024-10-18 1h40m docs :: design :: scripting interface
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -86,6 +109,25 @@ max: 2024-09-25 1h wrote email to Bob
 max: 2024-09-25 2h40m make my own ECS (homemade ECS)
 max: 2024-09-26 2h eight project meeting
 max: 2024-09-26 1h wrote email to Bob (after project meeting)
+max: 2024-09-30 1h30m nineth project meeting
+max: 2024-10-02 6h15m improved own ECS (POC)
+max: 2024-10-03 30m tenth project meeting
+max: 2024-10-03 1h30m fifth project lesson
+max: 2024-10-04 2h20m creating class diagram of ecs-homemade (and researching other possibilities for the ecs-homemade)
+max: 2024-10-05 2h made memory efficient ecs
+max: 2024-10-07 30m sixth project lesson
+max: 2024-10-07 2h15m eleventh project meeting
+max: 2024-10-09 2h trying to get clang-format working (ending up upgrading Linux)
+max: 2024-10-09 30m reviewing feedback of ecs-homemade
+max: 2024-10-09 30m expanding class diagram
+max: 2024-10-09 2h50m investigating compiler error options for game programmer when adding too much or too little Components of a specific type
+max: 2024-10-13 30m preparing 'kennisdeling' and 'functioneringsgesprek'
+max: 2024-10-14 2h kennisdeling
+max: 2024-10-14 1h30m twelfth project meeting
+max: 2024-10-16 30m investigated whether or not EnTT can handle multiple inheritance
+max: 2024-10-16 3h rethinked scripting (to avoid mutliple inheritance)
+max: 2024-10-16 20m added new scripting idea to ecs-homemade
+max: 2024-10-17 1h thirteenth project meeting
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -108,9 +150,21 @@ wouter: 2024-09-18 3h finishing gameloop poc and starting event manager
 wouter: 2024-09-19 15m project meeting
 wouter: 2024-09-19 1h30m project meeting
 wouter: 2024-09-19 45m project meeting
-wouter: 2024-09-19 15m docs :: remove versioning
 wouter: 2024-09-26 2h eight project meeting
 wouter: 2024-09-26 3h researching event manager
+wouter: 2024-09-28 6h researching and developing event poc
+wouter: 2024-09-29 3h researching and developing event poc
+wouter: 2024-09-30 1h40m project meeting
+wouter: 2024-10-03 1h30m discussing event with seger
+wouter: 2024-10-03 4h developing event poc
+wouter: 2024-10-03 1h30m creating gameloop design
+wouter: 2024-10-03 1h30m project meeting
+wouter: 2024-10-04 2h developing event poc
+wouter: 2024-10-04 1h15m project meeting
+wouter: 2024-10-07 2h45m project meeting
+wouter: 2024-10-08 4h finishing keyboard and mouse events
+wouter: 2024-10-09 3h intergrating gameloop with events for testing
+wouter: 2024-10-10 1h30m project meeting
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
@@ -142,7 +196,25 @@ niels: 2024-09-23 2h researching and POC tiled library tmxlite
 niels: 2024-09-24 2h project Meeting
 niels: 2024-09-24 45m meeting with Bob
 niels: 2024-09-25 6h integrate the resource manager spritesheet, tmxlite, texture.
-niels: 2024-09-26 2h project meeting 
+niels: 2024-09-26 2h project meeting
+niels: 2024-09-30 1h40m project meeting
+niels: 2024-10-01 2h design resource manager and making resource manager singleton
+niels: 2024-10-01 1h meeting loek refactoring resource manager
+niels: 2024-10-01 1h20m meeting jaro & loek about questions regarding design and ownership pointers
+niels: 2024-10-01 45m starting refactoring code after feedback
+niels: 2024-10-01 1h30m try implementating library in git submodule. And refactoring code further
+niels: 2024-10-02 1h finishing adding git submodule and bugs related to compiling external library
+niels: 2024-10-02 4h refacting code further so that textures and spritesheet work and fixing bugs.
+niels: 2024-10-04 1h10m project meeting
+niels: 2024-10-07 2h45m project meeting
+niels: 2024-10-09 2h adding the rendering components to api, and making the rendering system
+niels: 2024-10-09 3h researching and programming,debugging the rendersystem
+niels: 2024-10-10 3h Test jaro/particels branch to improve sdl functionalities. additionally, researching the necessary components
+niels: 2024-10-11 1h30m project meeting
+
+
+
+
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -181,4 +253,21 @@ jaro: 2024-09-26 2h30m physics research and poc
 jaro: 2024-09-26 30m preparing meeting
 jaro: 2024-09-26 2h team meeting
 jaro: 2024-09-27 45m converting notes
+jaro: 2024-09-27 2h30m weeklyupdate + Physics
+jaro: 2024-09-30 1h30m project meeting
+jaro: 2024-10-01 3h research physics + collisions
+jaro: 2024-10-01 1h meeting facade
+jaro: 2024-10-01 3h15m research physics + collisions
+jaro: 2024-10-01 1h30m Particels poc
+jaro: 2024-10-03 2h project meeting + project lesson
+jaro: 2024-10-04 1h15m project meeting
+jaro: 2024-10-07 2h particle system
+jaro: 2024-10-07 30m project lesson
+jaro: 2024-10-07 2hm project meeting
+jaro: 2024-10-07 4h30m particle system
+jaro: 2024-10-09 30m particle system with ECS
+jaro: 2024-10-10 3h30m particle system with ECS
+jaro: 2024-10-10 1h30m project meeting
+jaro: 2024-10-11 30m weekly update
+
 # vim:ft=cfg

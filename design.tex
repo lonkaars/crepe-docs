@@ -38,6 +38,30 @@ workflows.
 
 \subsection{Audio}
 
+\subsubsection{Library}
+
+\subsubsection{Fa\c{c}ade}
+
+\Cref{fig:class-audio-facade} shows a class diagram of the audio fa\c{c}ade. It
+contains the following classes:
+\begin{description}
+	\item[SoundContext] This is a wrapper around the \codeinline{SoLoud::soloud}
+		`engine' class, and is therefore implemented as a singleton. This ensures the
+		audio engine is initialized before \codeinline{Sound} is able to use it.
+
+		This class is friends with \codeinline{Sound}, so only \codeinline{Sound} is able
+		to get the \codeinline{SoundContext} instance.
+	\item[Sound] This is a wrapper around the \codeinline{SoLoud::Wav} class, and uses
+		cr\^epe's \codeinline{Asset} class to load an audio sample instead.
+\end{description}
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/facade-audio.puml}
+	\caption{Audio fa\c{c}ade class diagram}
+	\label{fig:class-audio-facade}
+\end{figure}
+
 \subsection{Input}
 
 \subsection{Physics}
