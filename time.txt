@@ -269,5 +269,8 @@ jaro: 2024-10-09 30m particle system with ECS
 jaro: 2024-10-10 3h30m particle system with ECS
 jaro: 2024-10-10 1h30m project meeting
 jaro: 2024-10-11 30m weekly update
+jaro: 2024-10-14 2h knowledge sharing
+jaro: 2024-10-14 1h30m project meeting
+jaro: 2024-10-17 1h project discussion
 
 # vim:ft=cfg
