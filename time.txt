@@ -75,6 +75,7 @@ loek: 2024-10-16 20m implementation :: scripting interface
 loek: 2024-10-17 40m project meeting
 loek: 2024-10-17 10m review :: PR review (#5 and #6)
 loek: 2024-10-18 1h40m docs :: design :: scripting interface
+loek: 2024-10-20 30m review :: PR review (#37)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
