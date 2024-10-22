@@ -12,6 +12,8 @@ $clean_ext .= ' %R.ist %R.xdy bbl run.xml';
 	'plan',
 	'research',
 	'timerep',
+	'design',
+	'requirements',
 );
 
 push @file_not_found, '^Package .* No file `([^\\\']*)\\\'';

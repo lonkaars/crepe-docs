@@ -330,7 +330,7 @@
 % adjust scale for puml diagrams
 \newcommand{\includepumldiag}[1]{%
 	\StrSubstitute{#1}{.puml}{.eps}[\filename]%
-	\fitimg{\includegraphics[scale=0.6]{\filename}}%
+	\fitimg{\includegraphics[scale=0.75]{\filename}}%
 }
 
 % prevent page break between two paragraphs

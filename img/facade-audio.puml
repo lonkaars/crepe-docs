@@ -2,14 +2,11 @@
 !include theme.ipuml
 skinparam Linetype ortho
 
-
 package crepe {
-	package api {
-		class Resource <<irrelevant>>
-	}
+	class Asset <<irrelevant>>
 
 	class Sound {
-		+Sound(resource)
+		+Sound(asset)
 		--
 		+pause()
 		+play()
@@ -20,7 +17,7 @@ package crepe {
 		-sample : SoLoud::Wav
 		-handle : SoLoud::handle
 		--
-		-load(resource)
+		-load(asset)
 	}
 
 	class SoundContext <<Singleton>> {
@@ -31,6 +28,11 @@ package crepe {
 		--
 		-engine : SoLoud::Soloud
 	}
+
+	Sound .> SoundContext
+	SoundContext .> Sound
+
+	Sound .left> Asset
 }
 
 package SoLoud {
@@ -38,15 +40,10 @@ package SoLoud {
 	class Wav <<irrelevant>>
 }
 
-' layout
-crepe -[hidden]down- SoLoud
-
 crepe.Sound --> SoLoud.Wav
 crepe.SoundContext --> SoLoud.Soloud
 
-crepe.Sound .> crepe.SoundContext
-crepe.SoundContext .> crepe.Sound
-
-crepe.Sound .> crepe.api.Resource
+' LAYOUT
+crepe -[hidden]down- SoLoud
 
 @enduml
