@@ -1,0 +1,64 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			-
+		Document standard
+			Add updates when needed
+		Requirement
+			physics sub-requirements -> Jaro write document
+			eventmanager sub-requirements -> Wouter write document
+			gameloop sub-requirements -> Wouter write document
+			ecs sub-requirements
+			particles sub-requirement -> Jaro write document
+			resourceManager sub-requirement -> Niels write document
+			rendering sub-requirement
+		design document
+			Discussing top-down
+		Game design
+			-
+	Git
+		Code standard -> LOEK update
+			Show updates
+			Code standard with examples not in main?
+			POC can/should be made in Example.
+			Code that performs POC should be as the code standard so it can be easy to understand and copied if needed.
+
+ 	Environments
+		-
+	Research (POC)
+		research eventmanager -> Wouter POC (goede voortgang) knoppen uitlezen
+		resource manager -> Niels POC check datatype for conversion (na meeting afgerond) alleen implementatie tiled
+		start research ui -> wouter
+		start research ai
+		start research savedata -> loek
+		start research renderer -> niels (sprite & color & transform) POC simple (SDL_GPU voor efficiency verbetering)
+		start research scripting -> loek
+		start research debugging (los staande profilers, toevoegen timers voor profilers?)
+		start research physics Starting POC -> Jaro
+			More research about physics
+			[closed] Question customer about physics requirements
+		start reasearch collsion detection -> Jaro
+		research ecs -> Max POC add detecting if a component exists.
+		start research particles Starting research -> Jaro (start lifetime. spawning area)
+	Design
+		Adding design asset class -> niels
+		Adding design resource holder -> niels
+		[closed] Adding design gameloop  -> Wouter toevoegen
+		[closed] Discuss facade design.
+		[closed] Who is owner of which facade instancies?
+		[closed] who is owner of what?
+		How does a game designer make a scene?
+		[closed] resourceManager discuss design.
+		[closed] review design document (loeks features) -> Wouter
+	Product
+		[closed] Api	class diagram to c++
+	Test
+		-
+	Question Bob
+		animator heeft 1 sprite sheet (1 sprite) animator sprite relatie
+		sprite sheet staat altijd in leesvolgorde
+	Overig
+		Presentatie maken -> Jaro
+
+

@@ -6,7 +6,7 @@
 \tablestables
 \newpage
 
-\section{Introduction}
+% \section{Introduction}
 
 \section{Game engine}
 
@@ -53,7 +53,7 @@ layers are divided into the following categories:\noparbreak
 The above mentioned layers should be structured, somehow. One of the requirements is
 that the game engine's API uses a so-called gameObject (with one or more
 component(s)). The gameObject is described in more detail at
-\cref{sec:Gameobjects/components}.
+\cref{sec:gameobjects-components}.
 
 There are multiple structures that could be used to structure a game engine. It's of
 course possible to use inheritance. A major disadvantages of inheritance is that it's
@@ -81,8 +81,8 @@ harder \autocite{man:DecoratorDesignPattern}.
 	\label{fig:decorator}
 \end{figure}
 
-The Extension Objects design pattern (as shown in \cref{fig:extension objects}) could
-also be used to structure the game engine. The Extension Objects design pattern
+The \emph{extension objects} design pattern (as shown in \cref{fig:dp:ext-objs})
+could also be used to structure the game engine. The extension objects design pattern
 allows to modify an object's propperties/behavior by adding one (or more) Extensions.
 The object that is modified, could be the gameObject and the components could be the
 Extensions. This is quite the same as the required API. An advantage is, that the
@@ -92,7 +92,7 @@ for the sprite Extension and the method \codeinline{update()} for the script
 Extension). In other words, the interfaces of the different Extensions should not be
 the same. This is way more flexible than the Decorator design pattern. A disadvantage
 is that the data and functionality are in the same class (namely inside the Extion's
-methods), so it's not sepperated. Another disadvantage is that the Extension Objects
+methods), so it's not sepperated. Another disadvantage is that the extension objects
 design pattern can be quite slow, because objects are scattered in memory (and it is
 very hard to quickly get their memory address)
 \autocite{man:ExtensionObjectDesignPattern, man:extionsionObjectsStackOverflow}.
@@ -100,9 +100,9 @@ very hard to quickly get their memory address)
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{img/ExtensionObjects.jpg}
-	\caption{Extension Objects design pattern}
+	\caption{Extension objects design pattern}
 	Source: \autocite{img:extionsionObjects}
-	\label{fig:extension objects}
+	\label{fig:dp:ext-objs}
 \end{figure}
 
 Another (very popular) design pattern to structure the game engine, is the Entity
@@ -179,7 +179,7 @@ based on the amount of stars on GitHub.
 		EntityX & Fast, type-safe C++ entity component system & 2.2k & MIT\\
 		\bottomrule
 	\end{tabular}
-	\caption{Popular \gls{ecs} libraries}
+	\caption{Popular \glsfmtname{ecs} libraries}
 	Source: \autocite{github:awesome-ecs}
 	\label{tab:popularECSLibraries}
 \end{table}
@@ -190,10 +190,10 @@ It is, of course, not necessary to use a library to implement an \gls{ecs}
 architecture. However, it seems very hard to achieve the same performance as a
 library \autocite{github:ecsfaq}.
 
-\subsection{Conclusion}
+% \subsection{Conclusion}
 
 \section{Gameobjects/components}
-\label{sec:Gameobjects/components}
+\label{sec:gameobjects-components}
 
 \subsection{Introduction}
 
@@ -234,7 +234,7 @@ can not have more than one parent. \autocite{man:unityTransformClass}
 
 \subsection{Conclusion}
 
-\section{Third-party Tools}
+\section{Third-party tools}
 
 \subsection{Introduction}
 
@@ -248,7 +248,7 @@ described.
 
 \subsection{Findings}
 
-\subsubsection{Media Frameworks}
+\subsubsection{Media frameworks}
 
 A game engine must have the ability to handle user input, render graphics, and
 process audio. Several large frameworks are available that provide these features and
@@ -359,7 +359,7 @@ Unity supports many different image formats:\noparbreak
 \end{itemize}
 \end{multicols}
 
-\subsection{Audio Format}
+\subsection{Audio format}
 
 % TODO: +ref (both urldate 2024-09-12)
 The choice of audio format for the cr\^epe game engine depends on several factors,
@@ -386,78 +386,401 @@ licensing flexibility.
 
 \subsection{Conclusion}
 
-\section{Rendering}
+% \section{Rendering}
+% 
+% \subsection{Introduction}
+% 
+% \subsection{Findings}
+% 
+% \subsection{Conclusion}
 
-\subsection{Introduction}
+% \section{Event manager/game loop}
+% 
+% \subsection{Introduction}
+% 
+% \subsection{Findings}
+% 
+% \subsection{Conclusion}
 
-\subsection{Findings}
-
-\subsection{Conclusion}
-
-\section{Event manager/game loop}
-
-\subsection{Introduction}
-
-\subsection{Findings}
-
-\subsection{Conclusion}
-
-% TODO: this entire section
-\section{Profiling and debugging}
-
-% Which profiling and debugging features are wanted?
-% How to provide those profiling and debugging features?
-% Can most of the profiling/debugging be handled by external tools?
-
-% Ideas:
-% - flame graph
-% - watchtable (combine w/ fps/speed control overlay?)
-% - debug printing utility functions
-
-\subsection{Introduction}
-
-\subsection{Findings}
-
-\subsubsection{Callgrind}
-
-\begin{comparison}
-	\pro{Source code does not need to be modified for profiling}
-	\con{Execution speed is severely impacted}
-\end{comparison}
-
-\subsection{Conclusion}
+% % TODO: this entire section
+% \section{Profiling and debugging}
+% 
+% % Which profiling and debugging features are wanted?
+% % How to provide those profiling and debugging features?
+% % Can most of the profiling/debugging be handled by external tools?
+% 
+% % Ideas:
+% % - flame graph
+% % - watchtable (combine w/ fps/speed control overlay?)
+% % - debug printing utility functions
+% 
+% \subsection{Introduction}
+% 
+% \subsection{Findings}
+% 
+% \subsubsection{Callgrind}
+% 
+% \begin{comparison}
+% 	\pro{Source code does not need to be modified for profiling}
+% 	\con{Execution speed is severely impacted}
+% \end{comparison}
+% 
+% \subsection{Conclusion}
 
 \section{Physics}
 
-\subsection{Introduction}
+%links
+%ragdoll info: https://learn.unity.com/tutorial/creating-ragdolls-2019#649c42abedbc2a04c2145ce7
+%softbody info: https://www.greenfoot.org/scenarios/29502
 
-\subsection{Findings}
-
-\subsection{Conclusion}
-
-\section{Scripting}
-
-\subsection{Introduction}
-
-\subsection{Findings}
-
-\subsection{Conclusion}
-
-\section{Audio}
+%2d box concepts: https://box2d.org/
+%liquidfun (fork of box2d): https://google.github.io/liquidfun/
+%Chipmunk2D: https://chipmunk-physics.net/
+% particel systemhttps://learn.unity.com/tutorial/introduction-to-particle-systems#
+%rigid body:https://docs.unity3d.com/ScriptReference/Rigidbody.html
 
 \subsection{Introduction}
 
+This part of the research explains Physics concepts and the use of physics in a game
+engine. Furthermore, it examines the ease of using a physics engine compared to
+implementing physics from scratch. Ultimately, a recommendation will be provided on
+whether using a physics engine is more feasible than a custom implementation.
+
+\subsection{Physics concepts}
+
+Some information about certain Physics topics. second partdescibes what physics we
+will be able to use and what it is.
+
+%Physics core concepts: https://bluebirdinternational.com/game-physics/#:~:text=Game%20physics%20is%20implemented%20using,solid%20and%20deformable%20objects%2C%20respectively
+
+%ragdoll https://bluebirdinternational.com/ragdoll-physics/
+
+\begin{description}
+	\item[Kinematics] Kinematics in game physics involves calculating the position,
+		velocity, and acceleration of objects to simulate realistic motion. It affects
+		everything from character movement to projectiles and vehicles. Collision
+		detection is key, as it determines when objects collide and how they respond,
+		including any damage or effects. Kinematics also helps create lifelike
+		animations, like jumping or running, enhancing the game's realism and immersion.
+		\begin{itemize}
+			\item mass
+			\item speed
+			\item direction
+			\item collision detection
+		\end{itemize}
+	\item[Dynamics] Dynamics simulate object interactions and forces, such as gravity
+		and friction, to enhance realism. It includes rigid body, soft body, and fluid
+		dynamics. For example, it affects car movements in racing games and projectiles
+		in shooters. Balancing dynamics is crucial to maintain performance. Ragdoll
+		physics, a related concept, models a character's body as interconnected rigid
+		bodies for realistic movement.
+		\begin{itemize}
+			\item rigid body dynamics
+			\item soft body dynamics
+			\item fluid dynamics
+			\item ragdoll physics
+		\end{itemize}
+	\item[Collision] Collision detection is the process of determining when two or more
+		objects in the game world come into contact with each other. There are several
+		techniques used for collision detection.
+		\begin{itemize}
+			\item bounding boxes
+			\item bounding spheres
+			\item mesh-based collision
+		\end{itemize}
+		These techniques involve creating simple shapes around the objects and checking
+		if they intersect with each other.
+	\item[Rigidbody] Rigidbodys deels with the behavior of of non deformable solid
+		objects. it has some physical properties.
+		\begin{itemize}
+			\item mass
+			\item velocity
+			\item angular velocity
+			\item orientation
+		\end{itemize}
+		To calculate all forces applied to the rigid body the most used algoritm is
+		Newton-Euler equations. The alogritm is about mass an conservation of energy.
+	\item[Softbody] Soft body dynamics simulates deformable objects like cloth, fluids,
+		and flesh, adding complexity beyond rigid body dynamics. Key techniques
+		include:\noparbreak
+		\begin{itemize}
+			\item Finite Element Method: Divides the object into small elements that
+				interact based on physical laws.
+			\item Mass-Spring Systems: Uses masses and springs to model deformation and
+				stretching.
+		\end{itemize}
+		These methods enhance game realism by creating lifelike clothing, natural water
+		effects, and realistic collision deformations. However, they are resource
+		intensive an require precise calculations to avoid unrealistic results.
+		\item[Particle Systems] Particle systems simulate numerous small objects to
+			create larger effects like dust, smoke, fire, or explosions. These effects can
+			add an extra layer of realism to a game.
+		\item[Fluid Dynamics] Fluid dynamics shows how fluids move and behave. In game
+			physics, it simulates liquids like water or lava, adding complexity and realism
+			to games with fluid interactions.
+		\item[Aerodynamics] Aerodynamics shows the movement of air and its interaction
+			with solid objects. In video games, it simulates how objects like airplanes or
+			birds move through the air, adding a realistic touch to games involving flight
+			or gliding.
+\end{description}
+
 \subsection{Findings}
+
+This part shows some phiscics engines an certain physics features that could be
+needed within the project.
+
+\subsubsection{Available physics engines}
+
+Available physics engines for complex physics:\noparbreak
+\begin{description}
+	\item[Box2D] One of the most popular and widely used open-source 2D physics
+		engines, Box2D is known for its simplicity, robustness, and efficiency.
+
+		MIT licensed.
+	\item[LiquidFun] A fork of Box2D, LiquidFun adds particle-based fluid simulation to
+		Box2D's rigid body dynamics. It's ideal for games that require both solid and
+		fluid dynamics.
+
+		Apache 2.0 licensed.
+	\item[Chipmunk2D] A lightweight and fast 2D physics engine that emphasizes ease of
+		use and flexibility. Chipmunk2D is designed to be simple enough to understand and
+		integrate but powerful enough for complex simulations.
+
+		MIT licensed.
+\end{description}
+
+\subsubsection{Physics system (engine specific physics engine)}
+
+A physics engine that is independent can be used across multiple game engines or
+applications. But when the physics engine is built directly into the game engine and
+can not be reused independently, it is often considered a physics system or physics
+module within that specific engine. It is optimized and designed to work within the
+constraints and features of that particular engine.
+
+features a physics engine should provide is determined by the requirements. Because
+the only requirement is that the user should easily add physics a list below is made
+for simple physics that can be implemented without the use of an 3rd party physics
+engine. Other features can be made by the user using scripts.
+
+For simple features as listed below (besides collision and particels) a Physics
+system is sufficient to provide these features to the game engine.
+
+Simple Physics features a physics engine could provide:\noparbreak
+\begin{itemize}
+	\item Gravity
+	\item Collision (detection + standard handeling)
+	\item Rigidbody body\noparbreak
+	\begin{itemize}
+		\item mass
+		\item gravity scale
+		\item velocity
+		\item body type\noparbreak
+		\begin{itemize}
+			\item Static
+			\item Dynamic
+			\item Kinematic (User script)
+			\item Kinematic (standard)
+		\end{itemize}
+	\end{itemize}
+	\item collsion detection mode
+	\item movement\noparbreak
+	\begin{itemize}
+		\item player movement
+		\item bounce
+		\item rotation
+		\item directional force
+	\end{itemize}
+	\item particels
+\end{itemize}
+
+\subsubsection{Physics with EC}
+
+with EC the component (e.g.~Rigidbody) would have some functionality to change its
+own physics. Besides storing data it would hold function as well for applying
+gravity, forces, or handle other physics-related logic.
+
+Preview of Rigidbody\noparbreak
+\begin{itemize}
+	\item Mass (data)
+	\item gravityscale (data)
+	\item velocity (data)
+	\item applygravity (function)
+	\item update position (function)
+\end{itemize}
+
+With this logic inside of each component the gameloop would look like this:
+
+\begin{enumerate}[label={step \arabic*:},leftmargin=5em]
+	\item Have a list of components.
+	\item call for each component the rigidbody with the update function (changing its
+		velocity)
+	\item call for each component the update position function (change x and y of each
+		entity)
+	\item check for collsion handeling (would be the collsion component)
+\end{enumerate}
+
+Because it is not known with EC if the list contains all object with a rigidbody some
+overhead is created if the entity does not have a component of the type rigidbody.
+
+\subsubsection{Physics with ECS}
+
+With ECS the component (e.g.~Rigidbody) would only be used to store data. all
+functionality would be moved to the Physics system
+
+Preview of Rigidbody
+\begin{itemize}
+	\item Mass (data)
+	\item gravityscale (data)
+	\item velocity (data)
+\end{itemize}
+
+Preview of physics system
+\begin{itemize}
+	\item applygravity (function)
+	\item update position (function)
+\end{itemize}
+
+A seperate sytem would be made that would do all the calculations for the physics.
+
+With this logic inside of each component the gameloop would look like
+this:\noparbreak
+\begin{enumerate}[label={Step(\arabic*):},leftmargin=5em]
+	\item ECS provides a list of rigidbodies (with the enitties)
+	\item physics system updates all components
+\end{enumerate}
+
+The benefit of ECS is that all physics and collsions are handled by one system. The
+Physics functionalities would be gathered in one place instead of multiple
+components. The Physics system could seperate the Physics function creating a correct
+Physics flow with only one loop. For EC to do this each function would need to have
+its own loop in the gameloop creating more overhead.
+
+What EC can not provide compared to ECS is a physics world. A physics world would be
+the physics that apply to all dynamic physics components. If you want to create
+gravity you can add the force to the world. The physics system would read all the
+Physics forces in the world and apply them to all dynamic entities. This would create
+an easier to use interface for the user and improve the efficiency of the physics
+because the total forces can be calcualted ones and then applied to all dynamic
+entities.
 
 \subsection{Conclusion}
 
-\section{AI}
+More components need te be created for both EC and ECS with the diagram provided by
+the customer. With ECS having the benefit of creating a world where all dynamic
+object can have a force they interact with. A physics system has the benefit that all
+physics functionalities are located within one system instead in each component. The
+flow of Physics updates can be change within the physics system instead of in the
+gameloop itself.
+
+\section{Collisions}
 
 \subsection{Introduction}
 
+Collision is mostly made part of an Physics engine, however it is something seperate
+but some collision handeling is done by the Physics engine that is the reason why
+they are most of the time one system.
+
+Collsions exists from two thing. Collsion detection and collsion handeling/ Some
+handeling is done by the physics engine and by user scripts and will not be
+explanined in this topic. Collsion detection is the scope of this research. There is
+a need of understanding what different type of collision objects are and what
+algoritm can be used to increase efficiency of the detection.
+
 \subsection{Findings}
 
+Collsion detection is made out of 2 fases.
+
+%https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+
+%https://medium.com/@bpmw/quadtrees-for-2d-games-with-moving-elements-63360b08329f
+
+%https://medium.com/my-games-company/optimizing-r-tree-inserts-in-unity-a-bomberman-like-example-81d2576efd75
+
+%https://matthias-research.github.io/pages/tenMinutePhysics/11-hashing.pdf
+
+The first fase want to make a list out of objects that could be colliding. Some
+algorithm can be used to make these list in an efficient way. quadtrees, R-Trees or
+a spatial hashmap.
+
+\begin{description}
+	\item[Quadtrees] Quadtrees partition 2D space into quadrants (stored as nodes in a
+		tree), dividing these quadrants into smaller quadrants when they contain more
+		than a certain threshold of elements.
+	\item[R-Trees] These are data structures commonly used for spatial access. They are
+		more suited for dynamic data and allow efficient querying of rectangles or
+		bounding boxes, making them useful for collision detection.
+	\item[Spatial hashing] This technique divides space into uniform grids (similar to
+		cells in a 2D array), and each object is assigned to one or more cells based on
+		its position. Objects within the same or adjacent cells are checked for
+		collisions, improving efficiency by limiting the number of checks to nearby
+		objects.
+\end{description}
+
+R-Trees are easy to understand but how the R-tree is build (how objects are inserted)
+is complex. The benefits of this tree for this project are not needed because
+quadtree would be sufficient for this purpose. reading the data would be as fast as
+the quadtree but implemeting the R-tree and knowing how to implement it takes to much
+time and is out of scope.
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{p{8em}XXX}
+		\toprule
+		Criteria & Quadtree & R-tree & Spatial hashing \\
+		\midrule
+		Best for & Static objects, sparse data & Complex shapes, dynamic objects & Fast-moving objects, uniform data \\
+		\midrule
+		Handles moving objects & Poorly (requires restructuring) & Well (efficient updates) & Very well (simple re-hash) \\
+		\midrule
+		Memory usage & Moderate & Moderate to high & Can be high \\
+		\midrule
+		Complexity & Moderate & High & Low \\
+		\midrule
+		Spatial queries & Efficient & Very efficient & Less efficient \\
+		\midrule
+		Grid size sensitivity & N/A & N/A & High (tuning needed) \\
+		\midrule
+		Handling variable density & Good & Good & Poor \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Comparison of quadtree, R-tree, and spatial hashing}
+\end{table}
+
+%https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+
+The second face checks the list from the first face if there are actually colliding. the narrow face detections are descripted in the list below.
+
+List of collision detection objects/algoritms (narrow)
+\begin{description}
+	\item[Axis-Aligned Bounding Box]One of the simpler forms of collision detection is
+		between two rectangles that are axis aligned --- meaning no rotation. The
+		algorithm works by ensuring there is no gap between any of the 4 sides of the
+		rectangles.
+	\item[Circle Collision] a simple shape for collision detection is between two
+		circles. This algorithm works by taking the center points of the two circles and
+		ensuring the distance between the center points are less than the two radii added
+		together.
+	\item[Separating Axis Theorem] This is a collision algorithm that can detect a
+		collision between any two convex polygons. It's more complicated to implement
+		than other methods but is more powerful.
+\end{description}
+
 \subsection{Conclusion}
+
+% \section{Audio}
+% 
+% \subsection{Introduction}
+% 
+% \subsection{Findings}
+% 
+% \subsection{Conclusion}
+
+% \section{AI}
+% 
+% \subsection{Introduction}
+% 
+% \subsection{Findings}
+% 
+% \subsection{Conclusion}
 
 \end{document}
 

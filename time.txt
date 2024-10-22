@@ -74,6 +74,10 @@ loek: 2024-10-16 40m implementation :: scripting interface
 loek: 2024-10-16 20m implementation :: scripting interface
 loek: 2024-10-17 40m project meeting
 loek: 2024-10-17 10m review :: PR review (#5 and #6)
+loek: 2024-10-18 1h40m docs :: design :: scripting interface
+loek: 2024-10-20 30m review :: PR review (#37)
+loek: 2024-10-21 1h30m implementation :: global config interface
+loek: 2024-10-21 10m review :: PR review (#7)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -268,5 +272,8 @@ jaro: 2024-10-09 30m particle system with ECS
 jaro: 2024-10-10 3h30m particle system with ECS
 jaro: 2024-10-10 1h30m project meeting
 jaro: 2024-10-11 30m weekly update
+jaro: 2024-10-14 2h knowledge sharing
+jaro: 2024-10-14 1h30m project meeting
+jaro: 2024-10-17 1h project discussion
 
 # vim:ft=cfg

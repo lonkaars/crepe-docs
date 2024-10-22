@@ -1,0 +1,69 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			-
+		Document standard
+			Add updates when needed
+		Requirement
+			physics sub-requirements -> Jaro write document
+			eventmanager sub-requirements -> Wouter write document
+			gameloop sub-requirements -> Wouter write document
+			ecs sub-requirements
+			particles sub-requirement -> Jaro write document
+			resourceManager sub-requirement -> Niels write document
+			rendering sub-requirement
+		design document
+			Discussing top-down
+		Game design
+			-
+	Git
+		Code standard -> LOEK update
+			Show updates
+			[closed] Getter and setter wil get: 'set' and 'get'
+			namespace/ using namespace
+ 	Environments
+		-
+	Research (POC)
+		research eventmanager -> Wouter POC (goede voortgang)
+		resource manager -> Niels POC check datatype for conversion (na meeting afgerond) alleen implementatie tiled
+		start research ui -> wouter
+		start research ai
+		start research savedata -> loek
+		start research renderer -> niels (kleine start)
+		start research scripting -> loek
+		start research debugging (los staande profilers, toevoegen timers voor profilers?)
+		start research physics Starting POC -> Jaro
+			More research about physics
+			Question customer about physics requirements
+		start reasearch collsion detection -> Jaro
+		research ecs -> Max POC
+		start research particles Starting research -> Jaro (LOEK is sterk tegen particles in physics system omdat loek geen vloeistof wilt)
+	Design
+		[closed] discussed class diagram
+			one instance of rigidbody and collider
+			Gameobject is not the owner of the component but the manager is
+			and one component type per gameobject.
+			Functions within a model can they change
+		Adding design asset class -> niels
+		Adding design resource holder -> niels 
+		[closed] Adding design gameloop  -> Wouter toevoegen
+		Discuss facade design.
+		Who is owner of which facade instancies?
+		who is owner of what?
+		How does a game designer make a scene?
+		[closed] resourceManager discuss design.
+		review design document (loeks features) -> Wouter
+	Product
+		[closed] Creating 3rd party tool facade audio -> LOEK verder werken
+		Api	class diagram to c++
+	Test
+		Add unit test for audio (do we want unit tests)
+		Discuss about what to test (wait on api)
+		Change location tests -> loek
+	Question Bob
+		Tell where these documents are located -> jaro
+		Question customer about physics requirements
+		functions in components (setter)
+		We ondersteunen toetsenbord en muis.
+
