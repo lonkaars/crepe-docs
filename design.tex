@@ -52,11 +52,133 @@ This separation between game logic and rendering ensures that both simulation ac
 
 \subsection{Scripting}
 
+The scripting interface was designed around a `target' \gls{api} (described by
+\cref{req:script:interface,req:script:user-class,req:script:direct-instance,req:script:direct-run}).
+An example of this \gls{api} is shown below:\noparbreak
+
+\begin{blockcode}
+class MyScript : public BehaviorScript {
+	void update() {
+		// update code here
+	}
+	// init() also exists, but is empty by default
+};
+
+{ // in scene initialization
+	GameObject & obj = ...;
+	obj.add_component<MyScript>();
+}
+\end{blockcode}
+
+The above call to \codeinline{GameObject::add_component} cannot work correctly
+without significantly increasing the complexity of the component manager, so the
+following restrictions were taken into account when creating the script system
+architecture:\noparbreak
+
+\begin{itemize}
+	\item The first template parameter passed to \codeinline{GameObject::add_component}
+		\emph{must} be a base `script \emph{component}' class, so each derived user
+		script class is instantiated in the same generic script list.
+	\item C++ does not allow passing types (i.e.~\codeinline{MyScript} in this case) as
+		function parameters, so a function call like
+		\codeinline{add_component<BehaviorScript>(MyScript)} cannot be realized.
+\end{itemize}
+
+\subsubsection{Architecture}
+
+The restrictions detailed at the start of this section are mitigated as
+follows:\noparbreak
+
+\begin{itemize}
+	\item User scripts are split into two classes---
+		\begin{enumerate}
+			\item a script \emph{interface} class (\codeinline{Script})
+			\item a script \emph{component} class (\codeinline{BehaviorScript})
+		\end{enumerate}
+	\item \codeinline{GameObject::add_component} receives the script \emph{component}
+		as template parameter
+	\item \codeinline{GameObject::add_component} now always returns a reference to the
+		component instance
+	\item The script component class has a setter function that takes a template
+		parameter for classes derived from the base script \emph{interface} class
+\end{itemize}
+
+\Cref{fig:class-scripts} shows the resulting structure as a class diagram. It
+contains the following classes:\noparbreak
+\begin{description}
+	\item[Script] This is the script \emph{interface}, and is used by the game
+		programmer to create derived script classes. All methods in this class are
+		declared virtual and have an empty implementation.
+
+		This class' methods are protected by default, and a friend relation to
+		\codeinline{ScriptSystem} is used to ensure only \codeinline{ScriptSystem} is
+		able to call these methods.
+
+		Only classes derived from \codeinline{Script} can be used with
+		\codeinline{BehaviorScript::set_script}'s template parameter \codeinline{T}. This
+		function returns a reference to the \codeinline{BehaviorScript} instance it was
+		called on so it can be chained after the call to
+		\codeinline{GameObject::add_component}.
+	\item[BehaviorScript]
+		This is the script \emph{component}, and is given as the template parameter to
+		\codeinline{GameObject::add_component}.
+
+		This class also uses a friend relation to \codeinline{ScriptSystem} to restrict
+		access to its private reference member \codeinline{script}.
+	\item[ScriptSystem] This is the system class that runs the methods implemented in
+		the derivative instances of \codeinline{Script}.
+\end{description}
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/class-scripts.puml}
+	\caption{User script class diagram}
+	\label{fig:class-scripts}
+\end{figure}
+
 \subsection{Audio}
 
-\subsubsection{Library}
+Since writing a custom real-time audio mixing engine is outside the scope of this
+project\mref and C++ does not provide a built-in cross-platform audio \gls{api}, the
+audio system inside the cr\^epe engine is implemented as a fa\c{c}ade around an
+existing audio library.
 
-\subsubsection{Fa\c{c}ade}
+\subsubsection{Libraries}
+\label{sec:audio:libs}
+
+This subsection compares various standalone audio libraries for suitability. After
+searching for libraries (search terms: `dynamic/adaptive audio', `real-time audio',
+`audio library', `game audio engine'), several libraries were found. These libraries
+were checked against the audio engine requirements \autocite{crepe:requirements} and
+then tested by writing the same benchmark-style \gls{poc} using the remaining
+qualifying libraries:\noparbreak
+\begin{enumerate}
+	\item Load a background track (Ogg Vorbis)
+	\item Load three short samples (WAV)
+	\item Start the background track
+	\item Play each sample sequentially while pausing and resuming the background track
+	\item Play all samples simultaniously
+	\item Stop all audio and exit
+\end{enumerate}
+
+Of these libraries the following were determined to be unsuitable for use in this
+project:\noparbreak
+\begin{description}
+	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license}).
+	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing.
+	\item[miniaudio \autocite{lib:miniaudio}] Tested by implementing a \gls{poc}, but
+		dropped due to very limited codec support (WAV, MP3 and FLAC only); Also does not
+		have an \gls{api} reference (only programming manual).
+	\item[YSE \autocite{lib:yse}] Attempted to write \gls{poc}, but CMake configuration
+		in repository is broken; This project seems to have been abandoned.
+\end{description}
+
+The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
+is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
+\Cref{sec:audio:architecture} describes the fa\c{c}ade written for this library.
+
+\subsubsection{Architecture}
+\label{sec:audio:architecture}
 
 \Cref{fig:class-audio-facade} shows a class diagram of the audio fa\c{c}ade. It
 contains the following classes:

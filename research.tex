@@ -427,59 +427,6 @@ licensing flexibility.
 % 
 % \subsection{Conclusion}
 
-\section{Audio}
-
-The game engine is required to have an audio system
-\autocite[\ref{req:audio}]{crepe:requirements}. Since writing a custom real-time
-audio mixing engine is outside the scope of this project\mref, this section compares
-various standalone audio libraries for suitability in the engine.
-
-\subsection{Libraries}
-\label{sec:audio:libs}
-
-After searching for libraries (search terms: `dynamic/adaptive audio', `real-time
-audio', `audio library', `game audio engine'), several libraries were found. These
-libraries were checked against the audio engine requirements
-\autocite{crepe:requirements} and then tested by writing the same benchmark-style
-\gls{poc} using the remaining qualifying libraries:\noparbreak
-\begin{enumerate}
-	\item Load a background track (Ogg Vorbis)
-	\item Load three short samples (WAV)
-	\item Start the background track
-	\item Play each sample sequentially while pausing and resuming the background track
-	\item Play all samples simultaniously
-	\item Stop all audio and exit
-\end{enumerate}
-
-Of these libraries the following were determined to be unsuitable for use in this
-project due to various reasons:\noparbreak
-\begin{description}
-	\item[FMOD \autocite{lib:fmod}] Is proprietary (violates \cref{req:lib:license})
-	\item[PortAudio \autocite{lib:portaudio}] Does not handle mixing
-	\item[miniaudio \autocite{lib:miniaudio}] With finished \gls{poc}, but dropped due
-		to very limited codec support (WAV, MP3 and FLAC only); Also does not have an
-		\gls{api} reference (only programming manual)
-	\item[YSE \autocite{lib:yse}] Attempted to write \gls{poc}, but CMake configuration
-		in repository is broken; This project seems to have been abandoned
-\end{description}
-
-The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
-is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
-
-\subsection{Conclusion}
-\label{sec:audio:conclusion}
-
-Due to a severe shortage of libraries that fit our requirements, SoLoud appears to be
-the most suitable (and only) audio library for use in this project.
-
-% \section{Scripting}
-% 
-% \subsection{Introduction}
-% 
-% \subsection{Findings}
-% 
-% \subsection{Conclusion}
-
 \section{Physics}
 
 %links
