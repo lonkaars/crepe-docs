@@ -81,6 +81,8 @@ loek: 2024-10-21 10m review :: PR review (#7)
 loek: 2024-10-22 15m review :: incorporate feedback and merge PR (#7 and #37)
 loek: 2024-10-23 30m implementation :: refactoring
 loek: 2024-10-23 2h20m review :: PR review (#9)
+loek: 2024-10-24 1h20m project meeting
+loek: 2024-10-24 30m review :: PR review (merge only, #8 and #11)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
