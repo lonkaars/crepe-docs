@@ -25,27 +25,53 @@ workflows.
 \section{Overview}
 
 \subsection{Core}
-\subsubsection{Game Loop}
-Problem Statement\
-
-In the context of game development, a robust game loop is essential for maintaining consistent gameplay and ensuring that game logic, physics, and rendering are executed in a synchronized manner.
-Without a well-defined game loop, issues such as inconsistent frame rates, unresponsive input handling, and unpredictable behavior can arise, leading to a poor user experience.
-Therefore, the implementation of a game loop within a game engine is crucial for providing a stable foundation upon which game developers can build their projects./
-
-Game Loop Design\
-
-The game loop is integrated directly into the engine to streamline development and minimize timing issues for game developers.
-Two separate update functions are employed. A fixed-time update is used with a consistent time delay per update call for game logic and physics, ensuring predictable behavior regardless of fluctuations in frame rates.
-By performing physics calculations at regular intervals, game logic and physics are decoupled from frame rate, ensuring consistent behavior across different hardware.
-
-Rendering and animations are handled separately on a per-frame basis.
-A delay and delta time calculation are applied to create consitent visual behavior, even when frame rates vary.
-This separation between game logic and rendering ensures that both simulation accuracy and visual fluidity are optimized.
 
 \subsection{Patterns}
 
 \section{Design}
+\subsection{Game Loop}
+\subsubsection{Problem statement:}
+The game loop is integrated into the engine to simplify development and minimize timing issues. By embedding the game loop within the engine, uniform execution of engine systems is ensured.
+Two separate update functions are employed: a fixed-time update with a consistent time delay per call is used for game logic and physics, ensuring predictable behavior regardless of fluctuations in frame rates.
+This approach decouples physics calculations from the frame rate, allowing consistent behavior across different hardware configurations.
+\subsubsection{Design:}
+As illustrated in Figure \ref{gameloop-flow}, the game loop continues to call the fixed update function as long as sufficient time is available.
+Delta time, calculated using the time between the start of the last frame and the current frame, is used to measure the duration of each frame. This value is converted into a time-based unit, enabling other systems or game developers to create behavior independent of frame rate.
 
+Rendering and animations are handled separately on a per-frame basis. A delay, in conjunction with the delta time calculation, is applied to maintain consistent visual behavior, even when frame rates vary. This separation of game logic from rendering ensures that both simulation accuracy and visual fluidity are optimized.
+As seen in figure Figure \ref{gameloop-class} to access the deltaTime anywhere in the system a timerClass is created using a singleton desing pattern which ensures only one instance of the class is created; the gameloop updates the timing and delta time of this class to ensure it is accurate.
+The gameloops two main functions are the setup() and loop(). The first is called when the game starts and handles all startup procedures this function only runs once.
+The loop() function keeps looping as long as the game is running. Within this function are the functions: processInputs for handling user input(mouse,keyboard,other controllers),fixed update,frame update and render function.
+\begin{figure}
+	\centering
+	\includepumldiag{img/gameloop-flow.puml}
+	\caption{Gameloop Flowchart Diagram} \label{gameloop-flow}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/gameloop-class.puml}
+	\caption{Gameloop Flowchart Diagram} \label{gameloop-class}
+\end{figure}
+\subsection{Event system}
+\subsubsection{Problem statement:}
+\subsubsection{Problem Statement:}
+The game engine utilizes the Entity-Component-System (ECS) architecture, where components store data, and systems process that data to apply changes. Each system is responsible for managing a specific domain, such as physics in the physics system and rendering in the rendering system. To facilitate communication between systems without introducing direct dependencies, a method of inter-system communication is required to maintain loose coupling.
+
+Additionally, a mechanism that allows one object's trigger to elicit responses from multiple other objects is beneficial for game developers, providing greater flexibility in designing interactions within the game.
+
+\subsubsection{Design:}
+The solution to the aforementioned problems is an event system that facilitates communication between systems and utilizes BehaviorScripts to handle various types of events. The event system includes several pre-defined events, all derived from a parent Event class, capable of handling user input and application-level events, such as window resizing.
+
+Furthermore, a specific event is designated for the collision handler within the physics system, which can be triggered when two objects collide. The event system also allows developers to create custom events, such as "onPlayerDeath," and assign callback functions that execute when the event is triggered.
+
+When such an event occurs, the EventManager calls the assigned callback function, executing the associated code to handle the event's consequences
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/event-uml.drawio.png}  % or specify a custom width
+    \caption{event system class diagram}
+    \label{fig:event-uml}
+\end{figure}
 \subsection{Rendering}
 
 \subsection{Physics}
@@ -203,6 +229,7 @@ contains the following classes:
 \subsection{Input}
 
 \subsection{Physics}
+
 
 \section{Tools}
 

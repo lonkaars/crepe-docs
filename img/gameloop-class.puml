@@ -1,0 +1,35 @@
+@startuml
+class LoopManager {
+    +static LoopManager& getInstance()
+
+    +void loop()
+    +void setup()
+    -void render()
+    -void processInput()
+    -void fixedUpdate()
+    -void update()
+    -bool gameRunning
+    -LoopManager()
+}
+
+class LoopTimer {
+    +static LoopTimer& getInstance()
+    +void start()
+    +void update()
+    +float getLag()
+    +float getFixedDeltaTime()
+    +void advanceFixedUpdate()
+    +void enforceFrameRate()
+    +float getDeltaTime()
+    -float lag
+    -float fixedDeltaTime
+    -float deltaTime
+}
+
+LoopManager --> LoopTimer : uses
+LoopManager : loop()
+LoopManager : |-- processInput()
+LoopManager : |-- fixedUpdate()
+LoopManager : |-- update()
+LoopManager : |-- render()
+@enduml
