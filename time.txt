@@ -293,10 +293,15 @@ jaro: 2024-10-14 2h knowledge sharing
 jaro: 2024-10-14 1h30m project meeting
 jaro: 2024-10-17 1h project discussion
 jaro: 2024-10-19 15m weeklyupdate
-jaro: 2024-10-20 3h components, physics,collision systems (design en onderzoek)
-jaro: 2024-10-23 1h30m samenvoegen collision,physics en rendering.
-jaro: 2024-10-24 1h20 project meeting
-jaro: 2024-10-24 3h30m physics / collision (physics en collision detection)
+jaro: 2024-10-20 3h components + physics + collision systems
+jaro: 2024-10-23 1h30m samenvoegen collision + physics en rendering
+jaro: 2024-10-24 1h20m project meeting
+jaro: 2024-10-24 3h30m physics and collision
 jaro: 2024-10-24 1h static collision handeling
-jaro: 2024-10-25 2h collision handeling + onderzoek collision event unity
+jaro: 2024-10-25 2h collision handeling and onderzoek collision event unity
+
+
+
+
+
 # vim:ft=cfg
