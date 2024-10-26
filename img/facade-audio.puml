@@ -1,5 +1,5 @@
 @startuml
-!include theme.ipuml
+!include ../img/theme.ipuml
 skinparam Linetype ortho
 
 package crepe {

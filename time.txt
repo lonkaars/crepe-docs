@@ -231,10 +231,17 @@ niels: 2024-10-09 2h adding the rendering components to api, and making the rend
 niels: 2024-10-09 3h researching and programming,debugging the rendersystem
 niels: 2024-10-10 3h Test jaro/particels branch to improve sdl functionalities. additionally, researching the necessary components
 niels: 2024-10-11 1h30m project meeting
-
-
-
-
+niels: 2024-10-21 3h design of asset manager and rendering
+niels: 2024-10-21 1h merging new master
+niels: 2024-10-22 2h adjusted rendering to new master
+niels: 2024-10-23 2h merge jaro/poc-physics branch to niels/rendering
+niels: 2024-10-23 1h finalize rendering
+niels: 2024-10-24 1h20m project meeting
+niels: 2024-10-25 2h camera programming
+niels: 2024-10-25 2h researching camera
+niels: 2024-10-26 2h merge wouter events branch to niels/rendering
+niels: 2024-10-26 1h fix my own git camera mistake
+niels: 2024-10-26 2h programming camera poc with movement and script
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
