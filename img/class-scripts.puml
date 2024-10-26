@@ -10,10 +10,12 @@ package api {
 	class Component <<irrelevant>>
 
 	class Script {
+		- Script()
+		--
 		# init() <<virtual>>
 		# update() <<virtual>>
 		--
-		- Script()
+		- parent : BehaviorScript *
 	}
 
 	class BehaviorScript {
@@ -26,7 +28,8 @@ package api {
 	}
 
 	BehaviorScript -u-|> Component
-	Script .u.> BehaviorScript
+	Script <.u. BehaviorScript : > friend
+	Script ..u> BehaviorScript
 }
 
 class System <<irrelevant>>

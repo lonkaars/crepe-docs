@@ -117,3 +117,48 @@ Unless explicitly changed by the game programmer, methods on instances of
 must be called by the script system.
 '''
 
+[savemgr]
+type = 'user'
+priority = 'must'
+description = '''
+The engine provides an \gls{api} for saving various kinds of game data
+(e.g.~progress, levels, statistics, unlocked items, achievements).
+'''
+
+[savemgr:journalling]
+type = 'system'
+priority = 'should'
+description = '''
+The save manager uses a journal to store data, such that partial saves do not
+cause data loss.
+'''
+
+[savemgr:types-custom]
+type = 'system'
+priority = 'will not'
+description = '''
+The save manager can be extended to store and retrieve game programmer-defined
+types and data structures.
+'''
+
+[savemgr:types-scalar]
+type = 'system'
+priority = 'must'
+description = '''
+The save manager is able to store and retrieve scalar types.
+'''
+
+[savemgr:types-string]
+type = 'system'
+priority = 'must'
+description = '''
+The save manager is able to store and retrieve strings.
+'''
+
+[savemgr:multi-file]
+type = 'system'
+priority = 'will not'
+description = '''
+The save manager can load multiple different save files.
+'''
+

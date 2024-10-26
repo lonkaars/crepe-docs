@@ -24,15 +24,15 @@ workflows.
 
 \section{Overview}
 
-\subsection{Core}
-
-\subsection{Patterns}
+% TODO: high-level design introduction
+% - which parts of the design are prerequisites (and therefore not designed by us)
+% - why are all parts in the following section arranged in the way they are
 
 \section{Design}
 
-\subsection{Rendering}
+% \subsection{Rendering}
 
-\subsection{Physics}
+% \subsection{Physics}
 
 \subsection{Scripting}
 
@@ -91,10 +91,11 @@ follows:\noparbreak
 contains the following classes:\noparbreak
 \begin{description}
 	\item[Script] This is the script \emph{interface}, and is used by the game
-		programmer to create derived script classes. All methods in this class are
-		declared virtual and have an empty implementation.
+		programmer to create derived script classes. All virtual methods in this class
+		have an empty implementation by default, and are optionally implemented by the
+		game programmer.
 
-		This class' methods are protected by default, and a friend relation to
+		This class' virtual methods are protected by default, and a friend relation to
 		\codeinline{ScriptSystem} is used to ensure only \codeinline{ScriptSystem} is
 		able to call these methods.
 
@@ -103,6 +104,10 @@ contains the following classes:\noparbreak
 		function returns a reference to the \codeinline{BehaviorScript} instance it was
 		called on so it can be chained after the call to
 		\codeinline{GameObject::add_component}.
+
+		\codeinline{Script} also has a reference to its parent
+		\codeinline{BehaviorScript} instance so components can easily be retrieved using
+		the component manager.
 	\item[BehaviorScript]
 		This is the script \emph{component}, and is given as the template parameter to
 		\codeinline{GameObject::add_component}.
@@ -184,13 +189,29 @@ contains the following classes:
 	\label{fig:class-audio-facade}
 \end{figure}
 
-\subsection{Input}
+\subsection{Save manager}
 
-\subsection{Physics}
+The save manager \gls{api} is designed to give the game programmer an easy to use
+interface for retrieving and storing game-specific data (\cref{req:savemgr}).
 
-\section{Tools}
+Because the engine validation app only stores statistics and highscores, the save
+manager is not required to support loading different save files
+(\cref{req:savemgr:multi-file}), nor storing complicated data types
+(\cref{req:savemgr:types-custom}). The save manager only supports storing simple
+types (\cref{req:savemgr:types-scalar,req:savemgr:types-string}).
 
-\section{Conclusion}
+In order to reduce complexity for the game programmer further, the following
+requirements were also set:\noparbreak
+
+\begin{itemize}
+	\item Prevent data loss in the case of crashes (\cref{req:savemgr:journalling})
+	\item Handle opening/closing/flushing of the underlying file automatically
+		% (\cref{req:savemgr:???})
+\end{itemize}
+
+% \subsection{Input}
+
+% \subsection{Physics}
 
 \end{document}
 
