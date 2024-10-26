@@ -175,6 +175,16 @@ wouter: 2024-10-07 2h45m project meeting
 wouter: 2024-10-08 4h finishing keyboard and mouse events
 wouter: 2024-10-09 3h intergrating gameloop with events for testing
 wouter: 2024-10-10 1h30m project meeting
+wouter: 2024-10-14 1h30m twelfth project meeting
+wouter: 2024-10-14 2h kennisdeling
+wouter: 2024-10-15 30m reviewing pull request sound
+wouter: 2024-10-17 1h thirteenth project meeting
+wouter: 2024-10-18 2h finished design diagram event manager
+wouter: 2024-10-21 3h working on design document
+wouter: 2024-10-12 30m reviewing pull request logging
+wouter: 2024-10-24 1h20m project meeting
+wouter: 2024-10-25 2h added collision functionality to event manager
+
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
