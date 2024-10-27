@@ -162,3 +162,23 @@ description = '''
 The save manager can load multiple different save files.
 '''
 
+[savemgr:file-manage]
+type = 'system'
+priority = 'must'
+description = '''
+The save manager manages opening/closing the underlying file, and flushing
+in-memory data to the file.
+'''
+done = '''
+The game programmer is able to use the save manager without explicit
+(de)initialization.
+'''
+
+[savemgr:var-key]
+type = 'system'
+priority = 'must'
+description = '''
+The save manager provides access to variables uniquely identified by a key
+string.
+'''
+

@@ -206,8 +206,22 @@ requirements were also set:\noparbreak
 \begin{itemize}
 	\item Prevent data loss in the case of crashes (\cref{req:savemgr:journalling})
 	\item Handle opening/closing/flushing of the underlying file automatically
-		% (\cref{req:savemgr:???})
+		(\cref{req:savemgr:file-manage})
+	\item Save file variables are uniquely identified (\cref{req:savemgr:var-key})
 \end{itemize}
+
+% \subsubsection{Architecture}
+% \label{sec:savemgr:architecture}
+% 
+% \begin{figure}
+% 	\centering
+% 	\includepumldiag{img/class-savemgr.puml}
+% 	\caption{Save manager class diagram}
+% 	\label{fig:class-savemgr}
+% \end{figure}
+% 
+% In order to realize \cref{req:savemgr:journalling,req:savemgr:var-key}, a third-party
+% key-value database library is used.
 
 % \subsection{Input}
 
