@@ -86,6 +86,7 @@ loek: 2024-10-24 30m review :: PR review (merge only, #8 and #11)
 loek: 2024-10-25 30m implementation :: scripting interface
 loek: 2024-10-25 20m review :: PR review (+errands, merge only, #12 and #13)
 loek: 2024-10-26 3h20m implementation :: save manager
+loek: 2024-10-27 4h implementation :: save manager
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
