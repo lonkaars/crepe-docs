@@ -126,6 +126,10 @@ max: 2024-10-16 30m investigated whether or not EnTT can handle multiple inherit
 max: 2024-10-16 3h rethinked scripting (to avoid mutliple inheritance)
 max: 2024-10-16 20m added new scripting idea to ecs-homemade
 max: 2024-10-17 1h thirteenth project meeting
+max: 2024-10-24 2h10m fourteenth project meeting
+max: 2024-10-25 3h started researching Scenes and Replay
+max: 2024-10-29 2h worked on UIObjects and Camera
+max: 2024-10-29 3h15m worked on Metadata Component, Camera and Scenes
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
