@@ -147,6 +147,11 @@ max: 2024-10-24 2h10m fourteenth project meeting
 max: 2024-10-25 3h started researching Scenes and Replay
 max: 2024-10-29 2h worked on UIObjects and Camera
 max: 2024-10-29 3h15m worked on Metadata Component, Camera and Scenes
+max: 2024-10-29 30m installing LaTeX on Linux
+max: 2024-10-29 30m discussing paricles/physics/colliders with Jaro
+max: 2024-10-30 4h refacting class diagram
+max: 2024-10-30 1h50m added SceneManager design to class diagram
+max: 2024-10-30 2h added ReplaySystem design to class diagram
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
