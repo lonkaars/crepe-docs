@@ -663,6 +663,73 @@ an easier to use interface for the user and improve the efficiency of the physic
 because the total forces can be calcualted ones and then applied to all dynamic
 entities.
 
+\subsubsection{Components physics}
+This is a list that could be needed for additonal phisics components
+
+\begin{itemize}
+    \item Gravity
+    \begin{itemize}
+        \item Rigidbody (for mass, gravity scale, etc.)
+        \item Transform (to modify position based on gravity)
+    \end{itemize}
+
+    \item Directional Force (e.g., wind or gravity in a specific direction)
+    \begin{itemize}
+        \item ForceComponent (for direction and magnitude of the force)
+        \item Rigidbody (for mass and velocity affected by force)
+        \item Transform (to update position based on force)
+    \end{itemize}
+
+    \item Collision (detection + handling)
+    \begin{itemize}
+        \item Rigidbody (for collision detection mode and velocity handling)
+        \item ColliderComponent (defines the shape and behavior of the collider, like bounce)
+        \item Transform (for object position, rotation updates)
+    \end{itemize}
+
+    \item Player Movement
+    \begin{itemize}
+        \item MovementComponent (for handling player input and movement speed)
+        \item Rigidbody (to handle physics-based movement, like velocity changes)
+        \item Transform (to apply movement to the object's position)
+    \end{itemize}
+
+    \item Bounce (elastic collisions)
+    \begin{itemize}
+        \item Rigidbody (for bounce coefficient and velocity adjustments)
+        \item ColliderComponent (to detect collisions and calculate bounce)
+        \item Transform (to adjust position after bouncing)
+    \end{itemize}
+
+    \item Rotation (torque or angular forces)
+    \begin{itemize}
+        \item Rigidbody (for rotational inertia and angular velocity)
+        \item Transform (to apply rotation to the object)
+    \end{itemize}
+
+    \item Directional Force (e.g., explosions, pushing)
+    \begin{itemize}
+        \item ForceComponent (to apply the force in a direction with a magnitude)
+        \item Rigidbody (for velocity changes due to the force)
+        \item Transform (to update position based on the force)
+    \end{itemize}
+
+    \item Particles (e.g., smoke, explosions)
+    \begin{itemize}
+        \item ParticleComponent (to define particle effects like lifetime, velocity)
+        \item Transform (to emit particles from the object’s position)
+    \end{itemize}
+\end{itemize}
+
+
+1. Input Processing
+2. Run Scripts (custom logic, AI, player input, etc.)
+3. Apply Forces (gravity, directional forces, user-applied forces)
+4. Calculate Movement (update positions based on velocity)
+5. Collision Detection and Resolution
+6. Post-Collision Adjustments (e.g., friction, constraints)
+
+
 \subsection{Conclusion}
 
 More components need te be created for both EC and ECS with the diagram provided by
