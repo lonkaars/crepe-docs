@@ -1,6 +1,14 @@
 ' vim:ft=plantuml
 
-!theme plain
+<style>
+root {
+	BackgroundColor white
+	FontColor black
+	LineThickness 1
+	Margin 0
+}
+</style>
+
 skinparam ClassAttributeIconSize 0
 skinparam ClassFontStyle bold
 skinparam DefaultFontName Inter
