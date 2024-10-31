@@ -49,7 +49,8 @@ $ curl -sLo- https://github.com/plantuml/plantuml/releases/download/v1.2024.7/pl
 # mv plantuml.jar /usr/share/plantuml/plantuml.jar
 ```
 
-> NOTE: Ubuntu, Debian and Mint all place PlantUML's \.jar file under
+> [!NOTE]
+> Ubuntu, Debian and Mint all place PlantUML's \.jar file under
 > `/usr/share/plantuml/plantuml.jar`, while it's under
 > `/usr/share/java/plantuml/plantuml.jar` on Arch. Check the contents of the
 > file returned by `command -v plantuml` to confirm this.
