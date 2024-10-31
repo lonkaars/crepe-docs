@@ -23,58 +23,61 @@ Unity and are looking for a flexible, cost-effective solution with familiar
 workflows.
 
 \section{Overview}
-As described above, the cr\^epe game engine's goal is to offer a Unity-like experience
-tailored for developing 2D games similar to Jetpack Joyride. That is why Jetpack
-Joyride and Unity provided the main inputs for this game engine design. Firstly, a
-quick overview will be given of the Unity game engine, in particular the \gls{ecs}.
-Secondly, this Overview will quickly talk you through some of the most important
-parts of the game engine, and why these parts are needed to create the Jetpack
-Joyride game.
+
+As described above, the cr\^epe game engine's goal is to offer a Unity-like
+experience tailored for developing 2D games similar to Jetpack Joyride. That is why
+Jetpack Joyride and Unity provided the main inputs for this game engine design.
+Firstly, a quick overview will be given of the Unity game engine, in particular the
+\gls{ecs}. Secondly, this Overview will quickly talk you through some of the most
+important parts of the game engine, and why these parts are needed to create the
+Jetpack Joyride game.
 
 \subsection{ECS}
-The Unity game engine is structured using the Entity Component System (\gls{ecs})
-(as shown in \cref{fig:ECS Block Diagram}). The \gls{ecs} is made out of three
-main subsystems, namely entities, components and systems. Entities are just IDs.
-An entity is also called a GameObject in Unity and it is made out of one (or
-more) components. Components are the classes that hold the data. The components
-determine what kind of entity it is (e.g. an enemy, audio, and so on). Systems take
-care of the behavior of the entities. Systems mainly read and write the enity's
-components data. The \gls{ecs} clearly distinguishes the data (components) from the
-functionality (systems).
+
+The Unity game engine is structured using the Entity Component System (\gls{ecs}) (as
+shown in \cref{fig:ecs-block-diagram}). The \gls{ecs} is made out of three main
+subsystems, namely entities, components and systems. Entities are just IDs. An entity
+is also called a GameObject in Unity and it is made out of one (or more) components.
+Components are the classes that hold the data. The components determine what kind of
+entity it is (e.g. an enemy, audio, and so on). Systems take care of the behavior of
+the entities. Systems mainly read and write the enity's components data. The
+\gls{ecs} clearly distinguishes the data (components) from the functionality
+(systems).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{img/ECSBlockDiagram.png}
 	\caption{ECS design pattern}
-	Source: \autocite{img:ECSBlockDiagram}
-	\label{fig:ECS Block Diagram}
+	Source: \autocite{img:ecs-block-diag}
+	\label{fig:ecs-block-diagram}
 \end{figure}
 
 The \gls{ecs} will also be used at the cr\^epe game engine. Everything (from the
-protagonist and bullets to the walls and enemies) in the cr\^epe game engine will
-be a GameObject (a.k.a. entity). The game programmer must program his game by
-creating all kind of GameObjects and placing them in one (or multiple) scenes, just
-like Unity.
+protagonist and bullets to the walls and enemies) in the cr\^epe game engine will be
+a GameObject (i.e.~entity). The game programmer must program his game by creating all
+kind of GameObjects and placing them in one (or multiple) scenes, just like Unity.
 
 \subsection{Jetpack Joyride}
+
 Firstly, some background information about Jetpack Joyride. Jetpack Joyride is a
 side-scrolling endless runner action video game created by Halfbrick Studios. The
 protagonist is called Barry Steakfries, who the player controls as he steals a
-bullet-powered jet pack from a top-secret laboratory \autocite{wiki:JetpackJoyride}.
-A screenshot from the game can be seen in \cref{fig:JetpackJoyride} (pleae be
-aware that the goal of this project is not to create an exact replica of Jetpack
-Joyride, it is only used as a source of inspiration).
+bullet-powered jet pack from a top-secret laboratory
+\autocite{wikipedia:jetpack-joyride}. A screenshot from the game can be seen in
+\cref{fig:jetpack-joyride} (pleae be aware that the goal of this project is not to
+create an exact replica of Jetpack Joyride, it is only used as a source of
+inspiration).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{img/JetpackJoyride.jpg}
 	\caption{Jetpack Joyride}
-	Source: \autocite{img:JetpackJoyride}
-	\label{fig:JetpackJoyride}
+	Source: \autocite{img:jetpack-joyride}
+	\label{fig:jetpack-joyride}
 \end{figure}
 
 The protagonist wears a jetpack with which he can float in the air. The player must
-avoide obstacles (such as lasers, missiles and zappers) by floating at the right
+avoid obstacles (such as lasers, missiles and zappers) by floating at the right
 height. The player can control the protagonist's jetpack, thereby also controlling
 the protagonist's height. The protagonist experiences gravity and other forces (like
 the force from his jetpack pushing him upwards). These forces should be easily
@@ -82,17 +85,17 @@ programmable by the game programmer. That is why a physics system is needed in t
 cr\^epe game engine. Only very limited/easy physics are needed for Jetpack Joyride,
 that is why this is only supported by the cr\^epe game engine.
 
-The protagonist must avoid obstacles. That is why the cr\^epe game engine should
-also support a collision system. Again, only very limited/easy collision is needed
-for Jetpack Joyride, that is why only very limited/easy collision is supported
-by the cr\^epe game engine.
+The protagonist must avoid obstacles. That is why the cr\^epe game engine should also
+support a collision system. Again, only very limited/easy collision is needed for
+Jetpack Joyride, that is why only very limited/easy collision is supported by the
+cr\^epe game engine.
 
 The game must, of course, also be visible to and playable by the user. A rendering
 system will take care of rendering (displaying) the game and its GameObjects. An
 input system will take care of all the inputs (mouse and keyboard).
 
-Jetpack Joyride also offers audio. A system will take care of the audio in the cr\^epe
-game engine.
+Jetpack Joyride also offers audio. A system will take care of the audio in the
+cr\^epe game engine.
 
 Particles are very common in Jetpack Joyride, e.g. underneath the jetpack and behind
 the rockets. Particles will be supported by the particle system.
