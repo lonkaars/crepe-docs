@@ -151,7 +151,7 @@ illustrated in \cref{fig:activity-scripts}.
 	\label{fig:activity-scripts}
 \end{figure}
 
-A \gls{poc} for the script system
+A \gls{poc} for the script system is showcased in \cref{poc:scripts}.
 
 \subsection{Audio}
 
@@ -168,15 +168,7 @@ searching for libraries (search terms: `dynamic/adaptive audio', `real-time audi
 `audio library', `game audio engine'), several libraries were found. These libraries
 were checked against the audio engine requirements \autocite{crepe:requirements} and
 then tested by writing the same benchmark-style \gls{poc} using the remaining
-qualifying libraries:\noparbreak
-\begin{enumerate}
-	\item Load a background track (Ogg Vorbis)
-	\item Load three short samples (WAV)
-	\item Start the background track
-	\item Play each sample sequentially while pausing and resuming the background track
-	\item Play all samples simultaniously
-	\item Stop all audio and exit
-\end{enumerate}
+qualifying libraries. These \glspl{poc} are detailed in \cref{poc:audio}.
 
 Of these libraries the following were determined to be unsuitable for use in this
 project:\noparbreak
@@ -217,6 +209,8 @@ contains the following classes:
 	\label{fig:class-audio-facade}
 \end{figure}
 
+A \gls{poc} for the final Audio fa\c{c}ade is also showcased in \cref{poc:audio}.
+
 \subsection{Save manager}
 
 The save manager \gls{api} is designed to give the game programmer an easy to use
@@ -251,6 +245,8 @@ requirements were also set:\noparbreak
 % In order to realize \cref{req:savemgr:journalling,req:savemgr:var-key}, a third-party
 % key-value database library is used.
 
+\subsection{Global configuration interface}
+
 % \subsection{Input}
 
 % \subsection{Physics}
@@ -259,12 +255,58 @@ requirements were also set:\noparbreak
 
 \section{\Glsfmtlongpl{poc}}
 
+The full (documented) source code of these \glspl{poc} is available on GitHub
+\autocite{crepe:code-repo}.
+
 \subsection{Script system}
 \label{poc:scripts}
 
-\subsection{Global configuration interface}
+The script system \gls{poc} \autocite[script example]{crepe:code-repo} consists of
+the following:\noparbreak
+\begin{itemize}
+	\item A user-defined class (\codeinline{MyScript}) derived from
+		\codeinline{Script}, which only implements the \codeinline{update()} function.
+	\item A main function that---
+		\begin{itemize}
+			\item Creates a game object with \codeinline{Transform} and
+				\codeinline{BehaviorScript} components.
+			\item A call to \codeinline{ScriptSystem::update}, which results in
+				\codeinline{MyScript::update} being called.
+		\end{itemize}
+\end{itemize}
+
+Running the \gls{poc} results in the output shown in \cref{fig:poc-output-scripts},
+demonstrating that the system works as intended.
+
+\begin{figure}
+	\centering
+	\fitimg{\includegraphics{img/poc-output-scripts.png}}
+	\caption{Script system \glsfmtshort{poc} output}
+	\label{fig:poc-output-scripts}
+\end{figure}
 
 \subsection{Logging utilities}
+\label{poc:log}
+
+\subsection{Audio}
+\label{poc:audio}
+
+A test that consists of the following steps was written for each audio library
+mentioned in \cref{sec:audio:libs}:\noparbreak
+\begin{enumerate}
+	\item Load a background track (Ogg Vorbis)
+	\item Load three short samples (WAV)
+	\item Start the background track
+	\item Play each sample sequentially while pausing and resuming the background track
+	\item Play all samples simultaniously
+	\item Stop all audio and exit
+\end{enumerate}
+
+The repository \autocite{crepe:code-repo} contains two finished \glspl{poc} under the
+\codeinline{mwe/audio/} subdirectory for miniaudio and SoLoud. The SoLoud \gls{poc}
+was later converted to a full audio fa\c{c}ade, which is currently part of the
+cr\^epe engine. The \gls{poc} using the audio fa\c{c}ade is available from the same
+repository, under the \codeinline{src/example/audio_internal.cpp} file.
 
 \end{document}
 
