@@ -69,6 +69,7 @@ architecture:\noparbreak
 \end{itemize}
 
 \subsubsection{Architecture}
+\label{sec:scripts:architecture}
 
 The restrictions detailed at the start of this section are mitigated as
 follows:\noparbreak
@@ -115,7 +116,8 @@ contains the following classes:\noparbreak
 		This class also uses a friend relation to \codeinline{ScriptSystem} to restrict
 		access to its private reference member \codeinline{script}.
 	\item[ScriptSystem] This is the system class that runs the methods implemented in
-		the derivative instances of \codeinline{Script}.
+		the derivative instances of \codeinline{Script}. Described further in
+		\cref{sec:scripts:sytem}.
 \end{description}
 
 \begin{figure}
@@ -124,6 +126,32 @@ contains the following classes:\noparbreak
 	\caption{User script class diagram}
 	\label{fig:class-scripts}
 \end{figure}
+
+\subsubsection{System}
+\label{sec:scripts:sytem}
+
+Because most of the complexity in the scripting interface comes from the containers
+described in \cref{sec:scripts:architecture}, the script system class itself is
+relatively simple. The script system provides a method
+\codeinline{ScriptSystem::update} that calls all active script's update functions.
+
+Because of the limitation that types cannot be passed as parameters in C++, the
+user-defined script class (derived from \codeinline{Script}) can not directly be
+instantiated when adding the component to the component manager. To work around this
+limitation, the method \codeinline{BehaviorScript::set_script} was created. This
+results in the possibility that an instance of \codeinline{BehaviorScript} does not
+reference an instance of \codeinline{Script}. In addition to the non-active script
+components, the script system skips over these `invalid' instances. This is
+illustrated in \cref{fig:activity-scripts}.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/activity-scripts.puml}
+	\caption{Script system update method}
+	\label{fig:activity-scripts}
+\end{figure}
+
+A \gls{poc} for the script system
 
 \subsection{Audio}
 
@@ -226,6 +254,17 @@ requirements were also set:\noparbreak
 % \subsection{Input}
 
 % \subsection{Physics}
+
+\appendix
+
+\section{\Glsfmtlongpl{poc}}
+
+\subsection{Script system}
+\label{poc:scripts}
+
+\subsection{Global configuration interface}
+
+\subsection{Logging utilities}
 
 \end{document}
 
