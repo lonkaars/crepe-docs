@@ -151,13 +151,13 @@ illustrated in \cref{fig:activity-scripts}.
 	\label{fig:activity-scripts}
 \end{figure}
 
-A \gls{poc} for the script system is showcased in \cref{poc:scripts}.
+A \gls{poc} for the script system is shown in \cref{poc:scripts}.
 
 \subsection{Audio}
 
 Since writing a custom real-time audio mixing engine is outside the scope of this
 project\mref and C++ does not provide a built-in cross-platform audio \gls{api}, the
-audio system inside the cr\^epe engine is implemented as a fa\c{c}ade around an
+audio system inside the cr\^epe engine is implemented as a \gls{facade} around an
 existing audio library.
 
 \subsubsection{Libraries}
@@ -184,12 +184,12 @@ project:\noparbreak
 
 The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
 is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
-\Cref{sec:audio:architecture} describes the fa\c{c}ade written for this library.
+\Cref{sec:audio:architecture} describes the \gls{facade} written for this library.
 
 \subsubsection{Architecture}
 \label{sec:audio:architecture}
 
-\Cref{fig:class-audio-facade} shows a class diagram of the audio fa\c{c}ade. It
+\Cref{fig:class-audio-facade} shows a class diagram of the audio \gls{facade}. It
 contains the following classes:
 \begin{description}
 	\item[SoundContext] This is a wrapper around the \codeinline{SoLoud::soloud}
@@ -205,11 +205,11 @@ contains the following classes:
 \begin{figure}
 	\centering
 	\includepumldiag{img/facade-audio.puml}
-	\caption{Audio fa\c{c}ade class diagram}
+	\caption{Audio \glsfmtshort{facade} class diagram}
 	\label{fig:class-audio-facade}
 \end{figure}
 
-A \gls{poc} for the final Audio fa\c{c}ade is also showcased in \cref{poc:audio}.
+A \gls{poc} for the final Audio \gls{facade} is also showcased in \cref{poc:audio}.
 
 \subsection{Save manager}
 
@@ -247,6 +247,26 @@ requirements were also set:\noparbreak
 
 \subsection{Global configuration interface}
 
+Because the game programmer only has access to interfaces within the public \gls{api}
+namespace (\codeinline{crepe::api}), they would not be able to configure aspects of
+engine-internal components. To work around this access restriction, a global
+interface was made that stores arbitrary data, which can be accessed both internally
+and via the public \gls{api}.
+
+\subsubsection{Architecture}
+\label{sec:config:architecture}
+
+The global configuration interface consists of a single singleton class that can be
+accessed globally (see \cref{fig:class-config}). This class holds several anonymous
+structs, which are used to organize options per system or engine component.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/class-config.puml}
+	\caption{Global configuration interface class diagram}
+	\label{fig:class-config}
+\end{figure}
+
 % \subsection{Input}
 
 % \subsection{Physics}
@@ -280,13 +300,33 @@ demonstrating that the system works as intended.
 
 \begin{figure}
 	\centering
-	\fitimg{\includegraphics{img/poc-output-scripts.png}}
+	\fitimg{\includegraphics[scale=0.7]{img/poc-output-scripts.png}}
 	\caption{Script system \glsfmtshort{poc} output}
 	\label{fig:poc-output-scripts}
 \end{figure}
 
 \subsection{Logging utilities}
 \label{poc:log}
+
+A small \gls{poc} was written to test the engine's logging functions \autocite[log
+example]{crepe:code-repo}. The following calls are used in this example:
+
+\begin{blockcode}
+dbg_trace();                                 // the dbg_* macros automatically show
+dbg_logf("test printf parameters: %d", 3);   // where the message is coming from
+logf(LogLevel::INFO,    "info message");
+logf(LogLevel::WARNING, "warning");
+logf(LogLevel::ERROR,   "error");
+\end{blockcode}
+
+The output of this test is shown in \cref{fig:poc-log}.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{img/poc-log.png}
+	\caption{Logging function outputs}
+	\label{fig:poc-log}
+\end{figure}
 
 \subsection{Audio}
 \label{poc:audio}
@@ -304,8 +344,8 @@ mentioned in \cref{sec:audio:libs}:\noparbreak
 
 The repository \autocite{crepe:code-repo} contains two finished \glspl{poc} under the
 \codeinline{mwe/audio/} subdirectory for miniaudio and SoLoud. The SoLoud \gls{poc}
-was later converted to a full audio fa\c{c}ade, which is currently part of the
-cr\^epe engine. The \gls{poc} using the audio fa\c{c}ade is available from the same
+was later converted to a full audio \gls{facade}, which is currently part of the
+cr\^epe engine. The \gls{poc} using the audio \gls{facade} is available from the same
 repository, under the \codeinline{src/example/audio_internal.cpp} file.
 
 \end{document}
