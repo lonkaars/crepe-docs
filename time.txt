@@ -203,7 +203,11 @@ wouter: 2024-10-21 3h working on design document
 wouter: 2024-10-12 30m reviewing pull request logging
 wouter: 2024-10-24 1h20m project meeting
 wouter: 2024-10-25 2h added collision functionality to event manager
-
+wouter: 2024-10-28 2h added iKeyListener and iMouseListener to poc
+wouter: 2024-10-29 20m discusing api change for UI objects
+wouter: 2024-10-30 15m helping out with gameloop question
+wouter: 2024-10-29 4h created diagrams for gameloop/events/inputs system
+wouter: 2024-10-31 3h45m fiftheent project meeting
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
