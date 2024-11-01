@@ -115,9 +115,9 @@ the main part of the \gls{ecs}. The design of these eight systems in combination
 
 \section{Design}
 
-\subsection{Rendering}
+% \subsection{Rendering}
 
-\subsection{Physics}
+% \subsection{Physics}
 
 \subsection{Scripting}
 
@@ -154,6 +154,7 @@ architecture:\noparbreak
 \end{itemize}
 
 \subsubsection{Architecture}
+\label{sec:scripts:architecture}
 
 The restrictions detailed at the start of this section are mitigated as
 follows:\noparbreak
@@ -176,10 +177,11 @@ follows:\noparbreak
 contains the following classes:\noparbreak
 \begin{description}
 	\item[Script] This is the script \emph{interface}, and is used by the game
-		programmer to create derived script classes. All methods in this class are
-		declared virtual and have an empty implementation.
+		programmer to create derived script classes. All virtual methods in this class
+		have an empty implementation by default, and are optionally implemented by the
+		game programmer.
 
-		This class' methods are protected by default, and a friend relation to
+		This class' virtual methods are protected by default, and a friend relation to
 		\codeinline{ScriptSystem} is used to ensure only \codeinline{ScriptSystem} is
 		able to call these methods.
 
@@ -188,6 +190,10 @@ contains the following classes:\noparbreak
 		function returns a reference to the \codeinline{BehaviorScript} instance it was
 		called on so it can be chained after the call to
 		\codeinline{GameObject::add_component}.
+
+		\codeinline{Script} also has a reference to its parent
+		\codeinline{BehaviorScript} instance so components can easily be retrieved using
+		the component manager.
 	\item[BehaviorScript]
 		This is the script \emph{component}, and is given as the template parameter to
 		\codeinline{GameObject::add_component}.
@@ -195,7 +201,8 @@ contains the following classes:\noparbreak
 		This class also uses a friend relation to \codeinline{ScriptSystem} to restrict
 		access to its private reference member \codeinline{script}.
 	\item[ScriptSystem] This is the system class that runs the methods implemented in
-		the derivative instances of \codeinline{Script}.
+		the derivative instances of \codeinline{Script}. Described further in
+		\cref{sec:scripts:sytem}.
 \end{description}
 
 \begin{figure}
@@ -205,11 +212,37 @@ contains the following classes:\noparbreak
 	\label{fig:class-scripts}
 \end{figure}
 
+\subsubsection{System}
+\label{sec:scripts:sytem}
+
+Because most of the complexity in the scripting interface comes from the containers
+described in \cref{sec:scripts:architecture}, the script system class itself is
+relatively simple. The script system provides a method
+\codeinline{ScriptSystem::update} that calls all active script's update functions.
+
+Because of the limitation that types cannot be passed as parameters in C++, the
+user-defined script class (derived from \codeinline{Script}) can not directly be
+instantiated when adding the component to the component manager. To work around this
+limitation, the method \codeinline{BehaviorScript::set_script} was created. This
+results in the possibility that an instance of \codeinline{BehaviorScript} does not
+reference an instance of \codeinline{Script}. In addition to the non-active script
+components, the script system skips over these `invalid' instances. This is
+illustrated in \cref{fig:activity-scripts}.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/activity-scripts.puml}
+	\caption{Script system update method}
+	\label{fig:activity-scripts}
+\end{figure}
+
+A \gls{poc} for the script system is shown in \cref{poc:scripts}.
+
 \subsection{Audio}
 
 Since writing a custom real-time audio mixing engine is outside the scope of this
 project\mref and C++ does not provide a built-in cross-platform audio \gls{api}, the
-audio system inside the cr\^epe engine is implemented as a fa\c{c}ade around an
+audio system inside the cr\^epe engine is implemented as a \gls{facade} around an
 existing audio library.
 
 \subsubsection{Libraries}
@@ -220,15 +253,7 @@ searching for libraries (search terms: `dynamic/adaptive audio', `real-time audi
 `audio library', `game audio engine'), several libraries were found. These libraries
 were checked against the audio engine requirements \autocite{crepe:requirements} and
 then tested by writing the same benchmark-style \gls{poc} using the remaining
-qualifying libraries:\noparbreak
-\begin{enumerate}
-	\item Load a background track (Ogg Vorbis)
-	\item Load three short samples (WAV)
-	\item Start the background track
-	\item Play each sample sequentially while pausing and resuming the background track
-	\item Play all samples simultaniously
-	\item Stop all audio and exit
-\end{enumerate}
+qualifying libraries. These \glspl{poc} are detailed in \cref{poc:audio}.
 
 Of these libraries the following were determined to be unsuitable for use in this
 project:\noparbreak
@@ -244,12 +269,12 @@ project:\noparbreak
 
 The only library that remained after these tests is SoLoud \autocite{lib:soloud}. It
 is Zlib/LibPng licensed and provides a high-level object-oriented C++ \gls{api}.
-\Cref{sec:audio:architecture} describes the fa\c{c}ade written for this library.
+\Cref{sec:audio:architecture} describes the \gls{facade} written for this library.
 
 \subsubsection{Architecture}
 \label{sec:audio:architecture}
 
-\Cref{fig:class-audio-facade} shows a class diagram of the audio fa\c{c}ade. It
+\Cref{fig:class-audio-facade} shows a class diagram of the audio \gls{facade}. It
 contains the following classes:
 \begin{description}
 	\item[SoundContext] This is a wrapper around the \codeinline{SoLoud::soloud}
@@ -265,17 +290,148 @@ contains the following classes:
 \begin{figure}
 	\centering
 	\includepumldiag{img/facade-audio.puml}
-	\caption{Audio fa\c{c}ade class diagram}
+	\caption{Audio \glsfmtshort{facade} class diagram}
 	\label{fig:class-audio-facade}
 \end{figure}
 
-\subsection{Input}
+A \gls{poc} for the final Audio \gls{facade} is also showcased in \cref{poc:audio}.
 
-\subsection{Physics}
+% \subsection{Save manager}
+% 
+% The save manager \gls{api} is designed to give the game programmer an easy to use
+% interface for retrieving and storing game-specific data (\cref{req:savemgr}).
+% 
+% Because the engine validation app only stores statistics and highscores, the save
+% manager is not required to support loading different save files
+% (\cref{req:savemgr:multi-file}), nor storing complicated data types
+% (\cref{req:savemgr:types-custom}). The save manager only supports storing simple
+% types (\cref{req:savemgr:types-scalar,req:savemgr:types-string}).
+% 
+% In order to reduce complexity for the game programmer further, the following
+% requirements were also set:\noparbreak
+% 
+% \begin{itemize}
+% 	\item Prevent data loss in the case of crashes (\cref{req:savemgr:journalling})
+% 	\item Handle opening/closing/flushing of the underlying file automatically
+% 		(\cref{req:savemgr:file-manage})
+% 	\item Save file variables are uniquely identified (\cref{req:savemgr:var-key})
+% \end{itemize}
+% 
+% \subsubsection{Architecture}
+% \label{sec:savemgr:architecture}
+% 
+% \begin{figure}
+% 	\centering
+% 	\includepumldiag{img/class-savemgr.puml}
+% 	\caption{Save manager class diagram}
+% 	\label{fig:class-savemgr}
+% \end{figure}
+% 
+% In order to realize \cref{req:savemgr:journalling,req:savemgr:var-key}, a third-party
+% key-value database library is used.
 
-\section{Tools}
+\subsection{Global configuration interface}
 
-\section{Conclusion}
+Because the game programmer only has access to interfaces within the public \gls{api}
+namespace (\codeinline{crepe::api}), they would not be able to configure aspects of
+engine-internal components. To work around this access restriction, a global
+interface was made that stores arbitrary data, which can be accessed both internally
+and via the public \gls{api}.
+
+\subsubsection{Architecture}
+\label{sec:config:architecture}
+
+The global configuration interface consists of a single singleton class that can be
+accessed globally (see \cref{fig:class-config}). This class holds several anonymous
+structs, which are used to organize options per system or engine component.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/class-config.puml}
+	\caption{Global configuration interface class diagram}
+	\label{fig:class-config}
+\end{figure}
+
+% \subsection{Input}
+
+% \subsection{Physics}
+
+\appendix
+
+\section{\Glsfmtlongpl{poc}}
+
+The full (documented) source code of these \glspl{poc} is available on GitHub
+\autocite{crepe:code-repo}.
+
+\subsection{Script system}
+\label{poc:scripts}
+
+The script system \gls{poc} \autocite[script example]{crepe:code-repo} consists of
+the following:\noparbreak
+\begin{itemize}
+	\item A user-defined class (\codeinline{MyScript}) derived from
+		\codeinline{Script}, which only implements the \codeinline{update()} function.
+	\item A main function that---
+		\begin{itemize}
+			\item Creates a game object with \codeinline{Transform} and
+				\codeinline{BehaviorScript} components.
+			\item A call to \codeinline{ScriptSystem::update}, which results in
+				\codeinline{MyScript::update} being called.
+		\end{itemize}
+\end{itemize}
+
+Running the \gls{poc} results in the output shown in \cref{fig:poc-output-scripts},
+demonstrating that the system works as intended.
+
+\begin{figure}
+	\centering
+	\fitimg{\includegraphics[scale=0.7]{img/poc-output-scripts.png}}
+	\caption{Script system \glsfmtshort{poc} output}
+	\label{fig:poc-output-scripts}
+\end{figure}
+
+\subsection{Logging utilities}
+\label{poc:log}
+
+A small \gls{poc} was written to test the engine's logging functions \autocite[log
+example]{crepe:code-repo}. The following calls are used in this example:
+
+\begin{blockcode}
+dbg_trace();                                 // the dbg_* macros automatically show
+dbg_logf("test printf parameters: %d", 3);   // where the message is coming from
+logf(LogLevel::INFO,    "info message");
+logf(LogLevel::WARNING, "warning");
+logf(LogLevel::ERROR,   "error");
+\end{blockcode}
+
+The output of this test is shown in \cref{fig:poc-log}.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{img/poc-log.png}
+	\caption{Logging function outputs}
+	\label{fig:poc-log}
+\end{figure}
+
+\subsection{Audio}
+\label{poc:audio}
+
+A test that consists of the following steps was written for each audio library
+mentioned in \cref{sec:audio:libs}:\noparbreak
+\begin{enumerate}
+	\item Load a background track (Ogg Vorbis)
+	\item Load three short samples (WAV)
+	\item Start the background track
+	\item Play each sample sequentially while pausing and resuming the background track
+	\item Play all samples simultaniously
+	\item Stop all audio and exit
+\end{enumerate}
+
+The repository \autocite{crepe:code-repo} contains two finished \glspl{poc} under the
+\codeinline{mwe/audio/} subdirectory for miniaudio and SoLoud. The SoLoud \gls{poc}
+was later converted to a full audio \gls{facade}, which is currently part of the
+cr\^epe engine. The \gls{poc} using the audio \gls{facade} is available from the same
+repository, under the \codeinline{src/example/audio_internal.cpp} file.
 
 \end{document}
 
