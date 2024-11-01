@@ -91,6 +91,7 @@ loek: 2024-10-29 10m tooling :: documentation (fix plantuml theme errors)
 loek: 2024-10-30 30m project meeting (min/max component count constraints)
 loek: 2024-10-24 10m review :: PR review (#40, #41 and #42)
 loek: 2024-10-31 3h45m project meeting
+loek: 2024-10-31 2h50m docs :: design :: POCs
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -153,6 +154,9 @@ max: 2024-10-29 30m discussing paricles/physics/colliders with Jaro
 max: 2024-10-30 4h refacting class diagram
 max: 2024-10-30 1h50m added SceneManager design to class diagram
 max: 2024-10-30 2h added ReplaySystem design to class diagram
+max: 2024-10-31 30m discussing with Jaro
+max: 2024-10-31 3h45m fiftheent project meeting
+max: 2024-10-31 3h30m creating chapter two of design
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -199,7 +203,11 @@ wouter: 2024-10-21 3h working on design document
 wouter: 2024-10-12 30m reviewing pull request logging
 wouter: 2024-10-24 1h20m project meeting
 wouter: 2024-10-25 2h added collision functionality to event manager
-
+wouter: 2024-10-28 2h added iKeyListener and iMouseListener to poc
+wouter: 2024-10-29 20m discusing api change for UI objects
+wouter: 2024-10-30 15m helping out with gameloop question
+wouter: 2024-10-29 4h created diagrams for gameloop/events/inputs system
+wouter: 2024-10-31 3h45m fiftheent project meeting
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
