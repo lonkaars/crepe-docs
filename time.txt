@@ -93,6 +93,7 @@ loek: 2024-10-24 10m review :: PR review (#40, #41 and #42)
 loek: 2024-10-31 3h45m project meeting
 loek: 2024-10-31 2h50m docs :: design :: POCs
 loek: 2024-11-01 1h05m docs :: design (log POC & Global configuration interface)
+loek: 2024-11-02 35m review :: PR review (#48 and #49)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
