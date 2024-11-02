@@ -80,6 +80,19 @@ loek: 2024-10-21 1h30m implementation :: global config interface
 loek: 2024-10-21 10m review :: PR review (#7)
 loek: 2024-10-22 15m review :: incorporate feedback and merge PR (#7 and #37)
 loek: 2024-10-23 30m implementation :: refactoring
+loek: 2024-10-23 2h20m review :: PR review (#9)
+loek: 2024-10-24 1h20m project meeting
+loek: 2024-10-24 30m review :: PR review (merge only, #8 and #11)
+loek: 2024-10-25 30m implementation :: scripting interface
+loek: 2024-10-25 20m review :: PR review (+errands, merge only, #12 and #13)
+loek: 2024-10-26 3h20m implementation :: save manager
+loek: 2024-10-27 4h implementation :: save manager
+loek: 2024-10-29 10m tooling :: documentation (fix plantuml theme errors)
+loek: 2024-10-30 30m project meeting (min/max component count constraints)
+loek: 2024-10-24 10m review :: PR review (#40, #41 and #42)
+loek: 2024-10-31 3h45m project meeting
+loek: 2024-10-31 2h50m docs :: design :: POCs
+loek: 2024-11-01 1h05m docs :: design (log POC & Global configuration interface)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -133,6 +146,18 @@ max: 2024-10-16 30m investigated whether or not EnTT can handle multiple inherit
 max: 2024-10-16 3h rethinked scripting (to avoid mutliple inheritance)
 max: 2024-10-16 20m added new scripting idea to ecs-homemade
 max: 2024-10-17 1h thirteenth project meeting
+max: 2024-10-24 2h10m fourteenth project meeting
+max: 2024-10-25 3h started researching Scenes and Replay
+max: 2024-10-29 2h worked on UIObjects and Camera
+max: 2024-10-29 3h15m worked on Metadata Component, Camera and Scenes
+max: 2024-10-29 30m installing LaTeX on Linux
+max: 2024-10-29 30m discussing paricles/physics/colliders with Jaro
+max: 2024-10-30 4h refacting class diagram
+max: 2024-10-30 1h50m added SceneManager design to class diagram
+max: 2024-10-30 2h added ReplaySystem design to class diagram
+max: 2024-10-31 30m discussing with Jaro
+max: 2024-10-31 3h45m fiftheent project meeting
+max: 2024-10-31 3h30m creating chapter two of design
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -170,6 +195,20 @@ wouter: 2024-10-07 2h45m project meeting
 wouter: 2024-10-08 4h finishing keyboard and mouse events
 wouter: 2024-10-09 3h intergrating gameloop with events for testing
 wouter: 2024-10-10 1h30m project meeting
+wouter: 2024-10-14 1h30m twelfth project meeting
+wouter: 2024-10-14 2h kennisdeling
+wouter: 2024-10-15 30m reviewing pull request sound
+wouter: 2024-10-17 1h thirteenth project meeting
+wouter: 2024-10-18 2h finished design diagram event manager
+wouter: 2024-10-21 3h working on design document
+wouter: 2024-10-12 30m reviewing pull request logging
+wouter: 2024-10-24 1h20m project meeting
+wouter: 2024-10-25 2h added collision functionality to event manager
+wouter: 2024-10-28 2h added iKeyListener and iMouseListener to poc
+wouter: 2024-10-29 20m discusing api change for UI objects
+wouter: 2024-10-30 15m helping out with gameloop question
+wouter: 2024-10-29 4h created diagrams for gameloop/events/inputs system
+wouter: 2024-10-31 3h45m fiftheent project meeting
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
@@ -216,10 +255,17 @@ niels: 2024-10-09 2h adding the rendering components to api, and making the rend
 niels: 2024-10-09 3h researching and programming,debugging the rendersystem
 niels: 2024-10-10 3h Test jaro/particels branch to improve sdl functionalities. additionally, researching the necessary components
 niels: 2024-10-11 1h30m project meeting
-
-
-
-
+niels: 2024-10-21 3h design of asset manager and rendering
+niels: 2024-10-21 1h merging new master
+niels: 2024-10-22 2h adjusted rendering to new master
+niels: 2024-10-23 2h merge jaro/poc-physics branch to niels/rendering
+niels: 2024-10-23 1h finalize rendering
+niels: 2024-10-24 1h20m project meeting
+niels: 2024-10-25 2h camera programming
+niels: 2024-10-25 2h researching camera
+niels: 2024-10-26 2h merge wouter events branch to niels/rendering
+niels: 2024-10-26 1h fix my own git camera mistake
+niels: 2024-10-26 2h programming camera poc with movement and script
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -277,5 +323,16 @@ jaro: 2024-10-11 30m weekly update
 jaro: 2024-10-14 2h knowledge sharing
 jaro: 2024-10-14 1h30m project meeting
 jaro: 2024-10-17 1h project discussion
+jaro: 2024-10-19 15m weeklyupdate
+jaro: 2024-10-20 3h components + physics + collision systems
+jaro: 2024-10-23 1h30m samenvoegen collision + physics en rendering
+jaro: 2024-10-24 1h20m project meeting
+jaro: 2024-10-24 3h30m physics and collision
+jaro: 2024-10-24 1h static collision handeling
+jaro: 2024-10-25 2h collision handeling and onderzoek collision event unity
+
+
+
+
 
 # vim:ft=cfg

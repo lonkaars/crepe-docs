@@ -1,0 +1,13 @@
+@startuml
+!include theme.ipuml
+skinparam Linetype ortho
+
+class SaveManager {
+
+}
+
+class ValueBroker {
+
+}
+
+@enduml

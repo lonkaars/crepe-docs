@@ -1,10 +1,10 @@
 ' vim:ft=plantuml
-
 !theme plain
 skinparam ClassAttributeIconSize 0
 skinparam ClassFontStyle bold
 skinparam DefaultFontName Inter
 skinparam DefaultFontSize 10
+skinparam DefaultMonospacedFontName "JetBrains Mono"
 skinparam MaxMessageSize 200
 skinparam Nodesep 25
 ' skinparam Padding 0
@@ -12,6 +12,8 @@ skinparam Ranksep 50
 skinparam RoundCorner 0
 skinparam PackageStyle rectangle
 skinparam PackageFontStyle italic
+skinparam ActivityStartColor black
+skinparam ActivityEndColor black
 
 hide class circle
 
