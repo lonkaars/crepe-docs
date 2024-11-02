@@ -115,7 +115,96 @@ the main part of the \gls{ecs}. The design of these eight systems in combination
 
 \section{Design}
 
-% \subsection{Rendering}
+\subsection{Texture}
+The textures in our game engine are represented by the \codeinline{Texture} class. It is implemented a \gls{facade} around the \gls{sdl} library.
+
+\subsubsection{Architecture}
+\Cref{fig:class-texture} shows a class diagram of the texture \gls{facade}. It contains the following classes:
+
+\begin{description}
+	\item[SDLContext] This is a facade around the \codeinline{SDL2} library which is used around different parts of the engine, 
+		and is therefore implemented as a singleton. 
+		This class is friends with \codeinline{Texture}, \codeinline{LoopManager}, \codeinline{RenderSystem} and \codeinline{AnimatorSystem}.
+	\item[Texture] This is a wrapper around the \codeinline{SDL_Texture} class, and uses
+		cr\^epe's \codeinline{Asset} class to load an Texture instead.
+\end{description}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/texture.png}
+	\caption{User texture class diagram}
+	\label{fig:class-texture}
+\end{figure}
+
+
+\subsection{AssetManager}
+The AssetManager is a \gls{api} class that the user can use to make a \codeinline{Asset} available from different scenes. 
+
+\subsubsection{Architecture}
+\Cref{fig:class-assetmanager} shows a class diagram of the AssetManager. It contains the following classes:
+
+\begin{description}
+	\item[AssetManager] is a Singleton class, meaning only one instance of this class exists throughout the application. 
+		This ensures a single point of access and control over asset management, simplifying resource handling and avoiding duplicated assets in memory.
+\end{description}
+
+\begin{figure}
+	\centering
+	\includegraphics[width= 0.5\textwidth]{img/AssesManager.png}
+	\caption{User AssetManager class diagram}
+	\label{fig:class-assetmanager}
+\end{figure}
+
+\subsection{Rendering}
+Every game engine has an rendering structure to present all the different enities and components on the screen. 
+
+\subsubsection{Architecture}
+\Cref{fig:class-rendering} shows a class diagram of the RenderSystem. It contains the following classes:
+
+\begin{itemize} 
+	\item The system architecture is centered around rendering and component management, with the following key components: 
+	\begin{enumerate} 
+		\item \emph{System} - an interface class, containing the virtual \codeinline{update()} function. 
+		\item \emph{RenderSystem} - a derived class of \codeinline{System} responsible for rendering operations. \end{enumerate} 
+		\item The \codeinline{System::get_instance()} function provides a static, singleton instance for managing system-wide operations. 
+		\item The \codeinline{RenderSystem} class implements various rendering functions: 
+			\begin{itemize} 
+				\item \codeinline{sort_layers()} - organizes the rendering layers. 
+				\item \codeinline{clear_screen()} - clears the screen prior to rendering. 
+				\item \codeinline{update_sprites()} - updates sprite positions and states. 
+				\item \codeinline{update_camera()} - manages the camera view. 
+				\item \codeinline{present_screen()} - presents the final rendered image to the screen. 
+			\end{itemize} 
+		\item The \emph{SdlContext} class, another singleton, manages the \gls(SDL) and has a friendship relationship with \codeinline{ComponentManager} 
+			for tighter integration with component management. 
+		\item Components are organized as follows: 
+			\begin{itemize} 
+				\item The \emph{Component} base class allows for generic handling of components. 
+				\item Derived component classes include: 
+					\begin{itemize} 
+					\item \emph{Sprite} - represents visual elements with attributes like \codeinline{sprite}, 
+							\codeinline{color}, \codeinline{flip}, \codeinline{sortingLayer}, and \codeinline{orderInLayer}. 
+					\item \emph{Transform} - manages positional attributes, including \codeinline{position}, \codeinline{rotation}, and \codeinline{scale}. 
+					\end{itemize} 
+			\end{itemize} 
+	\item Both \codeinline{Sprite} and \codeinline{Transform} components provide a \codeinline{get_instances_max()} function to retrieve the maximum instance count. 
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Rendering.png}
+	\caption{System Rendering class diagram}
+	\label{fig:class-rendering}
+\end{figure}
+
+\subsubsection{System}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/flowchart_rendering.png}
+	\caption{System Rendering flowchart }
+	\label{fig:class-renderingflowchart}
+\end{figure}
+
 
 % \subsection{Physics}
 
@@ -433,5 +522,34 @@ was later converted to a full audio \gls{facade}, which is currently part of the
 cr\^epe engine. The \gls{poc} using the audio \gls{facade} is available from the same
 repository, under the \codeinline{src/example/audio_internal.cpp} file.
 
+\subsection{Camera}
+\label{poc:camera}
+
+The camera \gls{poc} \autocite[camera example]{crepe:code-repo} consists of
+the following:\noparbreak
+
+\begin{itemize}
+	\item An \codeinline{on_key_pressed} function, which listens for key presses and adjusts camera position and zoom based on key inputs.
+	\item A user-defined script class (\codeinline{MyCameraScript}) derived from \codeinline{Script}, implementing only the \codeinline{update()} function. 
+		To update the camera movements and zoom.
+	\item A main function that— 
+		\begin{itemize} 
+			\item Subscribes the \codeinline{on_key_pressed} function to handle \codeinline{KeyPressedEvent} events.
+			\item Creates a \codeinline{GameObject} for the camera and adds \codeinline{Camera} and \codeinline{BehaviorScript} components, 
+				with \codeinline{MyCameraScript} attached to manage the camera’s transformation.
+			\item Instantiates a background \codeinline{GameObject} with \codeinline{Transform} and \codeinline{Sprite} components, loading an external texture as its background.
+		\end{itemize}
+\end{itemize}
+
+Running this \gls{poc} allows for controlled camera movement and zoom in response to key inputs. The \codeinline{MyCameraScript::update} function ensures that these transformations are applied each frame, as demonstrated by the output in \cref{fig:poc-output-camera}.
+
+
+
+\begin{figure}
+	\centering
+	\fitimg{\includegraphics[scale=0.7]{img/poc-camera.pdf}}
+	\caption{camera \glsfmtshort{poc} output}
+	\label{fig:poc-output-camera}
+\end{figure}
 \end{document}
 
