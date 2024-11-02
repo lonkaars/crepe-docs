@@ -115,6 +115,26 @@ the main part of the \gls{ecs}. The design of these eight systems in combination
 
 \section{Design}
 
+\subsection{Game Loop}
+
+\subsubsection{Problem statement}
+
+A game loop is essential for maintaining a continuous flow of game actions, ensuring
+that updates to game logic, physics, and rendering occur in a synchronized manner.
+Without a game loop, the game would lack consistent timing and leading to
+unpredictable behavior.
+
+The game loop is mainly responsible for these 2 purposes:\noparbreak
+\begin{itemize}
+	\item Updating all systems in the correct order
+	\item Making sure the gameloop timer is up to date
+\end{itemize}
+
+The game loop can be external where the user has the ability to update the systems
+themselves or an intergrated game loop which is managed by the gameloop. Both of
+these approaches have advantages and disadvantages when it comes to flexibility and
+reliability.
+
 \subsection{Texture}
 
 % FIXME: our
@@ -236,7 +256,164 @@ following classes:\noparbreak
 	\label{fig:class-renderingflowchart}
 \end{figure}
 
+\subsubsection{Design}
+
+The game loop of this engine is integrated into the engine, this is done for the
+following reasons:\noparbreak
+\begin{description}
+	\item[Simplify development] The user only has to call \codeinline{startGame()}.
+	\item[Uniform system calls] The systems are always updated in the same order
+		limiting overwrites and undefined system behavior.
+	\item[Reliable timer update] Each cycle the game loop timer is always updated
+		limiting timing issues.
+\end{description}
+
+As seen in \cref{fig:gameloop-flow} the gameloop is divided into different
+steps:\noparbreak
+\begin{description}
+	\item[Update loop timer] The loop timer gets updated and the expected frame time is
+		calculated.
+	\item[Check events] Queued events get dispatched and callback functions are handled
+		acordingly.
+	\item[Process input] The input system is called and user input is processed.
+	\item[Fixed update] A fixed loop for timing sensitive systems such as physics.
+	\item[Update] A per frame update for all per frame updates.
+	\item[Render] Calling the render system to render the frame.
+\end{description}
+
+This is done as illustrated in \cref{fig:gameloop-flow}, the game loop continues to call
+the fixed update function as long as sufficient time is available. Delta time,
+calculated using the time between the start of the last frame and the current frame,
+is used to measure the duration of each frame. This value is converted into a
+time-based unit, enabling other systems or game developers to create behavior
+independent of frame rate.
+
+Rendering and animations are handled separately on a per-frame basis. A delay, in
+conjunction with the delta time calculation, is applied to maintain consistent visual
+behavior, even when frame rates vary. As seen in \cref{fig:gameloop-class} to access the
+deltaTime anywhere in the system a timerClass is created using a singleton desing
+pattern which ensures only one instance of the class is created; the gameloop updates
+the timing and delta time of this class to ensure it is accurate. The gameloops two
+main functions are the setup() and loop(). The first is called when the game starts
+and handles all startup procedures this function only runs once. The loop() function
+keeps looping as long as the game is running.
+
+The gamedeveloper start the game engine/game using the code example below:\noparbreak
+\begin{blockcode}
+Gameloop loop;
+loop.start();
+\end{blockcode}
+
+This starts calls the setup() and loop() functions and starts the game loop timer; To
+get the current frames' delta time, the \codeinline{getDeltaTime()} method on the
+\codeinline{LoopTimer} singleton can be used, which will return the expected frame
+time.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/gameloop-flow.puml}
+	\caption{Gameloop Flowchart Diagram}
+	\label{fig:gameloop-flow}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/gameloop-class.puml}
+	\caption{Gameloop Flowchart Diagram}
+	\label{fig:gameloop-class}
+\end{figure}
+
+\subsection{Event system}
+
+\subsubsection{Problem Statement}
+
+The game engine utilizes the \gls{ecs} architecture, where components store data, and
+systems process that data to apply changes. Each system is responsible for managing a
+specific domain, such as physics in the physics system and rendering in the rendering
+system. To facilitate communication between systems without introducing direct
+dependencies, a method of inter-system communication is required to maintain loose
+coupling. Additionally, a mechanism that allows one object's trigger to manipulate
+adn affect multiple other objects is beneficial for game developers, providing
+greater flexibility in designing interactions within the game.
+
+\subsubsection{Architecture}
+
+The sollution to connect the various systems and BehaviorScripts together without
+inducing high coupling is an event system that facilitates communication between
+systems and BehaviorScripts using various types of events. The event system includes
+several pre-defined events, all derived from a parent Event class, capable of
+handling user input and application-level events, such as window resizing.
+Furthermore, a specific event is designated for the collision handler within the
+physics system, which can be triggered when two objects collide. The event system
+also allows developers to create custom events, such as "onPlayerDeath," and assign
+callback functions that execute when the event is triggered.
+
+\begin{figure}
+	\centering
+	% TODO: export as vector format instead
+	\includegraphics[width=\linewidth]{img/event-uml.drawio.png}
+	\caption{Event system class diagram}
+	\label{fig:event-uml}
+\end{figure}
+
+The event system as seen in \cref{fig:event-uml} includes several parts such
+as:\noparbreak
+\begin{description}
+	\item[eventManager] The manager has the functions to
+		subscribe/trigger/queue/dispatch events. It also stores all callback functions
+		corresponding to specific event. The manager is a singleton and can therefor only
+		exist once so all events are stored in one place.
+	\item[IEventWrapper] This is a EventWrapper \emph{interface} which is used to store
+		all the different templated eventshandlers in one map in the event manager. this
+		wrapper contains the logic to convert the parent class \emph{event} to the
+		correct subclasses. It also contains a variable onSuccessDestroy which can be set
+		to destroy the callback call onces completed. This can be used to make a one time
+		only event.
+	\item[Event] This is the parent class where all specific event classes are derived
+		from. Each event contains a---
+		\begin{itemize}
+			% TODO: the design document is not a technical reference, so implementation
+			% details shouldn't even be in here. Also, are getter functions used to set
+			% things nowadays?
+			\item \emph{\codeinline{static std::uint32_t getStaticEventType()}} to set type
+				during compiling.
+			\item \emph{\codeinline{virtual std::uint32_t getEventType() const override }}
+				function to manage the type conversion during runtime.
+		\end{itemize}
+		Other functions can be freely added when creating a custom function. When an
+		event is triggered a specific derived class must be used to indicate which event
+		is triggered. A reference to this event is then transfered to all callback
+		functions subscribed.
+\end{description}
+
+The EventManager is a singleton so all all callbacks are stored in one place and it
+can be called everywhere in the system or game. The user can use the EventManager for
+the following functions:\noparbreak
+\begin{description}
+	\item[Subscribe] This subscribes a function pointer or lambda function to a given
+		event. The function can be subscribed either to all event triggers or a specifc
+		ID.
+	\item[Trigger] This triggers a given event and all callbacks correlating to this
+		event are executed immediately.
+	\item[Queue event] This queues an event to be executed at a fixed time during the
+		gameloop.
+	\item[Unsubscibe] This removes the callback function from the event and it will no
+		longer be executed.
+\end{description}
+
+\Cref{fig:event-seq} shows that when a specific function is triggered or dispatched
+using the callback(eventHandler) is executed.
+
+\begin{figure}
+	\centering
+	\includepumldiag{img/event-sequence.puml}
+	\caption{Sequence diagram for event calling}
+	\label{fig:event-seq}
+\end{figure}
+
 % \subsection{Physics}
+
+\subsection{Rendering}
 
 \subsection{Scripting}
 
@@ -477,7 +654,7 @@ structs, which are used to organize options per system or engine component.
 
 \appendix
 
-\section{\Glsfmtlongpl{poc}}
+\section{Proof-of-concepts}
 
 The full (documented) source code of these \glspl{poc} is available on GitHub
 \autocite{crepe:code-repo}.
