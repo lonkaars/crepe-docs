@@ -332,7 +332,14 @@ jaro: 2024-10-24 1h20m project meeting
 jaro: 2024-10-24 3h30m physics and collision
 jaro: 2024-10-24 1h static collision handeling
 jaro: 2024-10-25 2h collision handeling and onderzoek collision event unity
-
+jaro: 2024-10-28 2h30m Mergen rendering + events
+jaro: 2024-10-29 4h Physics,collision design + latex
+jaro: 2024-10-30 2h diagrams design
+jaro: 2024-10-31 30m discusing design questions
+jaro: 2024-10-31 3h30m discusing design questions
+jaro: 2024-10-31 1h changing diagrams
+jaro: 2024-10-31 45m adding diagrams physics,collision,particles
+jaro: 2024-11-1 15m weeklyupdate
 
 
 
