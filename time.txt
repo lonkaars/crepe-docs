@@ -93,6 +93,8 @@ loek: 2024-10-24 10m review :: PR review (#40, #41 and #42)
 loek: 2024-10-31 3h45m project meeting
 loek: 2024-10-31 2h50m docs :: design :: POCs
 loek: 2024-11-01 1h05m docs :: design (log POC & Global configuration interface)
+loek: 2024-11-02 35m review :: PR review (#48 and #49)
+loek: 2024-11-03 55m docs :: design :: add full-size class diagram
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -330,7 +332,14 @@ jaro: 2024-10-24 1h20m project meeting
 jaro: 2024-10-24 3h30m physics and collision
 jaro: 2024-10-24 1h static collision handeling
 jaro: 2024-10-25 2h collision handeling and onderzoek collision event unity
-
+jaro: 2024-10-28 2h30m Mergen rendering + events
+jaro: 2024-10-29 4h Physics,collision design + latex
+jaro: 2024-10-30 2h diagrams design
+jaro: 2024-10-31 30m discusing design questions
+jaro: 2024-10-31 3h30m discusing design questions
+jaro: 2024-10-31 1h changing diagrams
+jaro: 2024-10-31 45m adding diagrams physics,collision,particles
+jaro: 2024-11-1 15m weeklyupdate
 
 
 

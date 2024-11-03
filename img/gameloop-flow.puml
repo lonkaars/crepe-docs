@@ -1,23 +1,22 @@
 @startuml
-title Game Loop Flowchart
-
+!include theme.ipuml
 start
 
 :Initialize LoopManager;
 :Start LoopTimer;
 
 repeat
-    :Update LoopTimer;
-    :Check for Events;
-    :Process Input;
+	:Update LoopTimer;
+	:Check for Events;
+	:Process Input;
 
-    while (Lag >= Fixed Delta Time?) is (yes)
-        :Perform Fixed Update;
-        :Advance Fixed Update;
-    endwhile
+	while (Lag >= Fixed Delta Time?) is (yes)
+		:Perform Fixed Update;
+		:Advance Fixed Update;
+	endwhile
 
-    :Perform Normal Update;
-    :Render Frame;
+	:Perform Normal Update;
+	:Render Frame;
 
 repeat while (Game Running?)
 
