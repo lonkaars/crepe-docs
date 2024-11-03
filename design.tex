@@ -115,61 +115,56 @@ the main part of the \gls{ecs}. The design of these eight systems in combination
 
 \section{Design}
 \subsection{Game Loop}
-\subsubsection{Problem statement:}
-A game loop is essential for maintaining a continuous flow of game actions, ensuring that updates to game logic, physics, and rendering occur in a synchronized manner. Without a game loop, the game would lack consistent timing and leading to unpredictable behavior.
-The game loop is mainly responsible for these 2 purposes:
-\begin{itemize}
-	\item Updating all systems in the correct order.
-	\item Making sure the gameloop timer is up to date
-\end{itemize}
-The game loop can be external where the user has the ability to update the systems themselves or an intergrated game loop which is managed by the gameloop.
-Both of these approaches have advantages and disadvantages when it comes to flexibility and reliability.
 
-
-\subsubsection{Design:}
-The game loop of this engine is integrated into the engine, this is done for the following reasons:
+\subsubsection{Problem Statement}
+A game loop is essential for maintaining a continuous flow of game actions, ensuring that updates to game logic, physics, and rendering occur in sync. Without a game loop, the game would lack consistent timing, leading to unpredictable behavior. The game loop is primarily responsible for two main tasks:
 \begin{itemize}
-	\item \emph{Simplify development} The user only has to call startGame().
-	\item \emph{Uniform system calls} The systems are always updated in the same order limiting overwrites and undefined system behavior.
-	\item \emph{Reliable timer update} Each cycle the game loop timer is always updated limiting timing issues.
+	\item Updating all systems in the correct order
+	\item Ensuring the game loop timer remains accurate
 \end{itemize}
-As seen in figure \ref{gameloop-flow} the gameloop is divided into different steps.
-\begin{itemize}
-	\item \emph{Update loop timer} The loop timer gets updated and the expected frame time is calculated.
-	\item \emph{Check events} Queued events get dispatched and callback functions are handled acordingly.
-	\item \emph{Process input} The input system is called and user input is processed.
-	\item \emph{Fixed update} A fixed loop for timing sensitive systems such as physics.
-	\item \emph{Update} A per frame update for all per frame updates.
-	\item \emph{Render} Calling the render system to render the frame.
-\end{itemize}
-This is done as illustrated in Figure \ref{gameloop-flow}, the game loop continues to call the fixed update function as long as sufficient time is available.
-Delta time, calculated using the time between the start of the last frame and the current frame, is used to measure the duration of each frame.
-This value is converted into a time-based unit, enabling other systems or game developers to create behavior independent of frame rate.
+The game loop can be either external—allowing users to update the systems themselves—or integrated, where the loop is managed within the engine itself. Both approaches offer trade-offs in flexibility and reliability.
 
-Rendering and animations are handled separately on a per-frame basis. A delay, in conjunction with the delta time calculation,
-is applied to maintain consistent visual behavior, even when frame rates vary.
-As seen in figure Figure \ref{gameloop-class} to access the deltaTime anywhere in the system a timerClass is created using a singleton desing pattern which ensures only one instance of the class is created; the gameloop updates the timing and delta time of this class to ensure it is accurate.
-The gameloops two main functions are the setup() and loop(). The first is called when the game starts and handles all startup procedures this function only runs once.
-The loop() function keeps looping as long as the game is running.
-The gamedeveloper start the game engine/game using the code example below:
+\subsubsection{Architecture}
+This engine uses an integrated game loop for the following reasons:
+\begin{itemize}
+	\item \emph{Simplifies development:} The user only needs to call \codeinline{startGame()}.
+	\item \emph{Ensures uniform system calls:} Systems are always updated in the same order, reducing the likelihood of overwrites and undefined system behavior.
+	\item \emph{Provides a reliable timer update:} The game loop timer is updated with each cycle, minimizing timing issues.
+\end{itemize}
+As shown in Figure \ref{gameloop-flow}, the game loop consists of multiple steps:
+\begin{itemize}
+	\item \emph{Update loop timer:} The loop timer is updated, and the expected frame time is calculated.
+	\item \emph{Check events:} Queued events are dispatched, and callback functions are executed accordingly.
+	\item \emph{Process input:} The input system is called, and user inputs are processed.
+	\item \emph{Fixed update:} A fixed loop for timing-sensitive systems, such as physics.
+	\item \emph{Update:} A per-frame update for all necessary frame-dependent changes.
+	\item \emph{Render:} The render system is called to display the current frame.
+\end{itemize}
+The game loop continues to call the fixed update function as long as there is sufficient time. Delta time, calculated as the time between the last frame’s start and the current frame, is used to measure the duration of each frame. This value is converted into a time-based unit, enabling systems to create frame rate-independent behavior.
+
+Rendering and animations are handled on a per-frame basis. A delay, combined with delta time calculation, ensures consistent visuals even at varying frame rates. Figure \ref{gameloop-class} shows a \codeinline{TimerClass} using a singleton design pattern, allowing access to \codeinline{deltaTime} throughout the system. The game loop updates the timing and delta time in this class to keep it accurate.
+
+The two main functions of the game loop are \codeinline{setup()} and \codeinline{loop()}. \codeinline{setup()} handles all startup procedures and is called only once when the game begins. The \codeinline{loop()} function repeats as long as the game is running.
+
+The code example below shows how to start the game engine/game:
 \begin{blockcode}
 	Gameloop loop;
 	loop.start();
 \end{blockcode}
-This starts calls the setup() and loop() functions and starts the game loop timer;
-To get the current frames Delta time \codeinline{LoopTimer::getInstance().getDeltaTime()} can be used which will return the expected frame time.
+This code calls both \codeinline{setup()} and \codeinline{loop()}, starting the game loop timer. The current frame’s delta time can be accessed using \codeinline{LoopTimer::getInstance().getDeltaTime()}, which returns the expected frame time.
 
 \begin{figure}
 	\centering
 	\includepumldiag{img/gameloop-flow.puml}
-	\caption{Gameloop Flowchart Diagram} \label{gameloop-flow}
+	\caption{Game Loop Flowchart Diagram} \label{gameloop-flow}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includepumldiag{img/gameloop-class.puml}
-	\caption{Gameloop Flowchart Diagram} \label{gameloop-class}
+	\caption{Game Loop Class Diagram} \label{gameloop-class}
 \end{figure}
+
 \subsection{Event system}
 \subsubsection{Problem Statement:}
 The game engine utilizes the Entity-Component-System (ECS) architecture, where components store data,
@@ -206,9 +201,12 @@ the event system as seen in \ref{fig:event-uml} includes several parts such as:
 	\end{itemize}
 	Other functions can be freely added when creating a custom function.
 	When an event is triggered a specific derived class must be used to indicate which event is triggered. A reference to this event is then transfered to all callback functions subscribed.
+	\item[IKeyListener] This is an interface designed to match the API. By deriving from this interface the game developer can override the key event functions to add their own functionality.
+	The derived class will immediately be subscribed to the EventManager and will Unsubscibe when deleted.
+	\item[IMouseListener] Like the IKeyListener this is also an interface to interact with the eventManager. The derived classes from this interface handle various mouse related events.
+	These events are triggered when the mouse is clicked/pressed/released or moved.
 \end{description}
-The EventManager is a singleton so all all callbacks are stored in one place and it can be called everywhere in the system or game.
-The user can use the EventManager for the following functions:
+The gamedeveloper can interact with the EventManager using the following functions:
 \begin{itemize}
 	\item \emph{Subscribe:} This subscribes a function pointer or lambda function to a given event. The function can be subscribed either to all event triggers or a specifc ID.
 	\item \emph{Trigger:} This triggers a given event and all callbacks correlating to this event are executed immediately.
@@ -537,6 +535,122 @@ The repository \autocite{crepe:code-repo} contains two finished \glspl{poc} unde
 was later converted to a full audio \gls{facade}, which is currently part of the
 cr\^epe engine. The \gls{poc} using the audio \gls{facade} is available from the same
 repository, under the \codeinline{src/example/audio_internal.cpp} file.
+\subsection{Gameloop}
+\label{poc:Gameloop}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{img/gameloop-squares.png}
+	\caption{gameloop running example}
+	\label{fig:poc-gameloop-squares}
+\end{figure}
+This \gls{poc} shows the functionality of the different loops and the approaches to decouple the updates from the framerate.
+Figure \ref{fig:poc-gameloop-squares} shows two squares that keep moving at the same speed no matter how high or low the framerate gets.
+This is done by updating the squares in the per frame update loop with the delta time generated by the timer.
+By multipling deltaTime to the velocity of the square the velocity is converted to a time instead of frames.
+this can be seen in de following code example
+\begin{blockcode}
+float delta = timer.getDeltaTime(); // get delta time of current frame
+	if (obj->direction == 1) {
+		obj->setX(obj->getX() + 50 * delta); // multiply velocity by delta time for consistent behavior.
+	} else {
+		obj->setX(obj->getX() - 50 * delta);
+	}
+\end{blockcode}
+The second functionality this \gls{poc} shows is how the fixed loop is executed.
+Based on the framerate of the gameloop the fixed loop is executed multiple times per frame or skips a certain amount of frames as seen in figures \ref{fig:poc-gameloop-500fps} and \ref{fig:poc-gameloop-10fps}.
 
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{img/gameloop-console.png}
+        \caption{Fixed loop (50Hz) with 500 fps}
+        \label{fig:poc-gameloop-500fps}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{img/gameloop-console-10.png}
+        \caption{Fixed loop (50Hz) with 10 fps}
+        \label{fig:poc-gameloop-10fps}
+    \end{subfigure}
+    \caption{Comparison of game loop performance at different frame rates}
+    \label{fig:poc-gameloop-console-comparison}
+\end{figure}
+\subsection{Events/input system}
+\label{poc:Event}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{img/poc-button.png}
+	\caption{gameloop running example}
+	\label{fig:poc-event}
+\end{figure}
+The event/input system \gls{poc} shows the different ways the event system can be used. It also serves as a basis on which the input system is developed.
+the first two features show the workings of the two interfaces which are created so the game developer doesnt need to subscribe each function individualy.
+The gamedeveloper only needs to create a derived class from the parent IKeyListener or IMouseListener and override the functions with their own implementation as shown below.
+\begin{description}
+	\item[KeyListener] \codeinline{KeyListenerTest keyListener(testListenerId);} this line creates a concrete KeyListener that has been created as follows.
+	\begin{blockcode}
+	class KeyListenerTest : public IKeyListener {
+	public:
+		KeyListenerTest(int listenerId);
+		~KeyListenerTest();
+
+		void onKeyPressed(const KeyPressedEvent& event) override;
+		void onKeyReleased(const KeyReleasedEvent& event) override;
+	};
+	\end{blockcode}
+	The functions have been overridden to add custom functionality, which is called when a key is pressed or released.
+
+	\item[MouseListener] Like the KeyListener, \codeinline{MouseListenerTest mouseListener(testListenerId);} is a concrete derived class of IMouseListener, created as follows:
+	\begin{blockcode}
+	class MouseListenerTest : public IMouseListener {
+	public:
+		MouseListenerTest(int listenerId);
+		~MouseListenerTest();
+
+		void onMouseClicked(const MouseClickEvent& event) override;
+		void onMousePressed(const MousePressedEvent& event) override;
+		void onMouseReleased(const MouseReleasedEvent& event) override;
+		void onMouseMoved(const MouseMovedEvent& event) override;
+	};
+	\end{blockcode}
+\end{description}
+Secondly the \gls{poc} shows how the gamedeveloper can create custom events by creating a derived class from the parent class Event.
+This custom event can then be used to subscribe callbacks to which can use the data within the derived class.
+Below is an example of such a custom event.
+\begin{blockcode}
+class PlayerDamagedEvent : public Event {
+public:
+	PlayerDamagedEvent(int damage, int playerID)
+		: Event("PlayerDamaged"), damage(damage), playerID(playerID) {}
+
+	REGISTER_EVENT_TYPE(PlayerDamagedEvent);
+
+    int getDamage() const { return damage; }
+    int getPlayerID() const { return playerID; }
+
+private:
+	int damage;
+	int playerID;
+};
+\end{blockcode}
+An example of a callback function using the custom PlayerDamagedEvent:
+\begin{blockcode}
+	void onPlayerDamaged(const PlayerDamagedEvent & e) {
+		std::cout << "Player " << e.getPlayerID() << " took " << e.getDamage()
+				  << " damage." << std::endl;
+	}
+\end{blockcode}
+Lastly the \gls{poc} shows how a button can be handled using a input sytem.
+The blue square in figure \ref{poc:Event} represents a button component which will call its onClick() function when the mouse click event triggers within its boundary.
+The result can be seen in figure \ref{fig:poc-event-button}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{img/poc-event-button.png}
+	\caption{gameloop running example}
+	\label{fig:poc-event-button}
+\end{figure}
 \end{document}
 
