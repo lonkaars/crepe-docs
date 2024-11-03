@@ -271,6 +271,11 @@ niels: 2024-10-25 2h researching camera
 niels: 2024-10-26 2h merge wouter events branch to niels/rendering
 niels: 2024-10-26 1h fix my own git camera mistake
 niels: 2024-10-26 2h programming camera poc with movement and script
+niels: 2024-10-29 2h30m Helping Jaro with events
+niels: 2024-10-30 3h fixing camera SDL viewort bug
+niels: 2024-10-31 3h45m meeting
+niels: 2024-11-2 3h design document, diagrams and flowcharts
+niels: 2024-11-3 1h design document, diagrams and flowcharts
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
