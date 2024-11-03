@@ -284,10 +284,17 @@ and the current frame, is used to measure the duration of each frame. This value
 converted into a time-based unit, enabling systems to create frame rate-independent
 behavior.
 
-The fixed update has a specific order to update seperate systems as seen in \Cref{fig:fixed-update}. The scripts update is called first so a gamedevelop can use the onupdate() in a script to move objects. after this movement the PhysicsSystem will move objects as well. after all movement is done the collision system will use the velocity and the current position to determine if something collided. Then the collisions system will call all collision handelers. After all collisions are handeled the particle system will update.
+The fixed update has a specific order to update seperate systems as seen in
+\cref{fig:fixed-update}. The scripts update is called first so a gamedevelop can use
+the onupdate() in a script to move objects. after this movement the PhysicsSystem
+will move objects as well. after all movement is done the collision system will use
+the velocity and the current position to determine if something collided. Then the
+collisions system will call all collision handelers. After all collisions are
+handeled the particle system will update.
 
-This order can not be changed because the systems work in a specific way. Collisions looks back in the past and the emitter can be moved so the particle update must be the last in the fixed update.
-
+This order can not be changed because the systems work in a specific way. Collisions
+looks back in the past and the emitter can be moved so the particle update must be
+the last in the fixed update.
 
 Rendering and animations are handled on a per-frame basis. A delay, combined with
 delta time calculation, ensures consistent visuals even at varying frame rates.
@@ -430,16 +437,22 @@ using the callback(eventHandler) is executed.
 
 \subsection{Physics}
 
-The Physics in the game engine are handled by the \emph{PhysicsSystem}. The physics calculate the velocity and moves each component with a Rigidbody. This game engine does not use any third party tools for calculating physics.
-
+The Physics in the game engine are handled by the \emph{PhysicsSystem}. The physics
+calculate the velocity and moves each component with a Rigidbody. This game engine
+does not use any third party tools for calculating physics.
 
 \subsubsection{Architecture}
-The \emph{PhysicsSystem} is a system and therefor a singleton in this engine. Besides the \codeinline{getinstance()} and \codeinline{update()} function it does not include more functions. The \emph{PhysicsSystem} uses a couple components:\noparbreak
-\begin {description}
-	\item[Transform] The \emph{PhysicsSystem} is the only system to change the values in the transform. A user is able to change these values through a script.
-	\item[Rigidbody] The \emph{PhysicsSystem} uses this to know what the next velocity should be and if it can move. What the physics system includes is shown in \cref{fig:physics-system}
-\end{description}
 
+The \emph{PhysicsSystem} is a system and therefor a singleton in this engine. Besides
+the \codeinline{getinstance()} and \codeinline{update()} function it does not include
+more functions. The \emph{PhysicsSystem} uses a couple components:\noparbreak
+\begin {description}
+	\item[Transform] The \emph{PhysicsSystem} is the only system to change the values
+		in the transform. A user is able to change these values through a script.
+	\item[Rigidbody] The \emph{PhysicsSystem} uses this to know what the next velocity
+		should be and if it can move. What the physics system includes is shown in
+		\cref{fig:physics-system}
+\end{description}
 
 \begin{figure}
 	\centering
@@ -449,7 +462,12 @@ The \emph{PhysicsSystem} is a system and therefor a singleton in this engine. Be
 \end{figure}
 
 \subsubsection{Design}
-The physics system is not a complex system. It works in three steps. It will request all physicsbodies. If there are no physicsbodies linked to a gameobject than that object does not have physics. It will read the values within the rigidbody and update the velocities. after this update it will move all objects. This is shown in the \cref{fig:physics-system-flowchart}.
+
+The physics system is not a complex system. It works in three steps. It will request
+all physicsbodies. If there are no physicsbodies linked to a gameobject than that
+object does not have physics. It will read the values within the rigidbody and update
+the velocities. after this update it will move all objects. This is shown in the
+\cref{fig:physics-system-flowchart}.
 
 \begin{figure}
 	\centering
@@ -460,15 +478,24 @@ The physics system is not a complex system. It works in three steps. It will req
 
 \subsection{Collisions}
 
-The Collisions in the game engine are handled by the \emph{CollisionSystem}. This system check if a collider collided with another collider.
+The Collisions in the game engine are handled by the \emph{CollisionSystem}. This
+system check if a collider collided with another collider.
 
 \subsubsection{Architecture}
-The \emph{CollisionSystem} is a system and therefor a singleton in this engine. Besides the \codeinline{getinstance()} and \codeinline{update()} function it does not include more functions. The \emph{CollisionSystem} uses a couple components:\noparbreak
+
+The \emph{CollisionSystem} is a system and therefor a singleton in this engine.
+Besides the \codeinline{getinstance()} and \codeinline{update()} function it does not
+include more functions. The \emph{CollisionSystem} uses a couple
+components:\noparbreak
 \begin {description}
-	\item[Transform] The \emph{CollisionSystem} Read the location and rotation value to know where all colliders are located.
-	\item[Rigidbody] The \emph{CollisionSystem} uses this to know if collision needs to be check, how collisions should be checked and how they are handled.
-	\item[BoxCollider] The box collider is a square with a width and height used to check for collisions.
-	\item[CircleCollider] The circle collider is a circle with a radius used to check for collisions.
+	\item[Transform] The \emph{CollisionSystem} Read the location and rotation value to
+		know where all colliders are located.
+	\item[Rigidbody] The \emph{CollisionSystem} uses this to know if collision needs to
+		be check, how collisions should be checked and how they are handled.
+	\item[BoxCollider] The box collider is a square with a width and height used to
+		check for collisions.
+	\item[CircleCollider] The circle collider is a circle with a radius used to check
+		for collisions.
 \end{description}
 This is shown in \cref{fig:collision-system}.
 
@@ -480,7 +507,13 @@ This is shown in \cref{fig:collision-system}.
 \end{figure}
 
 \subsubsection{Design}
-The collision system is complex compared to other systems. This is shown in the \cref{fig:collision-system-flowchart}. Because multiple colliders of different types can be added to one gameobject this system is complex. For this game it is not needed to check for more than one collider per gameobject but this functionality is added to the design. If the engine needs to be able to do this it can be added without changing the design. The same is for child and parent gameobjects.
+
+The collision system is complex compared to other systems. This is shown in
+\cref{fig:collision-system-flowchart}. Because multiple colliders of different types
+can be added to one gameobject this system is complex. For this game it is not needed
+to check for more than one collider per gameobject but this functionality is added to
+the design. If the engine needs to be able to do this it can be added without
+changing the design. The same is for child and parent gameobjects.
 
 \begin{figure}
 	\centering
@@ -489,19 +522,25 @@ The collision system is complex compared to other systems. This is shown in the 
 	\label{fig:collision-system-flowchart}
 \end{figure}
 
-
-
 \subsection{Particles}
 
-The Particles in the game engine are handled by the \emph{ParticlesSystem}. This system uses particleEmitters to create and move particles.
+The Particles in the game engine are handled by the \emph{ParticlesSystem}. This
+system uses particleEmitters to create and move particles.
 
 \subsubsection{Architecture}
-The \emph{ParticlesSystem} is a system and therefor a singleton in this engine. Besides the \codeinline{getinstance()} and \codeinline{update()} function it does not include more functions. The \emph{ParticlesSystem} uses a couple components:\noparbreak
+
+The \emph{ParticlesSystem} is a system and therefor a singleton in this engine.
+Besides the \codeinline{getinstance()} and \codeinline{update()} function it does not
+include more functions. The \emph{ParticlesSystem} uses a couple
+components:\noparbreak
 \begin {description}
-	\item[Transform] The \emph{ParticlesSystem} Read the location and rotation value to know where the emitter is located
-	\item[ParticleEmitter] The \emph{ParticlesSystem} uses the particle emitter to know what the values and configuration of the emitter are.
+	\item[Transform] The \emph{ParticlesSystem} Read the location and rotation value to
+		know where the emitter is located
+	\item[ParticleEmitter] The \emph{ParticlesSystem} uses the particle emitter to know
+		what the values and configuration of the emitter are.
 	\item[Particle] info for each particle.
 \end{description}
+
 This is shown in \cref{fig:particle-system}.
 
 \begin{figure}
@@ -512,15 +551,19 @@ This is shown in \cref{fig:particle-system}.
 \end{figure}
 
 \subsubsection{Design}
-The particle system is a bit strange because it uses a component which has objects (particles). How this system works is shown in the \cref{fig:Particle-system-flowchart}. Because each particle needs to be create pooling is used to increase efficientcy in the calulcation time of all the particles. Pooling decreases the calculation time by /10.
+
+The particle system is a bit strange because it uses a component which has objects
+(particles). How this system works is shown in the
+\cref{fig:particle-system-flowchart}. Because each particle needs to be create
+pooling is used to increase efficientcy in the calulcation time of all the particles.
+Pooling decreases the calculation time by a factor of 10.
 
 \begin{figure}
 	\centering
 	\fitimg{\includegraphics[scale=0.7]{img/Particle_system_flowchart.png}}
 	\caption{Particle system flowchart}
-	\label{fig:Particle-system-flowchart}
+	\label{fig:particle-system-flowchart}
 \end{figure}
-
 
 \subsection{Scripting}
 
@@ -1015,9 +1058,16 @@ transformations are applied each frame, as demonstrated by the output in
 \subsection{Particles}
 \label{poc:particle}
 
-The particles \gls{poc} \autocite[particles example]{crepe:code-repo} consists of the one particle emitter that is shown in \cref{fig:poc-particles}.This particle emmitter is controlled by the particle system using ECS. I can generate particles in a specified direction and velocity. With min and max values the system will determine what the exact value of eacht particle will be.
+The particles \gls{poc} \autocite[particles example]{crepe:code-repo} consists of the
+one particle emitter that is shown in \cref{fig:poc-particles}. This particle
+emmitter is controlled by the particle system using ECS. I can generate particles in
+a specified direction and velocity. With min and max values the system will determine
+what the exact value of eacht particle will be.
 
-This \gls{poc} showed that pooling is a must, even with lower amounts of particles. The calculation time of 100 particles was about 0.09ms and with pooling 0.009ms. Decreasing calculation times of physics is important because everything needs to eb calculated in 16.6 ms (60hz).
+This \gls{poc} showed that pooling is a must, even with lower amounts of particles.
+The calculation time of 100 particles was about 0.09\,ms and with pooling 0.009\,ms.
+Decreasing calculation times of physics is important because everything needs to eb
+calculated in 16.6\,ms (60\,hz).
 
 \begin{figure}
 	\centering
@@ -1029,11 +1079,22 @@ This \gls{poc} showed that pooling is a must, even with lower amounts of particl
 \subsection{Collision}
 \label{poc:collision}
 
-The collision \gls{poc} \autocite[collision example]{crepe:code-repo} uses a couple of systems. It uses ECS, Physics system, Collisions system and Render system. It uses a lot of components like a gamedeveloper would use. This poc shows that multiple systems can work together and shows physics described by the gamedeveloper.
+The collision \gls{poc} \autocite[collision example]{crepe:code-repo} uses a couple
+of systems. It uses ECS, Physics system, Collisions system and Render system. It uses
+a lot of components like a gamedeveloper would use. This poc shows that multiple
+systems can work together and shows physics described by the gamedeveloper.
 
-This \gls{poc} shows two boxes with some distance from each other \cref{fig:poc-no-collision}, and collide \cref{fig:poc-collision}. The red box is static and can not be moved be physics even if it has gravity. The green box is dynamic and is moved by gravity. These movements are done to add the velocity to the transform. the velocity is calculated by the physics and saved in the rigidbody. before moving the collision system checks if there is collison, so it looks at the future. if the green box wants to move through the red box it is pushed back by the collision handler because the green box is static.
+This \gls{poc} shows two boxes with some distance from each other
+\cref{fig:poc-no-collision}, and collide \cref{fig:poc-collision}. The red box is
+static and can not be moved be physics even if it has gravity. The green box is
+dynamic and is moved by gravity. These movements are done to add the velocity to the
+transform. the velocity is calculated by the physics and saved in the rigidbody.
+before moving the collision system checks if there is collison, so it looks at the
+future. if the green box wants to move through the red box it is pushed back by the
+collision handler because the green box is static.
 
-This \gls{poc} showed that it is better to do the opposite. Move all object then look back if the collided with anything..
+This \gls{poc} showed that it is better to do the opposite. Move all object then look
+back if the collided with anything.
 
 \begin{figure}
 	\centering
