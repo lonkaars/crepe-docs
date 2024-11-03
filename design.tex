@@ -139,9 +139,8 @@ reliability.
 
 \subsection{Texture}
 
-% FIXME: our
-The textures in our game engine are represented by the \codeinline{Texture} class. It
-is implemented a \gls{facade} around the \gls{sdl} library.
+The textures in cr\^epe game engine are represented by the \codeinline{Texture} class. It
+is implemented as an \gls{facade} around the \gls{sdl} library.
 
 \subsubsection{Architecture}
 
@@ -220,9 +219,7 @@ following classes:\noparbreak
 			\item[\codeinline{present_screen()}] Presents the final rendered image to the
 				screen.
 		\end{description}
-	\item The \codeinline{SdlContext} class, another singleton, manages the \gls{sdl}
-		and has a friendship relationship with \codeinline{ComponentManager} for tighter
-		integration with component management.
+	\item The \codeinline{SdlContext} class, another singleton, manages the \gls{sdl} library
 	\item Components are organized as follows:\noparbreak
 		\begin{itemize}
 			\item The \codeinline{Component} base class allows for generic handling of
