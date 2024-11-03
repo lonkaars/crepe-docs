@@ -1,5 +1,7 @@
 \documentclass{projdoc}
 
+\usepackage{eso-pic}
+
 \title{Software Design}
 
 \begin{document}
@@ -764,6 +766,30 @@ transformations are applied each frame, as demonstrated by the output in
 	\caption{Camera \glsfmtshort{poc} output}
 	\label{fig:poc-output-camera}
 \end{figure}
+
+\makeatletter%
+\newbox\full@class@diag%
+\newlength\full@class@diag@width%
+\newlength\full@class@diag@height%
+\savebox\full@class@diag{\includegraphics{img/class-api-full.pdf}}%
+\settowidth\full@class@diag@width{\usebox\full@class@diag}%
+\settoheight\full@class@diag@height{\usebox\full@class@diag}%
+\begingroup%
+\eject%
+\thispagestyle{empty}%
+\pdfpagewidth=\full@class@diag@width%
+\pdfpageheight=\full@class@diag@height%
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{%
+		\raisebox{-\full@class@diag@height}{%
+			\usebox\full@class@diag%
+		}%
+	}%
+}%
+\section{Full API class diagram}%
+\newpage%
+\endgroup%
+\makeatother%
 
 \end{document}
 
