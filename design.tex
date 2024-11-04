@@ -116,7 +116,8 @@ the main part of the \gls{ecs}. The design of these eight systems in combination
 \gls{ecs}, will be briefly discussed in the next parts of this design document.
 
 \section{Design}
-
+%TODO: lag uitleggen uit diagram
+%TODO: process input
 \subsection{Game Loop}
 
 \subsubsection{Problem statement}
@@ -134,126 +135,6 @@ The game loop can be external where the user has the ability to update the syste
 themselves or an intergrated game loop which is managed by the gameloop. Both of
 these approaches have advantages and disadvantages when it comes to flexibility and
 reliability.
-
-\subsection{Texture}
-
-The textures in cr\^epe game engine are represented by the \codeinline{Texture}
-class. It is implemented as an \gls{facade} around the \gls{sdl} library.
-
-\subsubsection{Architecture}
-
-\Cref{fig:class-texture} shows a class diagram of the texture \gls{facade}. It
-contains the following classes:\noparbreak
-\begin{description}
-	\item[SDLContext] This is a facade around the \codeinline{SDL2} library which is
-		used around different parts of the engine, and is therefore implemented as a
-		singleton. This class is friends with \codeinline{Texture},
-		\codeinline{LoopManager}, \codeinline{RenderSystem} and
-		\codeinline{AnimatorSystem}.
-	\item[Texture] This is a wrapper around the \codeinline{SDL_Texture} class, and
-		uses cr\^epe's \codeinline{Asset} class to load an Texture instead.
-\end{description}
-
-\begin{figure}
-	\centering
-	% TODO: export as vector format instead
-	\includegraphics[width=\textwidth]{img/texture.png}
-	\caption{User texture class diagram}
-	\label{fig:class-texture}
-\end{figure}
-
-\subsection{AssetManager}
-
-The AssetManager is a \gls{api} class that the user can use to make a
-\codeinline{Asset} available from different scenes.
-
-\subsubsection{Architecture}
-
-\Cref{fig:class-assetmanager} shows a class diagram of the AssetManager. It contains
-the following classes:\noparbreak
-\begin{description}
-	\item[AssetManager] is a Singleton class, meaning only one instance of this class
-		exists throughout the application. This ensures a single point of access and
-		control over asset management, simplifying resource handling and avoiding
-		duplicated assets in memory.
-\end{description}
-
-\begin{figure}
-	\centering
-	% TODO: export as vector format instead
-	\includegraphics[width=0.5\textwidth]{img/AssesManager.png}
-	\caption{User AssetManager class diagram}
-	\label{fig:class-assetmanager}
-\end{figure}
-
-\subsection{Rendering}
-
-Every game engine has an rendering structure to present all the different enities and
-components on the screen.
-
-\subsubsection{Architecture}
-
-% TODO: anyone read this?
-\Cref{fig:class-rendering} shows a class diagram of the RenderSystem. It contains the
-following classes:\noparbreak
-\begin{itemize}
-	\item The system architecture is centered around rendering and component
-		management, with the following key components:\noparbreak
-		\begin{description}
-			\item[\codeinline{System}] An interface class containing the virtual
-				\codeinline{update()} function.
-			\item[\codeinline{RenderSystem}] A derived class of \codeinline{System}
-				responsible for rendering operations.
-		\end{description}
-	\item The \codeinline{System::get_instance()} function provides a static, singleton
-		instance for managing system-wide operations.
-	\item The \codeinline{RenderSystem} class implements various rendering
-		functions:\noparbreak
-		\begin{description}
-			\item[\codeinline{sort_layers()}] Organizes the rendering layers.
-			\item[\codeinline{clear_screen()}] Clears the screen prior to rendering.
-			\item[\codeinline{update_sprites()}] Updates sprite positions and states.
-			\item[\codeinline{update_camera()}] Manages the camera view.
-			\item[\codeinline{present_screen()}] Presents the final rendered image to the
-				screen.
-		\end{description}
-	\item The \codeinline{SdlContext} class, another singleton, manages the \gls{sdl}
-		library
-	\item Components are organized as follows:\noparbreak
-		\begin{itemize}
-			\item The \codeinline{Component} base class allows for generic handling of
-				components.
-			\item Derived component classes include:\noparbreak
-				\begin{description}
-					\item[\codeinline{Sprite}] Represents visual elements with attributes like
-						\codeinline{sprite}, \codeinline{color}, \codeinline{flip},
-						\codeinline{sortingLayer}, and \codeinline{orderInLayer}.
-					\item[\codeinline{Transform}] Manages positional attributes, including
-						\codeinline{position}, \codeinline{rotation}, and \codeinline{scale}.
-				\end{description}
-		\end{itemize}
-	\item Both \codeinline{Sprite} and \codeinline{Transform} components provide a
-		\codeinline{get_instances_max()} function to retrieve the maximum instance count.
-\end{itemize}
-
-\begin{figure}
-	\centering
-	% TODO: export as vector format instead
-	\includegraphics[width=\textwidth]{img/Rendering.png}
-	\caption{System Rendering class diagram}
-	\label{fig:class-rendering}
-\end{figure}
-
-\subsubsection{System}
-
-\begin{figure}
-	\centering
-	% TODO: export as vector format instead
-	\includegraphics[width=\textwidth]{img/flowchart_rendering.png}
-	\caption{System Rendering flowchart }
-	\label{fig:class-renderingflowchart}
-\end{figure}
-
 \subsubsection{Architecture}
 
 This engine uses an integrated game loop for the following reasons:\noparbreak
@@ -339,7 +220,131 @@ frame time.
 	\caption{Gameloop flowchart diagram}
 	\label{fig:gameloop-class}
 \end{figure}
+\subsection{Texture}
 
+The textures in cr\^epe game engine are represented by the \codeinline{Texture}
+class. It is implemented as an \gls{facade} around the \gls{sdl} library.
+
+\subsubsection{Architecture}
+
+\Cref{fig:class-texture} shows a class diagram of the texture \gls{facade}. It
+contains the following classes:\noparbreak
+\begin{description}
+	\item[SDLContext] This is a facade around the \codeinline{SDL2} library which is
+		used around different parts of the engine, and is therefore implemented as a
+		singleton. This class is friends with \codeinline{Texture},
+		\codeinline{LoopManager}, \codeinline{RenderSystem} and
+		\codeinline{AnimatorSystem}.
+	\item[Texture] This is a wrapper around the \codeinline{SDL_Texture} class, and
+		uses cr\^epe's \codeinline{Asset} class to load an Texture instead.
+\end{description}
+
+\begin{figure}
+	\centering
+	% TODO: export as vector format instead
+	\includegraphics[width=\textwidth]{img/texture.png}
+	\caption{User texture class diagram}
+	\label{fig:class-texture}
+\end{figure}
+%TODO: lijntjes verbeteren in de diagrammen
+%TODO: verwijzen naar assets
+\subsection{AssetManager}
+
+The AssetManager is a \gls{api} class that the user can use to make a
+\codeinline{Asset} available from different scenes.
+
+\subsubsection{Architecture}
+
+\Cref{fig:class-assetmanager} shows a class diagram of the AssetManager. It contains
+the following classes:\noparbreak
+\begin{description}
+	\item[AssetManager] is a Singleton class, meaning only one instance of this class
+		exists throughout the application. This ensures a single point of access and
+		control over asset management, simplifying resource handling and avoiding
+		duplicated assets in memory.
+\end{description}
+
+\begin{figure}
+	\centering
+	% TODO: export as vector format instead
+	\includegraphics[width=0.5\textwidth]{img/AssesManager.png}
+	\caption{User AssetManager class diagram}
+	\label{fig:class-assetmanager}
+\end{figure}
+%TODO geen 2 actien
+%TODO: is er geen transform mag wel
+%TODO: nog kijken wel of geen spirte keuze in het diagram
+%TODO: in het diagram kijken of er een particle emiter
+\subsection{Rendering}
+
+Every game engine has an rendering structure to present all the different enities and
+components on the screen.
+
+\subsubsection{Architecture}
+
+% TODO: anyone read this?, fix disgram lines, add particle emitter and camera and reference other classes better
+\Cref{fig:class-rendering} shows a class diagram of the RenderSystem. It contains the
+following classes:\noparbreak
+\begin{itemize}
+	\item The system architecture is centered around rendering and component
+		management, with the following key components:\noparbreak
+		\begin{description}
+			\item[\codeinline{System}] An interface class containing the virtual
+				\codeinline{update()} function.
+			\item[\codeinline{RenderSystem}] A derived class of \codeinline{System}
+				responsible for rendering operations.
+		\end{description}
+	\item The \codeinline{System::get_instance()} function provides a static, singleton
+		instance for managing system-wide operations.
+	\item The \codeinline{RenderSystem} class implements various rendering
+		functions:\noparbreak
+		\begin{description}
+			\item[\codeinline{sort_layers()}] Organizes the rendering layers.
+			\item[\codeinline{clear_screen()}] Clears the screen prior to rendering.
+			\item[\codeinline{update_sprites()}] Updates sprite positions and states.
+			\item[\codeinline{update_camera()}] Manages the camera view.
+			\item[\codeinline{present_screen()}] Presents the final rendered image to the
+				screen.
+		\end{description}
+	\item The \codeinline{SdlContext} class, another singleton, manages the \gls{sdl}
+		library
+	\item Components are organized as follows:\noparbreak
+		\begin{itemize}
+			\item The \codeinline{Component} base class allows for generic handling of
+				components.
+			\item Derived component classes include:\noparbreak
+				\begin{description}
+					\item[\codeinline{Sprite}] Represents visual elements with attributes like
+						\codeinline{sprite}, \codeinline{color}, \codeinline{flip},
+						\codeinline{sortingLayer}, and \codeinline{orderInLayer}.
+					\item[\codeinline{Transform}] Manages positional attributes, including
+						\codeinline{position}, \codeinline{rotation}, and \codeinline{scale}.
+				\end{description}
+		\end{itemize}
+	\item Both \codeinline{Sprite} and \codeinline{Transform} components provide a
+		\codeinline{get_instances_max()} function to retrieve the maximum instance count.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	% TODO: export as vector format instead
+	\includegraphics[width=\textwidth]{img/Rendering.png}
+	\caption{System Rendering class diagram}
+	\label{fig:class-rendering}
+\end{figure}
+
+\subsubsection{System}
+
+\begin{figure}
+	\centering
+	% TODO: export as vector format instead
+	\includegraphics[width=\textwidth]{img/flowchart_rendering.png}
+	\caption{System Rendering flowchart }
+	\label{fig:class-renderingflowchart}
+\end{figure}
+
+
+%TODO: blokken voor callback in sequence
 \subsection{Event system}
 
 \subsubsection{Problem Statement}
@@ -475,7 +480,7 @@ the velocities. after this update it will move all objects. This is shown in the
 	\caption{Physics system flowchart}
 	\label{fig:physics-system-flowchart}
 \end{figure}
-
+%TODO: andere lijn in het diagram
 \subsection{Collisions}
 
 The Collisions in the game engine are handled by the \emph{CollisionSystem}. This
@@ -521,7 +526,7 @@ changing the design. The same is for child and parent gameobjects.
 	\caption{Collision system flowchart}
 	\label{fig:collision-system-flowchart}
 \end{figure}
-
+%TODO: diagram particle
 \subsection{Particles}
 
 The Particles in the game engine are handled by the \emph{ParticlesSystem}. This
