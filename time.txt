@@ -159,6 +159,7 @@ max: 2024-10-31 3h30m creating chapter two of design
 max: 2024-11-04 1h25m sixteent project meeting
 max: 2024-11-04 45m assessment (design)
 max: 2024-11-04 2h sixteent project meeting
+max: 2024-11-04 1h getting used to/testing new programming environment
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
