@@ -156,6 +156,9 @@ max: 2024-10-30 2h added ReplaySystem design to class diagram
 max: 2024-10-31 30m discussing with Jaro
 max: 2024-10-31 3h45m fiftheent project meeting
 max: 2024-10-31 3h30m creating chapter two of design
+max: 2024-11-04 1h25m sixteent project meeting
+max: 2024-11-04 45m assessment (design)
+max: 2024-11-04 2h sixteent project meeting
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
