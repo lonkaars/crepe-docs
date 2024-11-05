@@ -91,6 +91,15 @@ loek: 2024-10-29 10m tooling :: documentation (fix plantuml theme errors)
 loek: 2024-10-30 30m project meeting (min/max component count constraints)
 loek: 2024-10-24 10m review :: PR review (#40, #41 and #42)
 loek: 2024-10-31 3h45m project meeting
+loek: 2024-10-31 2h50m docs :: design :: POCs
+loek: 2024-11-01 1h05m docs :: design (log POC & Global configuration interface)
+loek: 2024-11-02 35m review :: PR review (#48 and #49)
+loek: 2024-11-03 55m docs :: design :: add full-size class diagram
+loek: 2024-11-03 1h30m implementation :: save manager
+loek: 2024-11-03 55m review :: PR review (#15, #50, #52)
+loek: 2024-11-03 10m review :: PR review (#53)
+loek: 2024-11-04 20m implementation :: save manager
+loek: 2024-11-04 4h project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -209,7 +218,11 @@ wouter: 2024-10-21 3h working on design document
 wouter: 2024-10-12 30m reviewing pull request logging
 wouter: 2024-10-24 1h20m project meeting
 wouter: 2024-10-25 2h added collision functionality to event manager
-
+wouter: 2024-10-28 2h added iKeyListener and iMouseListener to poc
+wouter: 2024-10-29 20m discusing api change for UI objects
+wouter: 2024-10-30 15m helping out with gameloop question
+wouter: 2024-10-29 4h created diagrams for gameloop/events/inputs system
+wouter: 2024-10-31 3h45m fiftheent project meeting
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
@@ -267,6 +280,11 @@ niels: 2024-10-25 2h researching camera
 niels: 2024-10-26 2h merge wouter events branch to niels/rendering
 niels: 2024-10-26 1h fix my own git camera mistake
 niels: 2024-10-26 2h programming camera poc with movement and script
+niels: 2024-10-29 2h30m Helping Jaro with events
+niels: 2024-10-30 3h fixing camera SDL viewort bug
+niels: 2024-10-31 3h45m meeting
+niels: 2024-11-2 3h design document, diagrams and flowcharts
+niels: 2024-11-3 1h design document, diagrams and flowcharts
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -331,7 +349,14 @@ jaro: 2024-10-24 1h20m project meeting
 jaro: 2024-10-24 3h30m physics and collision
 jaro: 2024-10-24 1h static collision handeling
 jaro: 2024-10-25 2h collision handeling and onderzoek collision event unity
-
+jaro: 2024-10-28 2h30m Mergen rendering + events
+jaro: 2024-10-29 4h Physics,collision design + latex
+jaro: 2024-10-30 2h diagrams design
+jaro: 2024-10-31 30m discusing design questions
+jaro: 2024-10-31 3h30m discusing design questions
+jaro: 2024-10-31 1h changing diagrams
+jaro: 2024-10-31 45m adding diagrams physics,collision,particles
+jaro: 2024-11-1 15m weeklyupdate
 
 
 

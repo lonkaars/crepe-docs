@@ -1,0 +1,54 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			-
+		Document standard
+			Add updates when needed
+		Requirement
+			physics sub-requirements -> Jaro write document
+			eventmanager sub-requirements -> Wouter write document
+			gameloop sub-requirements -> Wouter write document
+			ecs sub-requirements
+			particles sub-requirement -> Jaro write document
+			resourceManager sub-requirement -> Niels write document
+			rendering sub-requirement
+			script requirements added.
+		design document
+			API in design document
+		Game design
+			-
+	Git
+		Code standard -> LOEK update
+			Show updates
+			Code standard with examples not in main? -> niels
+ 	Environments
+		-
+	Research (POC)
+		[closed] research eventmanager -> Wouter POC is af
+		start research ui -> wouter POC uit
+		start research ai
+		start research playback -> Max
+		start research scenes -> Max
+		star research camera -> Niels POC
+		start research savedata -> loek
+		start research renderer -> niels (sprite & color & transform) POC simple (SDL_GPU voor efficiency verbetering)
+		[closed] start research physics Starting POC -> Jaro
+			More research about physics
+		[closed] start reasearch collision detection -> Jaro
+		[closed] start research particles Starting research -> Jaro (start lifetime. spawning area)
+		start poc animatie -> niels
+	Design
+		Adding design asset class -> niels
+		Adding design resource holder -> niels
+		How does a game designer make a scene?
+	Product
+		-
+	Test
+		-
+	Question Bob
+		mag de API gewoon een interface worden voor wat onderliggend een ECS is.
+	Overig
+		Timers voor systems (profiler van systems)
+
+

@@ -1,0 +1,14 @@
+@startuml
+!include theme.ipuml
+
+class Config <<singleton>> {
+	- Config()
+	+ ~Config()
+	--
+	+ get_instance() : Config & <<static>>
+	--
+	+ log : struct ...
+	...
+}
+
+@enduml

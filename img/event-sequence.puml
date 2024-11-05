@@ -1,0 +1,16 @@
+@startuml
+skinparam SequenceParticipantPadding 15
+
+
+participant EventHandler
+participant Publisher
+participant EventManager
+
+EventHandler -> EventManager : Subscribe event
+Publisher -> EventManager : trigger event
+
+EventManager -> EventHandler : execute callback function
+Publisher -> EventManager : Queue Event
+EventManager -> EventHandler : dispatching queued events
+EventHandler -> EventManager : unsubscribe event
+@enduml
