@@ -100,6 +100,7 @@ loek: 2024-11-03 55m review :: PR review (#15, #50, #52)
 loek: 2024-11-03 10m review :: PR review (#53)
 loek: 2024-11-04 20m implementation :: save manager
 loek: 2024-11-04 4h project meeting
+loek: 2024-11-05 1h05m docs :: style guide
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
