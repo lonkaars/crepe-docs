@@ -160,6 +160,9 @@ max: 2024-11-04 1h25m sixteent project meeting
 max: 2024-11-04 45m assessment (design)
 max: 2024-11-04 2h sixteent project meeting
 max: 2024-11-04 1h getting used to/testing new programming environment
+max: 2024-11-05 30m installing/testing GTest framework
+max: 2024-11-05 30m added examples to code style
+max: 2024-11-05 1h20m reviewed componentManager
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
