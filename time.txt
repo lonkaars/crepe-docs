@@ -103,6 +103,7 @@ loek: 2024-11-04 4h project meeting
 loek: 2024-11-05 1h05m docs :: style guide
 loek: 2024-11-05 1h20m implementation :: refactoring (code standard compliance)
 loek: 2024-11-05 25m review :: PR review (#18)
+loek: 2024-11-05 1h40m tech support (help Jaro w/ PR & various other issues)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
