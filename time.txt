@@ -106,6 +106,7 @@ loek: 2024-11-05 25m review :: PR review (#18)
 loek: 2024-11-05 1h40m tech support (help Jaro w/ PR & various other issues)
 loek: 2024-11-06 20m chores
 loek: 2024-11-06 20m tech support (help Wouter w/ library/dependency build issues)
+loek: 2024-11-06 25m review :: PR review (#19 and #21)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
