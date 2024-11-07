@@ -108,6 +108,8 @@ loek: 2024-11-06 20m chores
 loek: 2024-11-06 20m tech support (help Wouter w/ library/dependency build issues)
 loek: 2024-11-06 25m review :: PR review (#19 and #21)
 loek: 2024-11-07 15m implementation :: debugging (script manager segfault caused by 20bb682)
+loek: 2024-11-07 10m review :: PR review (#23)
+loek: 2024-11-07 2h05m review :: feedback (event manager design)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
