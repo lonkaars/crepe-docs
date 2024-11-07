@@ -178,6 +178,8 @@ max: 2024-11-05 30m replaced crepe::api with crepe
 max: 2024-11-06 1h30m refactored SceneManager according to new code style
 max: 2024-11-06 4h big cleanup
 max: 2024-11-06 1h added topics to code style
+max: 2024-11-07 45m refactoring componentManager according to new code style
+max: 2024-11-07 15m added new topics to code style
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
