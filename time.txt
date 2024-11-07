@@ -180,6 +180,8 @@ max: 2024-11-06 4h big cleanup
 max: 2024-11-06 1h added topics to code style
 max: 2024-11-07 45m refactoring componentManager according to new code style
 max: 2024-11-07 15m added new topics to code style
+max: 2024-11-07 30m recieve Jaro's feedback
+max: 2024-11-07 50m processed Jaro's feedback
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
