@@ -111,6 +111,7 @@ loek: 2024-11-07 15m implementation :: debugging (script manager segfault caused
 loek: 2024-11-07 10m review :: PR review (#23)
 loek: 2024-11-07 2h05m review :: feedback (event manager design)
 loek: 2024-11-07 1h review :: PR review (#16)
+loek: 2024-11-07 20m review :: PR review (#25)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
