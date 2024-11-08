@@ -202,6 +202,8 @@ max: 2024-11-07 50m processed Jaro's feedback
 max: 2024-11-07 30m quicly reviewed Wouter's GameLoop
 max: 2024-11-07 1h20m reviewed Jaro's physics poc
 max: 2024-11-07 40m called with Jaro
+max: 2024-11-07 1h seventeent project meeting
+max: 2024-11-07 1h45m fixing GitHub together
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
