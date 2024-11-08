@@ -116,6 +116,7 @@ loek: 2024-11-07 1h15m implementation :: audio system
 loek: 2024-11-07 25m implementation :: refactoring (big cleanup)
 loek: 2024-11-08 50m project meeting
 loek: 2024-11-08 10m tech support (Jaro w/ old clang-format version)
+loek: 2024-11-08 10m tooling :: repository (update libraries + readme)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
