@@ -400,8 +400,16 @@ jaro: 2024-10-31 3h30m discusing design questions
 jaro: 2024-10-31 1h changing diagrams
 jaro: 2024-10-31 45m adding diagrams physics,collision,particles
 jaro: 2024-11-1 15m weeklyupdate
-
-
-
+jaro: 2024-11-3 3h design documentation
+jaro: 2024-11-4 3h30m assesment and meetings
+jaro: 2024-11-4 3h Physics system,rigidbody,vector2
+jaro: 2024-11-5 3h merge conflicts and physics system and clangd
+jaro: 2024-11-6 1h30m physics doxygen,tests,rigidbody
+jaro: 2024-11-7 30m max code review
+jaro: 2024-11-7 2h physics code standard and particle system
+jaro: 2024-11-7 2h physics code standard and particle system
+jaro: 2024-11-8 2h project meeting
+jaro: 2024-11-8 2h installing environment and feedback.
+jaro: 2024-11-8 2h installing environment.
 
 # vim:ft=cfg
