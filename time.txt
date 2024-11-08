@@ -250,6 +250,15 @@ wouter: 2024-10-29 20m discusing api change for UI objects
 wouter: 2024-10-30 15m helping out with gameloop question
 wouter: 2024-10-29 4h created diagrams for gameloop/events/inputs system
 wouter: 2024-10-31 3h45m fiftheent project meeting
+wouter: 2024-11-04 2h sixteent project meeting
+wouter: 2024-11-05 30m setting up coding environment
+wouter: 2024-11-05 3h struggling with coding environment + fixing gameloop.
+wouter: 2024-11-06 3h trying to fix sdl_image environment error
+wouter: 2024-11-07 1h gameloop working and worked on feedback
+wouter: 2024-11-07 1h discussing eventManager improvements with loek
+wouter: 2024-11-07 15m reviewing pull request #16 saveManager
+wouter: 2024-11-07 4h working on eventManager improvements
+
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
