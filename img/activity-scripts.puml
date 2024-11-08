@@ -1,0 +1,21 @@
+@startuml
+!include theme.ipuml
+
+start
+
+label continue
+:Get list of ""BehaviorScript"" components from ""ComponentManager"";
+
+while (for each ""BehaviorScript"" in list)
+	if (""BehaviorScript"" is active) then (yes)
+		if (""BehaviorScript"" has an instance of ""Script"") then (yes)
+			:Call update function of ""BehaviorScript""'s ""Script"" instance;
+		else (no)
+		endif
+	else (no)
+	endif
+endwhile
+
+stop
+
+@enduml
