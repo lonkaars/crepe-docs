@@ -42,18 +42,18 @@ loek: 2024-09-19 15m tooling :: documentation (move to git commit versioning)
 loek: 2024-09-19 30m review :: PR review (+ style guide update)
 loek: 2024-09-22 2h15m docs :: research
 loek: 2024-09-24 1h45m project meeting
-loek: 2024-09-25 3h implementation :: audio API
+loek: 2024-09-25 3h implementation :: audio facade
 loek: 2024-09-26 2h project meeting
-loek: 2024-09-25 1h20m implementation :: audio API
+loek: 2024-09-25 1h20m implementation :: audio facade
 loek: 2024-09-27 20m review :: PR review (+ style guide update)
 loek: 2024-09-27 55m tooling :: build system (fix library import structure)
-loek: 2024-09-28 2h20m implementation :: audio API
+loek: 2024-09-28 2h20m implementation :: audio facade
 loek: 2024-09-29 1h55m implementation :: debug logging facilities
-loek: 2024-09-29 20m implementation :: audio API
-loek: 2024-09-29 45m docs :: design :: audio API
+loek: 2024-09-29 20m implementation :: audio facade
+loek: 2024-09-29 45m docs :: design :: audio facade
 loek: 2024-09-30 1h40m project meeting
 loek: 2024-10-01 2h20m review :: feedback & discussing software design
-loek: 2024-10-01 30m implementation :: audio API
+loek: 2024-10-01 30m implementation :: audio facade
 loek: 2024-10-03 1h30m project meeting
 loek: 2024-10-04 15m research :: read others' research
 loek: 2024-10-04 1h15m project meeting
@@ -100,6 +100,20 @@ loek: 2024-11-03 55m review :: PR review (#15, #50, #52)
 loek: 2024-11-03 10m review :: PR review (#53)
 loek: 2024-11-04 20m implementation :: save manager
 loek: 2024-11-04 4h project meeting
+loek: 2024-11-05 1h05m docs :: style guide
+loek: 2024-11-05 1h20m implementation :: refactoring (code standard compliance)
+loek: 2024-11-05 25m review :: PR review (#18)
+loek: 2024-11-05 1h40m tech support (help Jaro w/ PR & various other issues)
+loek: 2024-11-06 20m chores
+loek: 2024-11-06 20m tech support (help Wouter w/ library/dependency build issues)
+loek: 2024-11-06 25m review :: PR review (#19 and #21)
+loek: 2024-11-07 15m implementation :: debugging (script manager segfault caused by 20bb682)
+loek: 2024-11-07 10m review :: PR review (#23)
+loek: 2024-11-07 2h05m review :: feedback (event manager design)
+loek: 2024-11-07 1h review :: PR review (#16)
+loek: 2024-11-07 20m review :: PR review (#25)
+loek: 2024-11-07 1h15m implementation :: audio system
+loek: 2024-11-07 25m implementation :: refactoring (big cleanup)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
