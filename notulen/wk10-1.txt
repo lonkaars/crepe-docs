@@ -18,11 +18,12 @@
 	Research (POC)
 		-
 	Design
-		Adding design asset class -> niels
-		Adding design resource holder -> niels
-		How does a game designer make a scene?
+		[closed] Adding design asset class -> niels
+		[closed] Adding design resource holder -> niels
+		[closed] How does a game designer make a scene?
 	Product
-		see miro
+		see miro for tickets.
+		what needs to be a singeton?
 	Test
 		unit tests?
 	Question Bob
