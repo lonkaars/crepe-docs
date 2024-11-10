@@ -329,6 +329,15 @@ niels: 2024-10-30 3h fixing camera SDL viewort bug
 niels: 2024-10-31 3h45m meeting
 niels: 2024-11-2 3h design document, diagrams and flowcharts
 niels: 2024-11-3 1h design document, diagrams and flowcharts
+niels: 2024-11-4 3h30m assesment and meetings
+niels: 2024-11-7 1h merging master with niels/rendering
+niels: 2024-11-7 30m debugging segmentation fault of script.
+niels: 2024-11-7 1h Animator Component 
+niels: 2024-11-7 3h AnimatorSystem programming and debugging
+niels: 2024-11-7 3h AnimatorSystem programming and debugging
+niels: 2024-11-8 50m Project meeting
+niels: 2024-11-8 3h30m adjusted the RenderSystem,Animator,AnimatorSystem,Sprite,Texture, Camera. to code-style
+niels: 2024-11-8 3h Integrated the feedback from pullrequest.
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
