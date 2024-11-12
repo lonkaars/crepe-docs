@@ -123,6 +123,7 @@ loek: 2024-11-11 40m review :: PR review (#28)
 loek: 2024-11-12 35m project meeting
 loek: 2024-11-12 40m review :: PR review (#30)
 loek: 2024-11-12 5m review :: PR review (#28)
+loek: 2024-11-12 2h35m implementation :: unit tests (script system + major refactoring)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
