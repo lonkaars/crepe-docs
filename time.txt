@@ -213,6 +213,7 @@ max: 2024-11-08 1h seventeent project meeting
 max: 2024-11-08 1h45m fixing GitHub together
 max: 2024-11-12 40m eighteent project meeting
 max: 2024-11-13 2h50m reviewing Loek's big cleanup
+max: 2024-11-13 1h40m reviewing Jaro's particle PR
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -339,7 +340,7 @@ niels: 2024-11-3 1h design document, diagrams and flowcharts
 niels: 2024-11-4 3h30m assesment and meetings
 niels: 2024-11-7 1h merging master with niels/rendering
 niels: 2024-11-7 30m debugging segmentation fault of script.
-niels: 2024-11-7 1h Animator Component 
+niels: 2024-11-7 1h Animator Component
 niels: 2024-11-7 3h AnimatorSystem programming and debugging
 niels: 2024-11-7 3h AnimatorSystem programming and debugging
 niels: 2024-11-8 50m Project meeting
