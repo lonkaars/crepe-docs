@@ -1,0 +1,34 @@
+	Documents
+		Research Document
+			Continue adding research information
+		Project plan
+			-
+		Document standard
+			Add updates when needed
+		Requirement
+			-
+		design document
+			[closed] API in design document
+	Git
+		Code standard -> LOEK update
+			Show updates
+			Code standard with examples not in main? -> niels
+ 	Environments
+		-
+	Research (POC)
+		-
+	Design
+		[closed] Adding design asset class -> niels
+		[closed] Adding design resource holder -> niels
+		[closed] How does a game designer make a scene?
+	Product
+		see miro for tickets.
+		what needs to be a singeton?
+	Test
+		unit tests?
+	Question Bob
+		-
+	Overig
+		Timers voor systems (profiler van systems)
+
+
