@@ -128,7 +128,7 @@ loek: 2024-11-13 3h55m implementation :: unit tests (+ refactoring singletons)
 loek: 2024-11-13 3h05m review :: PR review (#26)
 loek: 2024-11-13 25m review :: PR review (merge #29 + update #26)
 loek: 2024-11-14 55m project meeting
-loek: 2024-11-14 4h30m implementation :: audio system
+loek: 2024-11-14 5h45m implementation :: audio system
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
