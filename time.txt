@@ -214,6 +214,7 @@ max: 2024-11-08 1h45m fixing GitHub together
 max: 2024-11-12 40m eighteent project meeting
 max: 2024-11-13 2h50m reviewing Loek's big cleanup
 max: 2024-11-13 1h40m reviewing Jaro's particle PR
+max: 2024-11-12 3h50m second review of Loek's big cleanup
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
