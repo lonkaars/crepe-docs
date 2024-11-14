@@ -280,8 +280,15 @@ wouter: 2024-11-07 1h gameloop working and worked on feedback
 wouter: 2024-11-07 1h discussing eventManager improvements with loek
 wouter: 2024-11-07 15m reviewing pull request #16 saveManager
 wouter: 2024-11-07 4h working on eventManager improvements
-
-
+wouter: 2024-11-08 4h working on loopManager feedback
+wouter: 2024-11-11 4h finishing up loopManager
+wouter: 2024-11-11 4h working on eventManager
+wouter: 2024-11-12 4h working on eventManager
+wouter: 2024-11-12 45m reviewing particle system PR #29
+wouter: 2024-11-12 35m project meeting
+wouter: 2024-11-13 4h testing eventManager using example + fixing code standard
+wouter: 2024-11-13 3h starting with inputSystem
+wouter: 2024-11-14 55m project meeting
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
