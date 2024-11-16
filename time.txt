@@ -134,6 +134,7 @@ loek: 2024-11-15 55m tech support (Jaro w/ event manager & scripts)
 loek: 2024-11-15 10m tooling :: repository (change default column width)
 loek: 2024-11-15 10m review :: PR review (#36)
 loek: 2024-11-15 2h review :: PR review (#26)
+loek: 2024-11-16 10m review :: PR review (#26)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
