@@ -227,6 +227,7 @@ max: 2024-11-15 1h30m seventh project lesson
 max: 2024-11-15 1h twentheenth project meeting
 max: 2024-11-15 30m extended code standard
 max: 2024-11-16 4h third review of Loek's big cleanup
+max: 2024-11-16 1h30m fourth review of Loek's big cleanup
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
