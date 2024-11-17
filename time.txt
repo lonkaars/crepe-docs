@@ -301,6 +301,7 @@ wouter: 2024-11-12 35m project meeting
 wouter: 2024-11-13 4h testing eventManager using example + fixing code standard
 wouter: 2024-11-13 3h starting with inputSystem
 wouter: 2024-11-14 55m project meeting
+wouter: 2024-11-16 3h implementing feedback and improving eventManager
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
