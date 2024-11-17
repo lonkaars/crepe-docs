@@ -365,7 +365,7 @@ niels: 2024-11-8 50m Project meeting
 niels: 2024-11-8 3h30m adjusted the RenderSystem,Animator,AnimatorSystem,Sprite,Texture, Camera. to code-style
 niels: 2024-11-8 3h Integrated the feedback from pullrequest.
 niels: 2024-11-11 30m Adjusted rendering example
-niels: 2024-11-11 3h30m rendering particle 
+niels: 2024-11-11 3h30m rendering particle
 niels: 2024-11-12 40m project meeting
 niels: 2024-11-12 1h adjusted rendering and texture so that gameObject can have multiple sprite components
 niels: 2024-11-12 20m merge master into rendering_particle branch
@@ -459,5 +459,18 @@ jaro: 2024-11-7 2h physics code standard and particle system
 jaro: 2024-11-8 2h project meeting
 jaro: 2024-11-8 2h installing environment and feedback.
 jaro: 2024-11-8 2h installing environment.
+jaro: 2024-11-8 3h fixing dependency issues and updated environment.
+jaro: 2024-11-10 3h30m finished Particle system and unit tests.
+jaro: 2024-11-10 1h30m code correct particle and collision system (box box).
+jaro: 2024-11-10 1h collision system circle circle.
+jaro: 2024-11-11 3h feedback particle system and collision system (box square).
+jaro: 2024-11-12 2h collision system
+jaro: 2024-11-13 1h giving feedback pr
+jaro: 2024-11-14 1h30m project meeting
+jaro: 2024-11-14 4h15m collision system all collision and improved functions.
+jaro: 2024-11-15 1h30m project lesson
+jaro: 2024-11-15 1h project meeting
+jaro: 2024-11-15 2h30m collision system unit test and integration scripts.
+jaro: 2024-11-17 5h collision system static handeler and bouncing ball game.
 
 # vim:ft=cfg
