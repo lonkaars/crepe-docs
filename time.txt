@@ -136,6 +136,8 @@ loek: 2024-11-15 10m review :: PR review (#36)
 loek: 2024-11-15 2h review :: PR review (#26)
 loek: 2024-11-16 1h40m review :: PR review (#26)
 loek: 2024-11-18 1h15m project meeting
+loek: 2024-11-18 20m review :: PR review (#38)
+loek: 2024-11-18 55m implementation :: split branch into separate PR (#39)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
