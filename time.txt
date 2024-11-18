@@ -365,6 +365,14 @@ niels: 2024-11-14 1h30m sorting sprites based on sorting in layer
 niels: 2024-11-14 1h Project meeting
 niels: 2024-11-15 1h Project meeting
 niels: 2024-11-15 2h project guidance
+niels: 2024-11-18 20m merging master with niels/rendering_color branch
+niels: 2024-11-18 15m merging master with niels/sortig_rendering and building
+niels: 2024-11-18 45m programming sorts based on order in layer and sorting in layer
+niels: 2024-11-18 15m merging master with niels/rendering branch (stopped because of a lot off compiler errors)
+niels: 2024-11-18 1h researching from world position to pixel coordinates
+niels: 2024-11-18 1h20m programming from world position to pixel coordinates
+niels: 2024-11-18 1h30m debugging world positons to pixel coordinates
+niels: 2024-11-18 1h20m implementing feedback on PR's(#31,35,28)
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
