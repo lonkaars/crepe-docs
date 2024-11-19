@@ -143,6 +143,7 @@ loek: 2024-11-19 40m implementation :: audio system
 loek: 2024-11-19 1h25m docs :: user documentation
 loek: 2024-11-19 50m chores
 loek: 2024-11-19 2h50m project meeting
+loek: 2024-11-19 1h15m review :: PR review (#34)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
