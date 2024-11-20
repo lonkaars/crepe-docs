@@ -234,6 +234,7 @@ max: 2024-11-19 1h50m reviewing Niels's game-units to pixels PR
 max: 2024-11-19 1h eight project lesson
 max: 2024-11-19 1h50m twenty-second project meeting
 max: 2024-11-20 1h30m reviewing Loek's util PR
+max: 2024-11-20 1h40m creating unit tests for ECS and Scenes
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
