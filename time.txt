@@ -231,6 +231,9 @@ max: 2024-11-16 1h30m fourth review of Loek's big cleanup
 max: 2024-11-18 1h30m twenty-first project meeting
 max: 2024-11-18 30m prepare PowerPoint for project lesson
 max: 2024-11-19 1h50m reviewing Niels's game-units to pixels PR
+max: 2024-11-19 1h eight project lesson
+max: 2024-11-19 1h50m twenty-second project meeting
+max: 2024-11-20 1h30m reviewing Loek's util PR
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
