@@ -147,6 +147,9 @@ loek: 2024-11-19 1h15m review :: PR review (#34)
 loek: 2024-11-20 15m tech support (w/ jaro)
 loek: 2024-11-20 1h55m review :: PR review (#38, #39, #43)
 loek: 2024-11-20 1h implementation :: unit tests (ValueBroker, Proxy & DB)
+loek: 2024-11-20 2h15m implementation :: unit tests (collision test / event manager)
+loek: 2024-11-20 35m docs :: doxygen
+loek: 2024-11-20 2h review :: PR review (#34 + update Script class)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
