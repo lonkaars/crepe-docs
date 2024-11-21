@@ -236,6 +236,8 @@ max: 2024-11-19 1h50m twenty-second project meeting
 max: 2024-11-20 1h30m reviewing Loek's util PR
 max: 2024-11-20 1h40m creating unit tests for ECS and Scenes
 max: 2024-11-20 45m added Doxygen user-documentation
+max: 2024-11-21 1h30m adjusting Doxygen PR according to feedback
+max: 2024-11-21 1h installing WhereAmI and checking PR
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
