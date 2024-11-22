@@ -420,7 +420,7 @@ niels: 2024-11-14 1h30m sorting sprites based on sorting in layer
 niels: 2024-11-14 1h Project meeting
 niels: 2024-11-15 1h Project meeting
 niels: 2024-11-15 2h project guidance
-niels: 2024-11-18 1h30m meeting 
+niels: 2024-11-18 1h30m meeting
 niels: 2024-11-18 20m merging master with niels/rendering_color branch
 niels: 2024-11-18 15m merging master with niels/sortig_rendering and building
 niels: 2024-11-18 45m programming sorts based on order in layer and sorting in layer
@@ -436,7 +436,7 @@ niels: 2024-11-19 2h30m project meeting
 niels: 2024-11-20 2h implementing feedback on PR niels/RenderingParticle
 niels: 2024-11-20 15m implementing feedback on PR niels/color
 niels: 2024-11-20 2h implementing feedback on PR niels/sortig_rendering
-niels: 2024-11-20 2h call with jaro about PR's 
+niels: 2024-11-20 2h call with jaro about PR's
 niels: 2024-11-20 45m researching more about 2d camera
 niels: 2024-11-21 1h merging master (problems with git submodule whereami)
 niels: 2024-11-21 1h researching more about 2d camera
@@ -538,5 +538,23 @@ jaro: 2024-11-15 1h30m project lesson
 jaro: 2024-11-15 1h project meeting
 jaro: 2024-11-15 2h30m collision system unit test and integration scripts.
 jaro: 2024-11-17 5h collision system static handeler and bouncing ball game.
+jaro: 2024-11-17 20m weekly update
+jaro: 2024-11-17 25m feedback scene wouter
+jaro: 2024-11-18 1h30m project meeting
+jaro: 2024-11-18 30m preparing presentation
+jaro: 2024-11-19 1h30m project lesson
+jaro: 2024-11-19 1h20m project meeting
+jaro: 2024-11-19 2h45m collision system struct info and doxygen comments
+jaro: 2024-11-20 30m merge master collision
+jaro: 2024-11-20 20m script system integration collision system unit test
+jaro: 2024-11-20 30m SceneManager fix for test game
+jaro: 2024-11-20 45m unit test collision
+jaro: 2024-11-20 45m review particle rendering
+jaro: 2024-11-20 3h15 unit test collision with scripts
+jaro: 2024-11-20 1h call loek for unti test collision
+jaro: 2024-11-20 30m particle rendering feedback
+jaro: 2024-11-20 1h15m making unit tests
+jaro: 2024-11-20 1h15m project meeting
+jaro: 2024-11-20 15m weeklyupdate
 
 # vim:ft=cfg
