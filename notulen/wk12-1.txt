@@ -1,0 +1,30 @@
+	Documents
+		Research Document
+			-
+		Project plan
+			-
+		Document standard
+			Add updates when needed
+		Requirement
+			-
+		design document
+			-
+	Git
+		Code standard -> LOEK update
+			Show updates
+ 	Environments
+		-
+	Research (POC)
+		-
+	Design
+		-
+	Product
+		see miro for tickets.
+	Test
+		[closed] unit tests? will add per system/manager when needed
+	Question Bob
+		-
+	Overig
+		[closed] Timers voor systems (profiler van systems)
+
+
