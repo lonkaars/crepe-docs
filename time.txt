@@ -278,6 +278,7 @@ wouter: 2024-09-05 1h30m first group meeting
 wouter: 2024-09-05 20m setting up research document
 wouter: 2024-09-05 1h researching game enigne
 wouter: 2024-09-06 3h researching game enigne
+wouter: 2024-09-09 14h afwezigheid
 wouter: 2024-09-09 2h researching SDL and SFML2
 wouter: 2024-09-10 1h30m third project meeting
 wouter: 2024-09-10 45m project videos
@@ -338,6 +339,15 @@ wouter: 2024-11-13 4h testing eventManager using example + fixing code standard
 wouter: 2024-11-13 3h starting with inputSystem
 wouter: 2024-11-14 55m project meeting
 wouter: 2024-11-16 3h implementing feedback and improving eventManager
+wouter: 2024-11-18 1h30m twenty-first project meeting
+wouter: 2024-11-18 2h working on input system
+wouter: 2024-11-18 20m reviewing rendering colors (PR #35)
+wouter: 2024-11-19 2h working on eventManager feedback
+wouter: 2024-11-19 2h working on input system
+wouter: 2024-11-19 1h eight project lesson
+wouter: 2024-11-19 1h50m twenty-second project meeting
+wouter: 2024-11-20 9h working on big eventManager changes
+wouter: 2024-11-22 2h checking gameLoop problem and checking timing code
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
