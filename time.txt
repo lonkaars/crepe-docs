@@ -266,6 +266,9 @@ max: 2024-11-21 1h45m making Vector2 templated and making tests
 max: 2024-11-22 40m improving Vector2 after feedback
 max: 2024-11-22 1h20m replaced reference by OptionalRef in Scene
 max: 2024-11-22 1h40m implemented presistent objects in ComponentManager
+max: 2024-11-22 30m small tasks
+max: 2024-11-22 1h25m twenty-third project meeting
+max: 2024-11-22 1h last fixes for templated Vector2
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
