@@ -439,7 +439,7 @@ niels: 2024-11-20 45m researching more about 2d camera
 niels: 2024-11-21 1h merging master (problems with git submodule whereami)
 niels: 2024-11-21 1h researching more about 2d camera
 niels: 2024-11-22 1h40m programming decoupling the world units and pixel in rendering
-niels: 2024-11-22 1h project meeting
+niels: 2024-11-22 1h15m project meeting
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
