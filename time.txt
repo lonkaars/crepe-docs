@@ -273,6 +273,7 @@ max: 2024-11-22 1h40m implemented presistent objects in ComponentManager
 max: 2024-11-22 30m small tasks
 max: 2024-11-22 1h25m twenty-third project meeting
 max: 2024-11-22 1h last fixes for templated Vector2
+max: 2024-11-24 1h30m small tasks (PRs and tests)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
