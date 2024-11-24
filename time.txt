@@ -158,6 +158,7 @@ loek: 2024-11-22 1h15m project meeting
 loek: 2024-11-22 20m review :: PR review (#47, #48, #49)
 loek: 2024-11-22 2h30m docs :: doxygen
 loek: 2024-11-22 1h docs :: presentation (validation plan)
+loek: 2024-11-24 10m review :: PR review (#50, #51, #54)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
