@@ -163,6 +163,8 @@ loek: 2024-11-25 55m project meeting
 loek: 2024-11-25 1h15m docs :: presentation (prepare testing/validation presentation)
 loek: 2024-11-25 15m review :: PR review (#52)
 loek: 2024-11-25 1h05m implementation :: audio system
+loek: 2024-11-26 1h55m implementation :: audio system
+loek: 2024-11-26 2h45m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
