@@ -172,6 +172,7 @@ loek: 2024-11-28 25m review :: PR review (#56)
 loek: 2024-11-28 25m review :: PR review (#40)
 loek: 2024-11-28 40m chores
 loek: 2024-11-28 15m implementation :: mediator
+loek: 2024-11-28 45m implementation :: resource manager
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
