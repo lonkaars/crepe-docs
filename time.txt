@@ -291,6 +291,7 @@ max: 2024-11-27 1h reviewing Wouter's PR55
 max: 2024-11-28 1h10m reviewing Niels's PR50
 max: 2024-11-28 1h5m discussing about Rect in Sprite/Animator
 max: 2024-11-28 1h45m another review for Niels's PR50
+max: 2024-11-28 1h20m trying to fix rouding errors
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
