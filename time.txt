@@ -167,6 +167,7 @@ loek: 2024-11-26 1h55m implementation :: resource manager
 loek: 2024-11-26 2h45m project meeting
 loek: 2024-11-26 1h25m implementation :: resource manager
 loek: 2024-11-27 10m review :: PR review (#52)
+loek: 2024-11-28 2h40m implementation :: refactoring (and add Script::set_next_scene)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
