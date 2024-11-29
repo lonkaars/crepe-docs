@@ -161,6 +161,20 @@ loek: 2024-11-22 1h docs :: presentation (validation plan)
 loek: 2024-11-24 10m review :: PR review (#50, #51, #54)
 loek: 2024-11-25 55m project meeting
 loek: 2024-11-25 1h15m docs :: presentation (prepare testing/validation presentation)
+loek: 2024-11-25 15m review :: PR review (#52)
+loek: 2024-11-25 1h05m implementation :: resource manager
+loek: 2024-11-26 1h55m implementation :: resource manager
+loek: 2024-11-26 2h45m project meeting
+loek: 2024-11-26 1h25m implementation :: resource manager
+loek: 2024-11-27 10m review :: PR review (#52)
+loek: 2024-11-28 2h40m implementation :: mediator (+ refactoring + add Script::set_next_scene)
+loek: 2024-11-28 25m review :: PR review (#56)
+loek: 2024-11-28 25m review :: PR review (#40)
+loek: 2024-11-28 40m chores
+loek: 2024-11-28 15m implementation :: mediator
+loek: 2024-11-28 45m implementation :: resource manager
+loek: 2024-11-29 1h15m project meeting
+loek: 2024-11-29 40m implementation :: audio system
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
