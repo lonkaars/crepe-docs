@@ -510,7 +510,7 @@ niels: 2024-11-25 1h project meeting
 niels: 2024-11-26 1h30m project meeting
 niels: 2024-11-26 1h50m project lesson
 niels: 2024-11-27 3h implementing feedback from #PR40
-niels: 2024-11-27 1h making niels/doxygen 
+niels: 2024-11-27 1h making niels/doxygen
 niels: 2024-11-27 29m Mouse position and rendering
 niels: 2024-11-28 41m call with max discussing #PR40
 niels: 2024-11-28 25m call about sdlcontext singleton and PR's
@@ -630,7 +630,25 @@ jaro: 2024-11-20 3h15m unit test collision with scripts
 jaro: 2024-11-20 1h call loek for unti test collision
 jaro: 2024-11-20 30m particle rendering feedback
 jaro: 2024-11-20 1h15m making unit tests
-jaro: 2024-11-20 1h15m project meeting
-jaro: 2024-11-20 15m weeklyupdate
+jaro: 2024-11-21 15m review vector2
+jaro: 2024-11-21 15m bug fix rendering (particle)
+jaro: 2024-11-21 30m Merge with master
+jaro: 2024-11-21 1h bug fix collision system
+jaro: 2024-11-22 1h15m project meeting
+jaro: 2024-11-22 15m weeklyupdate
+jaro: 2024-11-22 30m merge and bug fix collision system
+jaro: 2024-11-22 1h call scripts and collision system integration
+jaro: 2024-11-22 2h45m refactoring collision system variant
+jaro: 2024-11-22 30m unit test collision system
+jaro: 2024-11-23 2h collision system comments,unit test and profiling test
+jaro: 2024-11-25 1h project meeting
+jaro: 2024-11-25 30m profiling average function
+jaro: 2024-11-26 1h30m project meeting
+jaro: 2024-11-27 30m feedback and explaining collision system
+jaro: 2024-11-28 30m feedback decoupling pixels
+jaro: 2024-11-28 30m call niels decoupling pixels
+jaro: 2024-11-28 2h discussion niels decoupling pixels
+jaro: 2024-11-29 1h30m project meeting
+jaro: 2024-11-29 15m weeklyupdate
 
 # vim:ft=cfg
