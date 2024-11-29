@@ -496,6 +496,8 @@ niels: 2024-11-28 41m call with max discussing #PR40
 niels: 2024-11-28 25m call about sdlcontext singleton and PR's
 niels: 2024-11-28 18m rendering features
 niels: 2024-11-28 5h implementing feedback from #PR40
+niels: 2024-11-28 2h meeting with jaro about camera
+niels: 2024-11-29 1h30m prject meeting
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
