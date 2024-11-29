@@ -491,6 +491,20 @@ niels: 2024-11-21 1h merging master (problems with git submodule whereami)
 niels: 2024-11-21 1h researching more about 2d camera
 niels: 2024-11-22 1h40m programming decoupling the world units and pixel in rendering
 niels: 2024-11-22 1h15m project meeting
+niels: 2024-11-22 4h updating and refactoring camera
+niels: 2024-11-24 1h Running jaro tests
+niels: 2024-11-25 1h project meeting
+niels: 2024-11-26 1h30m project meeting
+niels: 2024-11-26 1h50m project lesson
+niels: 2024-11-27 3h implementing feedback from #PR40
+niels: 2024-11-27 1h making niels/doxygen 
+niels: 2024-11-27 29m Mouse position and rendering
+niels: 2024-11-28 41m call with max discussing #PR40
+niels: 2024-11-28 25m call about sdlcontext singleton and PR's
+niels: 2024-11-28 18m rendering features
+niels: 2024-11-28 5h implementing feedback from #PR40
+niels: 2024-11-28 2h meeting with jaro about camera
+niels: 2024-11-29 1h30m prject meeting
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
