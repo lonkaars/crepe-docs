@@ -156,6 +156,25 @@ loek: 2024-11-21 15m review :: PR review (merge #39 + update #47)
 loek: 2024-11-21 30m review :: PR review (#47, #48)
 loek: 2024-11-22 1h15m project meeting
 loek: 2024-11-22 20m review :: PR review (#47, #48, #49)
+loek: 2024-11-22 2h30m docs :: doxygen
+loek: 2024-11-22 1h docs :: presentation (validation plan)
+loek: 2024-11-24 10m review :: PR review (#50, #51, #54)
+loek: 2024-11-25 55m project meeting
+loek: 2024-11-25 1h15m docs :: presentation (prepare testing/validation presentation)
+loek: 2024-11-25 15m review :: PR review (#52)
+loek: 2024-11-25 1h05m implementation :: resource manager
+loek: 2024-11-26 1h55m implementation :: resource manager
+loek: 2024-11-26 2h45m project meeting
+loek: 2024-11-26 1h25m implementation :: resource manager
+loek: 2024-11-27 10m review :: PR review (#52)
+loek: 2024-11-28 2h40m implementation :: mediator (+ refactoring + add Script::set_next_scene)
+loek: 2024-11-28 25m review :: PR review (#56)
+loek: 2024-11-28 25m review :: PR review (#40)
+loek: 2024-11-28 40m chores
+loek: 2024-11-28 15m implementation :: mediator
+loek: 2024-11-28 45m implementation :: resource manager
+loek: 2024-11-29 1h15m project meeting
+loek: 2024-11-29 2h55m implementation :: audio system
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -268,6 +287,26 @@ max: 2024-11-21 1h45m making Vector2 templated and making tests
 max: 2024-11-22 40m improving Vector2 after feedback
 max: 2024-11-22 1h20m replaced reference by OptionalRef in Scene
 max: 2024-11-22 1h40m implemented presistent objects in ComponentManager
+max: 2024-11-22 30m small tasks
+max: 2024-11-22 1h25m twenty-third project meeting
+max: 2024-11-22 1h last fixes for templated Vector2
+max: 2024-11-24 1h30m small tasks (PRs and tests)
+max: 2024-11-25 1h twenty-fourth project meeting
+max: 2024-11-25 1h20m preparing for project lesson
+max: 2024-11-26 20m preparing for project lesson
+max: 2024-11-26 1h50m working on PR40 and PR52
+max: 2024-11-26 1h30m twenty-fifth project meeting
+max: 2024-11-26 1h50m nineth project lesson
+max: 2024-11-26 50m looking for sprite sheets
+max: 2024-11-27 2h reviewing Niels's PR50
+max: 2024-11-27 2h reviewing Wouter's PR55
+max: 2024-11-27 3h reviewing Niels's PR50
+max: 2024-11-27 1h reviewing Wouter's PR55
+max: 2024-11-28 1h10m reviewing Niels's PR50
+max: 2024-11-28 1h5m discussing about Rect in Sprite/Animator
+max: 2024-11-28 1h45m another review for Niels's PR50
+max: 2024-11-28 1h20m trying to fix rouding errors
+max: 2024-11-29 1h30m twenty-sixth project meeting
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -348,6 +387,19 @@ wouter: 2024-11-19 1h eight project lesson
 wouter: 2024-11-19 1h50m twenty-second project meeting
 wouter: 2024-11-20 9h working on big eventManager changes
 wouter: 2024-11-22 2h checking gameLoop problem and checking timing code
+wouter: 2024-11-24 3h working on inputsystem
+wouter: 2024-11-25 4h finishing inputsytem and writing tests
+wouter: 2024-11-25 1h twenty-fourth project meeting
+wouter: 2024-11-26 1h30m twenty-fifth project meeting
+wouter: 2024-11-26 3h working on inputsystem feedback
+wouter: 2024-11-26 30m finishing feedback inputsystem
+wouter: 2024-11-27 2h reviewing collision system PR #53
+wouter: 2024-11-27 30m discussing pixels to gameunits with niels
+wouter: 2024-11-27 2h setting up demogame environment and looking at assets
+wouter: 2024-11-28 6h working on demogame.
+wouter: 2024-11-28 1h30m twenty-sixth project meeting
+
+
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -452,6 +504,20 @@ niels: 2024-11-21 1h merging master (problems with git submodule whereami)
 niels: 2024-11-21 1h researching more about 2d camera
 niels: 2024-11-22 1h40m programming decoupling the world units and pixel in rendering
 niels: 2024-11-22 1h15m project meeting
+niels: 2024-11-22 4h updating and refactoring camera
+niels: 2024-11-24 1h Running jaro tests
+niels: 2024-11-25 1h project meeting
+niels: 2024-11-26 1h30m project meeting
+niels: 2024-11-26 1h50m project lesson
+niels: 2024-11-27 3h implementing feedback from #PR40
+niels: 2024-11-27 1h making niels/doxygen 
+niels: 2024-11-27 29m Mouse position and rendering
+niels: 2024-11-28 41m call with max discussing #PR40
+niels: 2024-11-28 25m call about sdlcontext singleton and PR's
+niels: 2024-11-28 18m rendering features
+niels: 2024-11-28 5h implementing feedback from #PR40
+niels: 2024-11-28 2h meeting with jaro about camera
+niels: 2024-11-29 1h30m prject meeting
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
