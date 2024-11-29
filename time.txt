@@ -387,6 +387,19 @@ wouter: 2024-11-19 1h eight project lesson
 wouter: 2024-11-19 1h50m twenty-second project meeting
 wouter: 2024-11-20 9h working on big eventManager changes
 wouter: 2024-11-22 2h checking gameLoop problem and checking timing code
+wouter: 2024-11-24 3h working on inputsystem
+wouter: 2024-11-25 4h finishing inputsytem and writing tests
+wouter: 2024-11-25 1h twenty-fourth project meeting
+wouter: 2024-11-26 1h30m twenty-fifth project meeting
+wouter: 2024-11-26 3h working on inputsystem feedback
+wouter: 2024-11-26 30m finishing feedback inputsystem
+wouter: 2024-11-27 2h reviewing collision system PR #53
+wouter: 2024-11-27 30m discussing pixels to gameunits with niels
+wouter: 2024-11-27 2h setting up demogame environment and looking at assets
+wouter: 2024-11-28 6h working on demogame.
+wouter: 2024-11-28 1h30m twenty-sixth project meeting
+
+
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
