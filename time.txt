@@ -173,6 +173,8 @@ loek: 2024-11-28 25m review :: PR review (#40)
 loek: 2024-11-28 40m chores
 loek: 2024-11-28 15m implementation :: mediator
 loek: 2024-11-28 45m implementation :: resource manager
+loek: 2024-11-29 1h15m project meeting
+loek: 2024-11-29 40m implementation :: audio system
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -298,8 +300,12 @@ max: 2024-11-26 1h50m nineth project lesson
 max: 2024-11-26 50m looking for sprite sheets
 max: 2024-11-27 2h reviewing Niels's PR50
 max: 2024-11-27 2h reviewing Wouter's PR55
-max: 2024-11-27 3h reviewing Niel's PR50
+max: 2024-11-27 3h reviewing Niels's PR50
 max: 2024-11-27 1h reviewing Wouter's PR55
+max: 2024-11-28 1h10m reviewing Niels's PR50
+max: 2024-11-28 1h5m discussing about Rect in Sprite/Animator
+max: 2024-11-28 1h45m another review for Niels's PR50
+max: 2024-11-28 1h20m trying to fix rouding errors
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
