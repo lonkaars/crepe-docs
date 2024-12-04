@@ -183,6 +183,8 @@ loek: 2024-12-03 20m project meeting
 loek: 2024-12-03 2h05m review :: PR review (#35, #53)
 loek: 2024-12-03 35m chores
 loek: 2024-12-03 50m review :: PR review (#58)
+loek: 2024-12-04 1h30m docs :: doxygen
+loek: 2024-12-04 15m review :: PR review (#57)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
