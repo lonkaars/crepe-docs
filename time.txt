@@ -313,6 +313,10 @@ max: 2024-12-03 25m twenty-eight project meeting
 max: 2024-12-03 2h reviewing Niels's PR59
 max: 2024-12-03 20m reviewing Wouter's PR55
 max: 2024-12-03 40m started researching for AI system
+max: 2024-12-04 2h25m reviewing Niels's PR59
+max: 2024-12-04 35m reviewing Wouter's PR55
+max: 2024-12-04 2h working on AI
+max: 2024-12-04 50m reviewing Wouter's PR55
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
