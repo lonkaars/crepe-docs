@@ -187,6 +187,7 @@ loek: 2024-12-04 1h30m docs :: doxygen
 loek: 2024-12-04 15m review :: PR review (#57)
 loek: 2024-12-04 55m review :: PR review (#55)
 loek: 2024-12-04 50m review :: PR review (#55, #60)
+loek: 2024-12-05 1h10m implementation :: unit tests (resource manager)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
