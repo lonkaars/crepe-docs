@@ -188,6 +188,8 @@ loek: 2024-12-04 15m review :: PR review (#57)
 loek: 2024-12-04 55m review :: PR review (#55)
 loek: 2024-12-04 50m review :: PR review (#55, #60)
 loek: 2024-12-05 1h10m implementation :: unit tests (resource manager)
+loek: 2024-12-05 1h05m project meeting
+loek: 2024-12-05 1h20m review :: PR review (#55)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
