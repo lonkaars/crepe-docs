@@ -318,6 +318,9 @@ max: 2024-12-04 35m reviewing Wouter's PR55
 max: 2024-12-04 2h working on AI
 max: 2024-12-04 50m reviewing Wouter's PR55
 max: 2024-12-04 2h working on AI
+max: 2024-12-05 10m meeting with Bob
+max: 2024-12-05 1h20m twenty-nineth project meeting
+max: 2024-12-05 1h30m working on AI
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
