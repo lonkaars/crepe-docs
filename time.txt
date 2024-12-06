@@ -695,5 +695,30 @@ jaro: 2024-11-28 30m call niels decoupling pixels
 jaro: 2024-11-28 2h discussion niels decoupling pixels
 jaro: 2024-11-29 1h30m project meeting
 jaro: 2024-11-29 15m weeklyupdate
+jaro: 2024-12-02 2h feedback collision system and readability
+jaro: 2024-12-02 1h30m project meeting
+jaro: 2024-12-02 1h collision system readbality and feedback
+jaro: 2024-12-02 30m meeting customer
+jaro: 2024-12-02 1h30m collision system feedback
+jaro: 2024-12-02 2h project: Call color functionaliteit en collision system
+jaro: 2024-12-03 2h45m collision system feedback verwerken
+jaro: 2024-12-03 30m collision system merge with master
+jaro: 2024-12-03 30m collision system implement feedback
+jaro: 2024-12-03 1h45m Doxygen en contributing voor features
+jaro: 2024-12-04 1h doxygen features
+jaro: 2024-12-04 1h miro story points
+jaro: 2024-12-04 1h collision layers
+jaro: 2024-12-05 1h15m preparing meeting (gathering and reading feedback)
+jaro: 2024-12-05 10m meeting teacher
+jaro: 2024-12-05 30m doxygen features
+jaro: 2024-12-05 1h project meeting
+jaro: 2024-12-05 4h15m collision system merge inputs and function testing
+jaro: 2024-12-06 45m call AI and physics
+jaro: 2024-12-06 1h15m fixing collision system bugs
+jaro: 2024-12-06 30m fixing collision system bugs
+jaro: 2024-12-06 15m weeklyupdate
+
+
+
 
 # vim:ft=cfg
