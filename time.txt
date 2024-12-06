@@ -430,7 +430,20 @@ wouter: 2024-11-27 30m discussing pixels to gameunits with niels
 wouter: 2024-11-27 2h setting up demogame environment and looking at assets
 wouter: 2024-11-28 6h working on demogame.
 wouter: 2024-11-28 1h30m twenty-sixth project meeting
-
+wouter: 2024-12-01 3h finishing up demogame.
+wouter: 2024-12-01 1h creating event doxygen
+wouter: 2024-12-02 1h30m twenty-seventh project meeting
+wouter: 2024-12-02 30m small showcase for customer
+wouter: 2024-12-02 3h changing position to game coordinates for input system
+wouter: 2024-12-02 30m checking for memory leaks in eventManager
+wouter: 2024-12-03 3h working on new feedback on inputsystem
+wouter: 2024-12-03 20m reviewing Loeks PR #57
+wouter: 2024-12-03 25m twenty-eight project meeting
+wouter: 2024-12-03 3h making improvements on gameloop
+wouter: 2024-12-04 2h working on more inputsystem feedback
+wouter: 2024-12-04 3h working on gameloop tests and finishing improvements
+wouter: 2024-12-05 1h05m project meeting
+wouter: 2024-12-05 1h20m discussing improvements and unclear features of inputsystem
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
