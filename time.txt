@@ -192,6 +192,9 @@ loek: 2024-12-05 1h05m project meeting
 loek: 2024-12-05 1h20m review :: PR review (#55)
 loek: 2024-12-05 20m review :: PR review (#55, #60)
 loek: 2024-12-05 30m tech support (w/ jaro)
+loek: 2024-12-06 30m chores (convert notes to nice to have tasks in miro)
+loek: 2024-12-06 1h20m review :: PR review (#53, #59)
+loek: 2024-12-06 45m implementation :: script (more utilities on ComponentManager)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -434,7 +437,20 @@ wouter: 2024-11-27 30m discussing pixels to gameunits with niels
 wouter: 2024-11-27 2h setting up demogame environment and looking at assets
 wouter: 2024-11-28 6h working on demogame.
 wouter: 2024-11-28 1h30m twenty-sixth project meeting
-
+wouter: 2024-12-01 3h finishing up demogame.
+wouter: 2024-12-01 1h creating event doxygen
+wouter: 2024-12-02 1h30m twenty-seventh project meeting
+wouter: 2024-12-02 30m small showcase for customer
+wouter: 2024-12-02 3h changing position to game coordinates for input system
+wouter: 2024-12-02 30m checking for memory leaks in eventManager
+wouter: 2024-12-03 3h working on new feedback on inputsystem
+wouter: 2024-12-03 20m reviewing Loeks PR #57
+wouter: 2024-12-03 25m twenty-eight project meeting
+wouter: 2024-12-03 3h making improvements on gameloop
+wouter: 2024-12-04 2h working on more inputsystem feedback
+wouter: 2024-12-04 3h working on gameloop tests and finishing improvements
+wouter: 2024-12-05 1h05m project meeting
+wouter: 2024-12-05 1h20m discussing improvements and unclear features of inputsystem
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
@@ -554,6 +570,17 @@ niels: 2024-11-28 18m rendering features
 niels: 2024-11-28 5h implementing feedback from #PR40
 niels: 2024-11-28 2h meeting with jaro about camera
 niels: 2024-11-29 1h30m prject meeting
+niels: 2024-11-29 4h Refactoring decoupling so that black bars are manually set
+niels: 2024-11-30 8h Refactoring decoupling branch instead of using SDL functions my own math is used so that it works with floating point
+niels: 2024-12-2 1h30m project meeting
+niels: 2024-12-2 30m Meeting Bob
+niels: 2024-12-2 2h Adjusting sprite,animator and camera constructor with structs
+niels: 2024-12-2 2h Adjusting Animator component 
+niels: 2024-12-3 15m project meeting
+niels: 2024-12-3 2h Fixed Animator one-cycle bug where last frame duration is not fully done
+niels: 2024-12-4 3h Implemented feedback on decoupling branch
+niels: 2024-12-5 1h30m project meeting
+niels: 2024-12-5 3h writing Doxygen features
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -686,5 +713,30 @@ jaro: 2024-11-28 30m call niels decoupling pixels
 jaro: 2024-11-28 2h discussion niels decoupling pixels
 jaro: 2024-11-29 1h30m project meeting
 jaro: 2024-11-29 15m weeklyupdate
+jaro: 2024-12-02 2h feedback collision system and readability
+jaro: 2024-12-02 1h30m project meeting
+jaro: 2024-12-02 1h collision system readbality and feedback
+jaro: 2024-12-02 30m meeting customer
+jaro: 2024-12-02 1h30m collision system feedback
+jaro: 2024-12-02 2h project: Call color functionaliteit en collision system
+jaro: 2024-12-03 2h45m collision system feedback verwerken
+jaro: 2024-12-03 30m collision system merge with master
+jaro: 2024-12-03 30m collision system implement feedback
+jaro: 2024-12-03 1h45m Doxygen en contributing voor features
+jaro: 2024-12-04 1h doxygen features
+jaro: 2024-12-04 1h miro story points
+jaro: 2024-12-04 1h collision layers
+jaro: 2024-12-05 1h15m preparing meeting (gathering and reading feedback)
+jaro: 2024-12-05 10m meeting teacher
+jaro: 2024-12-05 30m doxygen features
+jaro: 2024-12-05 1h project meeting
+jaro: 2024-12-05 4h15m collision system merge inputs and function testing
+jaro: 2024-12-06 45m call AI and physics
+jaro: 2024-12-06 1h15m fixing collision system bugs
+jaro: 2024-12-06 30m fixing collision system bugs
+jaro: 2024-12-06 15m weeklyupdate
+
+
+
 
 # vim:ft=cfg
