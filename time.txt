@@ -195,6 +195,7 @@ loek: 2024-12-05 30m tech support (w/ jaro)
 loek: 2024-12-06 30m chores (convert notes to nice to have tasks in miro)
 loek: 2024-12-06 1h20m review :: PR review (#53, #59)
 loek: 2024-12-06 45m implementation :: script (more utilities on ComponentManager)
+loek: 2024-12-06 1h10m review :: PR review (#53, #59)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
