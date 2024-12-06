@@ -192,6 +192,7 @@ loek: 2024-12-05 1h05m project meeting
 loek: 2024-12-05 1h20m review :: PR review (#55)
 loek: 2024-12-05 20m review :: PR review (#55, #60)
 loek: 2024-12-05 30m tech support (w/ jaro)
+loek: 2024-12-06 30m chores (convert notes to nice to have tasks in miro)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
