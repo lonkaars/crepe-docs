@@ -346,6 +346,7 @@ max: 2024-12-06 1h checking vector math (AI)
 max: 2024-12-06 50m discusing with Jaro about AI/Physics
 max: 2024-12-06 3h working on AI
 max: 2024-12-06 1h reviewing Niels's PR59
+max: 2024-12-06 2h working on AI
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
