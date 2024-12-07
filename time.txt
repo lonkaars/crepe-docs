@@ -198,6 +198,7 @@ loek: 2024-12-06 45m implementation :: script (more utilities on ComponentManage
 loek: 2024-12-06 1h10m review :: PR review (#53, #59)
 loek: 2024-12-07 1h10m implementation :: script (more utilities)
 loek: 2024-12-07 1h20m implementation :: refactoring (SaveManager singleton)
+loek: 2024-12-07 1h45m docs :: doxygen
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
