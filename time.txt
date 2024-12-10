@@ -352,6 +352,9 @@ max: 2024-12-09 3h working on AI
 max: 2024-12-09 40m reviewing Loek's PR62
 max: 2024-12-09 1h30m reviewing Wouter's PR63
 max: 2024-12-09 30m reviewing Loek's PR65
+max: 2024-12-09 1h20m fixing AI PR
+max: 2024-12-09 1h checking Wouter's PR63
+max: 2024-12-09 35m fixing AI PR (second reviewer)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
