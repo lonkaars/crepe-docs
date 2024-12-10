@@ -201,6 +201,9 @@ loek: 2024-12-07 1h20m implementation :: refactoring (SaveManager singleton)
 loek: 2024-12-07 1h45m docs :: doxygen
 loek: 2024-12-09 50m project meeting
 loek: 2024-12-09 2h45m docs :: doxygen
+loek: 2024-12-10 2h45m implementation :: replay system
+loek: 2024-12-10 1h50m review :: PR review (#60, #62, #63, #65)
+loek: 2024-12-10 15m implementation :: debugging (audio system + regression test)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
