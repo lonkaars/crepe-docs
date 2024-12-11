@@ -206,6 +206,9 @@ loek: 2024-12-10 1h50m review :: PR review (#60, #62, #63, #65)
 loek: 2024-12-10 15m implementation :: debugging (audio system + regression test)
 loek: 2024-12-10 10m implementation :: debugging (save manager w/ opaque DB)
 loek: 2024-12-11 2h05m project meeting
+loek: 2024-12-11 2h05m implementation :: replay system
+loek: 2024-12-11 40m review :: PR review (#70)
+loek: 2024-12-11 30m implementation :: debugging (loop timer)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
