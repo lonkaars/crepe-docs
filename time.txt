@@ -357,6 +357,8 @@ max: 2024-12-10 1h checking Wouter's PR63
 max: 2024-12-10 35m fixing AI PR (second reviewer)
 max: 2024-12-11 2h thirty-one project meeting
 max: 2024-12-11 30m fixing AI PR (second reviewer)
+max: 2024-12-11 2h40m working on game (looking for sprites)
+max: 2024-12-11 30m checking PR71 (only functional)
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
