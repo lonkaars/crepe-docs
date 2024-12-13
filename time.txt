@@ -491,7 +491,21 @@ wouter: 2024-12-04 2h working on more inputsystem feedback
 wouter: 2024-12-04 3h working on gameloop tests and finishing improvements
 wouter: 2024-12-05 1h05m project meeting
 wouter: 2024-12-05 1h20m discussing improvements and unclear features of inputsystem
+wouter: 2024-12-09 50m thirtieth project meeting
+wouter: 2024-12-09 2h worked on gameloop feedback changes and master merge.
+wouter: 2024-12-09 30m reviewing AI PR#68
+Wouter: 2024-12-09 3h added keyboard state to inputsystem and window events
+wouter: 2024-12-09 20m reviewed audio system PR#60
+wouter: 2024-12-10 3h worked and stuck on text component
+wouter: 2024-12-10 2h worked on input system
+wouter: 2024-12-11 2h stuck on failed test of inputsystem
+wouter: 2024-12-11 2h finalizing text component for PR
+wouter: 2024-12-11 2h thirty-one project meeting
+wouter: 2024-12-12 1h tenth project lesson
+wouter: 2024-12-12 2h pr created for input test + hotfix fps and regression test
+wouter: 2024-12-12 2h thirty-two project meeting
 
+wouter: 2024-12-12 20m reviewing physics system improvements
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -640,7 +654,7 @@ niels: 2024-12-11 1h hotfix inputtest (#PR73)
 niels: 2024-12-11 3h meeting
 niels: 2024-12-12 3h meeting
 niels: 2024-12-12 30m searching github for jetpack joyride assets
-niels: 2024-12-12 2h programming PreviewScene 
+niels: 2024-12-12 2h programming PreviewScene
 niels: 2024-12-12 1h debugging soloud crash with loek and jaro
 
 
