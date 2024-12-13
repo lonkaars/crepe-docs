@@ -384,6 +384,8 @@ max: 2024-12-12 2h thirty-two project meeting
 max: 2024-12-12 2h50m working on game
 max: 2024-12-12 15m reviewing Jaro's PR
 max: 2024-12-12 1h20m working on game
+max: 2024-12-13 8h30m working on game (+ very small PR reviews)
+max: 2024-12-13 20m sorting sprites
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
