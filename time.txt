@@ -615,6 +615,28 @@ niels: 2024-12-3 2h Fixed Animator one-cycle bug where last frame duration is no
 niels: 2024-12-4 3h Implemented feedback on decoupling branch
 niels: 2024-12-5 1h30m project meeting
 niels: 2024-12-5 3h writing Doxygen features
+niels: 2024-12-6 1h merge master into decoupling
+niels: 2024-12-6 3h implemented feedback for decoupling
+niels: 2024-12-6 1h merge master into decoupling
+niels: 2024-12-6 30m fixed tests
+niels: 2024-12-9 1h meeting
+niels: 2024-12-9 30m reviewing (#PR 60)
+niels: 2024-12-10 45m reviewing (#PR 62)
+niels: 2024-12-10 2h Functional testing and reviewing (#PR 65)
+niels: 2024-12-10 2h Functional testing and reviewing (#PR 60)
+niels: 2024-12-11 3h meeting
+niels: 2024-12-11 1h tests hotfix (#PR71)
+niels: 2024-12-11 30m hotfix draw call (#PR 67)
+niels: 2024-12-11 30m hotfix inputtest failing (#PR 66)
+niels: 2024-12-11 3h removing singleton sdlcontext (#PR 70)
+niels: 2024-12-11 1h inputsytem receiving game units instead of pixels (#PR 71)
+niels: 2024-12-11 1h hotfix inputtest (#PR73)
+niels: 2024-12-11 3h meeting
+niels: 2024-12-12 3h meeting
+niels: 2024-12-12 30m searching github for jetpack joyride assets
+niels: 2024-12-12 2h programming PreviewScene 
+niels: 2024-12-12 1h debugging soloud crash with loek and jaro
+
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
