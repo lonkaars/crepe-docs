@@ -212,6 +212,9 @@ loek: 2024-12-11 30m implementation :: debugging (loop timer)
 loek: 2024-12-12 2h50m project meeting
 loek: 2024-12-12 3h implementation :: replay system
 loek: 2024-12-12 30m tech support (Sound facade read after free bug report)
+loek: 2024-12-13 30m implementation :: script (more utilities)
+loek: 2024-12-13 5m tech support (w/ wouter)
+loek: 2024-12-13 30m review :: PR review (#75, #77)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
