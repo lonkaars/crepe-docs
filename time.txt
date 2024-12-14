@@ -812,8 +812,36 @@ jaro: 2024-12-06 45m call AI and physics
 jaro: 2024-12-06 1h15m fixing collision system bugs
 jaro: 2024-12-06 30m fixing collision system bugs
 jaro: 2024-12-06 15m weeklyupdate
-
-
+jaro: 2024-12-07 1h physics remake and particles system remake
+jaro: 2024-12-07 30m particles system remake
+jaro: 2024-12-07 2h call wouter gameloop. delta time. button camera, collisions
+jaro: 2024-12-07 30m call niels camera
+jaro: 2024-12-07 15m particle system bug fix
+jaro: 2024-12-09 1h30m project meeting
+jaro: 2024-12-10 45m review loopManager
+jaro: 2024-12-10 30m review AI
+jaro: 2024-12-11 2h project meeting
+jaro: 2024-12-11 30m review AI
+jaro: 2024-12-11 2h Review Loopmanager rendering pixel naar gameunits and test
+jaro: 2024-12-11 1h feedback phyiscs and AI fix and testing
+jaro: 2024-12-12 1h30m project lesson
+jaro: 2024-12-12 1h30m project meeting
+jaro: 2024-12-12 30m phyiscs test
+jaro: 2024-12-12 1h particles, physics feedback and improvement
+jaro: 2024-12-12 1h30m Physics and particles feedback and improvement
+jaro: 2024-12-12 45m mediator protected in scene
+jaro: 2024-12-12 15m review hotfix fps
+jaro: 2024-12-12 30m doxygen features
+jaro: 2024-12-12 1h15m game example and particle system fix
+jaro: 2024-12-13 1h mediator fix and particle fix
+jaro: 2024-12-13 1h30m collision system fix, meditator review
+jaro: 2024-12-13 15m updating and improving miro board
+jaro: 2024-12-14 2h particle system, collision system, menu(jetpack)
+jaro: 2024-12-14 30m api change and discussing collision/rigidbody
+jaro: 2024-12-14 30m testing collision system
+jaro: 2024-12-14 1h niels demo scene collisions
+jaro: 2024-12-14 1h loek debuggen demo
+jaro: 2024-12-14 15m weekly update
 
 
 # vim:ft=cfg
