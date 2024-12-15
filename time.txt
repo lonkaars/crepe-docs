@@ -217,6 +217,7 @@ loek: 2024-12-13 5m tech support (w/ wouter)
 loek: 2024-12-13 30m review :: PR review (#75, #77)
 loek: 2024-12-14 4h50m demo preparation
 loek: 2024-12-15 35m demo preparation
+loek: 2024-12-15 50m tech support (w/ jaro)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
