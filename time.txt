@@ -195,6 +195,30 @@ loek: 2024-12-05 30m tech support (w/ jaro)
 loek: 2024-12-06 30m chores (convert notes to nice to have tasks in miro)
 loek: 2024-12-06 1h20m review :: PR review (#53, #59)
 loek: 2024-12-06 45m implementation :: script (more utilities on ComponentManager)
+loek: 2024-12-06 1h10m review :: PR review (#53, #59)
+loek: 2024-12-07 1h10m implementation :: script (more utilities)
+loek: 2024-12-07 1h20m implementation :: refactoring (SaveManager singleton)
+loek: 2024-12-07 1h45m docs :: doxygen
+loek: 2024-12-09 50m project meeting
+loek: 2024-12-09 2h45m docs :: doxygen
+loek: 2024-12-10 2h45m implementation :: replay system
+loek: 2024-12-10 1h50m review :: PR review (#60, #62, #63, #65)
+loek: 2024-12-10 15m implementation :: debugging (audio system + regression test)
+loek: 2024-12-10 10m implementation :: debugging (save manager w/ opaque DB)
+loek: 2024-12-11 2h05m project meeting
+loek: 2024-12-11 4h15m implementation :: replay system
+loek: 2024-12-11 40m review :: PR review (#70)
+loek: 2024-12-11 30m implementation :: debugging (loop timer)
+loek: 2024-12-12 2h50m project meeting
+loek: 2024-12-12 3h implementation :: replay system
+loek: 2024-12-12 30m tech support (Sound facade read after free bug report)
+loek: 2024-12-13 30m implementation :: script (more utilities)
+loek: 2024-12-13 5m tech support (w/ wouter)
+loek: 2024-12-13 30m review :: PR review (#75, #77)
+loek: 2024-12-14 4h50m demo preparation
+loek: 2024-12-15 35m demo preparation
+loek: 2024-12-15 50m tech support (w/ jaro)
+loek: 2024-12-16 4h55m project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -474,7 +498,21 @@ wouter: 2024-12-04 2h working on more inputsystem feedback
 wouter: 2024-12-04 3h working on gameloop tests and finishing improvements
 wouter: 2024-12-05 1h05m project meeting
 wouter: 2024-12-05 1h20m discussing improvements and unclear features of inputsystem
+wouter: 2024-12-09 50m thirtieth project meeting
+wouter: 2024-12-09 2h worked on gameloop feedback changes and master merge.
+wouter: 2024-12-09 30m reviewing AI PR#68
+Wouter: 2024-12-09 3h added keyboard state to inputsystem and window events
+wouter: 2024-12-09 20m reviewed audio system PR#60
+wouter: 2024-12-10 3h worked and stuck on text component
+wouter: 2024-12-10 2h worked on input system
+wouter: 2024-12-11 2h stuck on failed test of inputsystem
+wouter: 2024-12-11 2h finalizing text component for PR
+wouter: 2024-12-11 2h thirty-one project meeting
+wouter: 2024-12-12 1h tenth project lesson
+wouter: 2024-12-12 2h pr created for input test + hotfix fps and regression test
+wouter: 2024-12-12 2h thirty-two project meeting
 
+wouter: 2024-12-12 20m reviewing physics system improvements
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -604,6 +642,28 @@ niels: 2024-12-3 2h Fixed Animator one-cycle bug where last frame duration is no
 niels: 2024-12-4 3h Implemented feedback on decoupling branch
 niels: 2024-12-5 1h30m project meeting
 niels: 2024-12-5 3h writing Doxygen features
+niels: 2024-12-6 1h merge master into decoupling
+niels: 2024-12-6 3h implemented feedback for decoupling
+niels: 2024-12-6 1h merge master into decoupling
+niels: 2024-12-6 30m fixed tests
+niels: 2024-12-9 1h meeting
+niels: 2024-12-9 30m reviewing (#PR 60)
+niels: 2024-12-10 45m reviewing (#PR 62)
+niels: 2024-12-10 2h Functional testing and reviewing (#PR 65)
+niels: 2024-12-10 2h Functional testing and reviewing (#PR 60)
+niels: 2024-12-11 3h meeting
+niels: 2024-12-11 1h tests hotfix (#PR71)
+niels: 2024-12-11 30m hotfix draw call (#PR 67)
+niels: 2024-12-11 30m hotfix inputtest failing (#PR 66)
+niels: 2024-12-11 3h removing singleton sdlcontext (#PR 70)
+niels: 2024-12-11 1h inputsytem receiving game units instead of pixels (#PR 71)
+niels: 2024-12-11 1h hotfix inputtest (#PR73)
+niels: 2024-12-11 3h meeting
+niels: 2024-12-12 3h meeting
+niels: 2024-12-12 30m searching github for jetpack joyride assets
+niels: 2024-12-12 2h programming PreviewScene
+niels: 2024-12-12 1h debugging soloud crash with loek and jaro
+
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
 jaro: 2024-09-02 45m project meeting
@@ -758,8 +818,36 @@ jaro: 2024-12-06 45m call AI and physics
 jaro: 2024-12-06 1h15m fixing collision system bugs
 jaro: 2024-12-06 30m fixing collision system bugs
 jaro: 2024-12-06 15m weeklyupdate
-
-
+jaro: 2024-12-07 1h physics remake and particles system remake
+jaro: 2024-12-07 30m particles system remake
+jaro: 2024-12-07 2h call wouter gameloop. delta time. button camera, collisions
+jaro: 2024-12-07 30m call niels camera
+jaro: 2024-12-07 15m particle system bug fix
+jaro: 2024-12-09 1h30m project meeting
+jaro: 2024-12-10 45m review loopManager
+jaro: 2024-12-10 30m review AI
+jaro: 2024-12-11 2h project meeting
+jaro: 2024-12-11 30m review AI
+jaro: 2024-12-11 2h Review Loopmanager rendering pixel naar gameunits and test
+jaro: 2024-12-11 1h feedback phyiscs and AI fix and testing
+jaro: 2024-12-12 1h30m project lesson
+jaro: 2024-12-12 1h30m project meeting
+jaro: 2024-12-12 30m phyiscs test
+jaro: 2024-12-12 1h particles, physics feedback and improvement
+jaro: 2024-12-12 1h30m Physics and particles feedback and improvement
+jaro: 2024-12-12 45m mediator protected in scene
+jaro: 2024-12-12 15m review hotfix fps
+jaro: 2024-12-12 30m doxygen features
+jaro: 2024-12-12 1h15m game example and particle system fix
+jaro: 2024-12-13 1h mediator fix and particle fix
+jaro: 2024-12-13 1h30m collision system fix, meditator review
+jaro: 2024-12-13 15m updating and improving miro board
+jaro: 2024-12-14 2h particle system, collision system, menu(jetpack)
+jaro: 2024-12-14 30m api change and discussing collision/rigidbody
+jaro: 2024-12-14 30m testing collision system
+jaro: 2024-12-14 1h niels demo scene collisions
+jaro: 2024-12-14 1h loek debuggen demo
+jaro: 2024-12-14 15m weekly update
 
 
 # vim:ft=cfg
