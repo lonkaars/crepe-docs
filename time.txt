@@ -394,6 +394,7 @@ max: 2024-12-16 2h eleventh project lesson
 max: 2024-12-16 3h30m thirty-three project meeting
 max: 2024-12-16 30m working on game
 max: 2024-12-16 1h working on game
+max: 2024-12-17 7h10m working on game
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
