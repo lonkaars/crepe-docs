@@ -402,6 +402,7 @@ max: 2024-12-17 2h10m reviewing Jaro's PR85
 max: 2024-12-18 3h reviewing Jaro's PR85
 max: 2024-12-18 40m reviewing Niels's PR86
 max: 2024-12-18 2h reviewing several PRs
+max: 2024-12-18 1h working on game design
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
