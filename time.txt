@@ -222,6 +222,8 @@ loek: 2024-12-16 4h55m project meeting
 loek: 2024-12-17 35m tech support (w/ wouter)
 loek: 2024-12-17 1h45m review :: PR review (#77, #74, #69)
 loek: 2024-12-17 2h review :: PR review (#85, #86, #87)
+loek: 2024-12-18 20m implementation :: debugging (audio system segfault) 
+loek: 2024-12-18 1h20m review :: PR review (#84, #80, #90, #89, #88, #87, #86, #85, #78)
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
