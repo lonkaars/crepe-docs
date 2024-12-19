@@ -225,6 +225,9 @@ loek: 2024-12-17 2h review :: PR review (#85, #86, #87)
 loek: 2024-12-18 20m implementation :: debugging (audio system segfault) 
 loek: 2024-12-18 1h20m review :: PR review (#84, #80, #90, #89, #88, #87, #86, #85, #78)
 loek: 2024-12-18 30m review :: PR review
+loek: 2024-12-19 35m project meeting
+loek: 2024-12-19 55m tech support (discuss demo game architecture)
+loek: 2024-12-19 1h25m review :: PR review
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
