@@ -406,6 +406,7 @@ max: 2024-12-18 1h working on game design
 max: 2024-12-19 40m working on game design
 max: 2024-12-19 30m thirty-four project meeting
 max: 2024-12-19 1h discussing game design with Loek
+max: 2024-12-19 1h using suffix at game and seperated files
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
