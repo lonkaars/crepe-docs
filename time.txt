@@ -229,6 +229,7 @@ loek: 2024-12-19 35m project meeting
 loek: 2024-12-19 55m tech support (discuss demo game architecture)
 loek: 2024-12-19 1h25m review :: PR review
 loek: 2024-12-19 40m review :: PR review
+loek: 2024-12-20 4h project meeting
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
