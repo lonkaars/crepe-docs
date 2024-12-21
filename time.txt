@@ -412,6 +412,7 @@ max: 2024-12-19 1h30m reviewing Niels's PR86 (and finding bug fix in main)
 max: 2024-12-19 1h50m working on game design
 max: 2024-12-20 4h30m thirty-five project meeting
 max: 2024-12-20 1h25m working on game (and transfering to WSL)
+max: 2024-12-21 1h30m added Config.h for game
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
