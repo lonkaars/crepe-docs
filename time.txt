@@ -541,8 +541,20 @@ wouter: 2024-12-11 2h thirty-one project meeting
 wouter: 2024-12-12 1h tenth project lesson
 wouter: 2024-12-12 2h pr created for input test + hotfix fps and regression test
 wouter: 2024-12-12 2h thirty-two project meeting
-
 wouter: 2024-12-12 20m reviewing physics system improvements
+wouter: 2024-12-15 35m demo preparation
+wouter: 2024-12-16 4h55m project meeting
+wouter: 2024-12-17 35m getting support with strange error (w/ loek)
+wouter: 2024-12-17 2h working on text component feedback
+wouter: 2024-12-17 25m reviewing PR#74
+wouter: 2024-12-18 2h30m working on transform change
+wouter: 2024-12-18 1h changed buttons to be event driven
+wouter: 2024-12-19 35m project meeting
+wouter: 2024-12-19 20m reviewing PR#78
+wouter: 2024-12-19 20m reviewing PR#90
+wouter: 2024-12-19 15m fixing last feedback new button approach
+wouter: 2024-12-20 4h project meeting
+
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
