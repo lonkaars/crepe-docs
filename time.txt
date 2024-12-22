@@ -706,6 +706,20 @@ niels: 2024-12-12 3h meeting
 niels: 2024-12-12 30m searching github for jetpack joyride assets
 niels: 2024-12-12 2h programming PreviewScene
 niels: 2024-12-12 1h debugging soloud crash with loek and jaro
+niels: 2024-12-13 8h building preview app (this is finding soloud bug and calling loek and jaro, physics bug, and learning how the other components work)
+niels: 2024-12-14 8h building preview app
+niels: 2024-12-16 5h project meeting
+niels: 2024-12-16 2h Text rendering 
+niels: 2024-12-16 30m rendering fixes #PR88
+niels: 2024-12-19 1h implementing PR feedback #PR86
+niels: 2024-12-19 10m implementing PR feedback #PR88
+niels: 2024-12-19 40m project meeting
+niels: 2024-12-19 30m pr review #PR84
+niels: 2024-12-19 40m project meeting
+niels: 2024-12-20 4h project meeting
+niels: 2024-12-20 40m PR review (#PRs 91, 92 93)
+niels: 2024-12-20 30m rendering text to world space bug #PR96
+niels: 2024-12-21 30m implementing feedback #PR96
 
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
