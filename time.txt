@@ -232,7 +232,7 @@ loek: 2024-12-19 40m review :: PR review
 loek: 2024-12-20 4h project meeting
 loek: 2024-12-20 20m chores (fix project webdav server)
 loek: 2024-12-20 30m implementation :: debugging (EventManager memory leak)
-loek: 2024-12-22 3h45m implementation :: game
+loek: 2024-12-22 6h35m implementation :: game
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
