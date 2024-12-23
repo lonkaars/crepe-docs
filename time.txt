@@ -216,6 +216,23 @@ loek: 2024-12-13 30m implementation :: script (more utilities)
 loek: 2024-12-13 5m tech support (w/ wouter)
 loek: 2024-12-13 30m review :: PR review (#75, #77)
 loek: 2024-12-14 4h50m demo preparation
+loek: 2024-12-15 35m demo preparation
+loek: 2024-12-15 50m tech support (w/ jaro)
+loek: 2024-12-16 4h55m project meeting
+loek: 2024-12-17 35m tech support (w/ wouter)
+loek: 2024-12-17 1h45m review :: PR review (#77, #74, #69)
+loek: 2024-12-17 2h review :: PR review (#85, #86, #87)
+loek: 2024-12-18 20m implementation :: debugging (audio system segfault)
+loek: 2024-12-18 1h20m review :: PR review (#84, #80, #90, #89, #88, #87, #86, #85, #78)
+loek: 2024-12-18 30m review :: PR review
+loek: 2024-12-19 35m project meeting
+loek: 2024-12-19 55m tech support (discuss demo game architecture)
+loek: 2024-12-19 1h25m review :: PR review
+loek: 2024-12-19 40m review :: PR review
+loek: 2024-12-20 4h project meeting
+loek: 2024-12-20 20m chores (fix project webdav server)
+loek: 2024-12-20 30m implementation :: debugging (EventManager memory leak)
+loek: 2024-12-22 6h35m implementation :: game
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -387,6 +404,26 @@ max: 2024-12-12 15m reviewing Jaro's PR
 max: 2024-12-12 1h20m working on game
 max: 2024-12-13 8h30m working on game (+ very small PR reviews)
 max: 2024-12-13 20m sorting sprites
+max: 2024-12-16 2h eleventh project lesson
+max: 2024-12-16 3h30m thirty-three project meeting
+max: 2024-12-16 30m working on game
+max: 2024-12-16 1h working on game
+max: 2024-12-17 7h10m working on game
+max: 2024-12-17 2h10m reviewing Jaro's PR85
+max: 2024-12-18 3h reviewing Jaro's PR85
+max: 2024-12-18 40m reviewing Niels's PR86
+max: 2024-12-18 2h reviewing several PRs
+max: 2024-12-18 1h working on game design
+max: 2024-12-19 40m working on game design
+max: 2024-12-19 30m thirty-four project meeting
+max: 2024-12-19 1h discussing game design with Loek
+max: 2024-12-19 1h using suffix at game and seperated files
+max: 2024-12-19 2h30m reviewing Jaro's PR85
+max: 2024-12-19 1h30m reviewing Niels's PR86 (and finding bug fix in main)
+max: 2024-12-19 1h50m working on game design
+max: 2024-12-20 4h30m thirty-five project meeting
+max: 2024-12-20 1h25m working on game (and transfering to WSL)
+max: 2024-12-21 1h30m added Config.h for game
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
@@ -505,8 +542,20 @@ wouter: 2024-12-11 2h thirty-one project meeting
 wouter: 2024-12-12 1h tenth project lesson
 wouter: 2024-12-12 2h pr created for input test + hotfix fps and regression test
 wouter: 2024-12-12 2h thirty-two project meeting
-
 wouter: 2024-12-12 20m reviewing physics system improvements
+wouter: 2024-12-15 35m demo preparation
+wouter: 2024-12-16 4h55m project meeting
+wouter: 2024-12-17 35m getting support with strange error (w/ loek)
+wouter: 2024-12-17 2h working on text component feedback
+wouter: 2024-12-17 25m reviewing PR#74
+wouter: 2024-12-18 2h30m working on transform change
+wouter: 2024-12-18 1h changed buttons to be event driven
+wouter: 2024-12-19 35m project meeting
+wouter: 2024-12-19 20m reviewing PR#78
+wouter: 2024-12-19 20m reviewing PR#90
+wouter: 2024-12-19 15m fixing last feedback new button approach
+wouter: 2024-12-20 4h project meeting
+
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -657,6 +706,20 @@ niels: 2024-12-12 3h meeting
 niels: 2024-12-12 30m searching github for jetpack joyride assets
 niels: 2024-12-12 2h programming PreviewScene
 niels: 2024-12-12 1h debugging soloud crash with loek and jaro
+niels: 2024-12-13 8h building preview app (this is finding soloud bug and calling loek and jaro, physics bug, and learning how the other components work)
+niels: 2024-12-14 8h building preview app
+niels: 2024-12-16 5h project meeting
+niels: 2024-12-16 2h Text rendering 
+niels: 2024-12-16 30m rendering fixes #PR88
+niels: 2024-12-19 1h implementing PR feedback #PR86
+niels: 2024-12-19 10m implementing PR feedback #PR88
+niels: 2024-12-19 40m project meeting
+niels: 2024-12-19 30m pr review #PR84
+niels: 2024-12-19 40m project meeting
+niels: 2024-12-20 4h project meeting
+niels: 2024-12-20 40m PR review (#PRs 91, 92 93)
+niels: 2024-12-20 30m rendering text to world space bug #PR96
+niels: 2024-12-21 30m implementing feedback #PR96
 
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
