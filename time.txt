@@ -415,6 +415,7 @@ max: 2024-12-20 1h25m working on game (and transfering to WSL)
 max: 2024-12-21 1h30m added Config.h for game
 max: 2024-12-23 1h working on game audio
 max: 2024-12-24 5h working on game Player
+max: 2024-12-19 30m working on game Player
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
