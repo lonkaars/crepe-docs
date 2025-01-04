@@ -908,6 +908,23 @@ jaro: 2024-12-14 30m testing collision system
 jaro: 2024-12-14 1h niels demo scene collisions
 jaro: 2024-12-14 1h loek debuggen demo
 jaro: 2024-12-14 15m weekly update
-
+jaro: 2024-12-15 1h menu: variable button and structuur
+jaro: 2024-12-15 1h30m script en button functionaliteit
+jaro: 2024-12-15 1h discussing script en button functionaliteit
+jaro: 2024-12-16 1h project meeting
+jaro: 2024-12-16 2h project lesson
+jaro: 2024-12-16 2h30m project meeting
+jaro: 2024-12-16 2h collision system handling
+jaro: 2024-12-16 2h30m collision handling, tranform, scale and refactoring
+jaro: 2024-12-16 1h particle system transform
+jaro: 2024-12-17 15m review collision uitleg
+jaro: 2024-12-18 3h30m refactoring collision system and adding handling features
+jaro: 2024-12-19 30m project meeting
+jaro: 2024-12-19 1h collision system doxygen/code standard
+jaro: 2024-12-19 2h30m collision system, feedback and testing
+jaro: 2024-12-20 1h30m project meeting
+jaro: 2024-12-20 3h project meeting and discussing
+jaro: 2024-12-20 1h game button
+jaro: 2024-12-21 3h30m game menu and scene switch
 
 # vim:ft=cfg
