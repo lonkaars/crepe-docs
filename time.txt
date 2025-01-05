@@ -712,7 +712,7 @@ niels: 2024-12-12 1h debugging soloud crash with loek and jaro
 niels: 2024-12-13 8h building preview app (this is finding soloud bug and calling loek and jaro, physics bug, and learning how the other components work)
 niels: 2024-12-14 8h building preview app
 niels: 2024-12-16 5h project meeting
-niels: 2024-12-16 2h Text rendering 
+niels: 2024-12-16 2h Text rendering
 niels: 2024-12-16 30m rendering fixes #PR88
 niels: 2024-12-19 1h implementing PR feedback #PR86
 niels: 2024-12-19 10m implementing PR feedback #PR88
@@ -926,5 +926,13 @@ jaro: 2024-12-20 1h30m project meeting
 jaro: 2024-12-20 3h project meeting and discussing
 jaro: 2024-12-20 1h game button
 jaro: 2024-12-21 3h30m game menu and scene switch
-
+jaro: 2024-12-23 2h15m  game, script,main menu , shop, banner, achtergrond,font
+jaro: 2024-12-28 2h menu improved interfaces and added some
+jaro: 2024-12-28 2h game added coins and coin pooling
+jaro: 2024-12-29 2h back button, generic pressdown and release, more coin presets. added icon to button. added  scale to button
+jaro: 2025-01-03 1h45m random coins, banner update, coin collision handling
+jaro: 2025-01-03 1h15m menu update with coin info, merge with master
+jaro: 2025-01-05 2h game hud
+jaro: 2025-01-05 1h3m hud,menu en gameplaysnelheid
+jaro: 2025-01-05 1h gameplaysnelheid en hud
 # vim:ft=cfg
