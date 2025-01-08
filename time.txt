@@ -235,6 +235,7 @@ loek: 2024-12-20 30m implementation :: debugging (EventManager memory leak)
 loek: 2024-12-22 6h35m implementation :: game
 loek: 2025-01-06 4h55m implementation :: game
 loek: 2025-01-07 5h10m implementation :: game
+loek: 2025-01-08 7h30m implementation :: game
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
