@@ -416,6 +416,11 @@ max: 2024-12-21 1h30m added Config.h for game
 max: 2024-12-23 1h working on game audio
 max: 2024-12-24 5h working on game Player
 max: 2024-12-29 30m working on game Player
+max: 2025-01-06 6h working on game
+max: 2025-01-07 7h working on game
+max: 2025-01-08 8h working on game
+max: 2025-01-10 3h working on/testing game
+max: 2025-01-11 2h testing game
 
 wouter: 2024-09-02 1h project meeting :: project kickoff
 wouter: 2024-09-02 45m project meeting
