@@ -563,6 +563,14 @@ wouter: 2024-12-19 20m reviewing PR#78
 wouter: 2024-12-19 20m reviewing PR#90
 wouter: 2024-12-19 15m fixing last feedback new button approach
 wouter: 2024-12-20 4h project meeting
+wouter: 2025-01-06 3h project meeting + starting with enemies
+wouter: 2025-01-06 6h creating enemysubscene and logic
+wouter: 2025-01-07 4h working on game together
+wouter: 2025-01-07 5h improving enemy ai and making shooting enemies
+wouter: 2025-01-08 8h working on game together
+wouter: 2025-01-08 1h adding sound and working on enemies moving with camera
+wouter: 2025-01-09 7h improving enemies now moving with camera.
+wouter: 2025-01-09 4h reviewing different game PR's and balance changes
 
 
 niels: 2024-09-02 1h project meeting :: project kickoff
