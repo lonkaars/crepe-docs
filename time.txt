@@ -222,6 +222,23 @@ loek: 2024-12-16 4h55m project meeting
 loek: 2024-12-17 35m tech support (w/ wouter)
 loek: 2024-12-17 1h45m review :: PR review (#77, #74, #69)
 loek: 2024-12-17 2h review :: PR review (#85, #86, #87)
+loek: 2024-12-18 20m implementation :: debugging (audio system segfault)
+loek: 2024-12-18 1h20m review :: PR review (#84, #80, #90, #89, #88, #87, #86, #85, #78)
+loek: 2024-12-18 30m review :: PR review
+loek: 2024-12-19 35m project meeting
+loek: 2024-12-19 55m tech support (discuss demo game architecture)
+loek: 2024-12-19 1h25m review :: PR review
+loek: 2024-12-19 40m review :: PR review
+loek: 2024-12-20 4h project meeting
+loek: 2024-12-20 20m chores (fix project webdav server)
+loek: 2024-12-20 30m implementation :: debugging (EventManager memory leak)
+loek: 2024-12-22 6h35m implementation :: game
+loek: 2025-01-06 4h55m implementation :: game
+loek: 2025-01-07 5h10m implementation :: game
+loek: 2025-01-08 7h30m implementation :: game
+loek: 2025-01-08 15m review :: PR review
+loek: 2025-01-09 1h implementation :: game
+loek: 2025-01-11 10m implementation :: game
 
 max: 2024-09-02 1h project kickoff
 max: 2024-09-02 45m first project meeting
@@ -539,8 +556,28 @@ wouter: 2024-12-11 2h thirty-one project meeting
 wouter: 2024-12-12 1h tenth project lesson
 wouter: 2024-12-12 2h pr created for input test + hotfix fps and regression test
 wouter: 2024-12-12 2h thirty-two project meeting
-
 wouter: 2024-12-12 20m reviewing physics system improvements
+wouter: 2024-12-15 35m demo preparation
+wouter: 2024-12-16 4h55m project meeting
+wouter: 2024-12-17 35m getting support with strange error (w/ loek)
+wouter: 2024-12-17 2h working on text component feedback
+wouter: 2024-12-17 25m reviewing PR#74
+wouter: 2024-12-18 2h30m working on transform change
+wouter: 2024-12-18 1h changed buttons to be event driven
+wouter: 2024-12-19 35m project meeting
+wouter: 2024-12-19 20m reviewing PR#78
+wouter: 2024-12-19 20m reviewing PR#90
+wouter: 2024-12-19 15m fixing last feedback new button approach
+wouter: 2024-12-20 4h project meeting
+wouter: 2025-01-06 3h project meeting + starting with enemies
+wouter: 2025-01-06 6h creating enemysubscene and logic
+wouter: 2025-01-07 4h working on game together
+wouter: 2025-01-07 5h improving enemy ai and making shooting enemies
+wouter: 2025-01-08 8h working on game together
+wouter: 2025-01-08 1h adding sound and working on enemies moving with camera
+wouter: 2025-01-09 7h improving enemies now moving with camera.
+wouter: 2025-01-09 4h reviewing different game PR's and balance changes
+
 
 niels: 2024-09-02 1h project meeting :: project kickoff
 niels: 2024-09-02 45m project meeting
@@ -691,6 +728,20 @@ niels: 2024-12-12 3h meeting
 niels: 2024-12-12 30m searching github for jetpack joyride assets
 niels: 2024-12-12 2h programming PreviewScene
 niels: 2024-12-12 1h debugging soloud crash with loek and jaro
+niels: 2024-12-13 8h building preview app (this is finding soloud bug and calling loek and jaro, physics bug, and learning how the other components work)
+niels: 2024-12-14 8h building preview app
+niels: 2024-12-16 5h project meeting
+niels: 2024-12-16 2h Text rendering
+niels: 2024-12-16 30m rendering fixes #PR88
+niels: 2024-12-19 1h implementing PR feedback #PR86
+niels: 2024-12-19 10m implementing PR feedback #PR88
+niels: 2024-12-19 40m project meeting
+niels: 2024-12-19 30m pr review #PR84
+niels: 2024-12-19 40m project meeting
+niels: 2024-12-20 4h project meeting
+niels: 2024-12-20 40m PR review (#PRs 91, 92 93)
+niels: 2024-12-20 30m rendering text to world space bug #PR96
+niels: 2024-12-21 30m implementing feedback #PR96
 
 
 jaro: 2024-09-02 1h project meeting :: project kickoff
@@ -876,6 +927,31 @@ jaro: 2024-12-14 30m testing collision system
 jaro: 2024-12-14 1h niels demo scene collisions
 jaro: 2024-12-14 1h loek debuggen demo
 jaro: 2024-12-14 15m weekly update
-
-
+jaro: 2024-12-15 1h menu: variable button and structuur
+jaro: 2024-12-15 1h30m script en button functionaliteit
+jaro: 2024-12-15 1h discussing script en button functionaliteit
+jaro: 2024-12-16 1h project meeting
+jaro: 2024-12-16 2h project lesson
+jaro: 2024-12-16 2h30m project meeting
+jaro: 2024-12-16 2h collision system handling
+jaro: 2024-12-16 2h30m collision handling, tranform, scale and refactoring
+jaro: 2024-12-16 1h particle system transform
+jaro: 2024-12-17 15m review collision uitleg
+jaro: 2024-12-18 3h30m refactoring collision system and adding handling features
+jaro: 2024-12-19 30m project meeting
+jaro: 2024-12-19 1h collision system doxygen/code standard
+jaro: 2024-12-19 2h30m collision system, feedback and testing
+jaro: 2024-12-20 1h30m project meeting
+jaro: 2024-12-20 3h project meeting and discussing
+jaro: 2024-12-20 1h game button
+jaro: 2024-12-21 3h30m game menu and scene switch
+jaro: 2024-12-23 2h15m  game, script,main menu , shop, banner, achtergrond,font
+jaro: 2024-12-28 2h menu improved interfaces and added some
+jaro: 2024-12-28 2h game added coins and coin pooling
+jaro: 2024-12-29 2h back button, generic pressdown and release, more coin presets. added icon to button. added  scale to button
+jaro: 2025-01-03 1h45m random coins, banner update, coin collision handling
+jaro: 2025-01-03 1h15m menu update with coin info, merge with master
+jaro: 2025-01-05 2h game hud
+jaro: 2025-01-05 1h3m hud,menu en gameplaysnelheid
+jaro: 2025-01-05 1h gameplaysnelheid en hud
 # vim:ft=cfg
