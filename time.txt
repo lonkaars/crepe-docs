@@ -955,4 +955,23 @@ jaro: 2025-01-03 1h15m menu update with coin info, merge with master
 jaro: 2025-01-05 2h game hud
 jaro: 2025-01-05 1h3m hud,menu en gameplaysnelheid
 jaro: 2025-01-05 1h gameplaysnelheid en hud
+jaro: 2025-01-06 1h30m meeting
+jaro: 2025-01-06 2h main menu coins
+jaro: 2025-01-06 1h30m fps and hud
+jaro: 2025-01-06 2h savedata endmgae
+jaro: 2025-01-06 2h popupwindow
+jaro: 2025-01-07 1h popupwindow
+jaro: 2025-01-07 2h coin improvement
+jaro: 2025-01-07 1h meeting
+jaro: 2025-01-07 2h saving new record
+jaro: 2025-01-07 1h gameplay snelheid
+jaro: 2025-01-07 2h replay
+jaro: 2025-01-08 1h credits
+jaro: 2025-01-08 1h endgame data shown
+jaro: 2025-01-08 1h generic menu improvements
+jaro: 2025-01-08 2h preview integratie
+jaro: 2025-01-09 1h shop
+jaro: 2025-01-10 1h shop save_data
+jaro: 2025-01-11 30m api diagram update
+
 # vim:ft=cfg
